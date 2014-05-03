@@ -33,7 +33,7 @@ class C2G2(object):
     </head>
     <body onload="brython({debug:1, cache:'version'})">
     <canvas id="plotarea" width="800" height="800"></canvas>
-    <script type="text/python3">
+    <script type="text/python">
     # 導入數學模組的所有方法
     from math import *
     # 導入時間模組
@@ -108,7 +108,7 @@ class C2G2(object):
     </head>
     <body onload="brython({debug:1, cache:'version'})">
     <canvas id="plotarea" width="800" height="800"></canvas>
-    <script type="text/python3">
+    <script type="text/python">
     # 導入 doc
     from browser import doc
 
