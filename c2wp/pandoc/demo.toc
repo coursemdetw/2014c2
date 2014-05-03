@@ -1,0 +1,86 @@
+\contentsline {section}{Synopsis}{4}{section*.2}
+\contentsline {section}{指令使用說明}{4}{section*.3}
+\contentsline {section}{An h1 header}{4}{section*.4}
+\contentsline {subsection}{An h2 header}{5}{section*.5}
+\contentsline {subsubsection}{An h3 header}{6}{section*.6}
+\contentsline {subsection}{Cover Page}{7}{section*.7}
+\contentsline {subsection}{Typography}{8}{section*.8}
+\contentsline {subsection}{Tables}{8}{section*.9}
+\contentsline {subsection}{Figures}{8}{section*.10}
+\contentsline {subsection}{Citations and Links}{8}{section*.11}
+\contentsline {subsection}{Math}{9}{section*.12}
+\contentsline {subsection}{Comments}{9}{section*.13}
+\contentsline {subsection}{References}{9}{section*.14}
+\contentsline {subsection}{Using \texttt {pandoc}}{10}{section*.15}
+\contentsline {subsection}{Creating a PDF}{11}{section*.16}
+\contentsline {subsection}{\texttt {hsmarkdown}}{11}{section*.17}
+\contentsline {section}{Options}{12}{section*.18}
+\contentsline {subsection}{General options}{12}{section*.19}
+\contentsline {subsection}{Reader options}{13}{section*.20}
+\contentsline {subsection}{General writer options}{15}{section*.21}
+\contentsline {subsection}{Options affecting specific writers}{16}{section*.22}
+\contentsline {subsection}{Citation rendering}{20}{section*.23}
+\contentsline {subsection}{Math rendering in HTML}{21}{section*.24}
+\contentsline {subsection}{Options for wrapper scripts}{22}{section*.25}
+\contentsline {section}{Templates}{22}{section*.26}
+\contentsline {section}{Pandoc's markdown}{24}{section*.27}
+\contentsline {subsection}{Philosophy}{25}{section*.28}
+\contentsline {subsection}{Paragraphs}{25}{section*.29}
+\contentsline {subsection}{Headers}{25}{section*.30}
+\contentsline {subsubsection}{Setext-style headers}{25}{section*.31}
+\contentsline {subsubsection}{Atx-style headers}{26}{section*.32}
+\contentsline {subsubsection}{Header identifiers in HTML, LaTeX, and ConTeXt}{26}{section*.33}
+\contentsline {subsection}{Block quotations}{29}{section*.34}
+\contentsline {subsection}{Verbatim (code) blocks}{30}{section*.35}
+\contentsline {subsubsection}{Indented code blocks}{30}{section*.36}
+\contentsline {subsubsection}{Fenced code blocks}{30}{section*.37}
+\contentsline {subsection}{Line blocks}{31}{section*.38}
+\contentsline {subsection}{Lists}{32}{section*.39}
+\contentsline {subsubsection}{Bullet lists}{32}{section*.40}
+\contentsline {subsubsection}{The four-space rule}{33}{section*.41}
+\contentsline {subsubsection}{Ordered lists}{34}{section*.42}
+\contentsline {subsubsection}{Definition lists}{36}{section*.43}
+\contentsline {subsubsection}{Numbered example lists}{36}{section*.44}
+\contentsline {subsubsection}{Compact and loose lists}{37}{section*.45}
+\contentsline {subsubsection}{Ending a list}{37}{section*.46}
+\contentsline {subsection}{Horizontal rules}{38}{section*.47}
+\contentsline {subsection}{Tables}{38}{section*.48}
+\contentsline {subsubsection}{Simple tables}{39}{section*.49}
+\contentsline {subsubsection}{Multiline tables}{40}{section*.50}
+\contentsline {subsubsection}{Grid tables}{41}{section*.51}
+\contentsline {subsubsection}{Pipe tables}{41}{section*.52}
+\contentsline {subsection}{Title block}{42}{section*.53}
+\contentsline {subsection}{YAML metadata block}{44}{section*.54}
+\contentsline {subsection}{Backslash escapes}{45}{section*.55}
+\contentsline {subsection}{Smart punctuation}{46}{section*.56}
+\contentsline {subsection}{Inline formatting}{46}{section*.57}
+\contentsline {subsubsection}{Emphasis}{46}{section*.58}
+\contentsline {subsubsection}{Strikeout}{47}{section*.59}
+\contentsline {subsubsection}{Superscripts and subscripts}{47}{section*.60}
+\contentsline {subsubsection}{Verbatim}{47}{section*.61}
+\contentsline {subsection}{Math}{48}{section*.62}
+\contentsline {subsection}{Raw HTML}{50}{section*.63}
+\contentsline {subsection}{Raw TeX}{51}{section*.64}
+\contentsline {subsection}{LaTeX macros}{51}{section*.65}
+\contentsline {subsection}{Links}{52}{section*.66}
+\contentsline {subsubsection}{Automatic links}{52}{section*.67}
+\contentsline {subsubsection}{Inline links}{52}{section*.68}
+\contentsline {subsubsection}{Reference links}{52}{section*.69}
+\contentsline {subsubsection}{Internal links}{53}{section*.70}
+\contentsline {subsection}{Images}{54}{section*.71}
+\contentsline {subsubsection}{Pictures with captions}{54}{section*.72}
+\contentsline {subsection}{Footnotes}{55}{section*.73}
+\contentsline {subsection}{Citations}{55}{section*.74}
+\contentsline {subsection}{Non-pandoc extensions}{58}{section*.75}
+\contentsline {subsection}{Markdown variants}{59}{section*.76}
+\contentsline {subsection}{Extensions with formats other than markdown}{60}{section*.77}
+\contentsline {section}{Producing slide shows with Pandoc}{60}{section*.78}
+\contentsline {subsection}{Structuring the slide show}{61}{section*.79}
+\contentsline {subsection}{Incremental lists}{62}{section*.80}
+\contentsline {subsection}{Inserting pauses}{62}{section*.81}
+\contentsline {subsection}{Styling the slides}{63}{section*.82}
+\contentsline {subsection}{Speaker notes}{63}{section*.83}
+\contentsline {section}{EPUB Metadata}{64}{section*.84}
+\contentsline {section}{Literate Haskell support}{65}{section*.85}
+\contentsline {section}{Custom writers}{66}{section*.86}
+\contentsline {section}{Authors}{66}{section*.87}
