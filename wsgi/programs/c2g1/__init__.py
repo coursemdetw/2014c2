@@ -96,6 +96,18 @@ class C2G1(object):
     root.c2g1 = c2g1.C2G1()
     
     則程式啟動後, 可以利用 /c2g1/drawline 呼叫函式執行
+    
+    context.setTransform(a,b,c,d,e,f)
+    a	To Scale the object across along the X axis
+    b	To skew the object horizontally(i.e horizontal shear)
+    c	To skew the object vertically(i.e vertical shear)
+    d	To scale the object across Y axis
+    e	To translate the object along the X axis
+    f	To translate the object along the Y axis
+    
+    a c e
+    b d f
+    0 0 1
     '''
     @cherrypy.expose
     def drawline(self, *args, **kwargs):
@@ -115,6 +127,8 @@ class C2G1(object):
     # 準備繪圖畫布
     canvas = doc["plotarea"]
     ctx = canvas.getContext("2d")
+    # 進行座標轉換, x 軸不變, y 軸反向且移動 800 光點
+    ctx.setTransform(1, 0, 0, -1, 0, 800)
 
     # 定義畫線函式
     def draw_line(x1, y1, x2, y2, linethick = 3, color = "black"):
