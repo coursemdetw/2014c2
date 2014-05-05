@@ -322,10 +322,16 @@ class C2G1(object):
         ctx.strokeStyle = color
         ctx.stroke()
 
-    draw_line(300, 300, 300, 500)
-    draw_line(300,  300, 500, 300)
-    draw_line(300, 500, 500, 500)
-    draw_line(500, 300, 500, 500)
+    def square(x, y, width, color="black"):
+        half = width/2
+        draw_line(x+half, y+half, x+half, y-half)
+        draw_line(x+half, y-half, x-half, y-half, color="red")
+        draw_line(x-half, y-half, x-half, y+half)
+        draw_line(x-half, y+half, x+half, y+half)
+    
+    for i in range(5):
+        square(400, 400, 200+50*i)
+        square(400+i*50, 400-i*50, 200)
     </script>
     </body>
     </html>
