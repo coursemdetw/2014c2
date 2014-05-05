@@ -70,14 +70,15 @@
 </v>
 <v t="2014spring.20140502183555.1776"><vh>c2_w10 - w18</vh></v>
 <v t="2014spring.20140503095553.1876" a="E"><vh>c2_w11</vh>
+<v t="2014spring.20140505200238.2114"><vh>注意事項</vh></v>
 <v t="2014spring.20140503095553.1927" a="E"><vh>分組程式開發</vh>
 <v t="2014spring.20140503095553.1928" a="E"><vh>@path wsgi/programs/c2g1</vh>
 <v t="2014spring.20140503095553.1929"><vh>@edit __init__.py</vh></v>
 </v>
-<v t="2014spring.20140503095553.1932"><vh>@path wsgi/programs/c2g2</vh>
+<v t="2014spring.20140503095553.1932" a="E"><vh>@path wsgi/programs/c2g2</vh>
 <v t="2014spring.20140503095553.1933"><vh>@edit __init__.py</vh></v>
 </v>
-<v t="2014python.20140505100744.1942"><vh>@path wsgi/programs/c2g3</vh>
+<v t="2014python.20140505100744.1942" a="E"><vh>@path wsgi/programs/c2g3</vh>
 <v t="2014python.20140505100744.1943" a="O"><vh>@edit __init__.py</vh></v>
 </v>
 <v t="2014spring.20140505200238.1819" a="E"><vh>@path wsgi/programs/c2g30</vh>
@@ -986,7 +987,9 @@ for 索引 in range(0, 70, 4):
 '''
     return outstring
 </t>
-<t tx="2014spring.20140502183555.1776">評量規劃:
+<t tx="2014spring.20140502183555.1776">
+
+評量規劃:
 
 每週以組為單位執行分組任務, 評分類別如下:
 
@@ -1279,6 +1282,20 @@ root.c2g1 = c2g1.C2G1()
 <t tx="2014spring.20140503095553.1928"></t>
 <t tx="2014spring.20140503095553.1932"></t>
 <t tx="2014spring.20140505200238.1819"></t>
+<t tx="2014spring.20140505200238.2114">注意事項
+
+    Python 版次必須使用 3.3 版
+    Leo Editor 必須使用 4.11 版
+    建立 pdf 與 html 文件則需要 pandoc 與 portableLatex 可攜應用程式(位於 apps 目錄下)
+    Git 則使用可攜版本(位於 apps 目錄下)
+    
+各組 push 資料確認事項
+
+    git config –list 中的 user.name 是否為各組代號 (代號錯誤將無法取分)
+    application 網站是否可以正確執行
+    .leo 檔案是否可以被 Leo Editor 正確開啟
+    專案是否可以正確產生協同報告 pdf 與 html 檔案
+    與 .leo 專案對應的外部目錄與檔案是否正確設定</t>
 <t tx="course-mde-tw.20140417093332.2216">@language python
 @tabwidth -4
 
