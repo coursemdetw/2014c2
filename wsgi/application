@@ -616,10 +616,10 @@ root = C2Project()
 # 導入 programs/c2g1 並且命名為 c2g1
 # 模組內建使用 __init__.py 中的 C2G1 類別
 # 若使用 programs/c2g1/class1.py, 則使用 import programs.c2g1.class1 as c2g1
-import programs.c2g1 as c2g1
+import programs.c2g8 as c2g8
 # 利用 c2g1 目錄下的 __init__.py 檔案中的 C2G1 類別建立案例物件
 # 而且指到 application 根目錄下的 c2g1
-root.c2g1 = c2g1.C2G1()
+root.c2g8 = c2g8.C2G8()
 #####################################################
 # 結束 c2g1 組的物件案例定義
 #####################################################
@@ -628,6 +628,10 @@ root.c2g1 = c2g1.C2G1()
 import programs.c2g2 as c2g2
 root.c2g2 = c2g2.C2G2()
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> dd5ca968d05e8316f3e5cc0ecf8337e6b3d797de
 # 假如在 os 環境變數中存在 'OPENSHIFT_REPO_DIR', 表示程式在 OpenShift 環境中執行
 if 'OPENSHIFT_REPO_DIR' in os.environ.keys():
     # 雲端執行啟動

@@ -43,7 +43,7 @@
 </v>
 </v>
 </v>
-<v t="2014pythonE.20140414091257.1680" a="E"><vh>c2_w8</vh>
+<v t="2014pythonE.20140414091257.1680"><vh>c2_w8</vh>
 <v t="2014pythonE.20140418222946.1967"><vh>說明</vh></v>
 <v t="2014pythonE.20140418222946.1968"><vh>同步設定</vh></v>
 <v t="2014pythonE.20140414091257.1916"><vh>簡單分頁</vh>
@@ -57,21 +57,25 @@ expanded="course-mde-tw.20140417093332.2218,"><vh>@file application</vh></v>
 <v t="2014spring.20140502183555.1776"><vh>c2_w10 - w18</vh></v>
 <v t="2014spring.20140503095553.1876" a="E"><vh>c2_w11</vh>
 <v t="2014spring.20140503095553.1927" a="E"><vh>分組程式開發</vh>
-<v t="2014spring.20140503095553.1928" a="E"><vh>@path wsgi/programs/c2g1</vh>
+<v t="2014spring.20140503095553.1928" a="E"><vh>@path wsgi/programs/c2g8</vh>
 <v t="2014spring.20140503095553.1929"><vh>@edit __init__.py</vh></v>
 </v>
 <v t="2014spring.20140503095553.1932" a="E"><vh>@path wsgi/programs/c2g2</vh>
 <v t="2014spring.20140503095553.1933"><vh>@edit __init__.py</vh></v>
 </v>
 </v>
+<<<<<<< HEAD
 <v t="2014spring.20140503095553.1883" a="E"><vh>利用 pandoc 進行格式轉換</vh>
+=======
+<v t="2014spring.20140503095553.1883"><vh>利用 pandoc 進行格式轉換</vh>
+>>>>>>> dd5ca968d05e8316f3e5cc0ecf8337e6b3d797de
 <v t="2014spring.20140503095553.1884"><vh>注意事項</vh></v>
 <v t="2014spring.20140503095553.1886"><vh>@button pandoc_auto</vh></v>
 <v t="2014spring.20140503095553.1887" a="E"><vh>@path wsgi/doc</vh>
 <v t="2014spring.20140503095553.1888"><vh>@edit title.txt</vh></v>
 </v>
 </v>
-<v t="2014spring.20140503095553.1908" a="E"><vh>分組協同報告區</vh>
+<v t="2014spring.20140503095553.1908"><vh>分組協同報告區</vh>
 <v t="2014spring.20140503095553.1909" a="E"><vh>@path wsgi/doc</vh>
 <v t="2014spring.20140503095553.1910" a="E"><vh>@path c2g1</vh>
 <v t="2014spring.20140503095553.1911"><vh>@edit doc.txt</vh></v>
