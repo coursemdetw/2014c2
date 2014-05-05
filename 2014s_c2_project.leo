@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Created by Leo (http://leoeditor.com/leo_toc.html) -->
+<!-- Created by Leo (http://webpages.charter.net/edreamleo/front.html) -->
 <?xml-stylesheet ekr_test?>
 <leo_file xmlns:leo="http://www.leo-editor.org/2011/leo" >
 <leo_header file_format="2" tnodes="0" max_tnode_index="0" clone_windows="0"/>
@@ -43,7 +43,7 @@
 </v>
 </v>
 </v>
-<v t="2014pythonE.20140414091257.1680" a="E"><vh>c2_w8</vh>
+<v t="2014pythonE.20140414091257.1680"><vh>c2_w8</vh>
 <v t="2014pythonE.20140418222946.1967"><vh>說明</vh></v>
 <v t="2014pythonE.20140418222946.1968"><vh>同步設定</vh></v>
 <v t="2014pythonE.20140414091257.1916"><vh>簡單分頁</vh>
@@ -60,11 +60,8 @@ expanded="course-mde-tw.20140417093332.2218,"><vh>@file application</vh></v>
 <v t="2014spring.20140503095553.1928" a="E"><vh>@path wsgi/programs/c2g1</vh>
 <v t="2014spring.20140503095553.1929"><vh>@edit __init__.py</vh></v>
 </v>
-<v t="2014spring.20140503095553.1932"><vh>@path wsgi/programs/c2g2</vh>
+<v t="2014spring.20140503095553.1932" a="E"><vh>@path wsgi/programs/c2g2</vh>
 <v t="2014spring.20140503095553.1933"><vh>@edit __init__.py</vh></v>
-</v>
-<v t="2014python.20140505100744.1942" a="E"><vh>@path wsgi/programs/c2g3</vh>
-<v t="2014python.20140505100744.1943" a="O"><vh>@edit __init__.py</vh></v>
 </v>
 </v>
 <v t="2014spring.20140503095553.1883"><vh>利用 pandoc 進行格式轉換</vh>
@@ -303,146 +300,6 @@ to handlers is not always 1:1, this provides a flexibility which is not as easil
 However, because the arrangement of config is directly related to the arrangement of handlers, it is the 
 responsibility of the Dispatcher to collect per-handler config, merge it with per-URI and global config, and bind the 
 resulting dict to cherrypy.request.config. This dict is of depth 1 and will contain all config entries which are in effect for the current request.</t>
-<t tx="2014python.20140505100744.1942"></t>
-<t tx="2014python.20140505100744.1943">@language python
-import cherrypy
-
-# 這是 C2G3 類別的定義
-class C2G3(object):
-    # 各組利用 index 引導隨後的程式執行
-    @cherrypy.expose
-    def index(self, *args, **kwargs):
-        outstring = '''
-這是 2014C2 協同專案下的 c2g3 分組程式開發網頁, 以下為 W12 的任務執行內容.&lt;br /&gt;
-&lt;!-- 這裡採用相對連結, 而非網址的絕對連結 (這一段為 html 註解) --&gt;
-&lt;a href="fillpoly"&gt;c2g2 fillpoly 繪圖&lt;/a&gt;&lt;br /&gt;
-&lt;a href="drawline"&gt;c2g2 drawline 繪圖&lt;/a&gt;&lt;br /&gt;
-&lt;a href="square"&gt;c2g3 square 繪圖&lt;/a&gt;&lt;br /&gt;
-'''
-        return outstring
-
-    # 以下為 c2g2 組所建立的 CherryPy 程式方法, 這裡的 fillpoly 利用 Brython 執行網際繪圖
-    ''' 
-    假如採用下列規畫
-    
-    import programs.c2g2 as c2g2
-    root.c2g2 = c2g2.C2G2()
-    
-    則程式啟動後, 可以利用 /c2g2/fillpoly 呼叫函式執行
-    '''
-    @cherrypy.expose
-    def fillpoly(self, *args, **kwargs):
-        outstring = '''
-    &lt;!DOCTYPE html&gt; 
-    &lt;html&gt;
-    &lt;head&gt;
-    &lt;meta http-equiv="content-type" content="text/html;charset=utf-8"&gt;
-    &lt;script type="text/javascript" src="/static/Brython2.1.0-20140419-113919/brython.js"&gt;&lt;/script&gt;
-    &lt;/head&gt;
-    &lt;body onload="brython({debug:1, cache:'version'})"&gt;
-    &lt;canvas id="plotarea" width="800" height="800"&gt;&lt;/canvas&gt;
-    &lt;script type="text/python"&gt;
-    # 導入數學模組的所有方法
-    from math import *
-    # 導入時間模組
-    import time
-    # 導入 doc
-    from browser import doc
-
-    # 準備繪圖畫布
-    canvas = doc["plotarea"]
-    ctx = canvas.getContext("2d")
-
-    # 定義座標轉換(0, 0) 到 (75, 20)
-    def change_ref_system(x, y):
-        return (20 + x * 8, 420 - y * 20)
-
-    # 定義畫線函式
-    def draw_line(x1, y1, x2, y2, linethick = 3, color = "black"):
-        ctx.beginPath()
-        ctx.lineWidth = linethick
-        ctx.moveTo(x1, y1)
-        ctx.lineTo(x2, y2)
-        ctx.strokeStyle = color
-        ctx.stroke()
-
-    def fill():
-        ctx.beginPath()
-        ctx.moveTo(75,50)
-        ctx.lineTo(100,75)
-        ctx.lineTo(100,25)
-        ctx.fill()
-        
-    def star():
-        ctx.beginPath()
-        ctx.moveTo(0,50)
-        ctx.lineTo(11,16)
-        ctx.lineTo(48,16)
-        ctx.fill()
-
-    ctx.fillStyle = "blue"
-    fill()
-    star()
-
-    x1, y1 = change_ref_system(0, 0)
-    for 索引 in range(0, 70, 4):
-        x2, y2 = change_ref_system(索引, 20)
-        draw_line(x1, y1, x2, y2, linethick=3, color="blue")
-    x1, y1 = change_ref_system(70, 0)
-    for 索引 in range(0, 70, 4):
-        x2, y2 = change_ref_system(索引, 20)
-        draw_line(x1, y1, x2, y2, linethick=3, color="red")
-    &lt;/script&gt;
-    &lt;/body&gt;
-    &lt;/html&gt;
-    '''
-        return outstring
-    ''' 
-    假如採用下列規畫
-    
-    import programs.c2g2 as c2g2
-    root.c2g2 = c2g2.C2G2()
-    
-    則程式啟動後, 可以利用 /c2g1/drawline 呼叫函式執行
-    '''
-    @cherrypy.expose
-    def square(self, *args, **kwargs):
-        outstring = '''
-    &lt;!DOCTYPE html&gt; 
-    &lt;html&gt;
-    &lt;head&gt;
-    &lt;meta http-equiv="content-type" content="text/html;charset=utf-8"&gt;
-    &lt;script type="text/javascript" src="/static/Brython2.1.0-20140419-113919/brython.js"&gt;&lt;/script&gt;
-    &lt;/head&gt;
-    &lt;body onload="brython({debug:1, cache:'version'})"&gt;
-    &lt;canvas id="plotarea" width="800" height="800"&gt;&lt;/canvas&gt;
-    &lt;script type="text/python"&gt;
-    # 導入 doc
-    from browser import doc
-
-    # 準備繪圖畫布
-    canvas = doc["plotarea"]
-    ctx = canvas.getContext("2d")
-
-    # 定義畫線函式
-    def draw_line(x1, y1, x2, y2, linethick = 3, color = "black"):
-        ctx.beginPath()
-        ctx.lineWidth = linethick
-        ctx.moveTo(x1, y1)
-        ctx.lineTo(x2, y2)
-        ctx.strokeStyle = color
-        ctx.stroke()
-
-    draw_line(100, 100, 100, 200)
-    draw_line(100, 100, 200, 100)
-    draw_line(100, 200, 200, 200)
-    draw_line(200, 100, 200, 200)
-    &lt;/script&gt;
-    &lt;/body&gt;
-    &lt;/html&gt;
-    '''
-        return outstring
-</t>
 <t tx="2014pythonE.20140224205837.3150"></t>
 <t tx="2014pythonE.20140224205837.3151">QSplitter::handle {
     background-color: #CAE1FF; /* lightSteelBlue1 */
