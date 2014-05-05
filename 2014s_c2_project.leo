@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Created by Leo (http://leoeditor.com/leo_toc.html) -->
+<!-- Created by Leo (http://webpages.charter.net/edreamleo/front.html) -->
 <?xml-stylesheet ekr_test?>
 <leo_file xmlns:leo="http://www.leo-editor.org/2011/leo" >
 <leo_header file_format="2" tnodes="0" max_tnode_index="0" clone_windows="0"/>
@@ -15,7 +15,7 @@
 <v t="2014pythonE.20140224205837.3152"><vh>@string initial_split_orientation = horizontal</vh></v>
 <v t="2014pythonE.20140331085053.2405"><vh>@string rst3_write_intermediate_extension = .rst</vh></v>
 </v>
-<v t="2014python.20140224210642.3165" a="E"><vh>c2_w1</vh>
+<v t="2014python.20140224210642.3165"><vh>c2_w1</vh>
 <v t="2014python.20140224210642.3168"><vh>程式說明</vh></v>
 <v t="public_kmol.20140302202325.1714"><vh>break, continue and pass</vh></v>
 <v t="public_kmol.20140302202325.1717"><vh>Leo editor 的檔案指令</vh></v>
@@ -23,7 +23,7 @@
 <v t="2014python.20140224210642.3167"><vh>@shadow c2_w1_python1.py</vh></v>
 </v>
 </v>
-<v t="public_kmol.20140302202325.1715" a="E"><vh>c2_w2</vh>
+<v t="public_kmol.20140302202325.1715"><vh>c2_w2</vh>
 <v t="public_kmol.20140302202325.1716"><vh>程式說明</vh></v>
 <v t="2014python.20140306154142.1723"><vh>CherryPy 程式架構</vh></v>
 <v t="2014python.20140306154142.1724"><vh>git 程式到 OpehShift</vh></v>
@@ -35,7 +35,7 @@
 </v>
 </v>
 </v>
-<v t="2014pythonE.20140402100203.1908" a="E"><vh>c2_w7</vh>
+<v t="2014pythonE.20140402100203.1908"><vh>c2_w7</vh>
 <v t="2014pythonE.20140402100203.1914" a="E"><vh>利用 pandoc 進行格式轉換</vh>
 <v t="2014pythonE.20140402100203.1915"><vh>@button pandoc</vh></v>
 <v t="2014pythonE.20140402100203.1916" a="E"><vh>@path c2wp/pandoc</vh>
@@ -43,7 +43,7 @@
 </v>
 </v>
 </v>
-<v t="2014pythonE.20140414091257.1680" a="E"><vh>c2_w8</vh>
+<v t="2014pythonE.20140414091257.1680"><vh>c2_w8</vh>
 <v t="2014pythonE.20140418222946.1967"><vh>說明</vh></v>
 <v t="2014pythonE.20140418222946.1968"><vh>同步設定</vh></v>
 <v t="2014pythonE.20140414091257.1916"><vh>簡單分頁</vh>

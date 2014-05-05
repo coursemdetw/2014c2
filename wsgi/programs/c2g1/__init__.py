@@ -322,9 +322,10 @@ class C2G1(object):
         ctx.strokeStyle = color
         ctx.stroke()
 
-    draw_line(100, 100, 100, 200)
-    draw_line(100, 100, 200, 100)
-    draw_line(200, 100, 200, 200)
+    draw_line(300, 300, 300, 500)
+    draw_line(300,  300, 500, 300)
+    draw_line(300, 500, 500, 500)
+    draw_line(500, 300, 500, 500)
     </script>
     </body>
     </html>
