@@ -63,8 +63,11 @@ expanded="course-mde-tw.20140417093332.2218,"><vh>@file application</vh></v>
 <v t="2014spring.20140503095553.1932"><vh>@path wsgi/programs/c2g2</vh>
 <v t="2014spring.20140503095553.1933"><vh>@edit __init__.py</vh></v>
 </v>
-<v t="2014python.20140505100744.1942" a="E"><vh>@path wsgi/programs/c2g3</vh>
+<v t="2014python.20140505100744.1942"><vh>@path wsgi/programs/c2g3</vh>
 <v t="2014python.20140505100744.1943" a="O"><vh>@edit __init__.py</vh></v>
+</v>
+<v t="2014spring.20140505200238.1819" a="E"><vh>@path wsgi/programs/c2g30</vh>
+<v t="2014spring.20140505200238.1820"><vh>@edit __init__.py</vh></v>
 </v>
 </v>
 <v t="2014spring.20140503095553.1883"><vh>利用 pandoc 進行格式轉換</vh>
@@ -1086,6 +1089,7 @@ root.c2g1 = c2g1.C2G1()
     3. 完成後先在近端測試, 完全符合需求且根據標準流程, 拉下目前協同專案區最新的 github 程式碼後, 檢驗 .leo 是否可以正確開啟, 各對應目錄是否正確配置, application 是否可以正確執行後, 再推送到協同專案區, 並與各分組的 OpenShift 雲端網站進行同步.</t>
 <t tx="2014spring.20140503095553.1928"></t>
 <t tx="2014spring.20140503095553.1932"></t>
+<t tx="2014spring.20140505200238.1819"></t>
 <t tx="public_kmol.20140302202325.1714">break
 
 The break statement in Python terminates the current loop and resumes execution at the next statement, just like the traditional break found in C.
