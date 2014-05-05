@@ -64,14 +64,14 @@ expanded="course-mde-tw.20140417093332.2218,"><vh>@file application</vh></v>
 <v t="2014spring.20140503095553.1933"><vh>@edit __init__.py</vh></v>
 </v>
 </v>
-<v t="2014spring.20140503095553.1883" a="E"><vh>利用 pandoc 進行格式轉換</vh>
+<v t="2014spring.20140503095553.1883"><vh>利用 pandoc 進行格式轉換</vh>
 <v t="2014spring.20140503095553.1884"><vh>注意事項</vh></v>
 <v t="2014spring.20140503095553.1886"><vh>@button pandoc_auto</vh></v>
 <v t="2014spring.20140503095553.1887" a="E"><vh>@path wsgi/doc</vh>
 <v t="2014spring.20140503095553.1888"><vh>@edit title.txt</vh></v>
 </v>
 </v>
-<v t="2014spring.20140503095553.1908" a="E"><vh>分組協同報告區</vh>
+<v t="2014spring.20140503095553.1908"><vh>分組協同報告區</vh>
 <v t="2014spring.20140503095553.1909" a="E"><vh>@path wsgi/doc</vh>
 <v t="2014spring.20140503095553.1910" a="E"><vh>@path c2g1</vh>
 <v t="2014spring.20140503095553.1911"><vh>@edit doc.txt</vh></v>
