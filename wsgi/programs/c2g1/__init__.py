@@ -10,10 +10,6 @@ class C2G1(object):
 <!-- 這裡採用相對連結, 而非網址的絕對連結 (這一段為 html 註解) -->
 <a href="fillpoly">c2g1 fillpoly 繪圖</a><br />
 <a href="drawline">c2g1 drawline 繪圖</a><br />
-<a href="animate1">c2g1 animate1 繪圖</a><br />
-<a href="flag">c2g1 flag 繪圖</a><br />
-<a href="square">c2g1 square 繪圖</a><br />
-<a href="star">c2g1 star 繪圖</a><br />
 '''
         return outstring
 
