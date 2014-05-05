@@ -15,7 +15,7 @@
 <v t="2014pythonE.20140224205837.3152"><vh>@string initial_split_orientation = horizontal</vh></v>
 <v t="2014pythonE.20140331085053.2405"><vh>@string rst3_write_intermediate_extension = .rst</vh></v>
 </v>
-<v t="2014python.20140224210642.3165"><vh>c2_w1</vh>
+<v t="2014python.20140224210642.3165" a="E"><vh>c2_w1</vh>
 <v t="2014python.20140224210642.3168"><vh>程式說明</vh></v>
 <v t="public_kmol.20140302202325.1714"><vh>break, continue and pass</vh></v>
 <v t="public_kmol.20140302202325.1717"><vh>Leo editor 的檔案指令</vh></v>
@@ -23,7 +23,7 @@
 <v t="2014python.20140224210642.3167"><vh>@shadow c2_w1_python1.py</vh></v>
 </v>
 </v>
-<v t="public_kmol.20140302202325.1715"><vh>c2_w2</vh>
+<v t="public_kmol.20140302202325.1715" a="E"><vh>c2_w2</vh>
 <v t="public_kmol.20140302202325.1716"><vh>程式說明</vh></v>
 <v t="2014python.20140306154142.1723"><vh>CherryPy 程式架構</vh></v>
 <v t="2014python.20140306154142.1724"><vh>git 程式到 OpehShift</vh></v>
@@ -35,7 +35,7 @@
 </v>
 </v>
 </v>
-<v t="2014pythonE.20140402100203.1908"><vh>c2_w7</vh>
+<v t="2014pythonE.20140402100203.1908" a="E"><vh>c2_w7</vh>
 <v t="2014pythonE.20140402100203.1914" a="E"><vh>利用 pandoc 進行格式轉換</vh>
 <v t="2014pythonE.20140402100203.1915"><vh>@button pandoc</vh></v>
 <v t="2014pythonE.20140402100203.1916" a="E"><vh>@path c2wp/pandoc</vh>
@@ -57,7 +57,7 @@ expanded="course-mde-tw.20140417093332.2218,"><vh>@file application</vh></v>
 <v t="2014spring.20140502183555.1776"><vh>c2_w10 - w18</vh></v>
 <v t="2014spring.20140503095553.1876" a="E"><vh>c2_w11</vh>
 <v t="2014spring.20140503095553.1927" a="E"><vh>分組程式開發</vh>
-<v t="2014spring.20140503095553.1928" a="E"><vh>@path wsgi/programs/c2g1</vh>
+<v t="2014spring.20140503095553.1928" a="E"><vh>@path wsgi/programs/c2g8</vh>
 <v t="2014spring.20140503095553.1929"><vh>@edit __init__.py</vh></v>
 </v>
 <v t="2014spring.20140503095553.1932" a="E"><vh>@path wsgi/programs/c2g2</vh>
