@@ -632,9 +632,14 @@ root.c2g2 = c2g2.C2G2()
 import programs.c2g9 as c2g9
 root.c2g9 = c2g9.C2G9()
 
+<<<<<<< HEAD
 # 以下為 c2g23 的模組導入與連結設定
 import programs.c2g23 as c2g23
 root.c2g23 = c2g23.C2G23()
+=======
+import programs.c2g30 as c2g30
+root.c2g30 = c2g30.C2G30()
+>>>>>>> e2cb63e522413e7371d0ef285143f9a4fb25553e
 
 # 假如在 os 環境變數中存在 'OPENSHIFT_REPO_DIR', 表示程式在 OpenShift 環境中執行
 if 'OPENSHIFT_REPO_DIR' in os.environ.keys():

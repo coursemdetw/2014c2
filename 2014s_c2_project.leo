@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Created by Leo (http://webpages.charter.net/edreamleo/front.html) -->
+<!-- Created by Leo (http://leoeditor.com/leo_toc.html) -->
 <?xml-stylesheet ekr_test?>
 <leo_file xmlns:leo="http://www.leo-editor.org/2011/leo" >
 <leo_header file_format="2" tnodes="0" max_tnode_index="0" clone_windows="0"/>
@@ -15,7 +15,7 @@
 <v t="2014pythonE.20140224205837.3152"><vh>@string initial_split_orientation = horizontal</vh></v>
 <v t="2014pythonE.20140331085053.2405"><vh>@string rst3_write_intermediate_extension = .rst</vh></v>
 </v>
-<v t="2014python.20140224210642.3165" a="E"><vh>c2_w1</vh>
+<v t="2014python.20140224210642.3165"><vh>c2_w1</vh>
 <v t="2014python.20140224210642.3168"><vh>程式說明</vh></v>
 <v t="public_kmol.20140302202325.1714"><vh>break, continue and pass</vh></v>
 <v t="public_kmol.20140302202325.1717"><vh>Leo editor 的檔案指令</vh></v>
@@ -23,7 +23,7 @@
 <v t="2014python.20140224210642.3167"><vh>@shadow c2_w1_python1.py</vh></v>
 </v>
 </v>
-<v t="public_kmol.20140302202325.1715" a="E"><vh>c2_w2</vh>
+<v t="public_kmol.20140302202325.1715"><vh>c2_w2</vh>
 <v t="public_kmol.20140302202325.1716"><vh>程式說明</vh></v>
 <v t="2014python.20140306154142.1723"><vh>CherryPy 程式架構</vh></v>
 <v t="2014python.20140306154142.1724"><vh>git 程式到 OpehShift</vh></v>
@@ -35,7 +35,7 @@
 </v>
 </v>
 </v>
-<v t="2014pythonE.20140402100203.1908" a="E"><vh>c2_w7</vh>
+<v t="2014pythonE.20140402100203.1908"><vh>c2_w7</vh>
 <v t="2014pythonE.20140402100203.1914" a="E"><vh>利用 pandoc 進行格式轉換</vh>
 <v t="2014pythonE.20140402100203.1915"><vh>@button pandoc</vh></v>
 <v t="2014pythonE.20140402100203.1916" a="E"><vh>@path c2wp/pandoc</vh>
@@ -50,12 +50,27 @@
 <v t="2014pythonE.20140414091257.1917"><vh>另一個例子</vh></v>
 </v>
 <v t="2014pythonE.20140414091257.1681" a="E"><vh>@path wsgi</vh>
-<v t="course-mde-tw.20140417093332.2216" a="E"
-expanded="course-mde-tw.20140417093332.2218,"><vh>@file application</vh></v>
+<v t="course-mde-tw.20140417093332.2216" a="EO"><vh>@file application</vh>
+<v t="course-mde-tw.20140417093332.2217"><vh>&lt;&lt;declarations&gt;&gt;</vh></v>
+<v t="course-mde-tw.20140417093332.2218" a="E"><vh>class C2Project</vh>
+<v t="2014pythonE.20140418074836.2204"><vh>__init__</vh></v>
+<v t="course-mde-tw.20140417093332.2219"><vh>fileuploadform</vh></v>
+<v t="course-mde-tw.20140417093332.2220"><vh>brythonuploadform</vh></v>
+<v t="course-mde-tw.20140417093332.2221"><vh>fileaxupload</vh></v>
+<v t="course-mde-tw.20140417093332.2222"><vh>index</vh></v>
+<v t="course-mde-tw.20140417093332.2223"><vh>inputform</vh></v>
+<v t="course-mde-tw.20140417093332.2224"><vh>rotate_inputform</vh></v>
+<v t="course-mde-tw.20140417093332.2225"><vh>calculatePosition</vh></v>
+<v t="course-mde-tw.20140417093332.2226"><vh>saveData</vh></v>
+<v t="2014spring.20140502183555.1775"><vh>drawlines</vh></v>
+<v t="2014spring.20140502183555.1866"><vh>fillpoly</vh></v>
+</v>
+</v>
 </v>
 </v>
 <v t="2014spring.20140502183555.1776"><vh>c2_w10 - w18</vh></v>
 <v t="2014spring.20140503095553.1876" a="E"><vh>c2_w11</vh>
+<v t="2014spring.20140505200238.2114"><vh>注意事項</vh></v>
 <v t="2014spring.20140503095553.1927" a="E"><vh>分組程式開發</vh>
 <v t="2014spring.20140503095553.1928" a="E"><vh>@path wsgi/programs/c2g1</vh>
 <v t="2014spring.20140503095553.1929"><vh>@edit __init__.py</vh></v>
@@ -63,21 +78,27 @@ expanded="course-mde-tw.20140417093332.2218,"><vh>@file application</vh></v>
 <v t="2014spring.20140503095553.1932" a="E"><vh>@path wsgi/programs/c2g2</vh>
 <v t="2014spring.20140503095553.1933"><vh>@edit __init__.py</vh></v>
 </v>
-<v t="kmolII_lite.20140505092917.1774" a="E"><vh>@path wsgi/programs/c2g9</vh>
-<v t="kmolII_lite.20140505092917.1775"><vh>@edit __init__.py</vh></v>
+<v t="2014python.20140505100744.1942" a="E"><vh>@path wsgi/programs/c2g3</vh>
+<v t="2014python.20140505100744.1943" a="O"><vh>@edit __init__.py</vh></v>
 </v>
+<<<<<<< HEAD
 <v t="kmolII_lite.20140505210604.1651" a="E"><vh>@path wsgi/programs/c2g23</vh>
 <v t="kmolII_lite.20140505210604.1652"><vh>@edit __init__.py</vh></v>
 </v>
+=======
+<v t="2014spring.20140505200238.1819" a="E"><vh>@path wsgi/programs/c2g30</vh>
+<v t="2014spring.20140505200238.1820"><vh>@edit __init__.py</vh></v>
+>>>>>>> e2cb63e522413e7371d0ef285143f9a4fb25553e
 </v>
-<v t="2014spring.20140503095553.1883" a="E"><vh>利用 pandoc 進行格式轉換</vh>
+</v>
+<v t="2014spring.20140503095553.1883"><vh>利用 pandoc 進行格式轉換</vh>
 <v t="2014spring.20140503095553.1884"><vh>注意事項</vh></v>
 <v t="2014spring.20140503095553.1886"><vh>@button pandoc_auto</vh></v>
 <v t="2014spring.20140503095553.1887" a="E"><vh>@path wsgi/doc</vh>
 <v t="2014spring.20140503095553.1888"><vh>@edit title.txt</vh></v>
 </v>
 </v>
-<v t="2014spring.20140503095553.1908" a="E"><vh>分組協同報告區</vh>
+<v t="2014spring.20140503095553.1908"><vh>分組協同報告區</vh>
 <v t="2014spring.20140503095553.1909" a="E"><vh>@path wsgi/doc</vh>
 <v t="2014spring.20140503095553.1910" a="E"><vh>@path c2g1</vh>
 <v t="2014spring.20140503095553.1911"><vh>@edit doc.txt</vh></v>
@@ -306,6 +327,142 @@ to handlers is not always 1:1, this provides a flexibility which is not as easil
 However, because the arrangement of config is directly related to the arrangement of handlers, it is the 
 responsibility of the Dispatcher to collect per-handler config, merge it with per-URI and global config, and bind the 
 resulting dict to cherrypy.request.config. This dict is of depth 1 and will contain all config entries which are in effect for the current request.</t>
+<t tx="2014python.20140505100744.1942"></t>
+<t tx="2014python.20140505100744.1943">@language python
+import cherrypy
+
+# 這是 C2G3 類別的定義
+class C2G3(object):
+    # 各組利用 index 引導隨後的程式執行
+    @cherrypy.expose
+    def index(self, *args, **kwargs):
+        outstring = '''
+這是 2014C2 協同專案下的 c2g2 分組程式開發網頁, 以下為 W12 的任務執行內容.&lt;br /&gt;
+&lt;!-- 這裡採用相對連結, 而非網址的絕對連結 (這一段為 html 註解) --&gt;
+&lt;a href="fillpoly"&gt;c2g2 fillpoly 繪圖&lt;/a&gt;&lt;br /&gt;
+&lt;a href="drawline"&gt;c2g2 drawline 繪圖&lt;/a&gt;&lt;br /&gt;
+'''
+        return outstring
+
+    # 以下為 c2g3 組所建立的 CherryPy 程式方法, 這裡的 fillpoly 利用 Brython 執行網際繪圖
+    ''' 
+    假如採用下列規畫
+    
+    import programs.c2g2 as c2g2
+    root.c2g2 = c2g2.C2G2()
+    
+    則程式啟動後, 可以利用 /c2g2/fillpoly 呼叫函式執行
+    '''
+    @cherrypy.expose
+    def fillpoly(self, *args, **kwargs):
+        outstring = '''
+    &lt;!DOCTYPE html&gt; 
+    &lt;html&gt;
+    &lt;head&gt;
+    &lt;meta http-equiv="content-type" content="text/html;charset=utf-8"&gt;
+    &lt;script type="text/javascript" src="/static/Brython2.1.0-20140419-113919/brython.js"&gt;&lt;/script&gt;
+    &lt;/head&gt;
+    &lt;body onload="brython({debug:1, cache:'version'})"&gt;
+    &lt;canvas id="plotarea" width="800" height="800"&gt;&lt;/canvas&gt;
+    &lt;script type="text/python"&gt;
+    # 導入數學模組的所有方法
+    from math import *
+    # 導入時間模組
+    import time
+    # 導入 doc
+    from browser import doc
+
+    # 準備繪圖畫布
+    canvas = doc["plotarea"]
+    ctx = canvas.getContext("2d")
+
+    # 定義座標轉換(0, 0) 到 (75, 20)
+    def change_ref_system(x, y):
+        return (20 + x * 8, 420 - y * 20)
+
+    # 定義畫線函式
+    def draw_line(x1, y1, x2, y2, linethick = 3, color = "black"):
+        ctx.beginPath()
+        ctx.lineWidth = linethick
+        ctx.moveTo(x1, y1)
+        ctx.lineTo(x2, y2)
+        ctx.strokeStyle = color
+        ctx.stroke()
+
+    def fill():
+        ctx.beginPath()
+        ctx.moveTo(75,50)
+        ctx.lineTo(100,75)
+        ctx.lineTo(100,25)
+        ctx.fill()
+        
+    def star():
+        ctx.beginPath()
+        ctx.moveTo(0,50)
+        ctx.lineTo(11,16)
+        ctx.lineTo(48,16)
+        ctx.fill()
+
+    ctx.fillStyle = "blue"
+    fill()
+    star()
+
+    x1, y1 = change_ref_system(0, 0)
+    for 索引 in range(0, 70, 4):
+        x2, y2 = change_ref_system(索引, 20)
+        draw_line(x1, y1, x2, y2, linethick=3, color="blue")
+    x1, y1 = change_ref_system(70, 0)
+    for 索引 in range(0, 70, 4):
+        x2, y2 = change_ref_system(索引, 20)
+        draw_line(x1, y1, x2, y2, linethick=3, color="red")
+    &lt;/script&gt;
+    &lt;/body&gt;
+    &lt;/html&gt;
+    '''
+        return outstring
+    ''' 
+    假如採用下列規畫
+    
+    import programs.c2g2 as c2g2
+    root.c2g2 = c2g2.C2G2()
+    
+    則程式啟動後, 可以利用 /c2g1/drawline 呼叫函式執行
+    '''
+    @cherrypy.expose
+    def drawline(self, *args, **kwargs):
+        outstring = '''
+    &lt;!DOCTYPE html&gt; 
+    &lt;html&gt;
+    &lt;head&gt;
+    &lt;meta http-equiv="content-type" content="text/html;charset=utf-8"&gt;
+    &lt;script type="text/javascript" src="/static/Brython2.1.0-20140419-113919/brython.js"&gt;&lt;/script&gt;
+    &lt;/head&gt;
+    &lt;body onload="brython({debug:1, cache:'version'})"&gt;
+    &lt;canvas id="plotarea" width="800" height="800"&gt;&lt;/canvas&gt;
+    &lt;script type="text/python"&gt;
+    # 導入 doc
+    from browser import doc
+
+    # 準備繪圖畫布
+    canvas = doc["plotarea"]
+    ctx = canvas.getContext("2d")
+
+    # 定義畫線函式
+    def draw_line(x1, y1, x2, y2, linethick = 3, color = "black"):
+        ctx.beginPath()
+        ctx.lineWidth = linethick
+        ctx.moveTo(x1, y1)
+        ctx.lineTo(x2, y2)
+        ctx.strokeStyle = color
+        ctx.stroke()
+
+    draw_line(0, 0, 100, 100)
+    &lt;/script&gt;
+    &lt;/body&gt;
+    &lt;/html&gt;
+    '''
+        return outstring
+</t>
 <t tx="2014pythonE.20140224205837.3150"></t>
 <t tx="2014pythonE.20140224205837.3151">QSplitter::handle {
     background-color: #CAE1FF; /* lightSteelBlue1 */
@@ -698,6 +855,29 @@ The url_for_other_page function is not handling query strings in the URL. Just c
 Comment by hilfi alkaff on 2014-01-29 @ 18:50
 
 Somehow my request.view_args is empty when I have previous search results on the paginated data. I had to use request.args.copy() instead.</t>
+<t tx="2014pythonE.20140418074836.2204">def __init__(self):
+    # hope to create downloads and images directories　
+    if not os.path.isdir(download_root_dir+"downloads"):
+        try:
+            os.makedirs(download_root_dir+"downloads")
+        except:
+            print("mkdir error")
+    if not os.path.isdir(download_root_dir+"images"):
+        try:
+            os.makedirs(download_root_dir+"images")
+        except:
+            print("mkdir error")
+    if not os.path.isdir(download_root_dir+"tmp"):
+        try:
+            os.makedirs(download_root_dir+"tmp")
+        except:
+            print("mkdir error")
+    if not os.path.isdir(data_dir+"data"):
+        try:
+            os.makedirs(data_dir+"data")
+        except:
+            print("mkdir error")
+</t>
 <t tx="2014pythonE.20140418222946.1967">已經與 ssh://53513f805004466e55000158@c2-mdec2project.rhcloud.com/~/git/c2.git/ 同步
 
 採用 mdec2project@gmail.com 登記 OpenShift 帳號
@@ -729,7 +909,93 @@ Bitbucket 同步倉儲則為: https://bitbucket.org/coursemde/2014c2
 cd project on Bitbucket: https://bitbucket.org/coursemde/2014cd
 
 與 Bitbucket 同步的 OpenShift 網站: http://cdproject-coursemdetw.rhcloud.com/</t>
-<t tx="2014spring.20140502183555.1776">評量規劃:
+<t tx="2014spring.20140502183555.1775">@cherrypy.expose
+def drawlines(self, *args, **kwargs):
+    outstring = '''
+&lt;!DOCTYPE html&gt; 
+&lt;html&gt;
+&lt;head&gt;
+&lt;meta http-equiv="content-type" content="text/html;charset=utf-8"&gt;
+&lt;script type="text/javascript" src="/static/Brython2.1.0-20140419-113919/brython.js"&gt;&lt;/script&gt;
+&lt;/head&gt;
+&lt;body onload="brython({debug:1, cache:'version'})"&gt;
+&lt;canvas id="plotarea" width="800" height="800"&gt;&lt;/canvas&gt;
+&lt;script type="text/python3"&gt;
+# 導入數學模組的所有方法
+from math import *
+# 導入時間模組
+import time
+# 導入 doc
+from browser import doc
+
+# 準備繪圖畫布
+canvas = doc["plotarea"]
+ctx = canvas.getContext("2d")
+# 定義座標轉換(0, 0) 到 (75, 20)
+def change_ref_system(x, y):
+    return (20 + x * 8, 420 - y * 20)
+# 定義畫線函式
+def draw_line(x1, y1, x2, y2, linethick = 3, color = "black"):
+    ctx.beginPath()
+    ctx.lineWidth = linethick
+    ctx.moveTo(x1, y1)
+    ctx.lineTo(x2, y2)
+    ctx.strokeStyle = color
+    ctx.stroke()
+# 定義一個點類別
+class Point:
+    def __init__(self, x, y):
+        self.x = x
+        self.y = y
+    def distanceTo(self, obj):
+        if isinstance(obj, Point):
+            return sqrt(pow(obj.x - self.x, 2) + pow(obj.y- self.y, 2))
+        else:
+            raise TypeError("Invalid type in Point.distanceTo()")
+# 定義一個線類別
+class Line:
+    def __init__(self, p1, p2):
+        self.p1 = p1
+        self.p2 = p2
+        # 定義一個 Line 的屬性 length
+        self.length = self.p1.distanceTo(self.p2)
+        self.deg = pi/180
+    def rotate(self, angle):
+        # 以 p1  為旋轉中心點
+        # angle 為右手則旋轉角度
+        # 這裡以左上角為原點, x 向右為正, y 向下為正
+        self.p2.x = self.p1.x + self.length*cos(angle*self.deg)
+        self.p2.y = self.p1.y - self.length*sin(angle*self.deg)
+
+p1 = Point(0, 0)
+p2 = Point(10, 0)
+p3 = Point(6.5, 7.8)
+print("點 p1 到點 p2 的距離:", p1.distanceTo(p2))
+line1 = Line(p1, p2)
+print("線 line1 的長度:", line1.length)
+# 以 p3 為圓心, 旋轉 90 度
+line1.rotate(90)
+#work = time.set_interval(graph, 100)
+print("旋轉後, line1 的長度:", line1.length)
+print("旋轉後, p1 的座標:", line1.p1.x, ",", line1.p1.y)
+print("旋轉後, p2 的座標:", line1.p2.x, ",",  line1.p2.y)
+x1, y1 = change_ref_system(0, 0)
+for 索引 in range(0, 70, 4):
+    x2, y2 = change_ref_system(索引, 20)
+    draw_line(x1, y1, x2, y2, linethick=3, color="blue")
+x1, y1 = change_ref_system(70, 0)
+for 索引 in range(0, 70, 4):
+    x2, y2 = change_ref_system(索引, 20)
+    draw_line(x1, y1, x2, y2, linethick=3, color="red")
+&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+'''
+    return outstring
+</t>
+<t tx="2014spring.20140502183555.1776">
+
+評量規劃:
 
 每週以組為單位執行分組任務, 評分類別如下:
 
@@ -767,6 +1033,74 @@ Week 18: 三項任務, 配分 15 分
 任務二:
 
 請設法將五芒星中間填入藍色</t>
+<t tx="2014spring.20140502183555.1866">@cherrypy.expose
+def fillpoly(self, *args, **kwargs):
+    outstring = '''
+&lt;!DOCTYPE html&gt; 
+&lt;html&gt;
+&lt;head&gt;
+&lt;meta http-equiv="content-type" content="text/html;charset=utf-8"&gt;
+&lt;script type="text/javascript" src="/static/Brython2.1.0-20140419-113919/brython.js"&gt;&lt;/script&gt;
+&lt;/head&gt;
+&lt;body onload="brython({debug:1, cache:'version'})"&gt;
+&lt;canvas id="plotarea" width="800" height="800"&gt;&lt;/canvas&gt;
+&lt;script type="text/python3"&gt;
+# 導入數學模組的所有方法
+from math import *
+# 導入時間模組
+import time
+# 導入 doc
+from browser import doc
+
+# 準備繪圖畫布
+canvas = doc["plotarea"]
+ctx = canvas.getContext("2d")
+
+# 定義座標轉換(0, 0) 到 (75, 20)
+def change_ref_system(x, y):
+    return (20 + x * 8, 420 - y * 20)
+
+# 定義畫線函式
+def draw_line(x1, y1, x2, y2, linethick = 3, color = "black"):
+    ctx.beginPath()
+    ctx.lineWidth = linethick
+    ctx.moveTo(x1, y1)
+    ctx.lineTo(x2, y2)
+    ctx.strokeStyle = color
+    ctx.stroke()
+
+def fill():
+    ctx.beginPath()
+    ctx.moveTo(75,50)
+    ctx.lineTo(100,75)
+    ctx.lineTo(100,25)
+    ctx.fill()
+    
+def star():
+    ctx.beginPath()
+    ctx.moveTo(0,50)
+    ctx.lineTo(11,16)
+    ctx.lineTo(48,16)
+    ctx.fill()
+
+ctx.fillStyle = "blue"
+fill()
+star()
+
+x1, y1 = change_ref_system(0, 0)
+for 索引 in range(0, 70, 4):
+    x2, y2 = change_ref_system(索引, 20)
+    draw_line(x1, y1, x2, y2, linethick=3, color="blue")
+x1, y1 = change_ref_system(70, 0)
+for 索引 in range(0, 70, 4):
+    x2, y2 = change_ref_system(索引, 20)
+    draw_line(x1, y1, x2, y2, linethick=3, color="red")
+&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+'''
+    return outstring
+</t>
 <t tx="2014spring.20140503095553.1876">自本週開始將搭協同產品設計實習的便車, 讓全班在 Github 上執行協同程式編寫.
 
 下半學期則將採用 Brython 模式, 以 canvas 網際繪圖模式來練習 Python 3 程式語法.
@@ -953,8 +1287,498 @@ root.c2g1 = c2g1.C2G1()
     3. 完成後先在近端測試, 完全符合需求且根據標準流程, 拉下目前協同專案區最新的 github 程式碼後, 檢驗 .leo 是否可以正確開啟, 各對應目錄是否正確配置, application 是否可以正確執行後, 再推送到協同專案區, 並與各分組的 OpenShift 雲端網站進行同步.</t>
 <t tx="2014spring.20140503095553.1928"></t>
 <t tx="2014spring.20140503095553.1932"></t>
+<<<<<<< HEAD
 <t tx="kmolII_lite.20140505092917.1774"></t>
 <t tx="kmolII_lite.20140505210604.1651"></t>
+=======
+<t tx="2014spring.20140505200238.1819"></t>
+<t tx="2014spring.20140505200238.2114">注意事項
+
+    Python 版次必須使用 3.3 版
+    Leo Editor 必須使用 4.11 版
+    建立 pdf 與 html 文件則需要 pandoc 與 portableLatex 可攜應用程式(位於 apps 目錄下)
+    Git 則使用可攜版本(位於 apps 目錄下)
+    
+各組 push 資料確認事項
+
+    git config –list 中的 user.name 是否為各組代號 (代號錯誤將無法取分)
+    application 網站是否可以正確執行
+    .leo 檔案是否可以被 Leo Editor 正確開啟
+    專案是否可以正確產生協同報告 pdf 與 html 檔案
+    與 .leo 專案對應的外部目錄與檔案是否正確設定</t>
+<t tx="course-mde-tw.20140417093332.2216">@language python
+@tabwidth -4
+
+&lt;&lt;declarations&gt;&gt;
+@others
+########################### 4. 安排啟動設定
+# 配合程式檔案所在目錄設定靜態目錄或靜態檔案
+application_conf = {'/static':{
+        'tools.staticdir.on': True,
+        'tools.staticdir.dir': _curdir+"/static"},
+        '/downloads':{
+        'tools.staticdir.on': True,
+        'tools.staticdir.dir': data_dir+"/downloads"},
+        '/data':{
+        'tools.staticdir.on': True,
+        'tools.staticdir.dir': data_dir+"/data"}
+    }
+
+########################### 5. 在近端或遠端啟動程式
+# 利用 C2Project() class 產生案例物件
+root = C2Project()
+
+#####################################################
+# 這是 c2g1 組的物件案例定義
+#####################################################
+# 導入 application 目錄下的模組
+# 導入 programs/c2g1 並且命名為 c2g1
+# 模組內建使用 __init__.py 中的 C2G1 類別
+# 若使用 programs/c2g1/class1.py, 則使用 import programs.c2g1.class1 as c2g1
+import programs.c2g1 as c2g1
+# 利用 c2g1 目錄下的 __init__.py 檔案中的 C2G1 類別建立案例物件
+# 而且指到 application 根目錄下的 c2g1
+root.c2g1 = c2g1.C2G1()
+#####################################################
+# 結束 c2g1 組的物件案例定義
+#####################################################
+
+# 以下為 c2g2 的模組導入與連結設定
+import programs.c2g2 as c2g2
+root.c2g2 = c2g2.C2G2()
+
+import programs.c2g3 as c2g3
+root.c2g3 = c2g3.C2G3()
+
+import programs.c2g8 as c2g8
+root.c2g8 = c2g8.C2G8()
+
+import programs.c2g30 as c2g30
+root.c2g30 = c2g30.C2G30()
+
+# 假如在 os 環境變數中存在 'OPENSHIFT_REPO_DIR', 表示程式在 OpenShift 環境中執行
+if 'OPENSHIFT_REPO_DIR' in os.environ.keys():
+    # 雲端執行啟動
+    application = cherrypy.Application(root, config = application_conf)
+else:
+    # 近端執行啟動
+    '''
+    cherrypy.server.socket_port = 8083
+    cherrypy.server.socket_host = '127.0.0.1'
+    '''
+    cherrypy.quickstart(root, config = application_conf)
+
+</t>
+<t tx="course-mde-tw.20140417093332.2217">@language python
+
+########################### 1. 導入所需模組
+import cherrypy
+import os
+import math
+
+########################### 2. 設定近端與遠端目錄
+# 確定程式檔案所在目錄, 在 Windows 有最後的反斜線
+_curdir = os.path.join(os.getcwd(), os.path.dirname(__file__))
+# 設定在雲端與近端的資料儲存目錄
+if 'OPENSHIFT_REPO_DIR' in os.environ.keys():
+    # 表示程式在雲端執行
+    download_root_dir = os.environ['OPENSHIFT_DATA_DIR']
+    data_dir = os.environ['OPENSHIFT_DATA_DIR']
+else:
+    # 表示程式在近端執行
+    download_root_dir = _curdir + "/local_data/"
+    data_dir = _curdir + "/local_data/"
+</t>
+<t tx="course-mde-tw.20140417093332.2218">########################### 3. 建立主物件
+class C2Project(object):
+    _cp_config = {
+    # if there is no utf-8 encoding, no Chinese input available
+    'tools.encode.encoding': 'utf-8',
+    'tools.sessions.on' : True,
+    'tools.sessions.storage_type' : 'file',
+    'tools.sessions.locking' : 'explicit',
+    'tools.sessions.storage_path' : data_dir+'/tmp',
+    # session timeout is 60 minutes
+    'tools.sessions.timeout' : 60
+    }
+    
+    @others
+    #index.exposed = True
+</t>
+<t tx="course-mde-tw.20140417093332.2219">@cherrypy.expose
+def fileuploadform(self):
+    return '''&lt;h1&gt;file upload&lt;/h1&gt;
+&lt;script src="/static/jquery.js" type="text/javascript"&gt;&lt;/script&gt;
+&lt;script src="/static/axuploader.js" type="text/javascript"&gt;&lt;/script&gt;
+&lt;script&gt;
+$(document).ready(function(){
+$('.prova').axuploader({url:'/fileaxupload', allowExt:['jpg','png','gif','7z','pdf','zip','flv','stl','txt'],
+finish:function(x,files)
+    {
+        alert('All files have been uploaded: '+files);
+    },
+enable:true,
+remotePath:function(){
+    return 'downloads/';
+}
+});
+});
+&lt;/script&gt;
+&lt;div class="prova"&gt;&lt;/div&gt;
+&lt;input type="button" onclick="$('.prova').axuploader('disable')" value="asd" /&gt;
+&lt;input type="button" onclick="$('.prova').axuploader('enable')" value="ok" /&gt;
+&lt;/section&gt;&lt;/body&gt;&lt;/html&gt;
+'''
+</t>
+<t tx="course-mde-tw.20140417093332.2220">@cherrypy.expose
+def brythonuploadform(self):
+    return '''&lt;h1&gt;file upload&lt;/h1&gt;
+&lt;script type="text/javascript" src="/static/Brython2.0.0-20140209-164925/brython.js"&gt;&lt;/script&gt;
+&lt;script type="text/javascript" &gt;
+function getradio(tagname){
+var radios = document.getElementsByName(tagname);
+for (var i = 0, length = radios.length; i &lt; length; i++) {
+    if (radios[i].checked) {
+        // do whatever you want with the checked radio
+        return radios[i].value;
+        // only one radio can be logically checked, don't check the rest
+        break;
+      }
+   }
+}
+
+function run_js(){
+    var cons = document.getElementById("console")
+    var jscode = cons.value
+    var t0 = (new Date()).getTime()
+    eval(jscode)
+    var t1 = (new Date()).getTime()
+    console.log("Javascript code run in "+(t1-t0)+" ms")
+}
+&lt;/script&gt;
+&lt;script type="text/python3" src="/static/editor.py"&gt;&lt;/script&gt;
+
+&lt;script type="text/python3"&gt;
+from browser import doc
+
+overwrite = 0
+# add delete_program 1/7, seven steps to complete the ajax task, the last step is to add delete_program function on server
+# delete1 and delete2 parameters are also added into save_program function.
+delete1 = 0
+delete2 = 0
+
+def set_debug(ev):
+    if ev.target.checked:
+        __BRYTHON__.debug = 1
+    else:
+        __BRYTHON__.debug = 0
+        
+def set_overwrite(ev):
+    global overwrite
+    if ev.target.checked:
+        overwrite = 1
+    else:
+        overwrite = 0
+
+# add delete_program 2/7, client side add set_delete1 and set_delete2 functions.
+def set_delete1(ev):
+    global delete1
+    if ev.target.checked:
+        delete1 = 1
+    else:
+        delete1 = 0
+
+def set_delete2(ev):
+    global delete2
+    if ev.target.checked:
+        delete2 = 1
+    else:
+        delete2 = 0
+
+#### ajax process
+from browser import ajax,doc
+
+def on_complete(req):
+    print(req.readyState)
+    print('status',req.status)
+    if req.status==200 or req.status==0:
+        # show request text on id=result division
+        doc["result"].html = req.text
+    else:
+        doc["result"].html = "error "+req.text
+
+def err_msg():
+    doc["result"].html = "server didn't reply after %s seconds" %timeout
+
+timeout = 4
+
+def go(url):
+    req = ajax.ajax()
+    req.bind('complete', on_complete)
+    req.set_timeout(timeout, err_msg)
+    req.open('GET', url, True)
+    req.send()
+
+def post(url):
+    req = ajax.ajax()
+    req.bind('complete', on_complete)
+    req.set_timeout(timeout, err_msg)
+    req.open('POST', url, True)
+    req.set_header('content-type','application/x-www-form-urlencoded')
+    # doc["filename"].value is the id=filename input field's value
+    # editor.getValue() is the content on editor, need to send dictionary format data
+    # while post url, need to save editor content into local_storage to use the previous load javascripts
+    storage["py_src"] = editor.getValue()
+    # add delete_program 3/7, two parameters added, this will also affect save_program function on server.
+    req.send({'filename':doc["filename"].value, 'editor':editor.getValue(), 'overwrite':overwrite, 'delete1':delete1, 'delete2':delete2})
+    
+# get program from server
+def get_prog(ev):
+    # ajax can only read data from server
+    _name = '/brython_programs/'+doc["filename"].value
+    try:
+        editor.setValue(open(_name, encoding="utf-8").read())
+        doc["result"].html = doc["filename"].value+" loaded!"
+    except:
+        doc["result"].html = "can not get "+doc["filename"].value+"!"
+    editor.scrollToRow(0)
+    editor.gotoLine(0)
+    reset_theme()
+    
+def get_radio(ev):
+    from javascript import JSObject
+    filename = JSObject(getradio)("filename")
+    # ajax can only read data from server
+    doc["filename"].value = filename
+    _name = '/brython_programs/'+filename
+    editor.setValue(open(_name, encoding="utf-8").read())
+    doc["result"].html = filename+" loaded!"
+    editor.scrollToRow(0)
+    editor.gotoLine(0)
+    reset_theme()
+    
+# bindings
+doc['run_js'].bind('click',run_js)
+doc['set_debug'].bind('change',set_debug)
+doc['set_overwrite'].bind('change',set_overwrite)
+# add delete_program 4/7, two associated binds added
+doc['set_delete1'].bind('change',set_delete1)
+doc['set_delete2'].bind('change',set_delete2)
+# next functions are defined in editor.py
+doc['show_js'].bind('click',show_js)
+doc['run'].bind('click',run)
+doc['show_console'].bind('click',show_console)
+# get_prog and get _radio (working)
+doc['get_prog'].bind('click', get_prog)
+doc['get_radio'].bind('click', get_radio)
+# reset_the_src and clear_console (working)
+doc['reset_the_src'].bind('click',reset_the_src)
+doc['clear_console'].bind('click',clear_console)
+# clear_canvas and clear_src
+doc['clear_canvas'].bind('click',clear_canvas)
+doc['clear_src'].bind('click',clear_src)
+# only admin can save program to server
+doc['save_program'].bind('click',lambda ev:post('/save_program'))
+# add delete_program 5/7, delete_program button bind to execute delete_program on server.
+doc['delete_program'].bind('click',lambda ev:post('/delete_program'))
+&lt;/script&gt;
+&lt;script type="text/javascript"&gt;
+window.onload=brython({debug:1, cache:'version'});
+&lt;/script&gt;
+&lt;div class="prova"&gt;&lt;/div&gt;
+&lt;input type="button" onclick="$('.prova').axuploader('disable')" value="asd" /&gt;
+&lt;input type="button" onclick="$('.prova').axuploader('enable')" value="ok" /&gt;
+&lt;/section&gt;&lt;/body&gt;&lt;/html&gt;
+'''
+</t>
+<t tx="course-mde-tw.20140417093332.2221">@cherrypy.expose
+def fileaxupload(self, *args, **kwargs):
+    filename = kwargs["ax-file-name"]
+    flag = kwargs["start"]
+    # 終於找到 bug, 因為從 kwargs[] 所取得的變數為字串, 而非數字, 先前用 flag == 0 是錯誤的
+    if flag == "0":
+        # 若從 0 byte 送起, 表示要開啟新檔案
+        file = open(download_root_dir+"downloads/"+filename, "wb")
+    else:
+        file = open(download_root_dir+"downloads/"+filename, "ab")
+    file.write(cherrypy.request.body.read())
+    file.close()
+    
+    return "files uploaded!"
+</t>
+<t tx="course-mde-tw.20140417093332.2222">@cherrypy.expose
+def index(self):
+    return "這是 2014C2 的期末專案, 不僅以 github 協同開發程式, 報告也採協同模式編寫"
+</t>
+<t tx="course-mde-tw.20140417093332.2223">@cherrypy.expose
+def inputform(self, *args, **kwargs):
+    outstring = '''
+&lt;!DOCTYPE html&gt; 
+&lt;html&gt;
+&lt;head&gt;
+&lt;meta http-equiv="content-type" content="text/html;charset=utf-8"&gt;
+&lt;script type="text/javascript" src="/static/Brython2.1.0-20140419-113919/brython.js"&gt;&lt;/script&gt;
+&lt;/head&gt;
+&lt;body onload="brython({debug:1, cache:'version'})"&gt;
+&lt;script type="text/python3"&gt;
+from browser import doc, alert, ajax
+
+# ajax can only read data from server
+_name = '/data/data.txt'
+try:
+    data = open(_name, encoding="utf-8").read()
+    doc["result"].html = data.replace("\n", "&lt;br /&gt;")
+except:
+    doc["result"].html = "沒有資料!"
+
+def on_complete(req):
+    print(req.readyState)
+    print('status',req.status)
+    if req.status==200 or req.status==0:
+        doc["result"].html = req.text
+    else:
+        doc["result"].html = "error "+req.text
+
+def err_msg():
+    doc["result"].html = "server didn't reply after %s seconds" %timeout
+
+timeout = 4
+
+def post(url):
+    req = ajax.ajax()
+    req.bind('complete',on_complete)
+    req.set_timeout(timeout,err_msg)
+    req.open('POST',url,True)
+    req.set_header('content-type','application/x-www-form-urlencoded')
+    req.send({'studNum':doc["studNum"].value, 'studName':doc["studName"].value})
+    
+def validate_form(ev):
+    if doc['studNum'].value == '':
+        alert('學號欄位不可空白!')
+        #doc["result"].html = "學號欄位不可空白!"
+        #doc['studNum'].focus()
+        return False
+    elif doc['studName'].value == '':
+        alert('姓名欄位也不可空白!')
+        #doc["result"].html = "姓名欄位也不可空白!"
+        #doc['studName'].focus()
+        return False
+    else:
+        # 若兩個欄位都填入值, 則呼叫 post, 以 ajax 執行遠端的 /saveData
+        post('/saveData')
+        doc["studNum"].value = ""
+        doc["studName"].value = ""
+doc['submit'].bind('click', validate_form)
+&lt;/script&gt;
+'''
+    outstring += "學號:&lt;input id='studNum'&gt;&lt;/input&gt;&lt;br /&gt;"
+    outstring += "姓名:&lt;input id='studName'&gt;&lt;/input&gt;&lt;br /&gt;"
+    outstring += "&lt;button id='submit'&gt;submit&lt;/button&gt;&lt;br /&gt;"
+    outstring += "&lt;hr&gt;"
+    outstring += "&lt;div id='result'&gt;&lt;/div&gt;"
+    outstring += '''
+&lt;/body&gt;
+&lt;/html&gt;
+'''
+    return outstring
+</t>
+<t tx="course-mde-tw.20140417093332.2224">@cherrypy.expose
+def rotate_inputform(self, *args, **kwargs):
+    outstring = '''
+&lt;!DOCTYPE html&gt; 
+&lt;html&gt;
+&lt;head&gt;
+&lt;meta http-equiv="content-type" content="text/html;charset=utf-8"&gt;
+&lt;script type="text/javascript" src="/static/Brython2.1.0-20140419-113919/brython.js"&gt;&lt;/script&gt;
+&lt;/head&gt;
+&lt;body onload="brython({debug:1, cache:'version'})"&gt;
+&lt;script type="text/python3"&gt;
+from browser import doc, alert, ajax
+
+def on_complete(req):
+    print(req.readyState)
+    print('status',req.status)
+    if req.status==200 or req.status==0:
+        doc["result"].html = req.text
+    else:
+        doc["result"].html = "error "+req.text
+
+def err_msg():
+    doc["result"].html = "server didn't reply after %s seconds" %timeout
+
+timeout = 4
+
+def post(url):
+    req = ajax.ajax()
+    req.bind('complete',on_complete)
+    req.set_timeout(timeout,err_msg)
+    req.open('POST',url,True)
+    req.set_header('content-type','application/x-www-form-urlencoded')
+    req.send({'cCoord':doc["cCoord"].value, 'dCoord':doc["dCoord"].value})
+    
+def validate_form(ev):
+    if doc['cCoord'].value == '':
+        alert('C 點座標不可空白!')
+        #doc["result"].html = "C 點座標不可空白!"
+        #doc['cCoord'].focus()
+        return False
+    elif doc['dCoord'].value == '':
+        alert('D 點座標也不可空白!')
+        #doc["result"].html = "D 點座標也不可空白!"
+        #doc['dCoord'].focus()
+        return False
+    else:
+        # 若兩個欄位都填入值, 則呼叫 post, 以 ajax 執行遠端的 /saveData
+        post('/calculatePosition')
+doc['submit'].bind('click', validate_form)
+&lt;/script&gt;
+'''
+    outstring += "(x, y 座標以空白隔開)&lt;br /&gt;"
+    outstring += "C點座標:&lt;input id='cCoord'&gt;&lt;br /&gt;"
+    outstring += "D點座標:&lt;input id='dCoord'&gt;&lt;br /&gt;"
+    outstring += "&lt;button id='submit'&gt;submit&lt;/button&gt;&lt;br /&gt;"
+    outstring += "&lt;div id='result'&gt;(empty)&lt;/div&gt;"
+    outstring += '''
+&lt;/body&gt;
+&lt;/html&gt;
+'''
+    return outstring
+</t>
+<t tx="course-mde-tw.20140417093332.2225">@cherrypy.expose
+def calculatePosition(self, cCoord=None, dCoord=None):
+    # 表單取得之變數為字串
+    xc, yc = cCoord.split(" ")
+    xd, yd = dCoord.split(" ")
+    # 利用 round() 取小數點位置到第四位數
+    radius = round(math.sqrt(math.pow(float(xc) - float(xd), 2) + math.pow(float(yc) - float(yd), 2)), 4)
+    outstring = "半徑為:" + str(radius) +"&lt;br /&gt;"
+    deg = math.pi/180
+    for i in range(37):
+        count = i +1
+        # 利用 round() 取小數點位置到第四位數
+        xcoord = round(float(xc) + radius*math.cos(i*10*deg), 4)
+        ycoord = round(float(yc) - radius*math.sin(i*10*deg), 4)
+        outstring += "旋轉 "+ str(10*i) + " 度後, 第 "+ str(count) +" 點座標:"+ str(xcoord) + " , " + str(ycoord) + "&lt;br /&gt;"
+    return outstring
+</t>
+<t tx="course-mde-tw.20140417093332.2226">@cherrypy.expose
+def saveData(self, studNum=None, studName=None):
+    outputfile = open(data_dir+"/data/data.txt", "at", encoding="utf-8")
+    # 要先過濾分隔符號
+    outputfile.write(studNum.replace(",", "")+","+studName.replace(",", "")+"\n")
+    outputfile.close()
+    outstring = ""
+    # read data.txt and send data back to client
+    if os.path.isfile(data_dir+"/data/data.txt"):
+        # read lines from file, lines is a list
+        lines = open(data_dir+"/data/data.txt", "r", encoding="utf-8").read().splitlines()
+        for i in range(len(lines)):
+            outstring += lines[i]+"&lt;br /&gt;"
+    else:
+        outstring += "no data!"
+    return outstring
+</t>
+>>>>>>> e2cb63e522413e7371d0ef285143f9a4fb25553e
 <t tx="public_kmol.20140302202325.1714">break
 
 The break statement in Python terminates the current loop and resumes execution at the next statement, just like the traditional break found in C.

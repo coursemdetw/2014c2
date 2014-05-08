@@ -1,26 +1,30 @@
 import cherrypy
 
-# 這是 C2G1 類別的定義
-class C2G1(object):
+# 這是 C2G30 類別的定義
+class C2G30(object):
     # 各組利用 index 引導隨後的程式執行
     @cherrypy.expose
     def index(self, *args, **kwargs):
         outstring = '''
-這是 2014C2 協同專案下的 c2g1 分組程式開發網頁, 以下為 W12 的任務執行內容.<br />
+這是 2014C2 協同專案下的 c2g30 分組程式開發網頁, 以下為 W12 的任務執行內容.<br />
 <!-- 這裡採用相對連結, 而非網址的絕對連結 (這一段為 html 註解) -->
-<a href="fillpoly">c2g1 fillpoly 繪圖</a><br />
-<a href="drawline">c2g1 drawline 繪圖</a><br />
+<a href="fillpoly">c2g30 fillpoly 繪圖</a><br />
+<a href="drawline">c2g30 drawline 繪圖</a><br />
+<a href="animate1">c2g30 animate1 繪圖</a><br />
+<a href="flag">c2g30 flag 繪圖</a><br />
+<a href="square">c2g30 square 繪圖</a><br />
+<a href="star">c2g30 star 繪圖</a><br />
 '''
         return outstring
 
-    # 以下為 c2g1 組所建立的 CherryPy 程式方法, 這裡的 fillpoly 利用 Brython 執行網際繪圖
+    # 以下為 c2g30 組所建立的 CherryPy 程式方法, 這裡的 fillpoly 利用 Brython 執行網際繪圖
     ''' 
     假如採用下列規畫
     
-    import programs.c2g1 as c2g1
-    root.c2g1 = c2g1.C2G1()
+    import programs.c2g30 as c2g30
+    root.c2g30 = c2g30.C2G30()
     
-    則程式啟動後, 可以利用 /c2g1/fillpoly 呼叫函式執行
+    則程式啟動後, 可以利用 /c2g30/fillpoly 呼叫函式執行
     '''
     @cherrypy.expose
     def fillpoly(self, *args, **kwargs):
@@ -92,10 +96,10 @@ class C2G1(object):
     ''' 
     假如採用下列規畫
     
-    import programs.c2g1 as c2g1
-    root.c2g1 = c2g1.C2G1()
+    import programs.c2g30 as c2g30
+    root.c2g30 = c2g30.C2G30()
     
-    則程式啟動後, 可以利用 /c2g1/drawline 呼叫函式執行
+    則程式啟動後, 可以利用 /c2g30/drawline 呼叫函式執行
     
     context.setTransform(a,b,c,d,e,f)
     a	To Scale the object across along the X axis
@@ -334,6 +338,7 @@ class C2G1(object):
     </html>
     '''
         return outstring
+        
     @cherrypy.expose
     def star(self, *args, **kwargs):
         outstring = '''
@@ -348,6 +353,7 @@ class C2G1(object):
     <script type="text/python">
     # 導入 doc
     from browser import doc
+    import math
 
     # 準備繪圖畫布
     canvas = doc["plotarea"]
@@ -363,19 +369,56 @@ class C2G1(object):
         ctx.lineTo(x2, y2)
         ctx.strokeStyle = color
         ctx.stroke()
-        
-    # 直接採用外部五點座標不是好方法
-    # 應該要寫成函式, 用圓心座標與半徑來控制
-    # 而且要計算內五點, 因為空的五芒星不能有交叉線
     
-    draw_line(400, 500, 458.7785, 319.0983)
-    draw_line(400,  500, 342.2215, 319.0983)
-    draw_line(342.2215, 319.0983, 495.0565, 430.9016)
-    draw_line(458.7785, 319.0983, 305.9535, 430.9016)
-    draw_line(495.05, 430.916, 305.9535, 430.9016)
+    # x, y 為中心,  r 為半徑, angle 旋轉角,  solid 空心或實心,  color 顏色
+    def star(x, y, r, angle=0, solid=False, color="#f00"):
+        # 以 x, y 為圓心, 計算五個外點
+        deg = math.pi/180
+        # 圓心到水平線距離
+        a = r*math.cos(72*deg)
+        # a 頂點向右到內點距離
+        b = (r*math.cos(72*deg)/math.cos(36*deg))*math.sin(36*deg)
+        # 利用畢氏定理求內點半徑
+        rin = math.sqrt(a**2 + b**2)
+        # 查驗 a, b 與 rin
+        #print(a, b, rin)
+        if(solid):
+            ctx.beginPath()
+        for i in range(5):
+            xout = (x + r*math.sin((360/5)*deg*i+angle*deg))
+            yout = (y + r*math.cos((360/5)*deg*i+angle*deg))
+            # 外點增量 + 1
+            xout2 = x + r*math.sin((360/5)*deg*(i+1)+angle*deg)
+            yout2 = y + r*math.cos((360/5)*deg*(i+1)+angle*deg)
+            xin = x + rin*math.sin((360/5)*deg*i+36*deg+angle*deg)
+            yin = y + rin*math.cos((360/5)*deg*i+36*deg+angle*deg)
+            # 查驗外點與內點座標
+            #print(xout, yout, xin, yin)
+            if(solid):
+                # 填色
+                if(i==0):
+                    ctx.moveTo(xout, yout)
+                    ctx.lineTo(xin, yin)
+                    ctx.lineTo(xout2, yout2)
+                else:
+                    ctx.lineTo(xin, yin)
+                    ctx.lineTo(xout2, yout2)
+            else:
+                # 空心
+                draw_line(xout, yout, xin, yin, color)
+                # 畫空心五芒星, 無關畫線次序, 若實心則與畫線次序有關
+                draw_line(xout2, yout2, xin, yin, color)
+        if(solid):
+            ctx.fillStyle = color
+            ctx.fill()
+    star(600, 600, 100, 30, True, "#00f")
+    star(100, 100, 30, 0, True, "#f00")
+    #star(300, 300, 50, 0, False, "#000")
+    for i in range(5):
+        for j in range(5):
+            star(200+65*i, 200+65*j, 30, 0, False, "#000")
     </script>
     </body>
     </html>
     '''
         return outstring
-
