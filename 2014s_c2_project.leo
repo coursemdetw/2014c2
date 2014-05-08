@@ -60,11 +60,14 @@ expanded="course-mde-tw.20140417093332.2218,"><vh>@file application</vh></v>
 <v t="2014spring.20140503095553.1928" a="E"><vh>@path wsgi/programs/c2g1</vh>
 <v t="2014spring.20140503095553.1929"><vh>@edit __init__.py</vh></v>
 </v>
-<v t="2014spring.20140503095553.1932"><vh>@path wsgi/programs/c2g2</vh>
+<v t="2014spring.20140503095553.1932" a="E"><vh>@path wsgi/programs/c2g2</vh>
 <v t="2014spring.20140503095553.1933"><vh>@edit __init__.py</vh></v>
 </v>
 <v t="kmolII_lite.20140505092917.1774" a="E"><vh>@path wsgi/programs/c2g9</vh>
 <v t="kmolII_lite.20140505092917.1775"><vh>@edit __init__.py</vh></v>
+</v>
+<v t="kmolII_lite.20140505210604.1651" a="E"><vh>@path wsgi/programs/c2g23</vh>
+<v t="kmolII_lite.20140505210604.1652"><vh>@edit __init__.py</vh></v>
 </v>
 </v>
 <v t="2014spring.20140503095553.1883" a="E"><vh>利用 pandoc 進行格式轉換</vh>
@@ -951,6 +954,7 @@ root.c2g1 = c2g1.C2G1()
 <t tx="2014spring.20140503095553.1928"></t>
 <t tx="2014spring.20140503095553.1932"></t>
 <t tx="kmolII_lite.20140505092917.1774"></t>
+<t tx="kmolII_lite.20140505210604.1651"></t>
 <t tx="public_kmol.20140302202325.1714">break
 
 The break statement in Python terminates the current loop and resumes execution at the next statement, just like the traditional break found in C.
