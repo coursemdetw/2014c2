@@ -627,18 +627,31 @@ root.c2g1 = c2g1.C2G1()
 # 以下為 c2g2 的模組導入與連結設定
 import programs.c2g2 as c2g2
 root.c2g2 = c2g2.C2G2()
+<<<<<<< HEAD
+
+import programs.c2g3 as c2g3
+root.c2g3 = c2g3.C2G3()
+
+import programs.c2g15 as c2g15
+root.c2g15 = c2g15.C2G15()
+
+import programs.c2g8 as c2g8
+root.c2g8 = c2g8.C2G8()
+
+=======
 import programs.c2g7 as c2g7
 root.c2g7 = c2g7.C2G7()
+>>>>>>> 6b686e0de0d1fb1db19d12c1f029d5e456e922ae
 # 假如在 os 環境變數中存在 'OPENSHIFT_REPO_DIR', 表示程式在 OpenShift 環境中執行
 if 'OPENSHIFT_REPO_DIR' in os.environ.keys():
     # 雲端執行啟動
     application = cherrypy.Application(root, config = application_conf)
 else:
     # 近端執行啟動
-    '''
+    
     cherrypy.server.socket_port = 8083
     cherrypy.server.socket_host = '127.0.0.1'
-    '''
+    
     cherrypy.quickstart(root, config = application_conf)
 
 #@-leo

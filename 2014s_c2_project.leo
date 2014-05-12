@@ -66,6 +66,14 @@ expanded="course-mde-tw.20140417093332.2218,"><vh>@file application</vh></v>
 <v t="2014spring.20140503095553.1932" a="E"><vh>@path wsgi/programs/c2g2</vh>
 <v t="2014spring.20140503095553.1933"><vh>@edit __init__.py</vh></v>
 </v>
+<<<<<<< HEAD
+<v t="2014python.20140505100744.1942"><vh>@path wsgi/programs/c2g3</vh>
+<v t="2014python.20140505100744.1943" a="O"><vh>@edit __init__.py</vh></v>
+</v>
+<v t="kmolII_lite.20140512204806.1651" a="E"><vh>@path wsgi/programs/c2g15</vh>
+<v t="kmolII_lite.20140512204806.1652"><vh>@edit __init__.py</vh></v>
+=======
+>>>>>>> 6b686e0de0d1fb1db19d12c1f029d5e456e922ae
 </v>
 <v t="2014spring.20140503095553.1883" a="E"><vh>利用 pandoc 進行格式轉換</vh>
 <v t="2014spring.20140503095553.1884"><vh>注意事項</vh></v>
