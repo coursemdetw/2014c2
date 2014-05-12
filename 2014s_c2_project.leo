@@ -15,7 +15,7 @@
 <v t="2014pythonE.20140224205837.3152"><vh>@string initial_split_orientation = horizontal</vh></v>
 <v t="2014pythonE.20140331085053.2405"><vh>@string rst3_write_intermediate_extension = .rst</vh></v>
 </v>
-<v t="2014python.20140224210642.3165"><vh>c2_w1</vh>
+<v t="2014python.20140224210642.3165" a="E"><vh>c2_w1</vh>
 <v t="2014python.20140224210642.3168"><vh>程式說明</vh></v>
 <v t="public_kmol.20140302202325.1714"><vh>break, continue and pass</vh></v>
 <v t="public_kmol.20140302202325.1717"><vh>Leo editor 的檔案指令</vh></v>
@@ -23,7 +23,7 @@
 <v t="2014python.20140224210642.3167"><vh>@shadow c2_w1_python1.py</vh></v>
 </v>
 </v>
-<v t="public_kmol.20140302202325.1715"><vh>c2_w2</vh>
+<v t="public_kmol.20140302202325.1715" a="E"><vh>c2_w2</vh>
 <v t="public_kmol.20140302202325.1716"><vh>程式說明</vh></v>
 <v t="2014python.20140306154142.1723"><vh>CherryPy 程式架構</vh></v>
 <v t="2014python.20140306154142.1724"><vh>git 程式到 OpehShift</vh></v>
@@ -35,7 +35,7 @@
 </v>
 </v>
 </v>
-<v t="2014pythonE.20140402100203.1908"><vh>c2_w7</vh>
+<v t="2014pythonE.20140402100203.1908" a="E"><vh>c2_w7</vh>
 <v t="2014pythonE.20140402100203.1914" a="E"><vh>利用 pandoc 進行格式轉換</vh>
 <v t="2014pythonE.20140402100203.1915"><vh>@button pandoc</vh></v>
 <v t="2014pythonE.20140402100203.1916" a="E"><vh>@path c2wp/pandoc</vh>
@@ -52,38 +52,26 @@
 <v t="2014pythonE.20140414091257.1681" a="E"><vh>@path wsgi</vh>
 <v t="course-mde-tw.20140417093332.2216" a="E"
 expanded="course-mde-tw.20140417093332.2218,"><vh>@file application</vh></v>
-<v t="2014spring.20140509071814.2435"
-expanded="2014spring.20140509071814.2459,"><vh>@file cmsimply.py</vh></v>
 </v>
 </v>
 <v t="2014spring.20140502183555.1776"><vh>c2_w10 - w18</vh></v>
 <v t="2014spring.20140503095553.1876" a="E"><vh>c2_w11</vh>
-<v t="2014spring.20140505200238.2114"><vh>注意事項</vh></v>
 <v t="2014spring.20140503095553.1927" a="E"><vh>分組程式開發</vh>
-<v t="2014spring.20140503095553.1928" a="E"><vh>@path wsgi/programs/c2g8</vh>
+<v t="2014spring.20140503095553.1928" a="E"><vh>@path wsgi/programs/c2g1</vh>
 <v t="2014spring.20140503095553.1929"><vh>@edit __init__.py</vh></v>
 </v>
 <v t="2014spring.20140503095553.1932" a="E"><vh>@path wsgi/programs/c2g2</vh>
 <v t="2014spring.20140503095553.1933"><vh>@edit __init__.py</vh></v>
 </v>
-<v t="2014python.20140505100744.1942" a="E"><vh>@path wsgi/programs/c2g3</vh>
-<v t="2014python.20140505100744.1943" a="O"><vh>@edit __init__.py</vh></v>
 </v>
-<v t="kmolII_lite.20140505210604.1651" a="E"><vh>@path wsgi/programs/c2g23</vh>
-<v t="kmolII_lite.20140505210604.1652"><vh>@edit __init__.py</vh></v>
-</v>
-<v t="2014spring.20140505200238.1819" a="E"><vh>@path wsgi/programs/c2g30</vh>
-<v t="2014spring.20140505200238.1820"><vh>@edit __init__.py</vh></v>
-</v>
-</v>
-<v t="2014spring.20140503095553.1883"><vh>利用 pandoc 進行格式轉換</vh>
+<v t="2014spring.20140503095553.1883" a="E"><vh>利用 pandoc 進行格式轉換</vh>
 <v t="2014spring.20140503095553.1884"><vh>注意事項</vh></v>
 <v t="2014spring.20140503095553.1886"><vh>@button pandoc_auto</vh></v>
 <v t="2014spring.20140503095553.1887" a="E"><vh>@path wsgi/doc</vh>
 <v t="2014spring.20140503095553.1888"><vh>@edit title.txt</vh></v>
 </v>
 </v>
-<v t="2014spring.20140503095553.1908"><vh>分組協同報告區</vh>
+<v t="2014spring.20140503095553.1908" a="E"><vh>分組協同報告區</vh>
 <v t="2014spring.20140503095553.1909" a="E"><vh>@path wsgi/doc</vh>
 <v t="2014spring.20140503095553.1910" a="E"><vh>@path c2g1</vh>
 <v t="2014spring.20140503095553.1911"><vh>@edit doc.txt</vh></v>
@@ -312,142 +300,6 @@ to handlers is not always 1:1, this provides a flexibility which is not as easil
 However, because the arrangement of config is directly related to the arrangement of handlers, it is the 
 responsibility of the Dispatcher to collect per-handler config, merge it with per-URI and global config, and bind the 
 resulting dict to cherrypy.request.config. This dict is of depth 1 and will contain all config entries which are in effect for the current request.</t>
-<t tx="2014python.20140505100744.1942"></t>
-<t tx="2014python.20140505100744.1943">@language python
-import cherrypy
-
-# 這是 C2G3 類別的定義
-class C2G3(object):
-    # 各組利用 index 引導隨後的程式執行
-    @cherrypy.expose
-    def index(self, *args, **kwargs):
-        outstring = '''
-這是 2014C2 協同專案下的 c2g2 分組程式開發網頁, 以下為 W12 的任務執行內容.&lt;br /&gt;
-&lt;!-- 這裡採用相對連結, 而非網址的絕對連結 (這一段為 html 註解) --&gt;
-&lt;a href="fillpoly"&gt;c2g2 fillpoly 繪圖&lt;/a&gt;&lt;br /&gt;
-&lt;a href="drawline"&gt;c2g2 drawline 繪圖&lt;/a&gt;&lt;br /&gt;
-'''
-        return outstring
-
-    # 以下為 c2g3 組所建立的 CherryPy 程式方法, 這裡的 fillpoly 利用 Brython 執行網際繪圖
-    ''' 
-    假如採用下列規畫
-    
-    import programs.c2g2 as c2g2
-    root.c2g2 = c2g2.C2G2()
-    
-    則程式啟動後, 可以利用 /c2g2/fillpoly 呼叫函式執行
-    '''
-    @cherrypy.expose
-    def fillpoly(self, *args, **kwargs):
-        outstring = '''
-    &lt;!DOCTYPE html&gt; 
-    &lt;html&gt;
-    &lt;head&gt;
-    &lt;meta http-equiv="content-type" content="text/html;charset=utf-8"&gt;
-    &lt;script type="text/javascript" src="/static/Brython2.1.0-20140419-113919/brython.js"&gt;&lt;/script&gt;
-    &lt;/head&gt;
-    &lt;body onload="brython({debug:1, cache:'version'})"&gt;
-    &lt;canvas id="plotarea" width="800" height="800"&gt;&lt;/canvas&gt;
-    &lt;script type="text/python"&gt;
-    # 導入數學模組的所有方法
-    from math import *
-    # 導入時間模組
-    import time
-    # 導入 doc
-    from browser import doc
-
-    # 準備繪圖畫布
-    canvas = doc["plotarea"]
-    ctx = canvas.getContext("2d")
-
-    # 定義座標轉換(0, 0) 到 (75, 20)
-    def change_ref_system(x, y):
-        return (20 + x * 8, 420 - y * 20)
-
-    # 定義畫線函式
-    def draw_line(x1, y1, x2, y2, linethick = 3, color = "black"):
-        ctx.beginPath()
-        ctx.lineWidth = linethick
-        ctx.moveTo(x1, y1)
-        ctx.lineTo(x2, y2)
-        ctx.strokeStyle = color
-        ctx.stroke()
-
-    def fill():
-        ctx.beginPath()
-        ctx.moveTo(75,50)
-        ctx.lineTo(100,75)
-        ctx.lineTo(100,25)
-        ctx.fill()
-        
-    def star():
-        ctx.beginPath()
-        ctx.moveTo(0,50)
-        ctx.lineTo(11,16)
-        ctx.lineTo(48,16)
-        ctx.fill()
-
-    ctx.fillStyle = "blue"
-    fill()
-    star()
-
-    x1, y1 = change_ref_system(0, 0)
-    for 索引 in range(0, 70, 4):
-        x2, y2 = change_ref_system(索引, 20)
-        draw_line(x1, y1, x2, y2, linethick=3, color="blue")
-    x1, y1 = change_ref_system(70, 0)
-    for 索引 in range(0, 70, 4):
-        x2, y2 = change_ref_system(索引, 20)
-        draw_line(x1, y1, x2, y2, linethick=3, color="red")
-    &lt;/script&gt;
-    &lt;/body&gt;
-    &lt;/html&gt;
-    '''
-        return outstring
-    ''' 
-    假如採用下列規畫
-    
-    import programs.c2g2 as c2g2
-    root.c2g2 = c2g2.C2G2()
-    
-    則程式啟動後, 可以利用 /c2g1/drawline 呼叫函式執行
-    '''
-    @cherrypy.expose
-    def drawline(self, *args, **kwargs):
-        outstring = '''
-    &lt;!DOCTYPE html&gt; 
-    &lt;html&gt;
-    &lt;head&gt;
-    &lt;meta http-equiv="content-type" content="text/html;charset=utf-8"&gt;
-    &lt;script type="text/javascript" src="/static/Brython2.1.0-20140419-113919/brython.js"&gt;&lt;/script&gt;
-    &lt;/head&gt;
-    &lt;body onload="brython({debug:1, cache:'version'})"&gt;
-    &lt;canvas id="plotarea" width="800" height="800"&gt;&lt;/canvas&gt;
-    &lt;script type="text/python"&gt;
-    # 導入 doc
-    from browser import doc
-
-    # 準備繪圖畫布
-    canvas = doc["plotarea"]
-    ctx = canvas.getContext("2d")
-
-    # 定義畫線函式
-    def draw_line(x1, y1, x2, y2, linethick = 3, color = "black"):
-        ctx.beginPath()
-        ctx.lineWidth = linethick
-        ctx.moveTo(x1, y1)
-        ctx.lineTo(x2, y2)
-        ctx.strokeStyle = color
-        ctx.stroke()
-
-    draw_line(0, 0, 100, 100)
-    &lt;/script&gt;
-    &lt;/body&gt;
-    &lt;/html&gt;
-    '''
-        return outstring
-</t>
 <t tx="2014pythonE.20140224205837.3150"></t>
 <t tx="2014pythonE.20140224205837.3151">QSplitter::handle {
     background-color: #CAE1FF; /* lightSteelBlue1 */
@@ -871,9 +723,7 @@ Bitbucket 同步倉儲則為: https://bitbucket.org/coursemde/2014c2
 cd project on Bitbucket: https://bitbucket.org/coursemde/2014cd
 
 與 Bitbucket 同步的 OpenShift 網站: http://cdproject-coursemdetw.rhcloud.com/</t>
-<t tx="2014spring.20140502183555.1776">
-
-評量規劃:
+<t tx="2014spring.20140502183555.1776">評量規劃:
 
 每週以組為單位執行分組任務, 評分類別如下:
 
@@ -1097,22 +947,6 @@ root.c2g1 = c2g1.C2G1()
     3. 完成後先在近端測試, 完全符合需求且根據標準流程, 拉下目前協同專案區最新的 github 程式碼後, 檢驗 .leo 是否可以正確開啟, 各對應目錄是否正確配置, application 是否可以正確執行後, 再推送到協同專案區, 並與各分組的 OpenShift 雲端網站進行同步.</t>
 <t tx="2014spring.20140503095553.1928"></t>
 <t tx="2014spring.20140503095553.1932"></t>
-<t tx="2014spring.20140505200238.1819"></t>
-<t tx="2014spring.20140505200238.2114">注意事項
-
-    Python 版次必須使用 3.3 版
-    Leo Editor 必須使用 4.11 版
-    建立 pdf 與 html 文件則需要 pandoc 與 portableLatex 可攜應用程式(位於 apps 目錄下)
-    Git 則使用可攜版本(位於 apps 目錄下)
-    
-各組 push 資料確認事項
-
-    git config –list 中的 user.name 是否為各組代號 (代號錯誤將無法取分)
-    application 網站是否可以正確執行
-    .leo 檔案是否可以被 Leo Editor 正確開啟
-    專案是否可以正確產生協同報告 pdf 與 html 檔案
-    與 .leo 專案對應的外部目錄與檔案是否正確設定</t>
-<t tx="kmolII_lite.20140505210604.1651"></t>
 <t tx="public_kmol.20140302202325.1714">break
 
 The break statement in Python terminates the current loop and resumes execution at the next statement, just like the traditional break found in C.

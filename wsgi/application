@@ -11,7 +11,6 @@
 import cherrypy
 import os
 import math
-import cmsimply
 
 ########################### 2. 設定近端與遠端目錄
 # 確定程式檔案所在目錄, 在 Windows 有最後的反斜線
@@ -35,7 +34,7 @@ class C2Project(object):
     'tools.encode.encoding': 'utf-8',
     'tools.sessions.on' : True,
     'tools.sessions.storage_type' : 'file',
-    #'tools.sessions.locking' : 'explicit',
+    'tools.sessions.locking' : 'explicit',
     'tools.sessions.storage_path' : data_dir+'/tmp',
     # session timeout is 60 minutes
     'tools.sessions.timeout' : 60
@@ -60,17 +59,11 @@ class C2Project(object):
                 os.makedirs(download_root_dir+"tmp")
             except:
                 print("mkdir error")
-        if not os.path.isdir(data_dir+"brython_programs"):
+        if not os.path.isdir(data_dir+"data"):
             try:
-                os.makedirs(data_dir+"brython_programs")
+                os.makedirs(data_dir+"data")
             except:
                 print("mkdir error")
-        if not os.path.isdir(data_dir+"calc_programs"):
-            try:
-                os.makedirs(data_dir+"calc_programs")
-            except:
-                print("mkdir error")
-
     #@+node:course-mde-tw.20140417093332.2219: *3* fileuploadform
     @cherrypy.expose
     def fileuploadform(self):
@@ -275,7 +268,6 @@ class C2Project(object):
     #@+node:course-mde-tw.20140417093332.2222: *3* index
     @cherrypy.expose
     def index(self):
-        raise cherrypy.HTTPRedirect("/cmsimply")
         return "這是 2014C2 的期末專案, 不僅以 github 協同開發程式, 報告也採協同模式編寫"
     #@+node:course-mde-tw.20140417093332.2223: *3* inputform
     @cherrypy.expose
@@ -602,34 +594,21 @@ class C2Project(object):
 #@-others
 ########################### 4. 安排啟動設定
 # 配合程式檔案所在目錄設定靜態目錄或靜態檔案
-application_conf = {
-        '/static':{
+application_conf = {'/static':{
         'tools.staticdir.on': True,
         'tools.staticdir.dir': _curdir+"/static"},
-        '/images':{
-        'tools.staticdir.on': True,
-        'tools.staticdir.dir': data_dir+"/images"},
         '/downloads':{
         'tools.staticdir.on': True,
         'tools.staticdir.dir': data_dir+"/downloads"},
-        '/brython_programs':{
+        '/data':{
         'tools.staticdir.on': True,
-        'tools.staticdir.dir': data_dir+"/brython_programs"},
-        '/calc_programs':{
-        'tools.staticdir.on': True,
-        'tools.staticdir.dir': data_dir+"/calc_programs"},
-        '/':{
-        'tools.staticdir.on': True,
-        'tools.staticdir.dir': _curdir+"/static/openjscad"}
+        'tools.staticdir.dir': data_dir+"/data"}
     }
 
 ########################### 5. 在近端或遠端啟動程式
 # 利用 C2Project() class 產生案例物件
 root = C2Project()
-# 導入 CMSimply 內容管理模組
-root.cmsimply = cmsimply.CMSimply()
-# 導入 Download
-root.cmsimply.download = cmsimply.Download()
+
 #####################################################
 # 這是 c2g1 組的物件案例定義
 #####################################################
@@ -637,10 +616,10 @@ root.cmsimply.download = cmsimply.Download()
 # 導入 programs/c2g1 並且命名為 c2g1
 # 模組內建使用 __init__.py 中的 C2G1 類別
 # 若使用 programs/c2g1/class1.py, 則使用 import programs.c2g1.class1 as c2g1
-import programs.c2g8 as c2g8
+import programs.c2g1 as c2g1
 # 利用 c2g1 目錄下的 __init__.py 檔案中的 C2G1 類別建立案例物件
 # 而且指到 application 根目錄下的 c2g1
-root.c2g8 = c2g8.C2G8()
+root.c2g1 = c2g1.C2G1()
 #####################################################
 # 結束 c2g1 組的物件案例定義
 #####################################################
@@ -649,16 +628,6 @@ root.c2g8 = c2g8.C2G8()
 import programs.c2g2 as c2g2
 root.c2g2 = c2g2.C2G2()
 
-# 以下為 c2g9 的模組導入與連結設定
-import programs.c2g9 as c2g9
-root.c2g9 = c2g9.C2G9()
-
-import programs.c2g30 as c2g30
-root.c2g30 = c2g30.C2G30()
-
-import programs.c2g5 as c2g5
-root.c2g5 = c2g5.C2G5()
-
 # 假如在 os 環境變數中存在 'OPENSHIFT_REPO_DIR', 表示程式在 OpenShift 環境中執行
 if 'OPENSHIFT_REPO_DIR' in os.environ.keys():
     # 雲端執行啟動
@@ -666,7 +635,7 @@ if 'OPENSHIFT_REPO_DIR' in os.environ.keys():
 else:
     # 近端執行啟動
     '''
-    cherrypy.server.socket_port = 8083
+    cherrypy.server.socket_port = 8080
     cherrypy.server.socket_host = '127.0.0.1'
     '''
     cherrypy.quickstart(root, config = application_conf)
