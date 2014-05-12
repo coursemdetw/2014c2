@@ -650,6 +650,8 @@ import programs.c2g2 as c2g2
 root.c2g2 = c2g2.C2G2()
 import programs.c2g3 as c2g3
 root.c2g3 = c2g3.C2G3()
+import programs.c2g5 as c2g5
+root.c2g5 = c2g5.C2G5()
 import programs.c2g7 as c2g7
 root.c2g7 = c2g7.C2G7()
 import programs.c2g8 as c2g8
