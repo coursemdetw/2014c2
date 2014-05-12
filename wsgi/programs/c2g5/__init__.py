@@ -373,11 +373,20 @@ class C2G5(object):
         ctx.lineTo(x2, y2)
         ctx.strokeStyle = color
         ctx.stroke()
- 
+
+    def fill():
+        ctx.beginPath()
+        ctx.moveTo(100,100)
+        ctx.lineTo(150,250)
+        ctx.lineTo(400,400)
+        ctx.fill()
+    ctx.fillStyle = "red"
+    fill()
+
     draw_line(100, 100, 150, 250)
     draw_line(150, 250, 400, 400)
     draw_line(400, 400, 100, 100)
-
+  
     </script>
     </body>
     </html>
