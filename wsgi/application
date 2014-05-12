@@ -672,6 +672,9 @@ import programs.c2g30 as c2g30
 root.c2g30 = c2g30.C2G30()
 >>>>>>> 346472fe0e07d11dccc60ac6accfea49f591d5e6
 
+import programs.c2g5 as c2g5
+root.c2g5 = c2g5.C2G5()
+
 # 假如在 os 環境變數中存在 'OPENSHIFT_REPO_DIR', 表示程式在 OpenShift 環境中執行
 if 'OPENSHIFT_REPO_DIR' in os.environ.keys():
     # 雲端執行啟動
