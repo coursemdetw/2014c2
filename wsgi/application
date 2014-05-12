@@ -631,8 +631,8 @@ root.c2g2 = c2g2.C2G2()
 import programs.c2g3 as c2g3
 root.c2g3 = c2g3.C2G3()
 
-import programs.c2g16 as c2g16
-root.c2g16 = c2g16.C2G16()
+import programs.c2g15 as c2g15
+root.c2g15 = c2g15.C2G15()
 
 import programs.c2g8 as c2g8
 root.c2g8 = c2g8.C2G8()
@@ -643,10 +643,10 @@ if 'OPENSHIFT_REPO_DIR' in os.environ.keys():
     application = cherrypy.Application(root, config = application_conf)
 else:
     # 近端執行啟動
-    '''
+    
     cherrypy.server.socket_port = 8083
     cherrypy.server.socket_host = '127.0.0.1'
-    '''
+    
     cherrypy.quickstart(root, config = application_conf)
 
 #@-leo
