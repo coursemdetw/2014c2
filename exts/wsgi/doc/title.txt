@@ -1,0 +1,54 @@
+% 2014 程式語言二期末報告
+% 機械設計工程系一甲
+% May 5, 2014
+
+前言
+===
+
+程式語言二課程目標[^1]
+
+[^1]: 這是註解的用法.
+
+Here is an inline note.^[Inlines notes are easier to write, since
+you don't have to pick an identifier and move down to type the
+note.]
+
+讓學員學習高階程式語言基本語法
+
+讓學員能夠運用高階程式語言處理資料
+
+讓學員能夠運用高階程式語言進行數值運算
+
+讓學員能夠運用高階程式語言進行動態模擬
+
+Pandoc 手冊
+===
+
+http://johnmacfarlane.net/pandoc/README.html
+
+footnotes
+
+tables
+
+flexible ordered lists
+
+definition lists
+
+fenced code blocks
+
+superscript
+
+subscript
+
+strikeout
+
+title blocks
+
+automatic tables of contents
+
+embedded LaTeX math
+
+citations
+
+markdown inside HTML block elements
+
