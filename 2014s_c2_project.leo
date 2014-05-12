@@ -60,7 +60,7 @@ expanded="2014spring.20140509071814.2459,"><vh>@file cmsimply.py</vh></v>
 <v t="2014spring.20140503095553.1876" a="E"><vh>c2_w11</vh>
 <v t="2014spring.20140505200238.2114"><vh>注意事項</vh></v>
 <v t="2014spring.20140503095553.1927" a="E"><vh>分組程式開發</vh>
-<v t="2014spring.20140503095553.1928" a="E"><vh>@path wsgi/programs/c2g1</vh>
+<v t="2014spring.20140503095553.1928" a="E"><vh>@path wsgi/programs/c2g8</vh>
 <v t="2014spring.20140503095553.1929"><vh>@edit __init__.py</vh></v>
 </v>
 <v t="2014spring.20140503095553.1932" a="E"><vh>@path wsgi/programs/c2g2</vh>
@@ -72,12 +72,18 @@ expanded="2014spring.20140509071814.2459,"><vh>@file cmsimply.py</vh></v>
 <v t="kmolII_lite.20140505210604.1651" a="E"><vh>@path wsgi/programs/c2g23</vh>
 <v t="kmolII_lite.20140505210604.1652"><vh>@edit __init__.py</vh></v>
 </v>
+<<<<<<< HEAD
 <v t="2014spring.20140505200238.1819"><vh>@path wsgi/programs/c2g30</vh>
 <v t="2014spring.20140505200238.1820"><vh>@edit __init__.py</vh></v>
 </v>
 <v t="kmolII_lite.20140512083458.1856" a="E"><vh>@path wsgi/programs/c2g12</vh>
 <v t="kmolII_lite.20140512083458.1857"><vh>@edit __init__.py</vh></v>
 </v>
+=======
+<v t="2014spring.20140505200238.1819" a="E"><vh>@path wsgi/programs/c2g30</vh>
+<v t="2014spring.20140505200238.1820"><vh>@edit __init__.py</vh></v>
+</v>
+>>>>>>> 346472fe0e07d11dccc60ac6accfea49f591d5e6
 </v>
 <v t="2014spring.20140503095553.1883"><vh>利用 pandoc 進行格式轉換</vh>
 <v t="2014spring.20140503095553.1884"><vh>注意事項</vh></v>
@@ -1116,7 +1122,10 @@ root.c2g1 = c2g1.C2G1()
     專案是否可以正確產生協同報告 pdf 與 html 檔案
     與 .leo 專案對應的外部目錄與檔案是否正確設定</t>
 <t tx="kmolII_lite.20140505210604.1651"></t>
+<<<<<<< HEAD
 <t tx="kmolII_lite.20140512083458.1856"></t>
+=======
+>>>>>>> 346472fe0e07d11dccc60ac6accfea49f591d5e6
 <t tx="public_kmol.20140302202325.1714">break
 
 The break statement in Python terminates the current loop and resumes execution at the next statement, just like the traditional break found in C.
