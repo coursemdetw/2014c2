@@ -648,6 +648,16 @@ root.c2g1 = c2g1.C2G1()
 # 以下為 c2g2 的模組導入與連結設定
 import programs.c2g2 as c2g2
 root.c2g2 = c2g2.C2G2()
+import programs.c2g3 as c2g3
+root.c2g3 = c2g3.C2G3()
+import programs.c2g7 as c2g7
+root.c2g7 = c2g7.C2G7()
+import programs.c2g8 as c2g8
+root.c2g8 = c2g8.C2G8()
+import programs.c2g15 as c2g15
+root.c2g15 = c2g15.C2G15()
+import programs.c2g23 as c2g23
+root.c2g23 = c2g23.C2G23()
 
 # 以下為 c2g9 的模組導入與連結設定
 import programs.c2g9 as c2g9

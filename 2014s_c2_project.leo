@@ -994,7 +994,8 @@ root.c2g1 = c2g1.C2G1()
     與 .leo 專案對應的外部目錄與檔案是否正確設定</t>
 <t tx="2014spring.20140512231824.2642"></t>
 <t tx="2014spring.20140512231824.2646"></t>
-<t tx="2014spring.20140512231824.2647">import cherrypy
+<t tx="2014spring.20140512231824.2647">@language python
+import cherrypy
 
 # 這是 C2G15 類別的定義
 class C2G15(object):
@@ -1275,7 +1276,8 @@ class C2G15(object):
     '''
         return outstring
    
-  </t>
+  
+</t>
 <t tx="2014spring.20140512231824.2651"></t>
 <t tx="2014spring.20140512231824.2655"></t>
 <t tx="2014spring.20140512231824.2659"></t>
