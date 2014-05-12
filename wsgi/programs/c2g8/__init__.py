@@ -10,9 +10,12 @@ class C2G8(object):
 <!-- 這裡採用相對連結, 而非網址的絕對連結 (這一段為 html 註解) -->
 <a href="fillpoly">c2g8 fillpoly 繪圖</a><br />
 <a href="drawline">c2g8 drawline 繪圖</a><br />
-<a href="animate1">c2g8 drawline 繪圖</a><br />
+<a href="animate1">c2g8 animate1 繪圖</a><br />
+<a href="star">c2g8 star 繪圖</a><br />
 <a href="flag">c2g8 flag 繪圖</a><br />
 <a href="square">c2g8 square 繪圖</a><br />
+<a href="triangle">c2g8 triangle 繪圖</a><br />
+<a href="triangle1">c2g8 triangle1 繪圖</a><br />
 '''
         return outstring
 
@@ -183,6 +186,144 @@ class C2G8(object):
     draw_line(300, 300, 500, 300)
     draw_line(300, 500, 500, 500)
     draw_line(500, 300, 500, 500)
+    </script>
+    </body>
+    </html>
+    '''
+
+ 
+        return outstring
+    
+    @cherrypy.expose
+    def triangle(self, *args, **kwargs):
+        outstring = '''
+    <!DOCTYPE html> 
+    <html>
+    <head>
+    <meta http-equiv="content-type" content="text/html;charset=utf-8">
+    <script type="text/javascript" src="/static/Brython2.1.0-20140419-113919/brython.js"></script>
+    </head>
+    <body onload="brython({debug:1, cache:'version'})">
+    <canvas id="plotarea" width="800" height="800"></canvas>
+    <script type="text/python">
+    # 導入 doc
+    from browser import doc
+
+    # 準備繪圖畫布
+    canvas = doc["plotarea"]
+    ctx = canvas.getContext("2d")
+    # 進行座標轉換, x 軸不變, y 軸反向且移動 800 光點
+    ctx.setTransform(1, 0, 0, -1, 0, 800)
+
+    # 定義畫線函式
+    def draw_line(x1, y1, x2, y2, linethick = 3, color = "blue"):
+        ctx.beginPath()
+        ctx.lineWidth = linethick
+        ctx.moveTo(x1, y1)
+        ctx.lineTo(x2, y2)
+        ctx.strokeStyle = color
+        ctx.stroke()
+
+    draw_line(100, 100, 150, 250)
+    draw_line(150, 250, 400, 400)
+    draw_line(400, 400, 100, 100)
+    </script>
+    </body>
+    </html>
+    '''
+        return outstring
+        
+    @cherrypy.expose
+    def triangle1(self, *args, **kwargs):
+        outstring = '''
+    <!DOCTYPE html> 
+    <html>
+    <head>
+    <meta http-equiv="content-type" content="text/html;charset=utf-8">
+    <script type="text/javascript" src="/static/Brython2.1.0-20140419-113919/brython.js"></script>
+    </head>
+    <body onload="brython({debug:1, cache:'version'})">
+    <canvas id="plotarea" width="800" height="800"></canvas>
+    <script type="text/python">
+    # 導入 doc
+    from browser import doc
+
+    # 準備繪圖畫布
+    canvas = doc["plotarea"]
+    ctx = canvas.getContext("2d")
+    # 進行座標轉換, x 軸不變, y 軸反向且移動 800 光點
+    ctx.setTransform(1, 0, 0, -1, 0, 800)
+
+    # 定義畫線函式
+    def draw_line(x1, y1, x2, y2, linethick = 3, color = "blue"):
+        ctx.beginPath()
+        ctx.lineWidth = linethick
+        ctx.moveTo(x1, y1)
+        ctx.lineTo(x2, y2)
+        ctx.strokeStyle = color
+        ctx.stroke()
+    def full():
+        ctx.beginPath()
+        ctx.moveTo(100,100)
+        ctx.lineTo(150,250)
+        ctx.lineTo(400,400)
+        ctx.lineTo(100,100)
+        ctx.fill()
+        
+    ctx.fillStyle = "red"
+    full()
+
+    </script>
+    </body>
+    </html>
+    '''
+        return outstring
+    
+    @cherrypy.expose
+    def star(self, *args, **kwargs):
+        outstring = '''
+    <!DOCTYPE html> 
+    <html>
+    <head>
+    <meta http-equiv="content-type" content="text/html;charset=utf-8">
+    <script type="text/javascript" src="/static/Brython2.1.0-20140419-113919/brython.js"></script>
+    </head>
+    <body onload="brython({debug:1, cache:'version'})">
+    <canvas id="plotarea" width="800" height="800"></canvas>
+    <script type="text/python">
+    # 導入 doc
+    from browser import doc
+
+    # 準備繪圖畫布
+    canvas = doc["plotarea"]
+    ctx = canvas.getContext("2d")
+    # 進行座標轉換, x 軸不變, y 軸反向且移動 800 光點
+    ctx.setTransform(1, 0, 0, -1, 0, 800)
+
+    # 定義畫線函式
+    def draw_line(x1, y1, x2, y2, linethick = 3, color = "black"):
+        ctx.beginPath()
+        ctx.lineWidth = linethick
+        ctx.moveTo(x1, y1)
+        ctx.lineTo(x2, y2)
+        ctx.strokeStyle = color
+        ctx.stroke()
+        
+    draw_line(378, 430, 400, 500)
+    draw_line(400, 500, 422, 430)
+    draw_line(422, 430, 378, 430)
+    draw_line(378, 430, 305, 430)
+    draw_line(305, 430, 364, 389)
+    draw_line(364, 389, 378, 430)
+    draw_line(364, 389, 342, 319)
+    draw_line(342, 319, 400, 362)
+    draw_line(400, 362, 364, 389)
+    draw_line(400, 362, 457, 319)
+    draw_line(457, 319, 436, 389)
+    draw_line(436, 389, 400, 362)
+    draw_line(436, 389, 495, 430)
+    draw_line(495, 430, 422, 430)
+    draw_line(422, 430, 436, 389)
     </script>
     </body>
     </html>
