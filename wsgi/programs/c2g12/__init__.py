@@ -16,14 +16,14 @@ class C2G12(object):
 '''
         return outstring
 
-    # 以下為 c2g2 組所建立的 CherryPy 程式方法, 這裡的 fillpoly 利用 Brython 執行網際繪圖
+    # 以下為 c2g12 組所建立的 CherryPy 程式方法, 這裡的 fillpoly 利用 Brython 執行網際繪圖
     ''' 
     假如採用下列規畫
     
-    import programs.c2g2 as c2g2
-    root.c2g2 = c2g2.C2G2()
+    import programs.c2g12 as c2g12
+    root.c2g12 = c2g12.C2G12()
     
-    則程式啟動後, 可以利用 /c2g2/fillpoly 呼叫函式執行
+    則程式啟動後, 可以利用 /c2g12/fillpoly 呼叫函式執行
     '''
     @cherrypy.expose
     def fillpoly(self, *args, **kwargs):
@@ -95,11 +95,46 @@ class C2G12(object):
     ''' 
     假如採用下列規畫
     
-    import programs.c2g2 as c2g2
-    root.c2g2 = c2g2.C2G2()
+    import programs.c2g12 as c2g12
+    root.c2g12 = c2g12.C2G12()
     
     則程式啟動後, 可以利用 /c2g1/drawline 呼叫函式執行
     '''
+    @cherrypy.expose
+    def drawline(self, *args, **kwargs):
+        outstring = '''
+    <!DOCTYPE html> 
+    <html>
+    <head>
+    <meta http-equiv="content-type" content="text/html;charset=utf-8">
+    <script type="text/javascript" src="/static/Brython2.1.0-20140419-113919/brython.js"></script>
+    </head>
+    <body onload="brython({debug:1, cache:'version'})">
+    <canvas id="plotarea" width="800" height="800"></canvas>
+    <script type="text/python">
+    # 導入 doc
+    from browser import doc
+
+    # 準備繪圖畫布
+    canvas = doc["plotarea"]
+    ctx = canvas.getContext("2d")
+
+    # 定義畫線函式
+    def draw_line(x1, y1, x2, y2, linethick = 3, color = "black"):
+        ctx.beginPath()
+        ctx.lineWidth = linethick
+        ctx.moveTo(x1, y1)
+        ctx.lineTo(x2, y2)
+        ctx.strokeStyle = color
+        ctx.stroke()
+
+    draw_line(0, 0, 100, 100)
+    </script>
+    </body>
+    </html>
+    '''
+        return outstring
+
     @cherrypy.expose
     def square(self, *args, **kwargs):
         outstring = '''
@@ -120,7 +155,7 @@ class C2G12(object):
     ctx = canvas.getContext("2d")
 
     # 定義畫線函式
-    def draw_line(x1, y1, x2, y2, linethick = 3, color = "red"):
+    def draw_line(x1, y1, x2, y2, linethick = 3, color = "black"):
         ctx.beginPath()
         ctx.lineWidth = linethick
         ctx.moveTo(x1, y1)
@@ -128,10 +163,10 @@ class C2G12(object):
         ctx.strokeStyle = color
         ctx.stroke()
 
-    draw_line(300,300, 300, 500)
-    draw_line(300,500, 500, 500)
-    draw_line(500,500, 500, 300)
-    draw_line(500,300, 300, 300)
+    draw_line(100,100, 100, 300)
+    draw_line(100,300, 300, 300)
+    draw_line(300,300, 300, 100)
+    draw_line(300,100, 100, 100)
     </script>
     </body>
     </html>
@@ -199,7 +234,7 @@ class C2G12(object):
     ctx.setTransform(1, 0, 0, -1, 0, 800)
 
     # 定義畫線函式
-    def draw_line(x1, y1, x2, y2, linethick = 3, solid=full, color = "blue"):
+    def draw_line(x1, y1, x2, y2, linethick = 3, color = "blue"):
         ctx.beginPath()
         ctx.lineWidth = linethick
         ctx.moveTo(x1, y1)
@@ -207,9 +242,19 @@ class C2G12(object):
         ctx.strokeStyle = color
         ctx.stroke()
 
-    draw_line(100, 100, 150, 250)
-    draw_line(150, 250, 400, 400)
-    draw_line(400, 400, 100, 100)
+    def fill():
+        ctx.beginPath()
+        ctx.moveTo(100, 100)
+        ctx.lineTo(150, 250)
+        ctx.lineTo(400, 400)
+        ctx.fill()
+
+    ctx.fillStyle = "red"
+    fill()
+
+    draw_line(100, 100, 150, 250, linethick = 3, color = "blue")
+    draw_line(150, 250, 400, 400, linethick = 3, color = "blue")
+    draw_line(400, 400, 100, 100, linethick = 3, color = "blue")
     </script>
     </body>
     </html>

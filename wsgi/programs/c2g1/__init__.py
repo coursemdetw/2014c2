@@ -10,10 +10,6 @@ class C2G1(object):
 <!-- 這裡採用相對連結, 而非網址的絕對連結 (這一段為 html 註解) -->
 <a href="fillpoly">c2g1 fillpoly 繪圖</a><br />
 <a href="drawline">c2g1 drawline 繪圖</a><br />
-<a href="animate1">c2g1 animate1 繪圖</a><br />
-<a href="flag">c2g1 flag 繪圖</a><br />
-<a href="square">c2g1 square 繪圖</a><br />
-<a href="star">c2g1 star 繪圖</a><br />
 '''
         return outstring
 
@@ -323,10 +319,16 @@ class C2G1(object):
         ctx.strokeStyle = color
         ctx.stroke()
 
-    draw_line(300, 300, 300, 500)
-    draw_line(300,  300, 500, 300)
-    draw_line(300, 500, 500, 500)
-    draw_line(500, 300, 500, 500)
+    def square(x, y, width, color="black"):
+        half = width/2
+        draw_line(x+half, y+half, x+half, y-half)
+        draw_line(x+half, y-half, x-half, y-half, color="red")
+        draw_line(x-half, y-half, x-half, y+half)
+        draw_line(x-half, y+half, x+half, y+half)
+    
+    for i in range(5):
+        square(400, 400, 200+50*i)
+        square(400+i*50, 400-i*50, 200)
     </script>
     </body>
     </html>
@@ -361,7 +363,11 @@ class C2G1(object):
         ctx.lineTo(x2, y2)
         ctx.strokeStyle = color
         ctx.stroke()
-
+        
+    # 直接採用外部五點座標不是好方法
+    # 應該要寫成函式, 用圓心座標與半徑來控制
+    # 而且要計算內五點, 因為空的五芒星不能有交叉線
+    
     draw_line(400, 500, 458.7785, 319.0983)
     draw_line(400,  500, 342.2215, 319.0983)
     draw_line(342.2215, 319.0983, 495.0565, 430.9016)
