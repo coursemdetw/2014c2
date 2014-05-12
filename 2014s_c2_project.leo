@@ -69,11 +69,14 @@ expanded="2014spring.20140509071814.2459,"><vh>@file cmsimply.py</vh></v>
 <v t="2014python.20140505100744.1942" a="E"><vh>@path wsgi/programs/c2g3</vh>
 <v t="2014python.20140505100744.1943" a="O"><vh>@edit __init__.py</vh></v>
 </v>
-<v t="kmolII_lite.20140505210604.1651" a="E"><vh>@path wsgi/programs/c2g23</vh>
+<v t="kmolII_lite.20140505210604.1651"><vh>@path wsgi/programs/c2g23</vh>
 <v t="kmolII_lite.20140505210604.1652"><vh>@edit __init__.py</vh></v>
 </v>
-<v t="2014spring.20140505200238.1819" a="E"><vh>@path wsgi/programs/c2g30</vh>
+<v t="2014spring.20140505200238.1819"><vh>@path wsgi/programs/c2g30</vh>
 <v t="2014spring.20140505200238.1820"><vh>@edit __init__.py</vh></v>
+</v>
+<v t="2014python.20140512091301.1901" a="E"><vh>@path wsgi/programs/c2g5</vh>
+<v t="2014python.20140512091301.1902"><vh>@edit __init__.py</vh></v>
 </v>
 </v>
 <v t="2014spring.20140503095553.1883"><vh>利用 pandoc 進行格式轉換</vh>
@@ -448,6 +451,7 @@ class C2G3(object):
     '''
         return outstring
 </t>
+<t tx="2014python.20140512091301.1901"></t>
 <t tx="2014pythonE.20140224205837.3150"></t>
 <t tx="2014pythonE.20140224205837.3151">QSplitter::handle {
     background-color: #CAE1FF; /* lightSteelBlue1 */
