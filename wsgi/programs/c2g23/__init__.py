@@ -12,8 +12,8 @@ class C2G23(object):
 <a href="drawline">c2g23 drawline 繪圖</a><br />
 <a href="square">c2g23 square 繪圖</a><br />
 <a href="xindus">c2g23 xindus 繪圖</a><br />
+<a href="triangle">c2g23 triangle 繪圖</a><br />
 <a href="triangle1">c2g23 triangle 繪圖</a><br />
-<a href="triangle2">c2g23 triangle 繪圖</a><br />
 '''
         return outstring
 
@@ -246,7 +246,7 @@ class C2G23(object):
 
         return outstring
     @cherrypy.expose
-    def triangle1(self, *args, **kwargs):
+    def triangle(self, *args, **kwargs):
         outstring = '''
     <!DOCTYPE html> 
     <html>
@@ -283,7 +283,7 @@ class C2G23(object):
 
         return outstring
     @cherrypy.expose
-    def triangle2 (self, *args, **kwargs):
+    def triangle1(self, *args, **kwargs):
         outstring = '''
     <!DOCTYPE html> 
     <html>
@@ -324,5 +324,5 @@ class C2G23(object):
       </body>
       </html>
       '''
-
+ 
         return outstring
