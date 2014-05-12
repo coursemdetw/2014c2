@@ -94,7 +94,9 @@ expanded="2014spring.20140509071814.2459,"><vh>@file cmsimply.py</vh></v>
 </v>
 </v>
 </v>
-<v t="2014spring.20140502183555.1864"><vh>c2_w12 任務</vh></v>
+<v t="2014spring.20140502183555.1864" a="E"><vh>c2_w12 任務</vh>
+<v t="2014spring.20140512231824.1895"><vh>問題</vh></v>
+</v>
 </vnodes>
 <tnodes>
 <t tx="2014python.20140224210642.3165"></t>
@@ -1112,6 +1114,11 @@ root.c2g1 = c2g1.C2G1()
     .leo 檔案是否可以被 Leo Editor 正確開啟
     專案是否可以正確產生協同報告 pdf 與 html 檔案
     與 .leo 專案對應的外部目錄與檔案是否正確設定</t>
+<t tx="2014spring.20140512231824.1895">許多組仍然無法正確執行協同程式, 資料在
+
+https://github.com/coursemdetw/2014c2/commit/9e8b9ff71a685129e482ab8fa4896688d7f66c89
+
+就已經被弄亂, 準備回復到原始狀態, 並將各組程式在此 .leo 中加入</t>
 <t tx="kmolII_lite.20140505210604.1651"></t>
 <t tx="public_kmol.20140302202325.1714">break
 
