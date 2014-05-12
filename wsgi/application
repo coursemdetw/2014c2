@@ -634,6 +634,7 @@ root.c2g3 = c2g3.C2G3()
 import programs.c2g8 as c2g8
 root.c2g8 = c2g8.C2G8()
 
+#以下為 c2g5 的模組導入與連結設定
 import programs.c2g15 as c2g15
 root.c2g15 = c2g15.C2G15()
 # 假如在 os 環境變數中存在 'OPENSHIFT_REPO_DIR', 表示程式在 OpenShift 環境中執行
