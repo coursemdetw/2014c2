@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Created by Leo (http://webpages.charter.net/edreamleo/front.html) -->
+<!-- Created by Leo (http://leoeditor.com/leo_toc.html) -->
 <?xml-stylesheet ekr_test?>
 <leo_file xmlns:leo="http://www.leo-editor.org/2011/leo" >
 <leo_header file_format="2" tnodes="0" max_tnode_index="0" clone_windows="0"/>
@@ -60,8 +60,11 @@ expanded="course-mde-tw.20140417093332.2218,"><vh>@file application</vh></v>
 <v t="2014spring.20140503095553.1928" a="E"><vh>@path wsgi/programs/c2g1</vh>
 <v t="2014spring.20140503095553.1929"><vh>@edit __init__.py</vh></v>
 </v>
-<v t="2014spring.20140503095553.1932" a="E"><vh>@path wsgi/programs/c2g2</vh>
+<v t="2014spring.20140503095553.1932"><vh>@path wsgi/programs/c2g2</vh>
 <v t="2014spring.20140503095553.1933"><vh>@edit __init__.py</vh></v>
+</v>
+<v t="2014python.20140511215742.2083" a="E"><vh>@path wsgi/programs/c2g9</vh>
+<v t="2014python.20140511215742.2084"><vh>@edit __init__.py</vh></v>
 </v>
 </v>
 <v t="2014spring.20140503095553.1883" a="E"><vh>利用 pandoc 進行格式轉換</vh>
@@ -300,6 +303,7 @@ to handlers is not always 1:1, this provides a flexibility which is not as easil
 However, because the arrangement of config is directly related to the arrangement of handlers, it is the 
 responsibility of the Dispatcher to collect per-handler config, merge it with per-URI and global config, and bind the 
 resulting dict to cherrypy.request.config. This dict is of depth 1 and will contain all config entries which are in effect for the current request.</t>
+<t tx="2014python.20140511215742.2083"></t>
 <t tx="2014pythonE.20140224205837.3150"></t>
 <t tx="2014pythonE.20140224205837.3151">QSplitter::handle {
     background-color: #CAE1FF; /* lightSteelBlue1 */
