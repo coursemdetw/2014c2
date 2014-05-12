@@ -188,7 +188,7 @@ class C2G15(object):
         return outstring
         
     @cherrypy.expose
-    def  triangle(self, *args, **kwargs):
+    def triangle(self, *args, **kwargs):
         outstring = '''
     <!DOCTYPE html> 
     <html>
@@ -229,7 +229,7 @@ class C2G15(object):
         return outstring
         
     @cherrypy.expose
-    def  triangle2(self, *args, **kwargs):
+    def triangle2(self, *args, **kwargs):
         outstring = '''
     <!DOCTYPE html> 
     <html>
