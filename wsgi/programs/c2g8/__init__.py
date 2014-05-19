@@ -13,6 +13,8 @@ class C2G8(object):
 <a href="animate1">c2g8 animate1 繪圖</a><br />
 <a href="star">c2g8 star 繪圖</a><br />
 <a href="flag">c2g8 flag 繪圖</a><br />
+<a href="Japanflag">c2g8 Japanflag 繪圖</a><br />
+<a href="america">c2g8 Americaflag 繪圖</a><br />
 <a href="square">c2g8 square 繪圖</a><br />
 <a href="triangle">c2g8 triangle 繪圖</a><br />
 <a href="triangle1">c2g8 triangle1 繪圖</a><br />
@@ -469,6 +471,146 @@ class C2G8(object):
     # 填色設為白色
     ctx.fillStyle = '#fff'
     ctx.fill()
+    </script>
+    </body>
+    </html>
+    '''
+        return outstring
+    
+    @cherrypy.expose
+    def Japanflag(self, *args, **kwargs):
+        '''
+        原始程式來源: http://blog.roodo.com/esabear/archives/19215194.html
+        改寫為 Brython 程式
+        '''
+        outstring = '''
+    <!DOCTYPE html> 
+    <html>
+    <head>
+    <meta http-equiv="content-type" content="text/html;charset=utf-8">
+    <script type="text/javascript" src="/static/Brython2.1.0-20140419-113919/brython.js"></script>
+    </head>
+    <body onload="brython({debug:1, cache:'version'})">
+    <canvas id="plotarea" width="300" height="200"></canvas>
+    <script type="text/python">
+    # 導入 doc
+    from browser import doc
+    import math
+
+    # 準備繪圖畫布
+    canvas = doc["plotarea"]
+    ctx = canvas.getContext("2d")
+    # 進行座標轉換, x 軸不變, y 軸反向且移動 canvas.height 單位光點
+    # ctx.setTransform(1, 0, 0, -1, 0, canvas.height)
+    # 以下採用 canvas 原始座標繪圖
+    #設定一個變數
+    flag_w = canvas.width
+    flag_h = canvas.height
+    #畫出兩個正方形,一個為黑色,一個白色,將白色覆蓋掉黑色來做出框
+    #黑色
+    ctx.fillStyle='black'
+    ctx.fillRect(0,0,flag_w,flag_h)
+    #白色
+    ctx.fillStyle='white'
+    ctx.fillRect(0+5,0+5,290,190)
+    ctx.beginPath()
+    #以下為畫圓,(x軸,y軸,半徑,弧,他畫出是一半所以*2)
+    ctx.arc(150, 100, 60, 0, math.pi*2, true)
+    ctx.closePath()
+    #紅色
+    ctx.fillStyle = 'red'
+    ctx.fill()
+    </script>
+    </body>
+    </html>
+    '''
+        return outstring
+        
+    @cherrypy.expose
+    def america(self, *args, **kwargs):
+        outstring = '''
+    <!DOCTYPE html> 
+    <html>
+    <head>
+    <meta http-equiv="content-type" content="text/html;charset=utf-8">
+    <script type="text/javascript" src="/static/Brython2.1.0-20140419-113919/brython.js"></script>
+    </head>
+    <body onload="brython({debug:1, cache:'version'})">
+    <canvas id="plotarea" width="800" height="800"></canvas>
+    <script type="text/python">
+    # 導入 doc
+    from browser import doc
+    import math
+
+    # 準備繪圖畫布
+    canvas = doc["plotarea"]
+    ctx = canvas.getContext("2d")
+    # 進行座標轉換, x 軸不變, y 軸反向且移動 800 光點
+    ctx.setTransform(1, 0, 0, -1, 0, 800)
+    # x, y 為中心,  r 為半徑, angle 旋轉角,  solid 空心或實心,  color 顏色
+    def star(x, y, r, angle=0, solid=False, color="white"):
+        # 以 x, y 為圓心, 計算五個外點
+        deg = math.pi/180
+        # 圓心到水平線距離
+        a = r*math.cos(72*deg)
+        # a 頂點向右到內點距離
+        b = (r*math.cos(72*deg)/math.cos(36*deg))*math.sin(36*deg)
+        # 利用畢氏定理求內點半徑
+        rin = math.sqrt(a**2 + b**2)
+        # 查驗 a, b 與 rin
+        #print(a, b, rin)
+        if(solid):
+            ctx.beginPath()
+        for i in range(5):
+            xout = (x + r*math.sin((360/5)*deg*i+angle*deg))
+            yout = (y + r*math.cos((360/5)*deg*i+angle*deg))
+            # 外點增量 + 1
+            xout2 = x + r*math.sin((360/5)*deg*(i+1)+angle*deg)
+            yout2 = y + r*math.cos((360/5)*deg*(i+1)+angle*deg)
+            xin = x + rin*math.sin((360/5)*deg*i+36*deg+angle*deg)
+            yin = y + rin*math.cos((360/5)*deg*i+36*deg+angle*deg)
+            # 查驗外點與內點座標
+            #print(xout, yout, xin, yin)
+            if(solid):
+                # 填色
+                if(i==0):
+                    ctx.moveTo(xout, yout)
+                    ctx.lineTo(xin, yin)
+                    ctx.lineTo(xout2, yout2)
+                else:
+                    ctx.lineTo(xin, yin)
+                    ctx.lineTo(xout2, yout2)
+        if(solid):
+            ctx.fillStyle = 'white'
+            ctx.fill()
+
+    for i in range(7):
+        ctx.fillStyle='rgb(255, 0, 0)'
+        ctx.fillRect(0, 0+40*i, 390, 20)
+
+    ctx.fillStyle='rgb(0, 0, 149)'
+    ctx.fillRect(0, 120, 210, 140)
+
+    for i in range(6):
+        for j in range(5):
+            star(20+34*i, 134+28*j, 8, 0, True, "white")
+    for i in range(5):
+        for j in range(4):
+            star(36+34*i, 148+28*j, 8, 0, True, "white")
+      # 定義畫線函式
+    def draw_line(x1, y1, x2, y2, linethick = 3, color = "black"):
+        ctx.beginPath()
+        ctx.lineWidth = linethick
+        ctx.moveTo(x1, y1)
+        ctx.lineTo(x2, y2)
+        ctx.strokeStyle = color
+        ctx.stroke()
+    
+    draw_line(0, 0, 390, 0)
+    draw_line(390, 0, 390, 260)
+    draw_line(390, 260, 0, 260)
+    draw_line(0, 260, 0, 0)
+    
     </script>
     </body>
     </html>
