@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Created by Leo (http://webpages.charter.net/edreamleo/front.html) -->
+<!-- Created by Leo (http://leoeditor.com/leo_toc.html) -->
 <?xml-stylesheet ekr_test?>
 <leo_file xmlns:leo="http://www.leo-editor.org/2011/leo" >
 <leo_header file_format="2" tnodes="0" max_tnode_index="0" clone_windows="0"/>
@@ -43,7 +43,7 @@
 </v>
 </v>
 </v>
-<v t="2014pythonE.20140414091257.1680"><vh>c2_w8</vh>
+<v t="2014pythonE.20140414091257.1680" a="E"><vh>c2_w8</vh>
 <v t="2014pythonE.20140418222946.1967"><vh>說明</vh></v>
 <v t="2014pythonE.20140418222946.1968"><vh>同步設定</vh></v>
 <v t="2014pythonE.20140414091257.1916"><vh>簡單分頁</vh>
@@ -60,13 +60,13 @@ expanded="2014spring.20140509071814.2459,"><vh>@file cmsimply.py</vh></v>
 <v t="2014spring.20140503095553.1876" a="E"><vh>c2_w11</vh>
 <v t="2014spring.20140505200238.2114"><vh>注意事項</vh></v>
 <v t="2014spring.20140503095553.1927" a="E"><vh>分組程式開發</vh>
-<v t="2014spring.20140503095553.1928" a="E"><vh>@path wsgi/programs/c2g1</vh>
+<v t="2014spring.20140503095553.1928"><vh>@path wsgi/programs/c2g1</vh>
 <v t="2014spring.20140503095553.1929"><vh>@edit __init__.py</vh></v>
 </v>
 <v t="2014spring.20140503095553.1932" a="E"><vh>@path wsgi/programs/c2g2</vh>
 <v t="2014spring.20140503095553.1933"><vh>@edit __init__.py</vh></v>
 </v>
-<v t="2014python.20140505100744.1942"><vh>@path wsgi/programs/c2g3</vh>
+<v t="2014python.20140505100744.1942" a="E"><vh>@path wsgi/programs/c2g3</vh>
 <v t="2014python.20140505100744.1943"><vh>@edit __init__.py</vh></v>
 </v>
 <v t="2014spring.20140512231824.4733" a="E"><vh>@path wsgi/programs/c2g5</vh>
