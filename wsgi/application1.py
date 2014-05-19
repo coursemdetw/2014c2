@@ -139,7 +139,8 @@ class C2Project(object):
             overwrite = 1
         else:
             overwrite = 0
-# add delete_program 2/7, client side add set_delete1 and set_delete2 functions.
+
+    # add delete_program 2/7, client side add set_delete1 and set_delete2 functions.
     def set_delete1(ev):
         global delete1
         if ev.target.checked:
@@ -624,15 +625,8 @@ root.c2g1 = c2g1.C2G1()
 #####################################################
 
 # 以下為 c2g2 的模組導入與連結設定
-import programs.c2g1 as c2g1
-root.c2g1 = c2g1.C2G1()
-
 import programs.c2g2 as c2g2
 root.c2g2 = c2g2.C2G2()
-
-import programs.c2g6 as c2g6
-root.c2g6 = c2g6.C2G6()
-
 
 # 假如在 os 環境變數中存在 'OPENSHIFT_REPO_DIR', 表示程式在 OpenShift 環境中執行
 if 'OPENSHIFT_REPO_DIR' in os.environ.keys():
