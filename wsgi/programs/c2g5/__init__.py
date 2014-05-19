@@ -14,6 +14,7 @@ class C2G5(object):
 <a href="flag">c2g5 flag 繪圖</a><br />
 <a href="square">c2g5 squared 繪圖</a><br />
 <a href="triangle">c2g5 triangle 繪圖</a><br />
+<a href="JPflag">c2g5 JPflag 繪圖</a><br />
 '''
         return outstring
 
@@ -445,6 +446,91 @@ class C2G5(object):
     ctx.fillStyle = 'rgb(255, 0, 0)'
     ctx.fill()
 
+    def draw_line(x1, y1, x2, y2, linethick = 3, color = "blue"):
+        ctx.beginPath()
+        ctx.lineWidth = linethick
+        ctx.moveTo(x1, y1)
+        ctx.lineTo(x2, y2)
+        ctx.strokeStyle = color
+        ctx.stroke()
+
+    draw_line(0, 0, 300, 0)
+    draw_line(300, 0, 300, 200)
+    draw_line(300, 200, 0, 200)
+    draw_line(0, 200, 0, 0)  
+
+    ctx.beginPath()
+    #ctx.arc(circle_x, circle_y, flag_h*0.6, 0, pi*2, true)
+    ctx.arc(circle_x, circle_y, 60, 0, pi*2)
+    ctx.closePath()
+    # 填色設為紅色
+    ctx.fillStyle = 'rgb(255, 0, 0)'
+    ctx.fill()
+    
+    </script>
+    </body>
+    </html>
+    '''
+        return outstring
+
+    @cherrypy.expose
+    def USAflag(self, *args, **kwargs):
+        outstring = '''
+    <!DOCTYPE html> 
+    <html>
+    <head>
+    <meta http-equiv="content-type" content="text/html;charset=utf-8">
+    <script type="text/javascript" src="/static/Brython2.1.0-20140419-113919/brython.js"></script>
+    </head>
+    <body onload="brython({debug:1, cache:'version'})">
+    <canvas id="plotarea" width="475" height="250"></canvas>
+    <script type="text/python">
+    # 導入時間模組
+    import time
+    # 導入數學模組的所有方法
+    import math
+    # 導入 doc
+    from browser import html, doc
+    
+    # use plotarea as canvas
+    canvas = doc["background_canvas"]
+    # 準備在 canvas 中繪圖
+    def draw_line(x1, y1, x2, y2, color="blue"):
+        ctx.beginPath()
+        ctx.moveTo(x1, y1)
+        ctx.lineTo(x2, y2)
+        ctx.strokeStyle = color
+        ctx.stroke()
+    def fill_rectangle(x1, y1, x2, y2, color="red"):
+        ctx.beginPath()
+        ctx.moveTo(x1, y1)
+        ctx.lineTo(x1, y2)
+        ctx.lineTo(x2, y2)
+        ctx.lineTo(x2, y1)
+        ctx.lineTo(x1, y1)
+        ctx.fillStyle = color
+        ctx.fill
+    ctx = canvas.getContext('2d')
+    
+    w = 475
+    h = 250
+    for i in range(7):
+        # 水平線
+        ctx.fillStyle = "rgb(200,0,0)"
+        ctx.fillRect (0, 0+i*h/7, w, h/13)
+      
+    def fill():
+        ctx.beginPath()
+        ctx.moveTo(0, 0, w*2/5, 0)
+        ctx.lineTo(w*2/5, 0, w*2/5, h/2)
+        ctx.lineTo(w*2/5, h/2, 0, h/2)
+        ctx.lineTo(0, h/2, 0, 0)
+        ctx.fill()
+    ctx.fillStyle = "blue"
+    fill()
+
+
+    
     </script>
     </body>
     </html>
