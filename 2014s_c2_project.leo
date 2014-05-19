@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Created by Leo (http://webpages.charter.net/edreamleo/front.html) -->
+<!-- Created by Leo (http://leoeditor.com/leo_toc.html) -->
 <?xml-stylesheet ekr_test?>
 <leo_file xmlns:leo="http://www.leo-editor.org/2011/leo" >
 <leo_header file_format="2" tnodes="0" max_tnode_index="0" clone_windows="0"/>
@@ -66,8 +66,11 @@ expanded="2014spring.20140509071814.2459,"><vh>@file cmsimply.py</vh></v>
 <v t="2014spring.20140503095553.1932" a="E"><vh>@path wsgi/programs/c2g2</vh>
 <v t="2014spring.20140503095553.1933"><vh>@edit __init__.py</vh></v>
 </v>
-<v t="2014python.20140505100744.1942" a="E"><vh>@path wsgi/programs/c2g3</vh>
+<v t="2014python.20140505100744.1942"><vh>@path wsgi/programs/c2g3</vh>
 <v t="2014python.20140505100744.1943" a="O"><vh>@edit __init__.py</vh></v>
+</v>
+<v t="2014python.20140519083343.1825" a="E"><vh>@path wsgi/programs/c2g5</vh>
+<v t="2014python.20140519083343.1826"><vh>@edit __init__.py</vh></v>
 </v>
 <v t="kmolII_lite.20140505210604.1651" a="E"><vh>@path wsgi/programs/c2g23</vh>
 <v t="kmolII_lite.20140505210604.1652"><vh>@edit __init__.py</vh></v>
@@ -448,6 +451,7 @@ class C2G3(object):
     '''
         return outstring
 </t>
+<t tx="2014python.20140519083343.1825"></t>
 <t tx="2014pythonE.20140224205837.3150"></t>
 <t tx="2014pythonE.20140224205837.3151">QSplitter::handle {
     background-color: #CAE1FF; /* lightSteelBlue1 */
