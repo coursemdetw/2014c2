@@ -1,8 +1,19 @@
-import cherrypy
+#@+leo-ver=5-thin
+#@+node:2014spring.20140519152219.2061: * @file demo1.py
+#@@language python
+#@@tabwidth -4
 
+#@+<<declarations>>
+#@+node:2014spring.20140519152219.2062: ** <<declarations>> (demo1)
+import cherrypy
+#@-<<declarations>>
+#@+others
+#@+node:2014spring.20140519152219.2063: ** class DEMO1
 # 這是 DEMO1 類別的定義
 class DEMO1(object):
     # 各組利用 index 引導隨後的程式執行
+    #@+others
+    #@+node:2014spring.20140519152219.2064: *3* index
     @cherrypy.expose
     def index(self, *args, **kwargs):
         outstring = '''
@@ -50,7 +61,7 @@ def change_color(event):
     grad.addColorStop(1, 'rgb(%s,%s,%s)' %(xc,(255-xc),yc))
     ctx.fillStyle = grad
     ctx.fillRect(0, 0, 600, 600)
-    
+
 doc["body"].bind('mousemove', change_color)
 
 </script>
@@ -60,3 +71,6 @@ doc["body"].bind('mousemove', change_color)
 </html>
 '''
         return outstring
+    #@-others
+#@-others
+#@-leo
