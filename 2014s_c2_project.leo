@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Created by Leo (http://webpages.charter.net/edreamleo/front.html) -->
+<!-- Created by Leo (http://leoeditor.com/leo_toc.html) -->
 <?xml-stylesheet ekr_test?>
 <leo_file xmlns:leo="http://www.leo-editor.org/2011/leo" >
 <leo_header file_format="2" tnodes="0" max_tnode_index="0" clone_windows="0"/>
@@ -63,7 +63,11 @@ expanded="course-mde-tw.20140417093332.2218,"><vh>@file application</vh></v>
 <v t="2014spring.20140503095553.1932"><vh>@path wsgi/programs/c2g2</vh>
 <v t="2014spring.20140503095553.1933"><vh>@edit __init__.py</vh></v>
 </v>
+<<<<<<< HEAD
 <v t="kmolII_lite.20140512083655.1700" a="E"><vh>@path wsgi/programs/c2g23</vh>
+=======
+<v t="kmolII_lite.20140512083655.1700" a="E"><vh>@path wsgi/programs/c2g16</vh>
+>>>>>>> 547fea0374e2cc634a1220b42df7524c192b78bc
 <v t="kmolII_lite.20140512083655.1701"><vh>@edit __init__.py</vh></v>
 </v>
 </v>

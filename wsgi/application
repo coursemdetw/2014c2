@@ -630,8 +630,13 @@ root.c2g1 = c2g1.C2G1()
 import programs.c2g2 as c2g2
 root.c2g2 = c2g2.C2G2()
 
+<<<<<<< HEAD
 import programs.c2g23 as c2g23
 root.c2g23 = c2g23.C2G23()
+=======
+import programs.c2g16 as c2g16
+root.c2g16 = c2g16.C2G16()
+>>>>>>> 547fea0374e2cc634a1220b42df7524c192b78bc
 
 
 # 假如在 os 環境變數中存在 'OPENSHIFT_REPO_DIR', 表示程式在 OpenShift 環境中執行
