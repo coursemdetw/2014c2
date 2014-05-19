@@ -57,12 +57,6 @@ expanded="course-mde-tw.20140417093332.2218,"><vh>@file application</vh></v>
 <v t="2014spring.20140502183555.1776"><vh>c2_w10 - w18</vh></v>
 <v t="2014spring.20140503095553.1876" a="E"><vh>c2_w11</vh>
 <v t="2014spring.20140503095553.1927" a="E"><vh>分組程式開發</vh>
-<<<<<<< HEAD
-=======
-<v t="kmolII_lite.20140505090529.1647" a="E"><vh>@path wsgi/programs/c2g7</vh>
-<v t="kmolII_lite.20140505090529.1648"><vh>@edit __init__.py</vh></v>
-</v>
->>>>>>> 242f48c862ffc1a77a6cd8ddedadf24a134d3955
 <v t="2014spring.20140503095553.1928" a="E"><vh>@path wsgi/programs/c2g1</vh>
 <v t="2014spring.20140503095553.1929"><vh>@edit __init__.py</vh></v>
 </v>
@@ -70,15 +64,7 @@ expanded="course-mde-tw.20140417093332.2218,"><vh>@file application</vh></v>
 <v t="2014spring.20140503095553.1933"><vh>@edit __init__.py</vh></v>
 </v>
 </v>
-<<<<<<< HEAD
-<v t="kmolII_lite.20140519082422.1738" a="E"><vh>@path wsgi/programs/c2g12</vh>
-<v t="kmolII_lite.20140519082422.1739"><vh>@edit __init__.py</vh></v>
-</v>
-</v>
-<v t="2014spring.20140503095553.1883"><vh>利用 pandoc 進行格式轉換</vh>
-=======
 <v t="2014spring.20140503095553.1883" a="E"><vh>利用 pandoc 進行格式轉換</vh>
->>>>>>> 242f48c862ffc1a77a6cd8ddedadf24a134d3955
 <v t="2014spring.20140503095553.1884"><vh>注意事項</vh></v>
 <v t="2014spring.20140503095553.1886"><vh>@button pandoc_auto</vh></v>
 <v t="2014spring.20140503095553.1887" a="E"><vh>@path wsgi/doc</vh>
@@ -961,27 +947,6 @@ root.c2g1 = c2g1.C2G1()
     3. 完成後先在近端測試, 完全符合需求且根據標準流程, 拉下目前協同專案區最新的 github 程式碼後, 檢驗 .leo 是否可以正確開啟, 各對應目錄是否正確配置, application 是否可以正確執行後, 再推送到協同專案區, 並與各分組的 OpenShift 雲端網站進行同步.</t>
 <t tx="2014spring.20140503095553.1928"></t>
 <t tx="2014spring.20140503095553.1932"></t>
-<<<<<<< HEAD
-<t tx="2014spring.20140505200238.1819"></t>
-<t tx="2014spring.20140505200238.2114">注意事項
-
-    Python 版次必須使用 3.3 版
-    Leo Editor 必須使用 4.11 版
-    建立 pdf 與 html 文件則需要 pandoc 與 portableLatex 可攜應用程式(位於 apps 目錄下)
-    Git 則使用可攜版本(位於 apps 目錄下)
-    
-各組 push 資料確認事項
-
-    git config –list 中的 user.name 是否為各組代號 (代號錯誤將無法取分)
-    application 網站是否可以正確執行
-    .leo 檔案是否可以被 Leo Editor 正確開啟
-    專案是否可以正確產生協同報告 pdf 與 html 檔案
-    與 .leo 專案對應的外部目錄與檔案是否正確設定</t>
-<t tx="kmolII_lite.20140505210604.1651"></t>
-<t tx="kmolII_lite.20140519082422.1738"></t>
-=======
-<t tx="kmolII_lite.20140505090529.1647"></t>
->>>>>>> 242f48c862ffc1a77a6cd8ddedadf24a134d3955
 <t tx="public_kmol.20140302202325.1714">break
 
 The break statement in Python terminates the current loop and resumes execution at the next statement, just like the traditional break found in C.
