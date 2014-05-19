@@ -52,7 +52,7 @@
 <v t="2014pythonE.20140414091257.1681" a="E"><vh>@path wsgi</vh>
 <v t="course-mde-tw.20140417093332.2216" a="E"
 expanded="course-mde-tw.20140417093332.2218,"><vh>@file application</vh></v>
-<v t="2014spring.20140509071814.2435"
+<v t="2014spring.20140509071814.2435" a="E"
 expanded="2014spring.20140509071814.2459,"><vh>@file cmsimply.py</vh></v>
 </v>
 </v>
@@ -93,7 +93,7 @@ expanded="2014spring.20140509071814.2459,"><vh>@file cmsimply.py</vh></v>
 <v t="kmolII_lite.20140505210604.1651"><vh>@path wsgi/programs/c2g23</vh>
 <v t="kmolII_lite.20140505210604.1652"><vh>@edit __init__.py</vh></v>
 </v>
-<v t="2014spring.20140505200238.1819" a="E"><vh>@path wsgi/programs/c2g30</vh>
+<v t="2014spring.20140505200238.1819"><vh>@path wsgi/programs/c2g30</vh>
 <v t="2014spring.20140519152219.2033" a="E"
 expanded="2014spring.20140519152219.2035,"><vh>@file __init__.py</vh></v>
 <v t="2014spring.20140519152219.2053"
