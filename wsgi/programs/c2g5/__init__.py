@@ -6,7 +6,7 @@ class C2G5(object):
     @cherrypy.expose
     def index(self, *args, **kwargs):
         outstring = '''
-這是 2014C2 協同專案下的 c2g1 分組程式開發網頁, 以下為 W12 的任務執行內容.<br />
+這是 2014C2 協同專案下的 c2g5 分組程式開發網頁, 以下為 W12 的任務執行內容.<br />
 <!-- 這裡採用相對連結, 而非網址的絕對連結 (這一段為 html 註解) -->
 <a href="fillpoly">c2g5 fillpoly 繪圖</a><br />
 <a href="drawline">c2g5 drawline 繪圖</a><br />
@@ -15,6 +15,7 @@ class C2G5(object):
 <a href="square">c2g5 squared 繪圖</a><br />
 <a href="triangle">c2g5 triangle 繪圖</a><br />
 <a href="JPflag">c2g5 JPflag 繪圖</a><br />
+<a href="USAflag">c2g5 USAflag 繪圖</a><br />
 '''
         return outstring
 
