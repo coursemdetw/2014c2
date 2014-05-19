@@ -1,30 +1,28 @@
 import cherrypy
 
-# 這是 C2G23 類別的定義
-class C2G23(object):
+# 這是 C2G6 類別的定義
+class C2G6(object):
     # 各組利用 index 引導隨後的程式執行
     @cherrypy.expose
     def index(self, *args, **kwargs):
         outstring = '''
-這是 2014C2 協同專案下的 c2g23 分組程式開發網頁, 以下為 W12 的任務執行內容.<br />
+這是 2014C2 協同專案下的 c2g6 分組程式開發網頁, 以下為 W12 的任務執行內容.<br />
 <!-- 這裡採用相對連結, 而非網址的絕對連結 (這一段為 html 註解) -->
-<a href="fillpoly">c2g23 fillpoly 繪圖</a><br />
-<a href="drawline">c2g23 drawline 繪圖</a><br />
-<a href="square">c2g23 square 繪圖</a><br />
-<a href="xindus">c2g23 xindus 繪圖</a><br />
-<a href="triangle">c2g23 triangle 繪圖</a><br />
-<a href="triangle1">c2g23 triangle 繪圖</a><br />
+<a href="fillpoly">c2g6 fillpoly 繪圖</a><br />
+<a href="drawline">c2g6 drawline 繪圖</a><br />
+<a href="triangle">c2g6 triangle 繪圖</a><br />
+<a href="triangle2">c2g6 triangle2 繪圖</a><br />
 '''
         return outstring
 
-    # 以下為 c2g23 組所建立的 CherryPy 程式方法, 這裡的 fillpoly 利用 Brython 執行網際繪圖
+    # 以下為 c2g2 組所建立的 CherryPy 程式方法, 這裡的 fillpoly 利用 Brython 執行網際繪圖
     ''' 
     假如採用下列規畫
     
-    import programs.c2g23 as c2g23
-    root.c2g23 = c2g23.C2G23()
+    import programs.c2g6 as c2g6
+    root.c2g6 = c2g6.C2G6()
     
-    則程式啟動後, 可以利用 /c2g23/fillpoly 呼叫函式執行
+    則程式啟動後, 可以利用 /c2g2/fillpoly 呼叫函式執行
     '''
     @cherrypy.expose
     def fillpoly(self, *args, **kwargs):
@@ -96,8 +94,8 @@ class C2G23(object):
     ''' 
     假如採用下列規畫
     
-    import programs.c2g2 as c2g2
-    root.c2g2 = c2g2.C2G2()
+    import programs.c2g6 as c2g6
+    root.c2g6 = c2g6.C2G6()
     
     則程式啟動後, 可以利用 /c2g1/drawline 呼叫函式執行
     '''
@@ -115,7 +113,7 @@ class C2G23(object):
     <script type="text/python">
     # 導入 doc
     from browser import doc
-
+    
     # 準備繪圖畫布
     canvas = doc["plotarea"]
     ctx = canvas.getContext("2d")
@@ -135,116 +133,13 @@ class C2G23(object):
     </html>
     '''
         return outstring
-        
-    @cherrypy.expose
-    def drawline(self, *args, **kwargs):
-        outstring = '''
-    <!DOCTYPE html> 
-    <html>
-    <head>
-    <meta http-equiv="content-type" content="text/html;charset=utf-8">
-    <script type="text/javascript" src="/static/Brython2.1.0-20140419-113919/brython.js"></script>
-    </head>
-    <body onload="brython({debug:1, cache:'version'})">
-    <canvas id="plotarea" width="800" height="800"></canvas>
-    <script type="text/python">
-    # 導入 doc
-    from browser import doc
 
-    # 準備繪圖畫布
-    canvas = doc["plotarea"]
-    ctx = canvas.getContext("2d")
 
-    # 定義畫線函式
-    def draw_line(x1, y1, x2, y2, linethick = 3, color = "black"):
-        ctx.beginPath()
-        ctx.lineWidth = linethick
-        ctx.moveTo(x1, y1)
-        ctx.lineTo(x2, y2)
-        ctx.strokeStyle = color
-        ctx.stroke()
 
-    draw_line(0, 0, 300, 300)
-    </script>
-    </body>
-    </html>
-    '''
-        return outstring
-        
-    @cherrypy.expose
-    def square(self, *args, **kwargs):
-        outstring = '''
-    <!DOCTYPE html> 
-    <html>
-    <head>
-    <meta http-equiv="content-type" content="text/html;charset=utf-8">
-    <script type="text/javascript" src="/static/Brython2.1.0-20140419-113919/brython.js"></script>
-    </head>
-    <body onload="brython({debug:1, cache:'version'})">
-    <canvas id="plotarea" width="800" height="800"></canvas>
-    <script type="text/python">
-    # 導入 doc
-    from browser import doc
 
-    # 準備繪圖畫布
-    canvas = doc["plotarea"]
-    ctx = canvas.getContext("2d")
 
-    # 定義畫線函式
-    def draw_line(x1, y1, x2, y2, linethick = 3, color = "black"):
-        ctx.beginPath()
-        ctx.lineWidth = linethick
-        ctx.moveTo(x1, y1)
-        ctx.lineTo(x2, y2)
-        ctx.strokeStyle = color
-        ctx.stroke()
 
-    draw_line(100, 100, 100, 100)
-    draw_line(100, 100, 100, 200)
-    draw_line(100, 200, 200, 200)
-    draw_line(200, 200, 200, 100)
-    draw_line(100, 100, 200, 100)
-    </script>
-    </body>
-    </html>
-    '''
 
-        return outstring
-    @cherrypy.expose
-    def xindus(self, *args, **kwargs):
-        outstring = '''
-    <!DOCTYPE html> 
-    <html>
-    <head>
-    <meta http-equiv="content-type" content="text/html;charset=utf-8">
-    <script type="text/javascript" src="/static/Brython2.1.0-20140419-113919/brython.js"></script>
-    </head>
-    <body onload="brython({debug:1, cache:'version'})">
-    <canvas id="plotarea" width="800" height="800"></canvas>
-    <script type="text/python">
-    # 導入 doc
-    from browser import doc
-
-    # 準備繪圖畫布
-    canvas = doc["plotarea"]
-    ctx = canvas.getContext("2d")
-
-    # 定義畫線函式
-    def draw_line(x1, y1, x2, y2, linethick = 3, color = "black"):
-        ctx.beginPath()
-        ctx.lineWidth = linethick
-        ctx.moveTo(x1, y1)
-        ctx.lineTo(x2, y2)
-        ctx.strokeStyle = color
-        ctx.stroke()
-
-    draw_line(100, 100, 200, 200)
-    </script>
-    </body>
-    </html>
-    '''
-
-        return outstring
     @cherrypy.expose
     def triangle(self, *args, **kwargs):
         outstring = '''
@@ -263,6 +158,8 @@ class C2G23(object):
     # 準備繪圖畫布
     canvas = doc["plotarea"]
     ctx = canvas.getContext("2d")
+    # 進行座標轉換, x 軸不變, y 軸反向且移動 800 光點
+    ctx.setTransform(1, 0, 0, -1, 0, 800)
 
     # 定義畫線函式
     def draw_line(x1, y1, x2, y2, linethick = 3, color = "blue"):
@@ -274,16 +171,18 @@ class C2G23(object):
         ctx.stroke()
 
     draw_line(100, 100, 150, 250)
-    draw_line(150, 250, 400, 400)
+    draw_line(150,  250, 400, 400)
     draw_line(400, 400, 100, 100)
+   
     </script>
     </body>
     </html>
     '''
-
         return outstring
+
+
     @cherrypy.expose
-    def triangle1(self, *args, **kwargs):
+    def triangle2(self, *args, **kwargs):
         outstring = '''
     <!DOCTYPE html> 
     <html>
@@ -300,6 +199,8 @@ class C2G23(object):
     # 準備繪圖畫布
     canvas = doc["plotarea"]
     ctx = canvas.getContext("2d")
+    # 進行座標轉換, x 軸不變, y 軸反向且移動 800 光點
+    ctx.setTransform(1, 0, 0, -1, 0, 800)
 
     # 定義畫線函式
     def draw_line(x1, y1, x2, y2, linethick = 3, color = "blue"):
@@ -309,20 +210,23 @@ class C2G23(object):
         ctx.lineTo(x2, y2)
         ctx.strokeStyle = color
         ctx.stroke()
-        
+
     def fill():
         ctx.beginPath()
-        ctx.moveTo(100, 100)
-        ctx.lineTo(150, 250)
-        ctx.lineTo(400, 400)        
+        ctx.moveTo(100,100)
+        ctx.lineTo(150,250)
+        ctx.lineTo(400,400)
         ctx.fill()
 
     ctx.fillStyle = "red"
     fill()
- 
-      </script>
-      </body>
-      </html>
-      '''
- 
+
+    draw_line(100, 100, 150, 250, linethick = 3, color = "blue")
+    draw_line(150, 250, 400, 400, linethick = 3, color = "blue")
+    draw_line(400, 400, 100, 100, linethick = 3, color = "blue")
+
+    </script>
+    </body>
+    </html>
+    '''
         return outstring

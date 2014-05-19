@@ -1,5 +1,5 @@
 import cherrypy
-
+import math
 # 這是 C2G1 類別的定義
 class C2G1(object):
     # 各組利用 index 引導隨後的程式執行
@@ -10,6 +10,12 @@ class C2G1(object):
 <!-- 這裡採用相對連結, 而非網址的絕對連結 (這一段為 html 註解) -->
 <a href="fillpoly">c2g1 fillpoly 繪圖</a><br />
 <a href="drawline">c2g1 drawline 繪圖</a><br />
+<a href="flag">c2g1 flag 繪圖</a><br />
+<a href="star">c2g1 star 繪圖</a><br />
+<a href="square">c2g1 square 繪圖</a><br />
+<a href="triangle">c2g1 triangle 繪圖</a><br />
+<a href="triangle2">c2g1 triangle2 繪圖</a><br />
+
 '''
         return outstring
 
@@ -363,19 +369,132 @@ class C2G1(object):
         ctx.lineTo(x2, y2)
         ctx.strokeStyle = color
         ctx.stroke()
-        
+    def square(x, y, r, color="black"):
+
+        ri=0.381966*r
+        draw_line(x, y+r, x+ri*0.58779, y+ri*0.80902)
+        draw_line(x+ri*0.58779, y+ri*0.80902, x+r*0.95106, y+r*0.30902)
+        draw_line(x+r*0.95106, y+r*0.30902 , x+ri*0.95106, y+ri*-0.30902)
+        draw_line(x+ri*0.95106, y+ri*-0.30902, x+r*0.58779, y+r*-0.80902)
+        draw_line(x+r*0.58779, y+r*-0.80902 ,x,y-ri)
+        draw_line(x,y-ri, x+r*-0.58779, y+r*-0.80902)
+        draw_line(x+r*-0.58779, y+r*-0.80902 , x+ri*-0.95106, y+ri*-0.30902)
+        draw_line(x+ri*-0.95106,y+ri*-0.30902, x+r*-0.95106, y+r*0.30902)
+        draw_line(x+r*-0.95106, y+r*0.30902 , x+ri*-0.58779, y+ri*0.80902)
+        draw_line(x+ri*-0.58779, y+ri*0.80902, x, y+r)
+
+    
+    for i in range(5):
+        square(400, 400, 200)
     # 直接採用外部五點座標不是好方法
     # 應該要寫成函式, 用圓心座標與半徑來控制
     # 而且要計算內五點, 因為空的五芒星不能有交叉線
-    
-    draw_line(400, 500, 458.7785, 319.0983)
-    draw_line(400,  500, 342.2215, 319.0983)
-    draw_line(342.2215, 319.0983, 495.0565, 430.9016)
-    draw_line(458.7785, 319.0983, 305.9535, 430.9016)
-    draw_line(495.05, 430.916, 305.9535, 430.9016)
+    #draw_line(400, 500, 458.7785, 319.0983)
+    #draw_line(400, 500, 342.2215, 319.0983)
+    #draw_line(342.2215, 319.0983, 495.0565, 430.9016)
+    #draw_line(458.7785, 319.0983, 305.9535, 430.9016)
+    #draw_line(495.05, 430.916, 305.9535, 430.9016)
+    #x = 400
+    #y = 400
+    #r = 100
+    #ri = r/4
+    #不知為何，裡面輸入三角函數的算式會跑不出來
+    #draw_line(x, y+r, x+ri*math.cos(54pi/180),y+ri*math.sin(54pi/180))
+    #  draw_line( x+ri*math.cos(54pi/180),y+ri*math.sin(54pi/180), x+r*math.cos(18pi/180), y+r*math.sin(18pi/180))
+    #draw_line(x+r*math.cos(18pi/180), y+r*math.sin(18pi/180) ,x+ri*math.cos(342pi/180),y+ri*math.sin(342pi/180))
+    #draw_line( x+ri*math.cos(342pi/180),y+ri*math.sin(342pi/180), x+r*math.cos(306pi/180), y+r*math.sin(306pi/180)) 
+    #draw_line(x+r*math.cos(306pi/180), y+r*math.sin(306pi/180) ,x+ri,y-ri)
+    #draw_line( x+ri,y-ri, x+r*math.cos(234pi/180), y+r*math.sin(234pi/180))
+    #draw_line(x+r*math.cos(234pi/180), y+r*math.sin(234pi/180) ,x+ri*math.cos(198pi/180),y+ri*math.sin(198pi/180))
+    #draw_line( x+ri*math.cos(198pi/180),y+ri*math.sin(198pi/180), x+r*math.cos(162pi/180), y+r*math.sin(162pi/180)) 
+    #draw_line(x+r*math.cos(162pi/180), y+r*math.sin(162pi/180) ,x+ri*math.cos(126pi/180),y+ri*math.sin(126pi/180))
+    #draw_line( x+ri*math.cos(126pi/180),y+ri*math.sin(126pi/180), x, y+r)
     </script>
     </body>
     </html>
     '''
         return outstring
+    @cherrypy.expose
+    def triangle(self, *args, **kwargs):
+        outstring = '''
+    <!DOCTYPE html> 
+    <html>
+    <head>
+    <meta http-equiv="content-type" content="text/html;charset=utf-8">
+    <script type="text/javascript" src="/static/Brython2.1.0-20140419-113919/brython.js"></script>
+    </head>
+    <body onload="brython({debug:1, cache:'version'})">
+    <canvas id="plotarea" width="800" height="800"></canvas>
+    <script type="text/python">
+    # 導入 doc
+    from browser import doc
 
+    # 準備繪圖畫布
+    canvas = doc["plotarea"]
+    ctx = canvas.getContext("2d")
+    # 進行座標轉換, x 軸不變, y 軸反向且移動 800 光點
+    ctx.setTransform(1, 0, 0, -1, 0, 800)
+
+    # 定義畫線函式
+    def draw_line(x1, y1, x2, y2, linethick = 3, color = "blue"):
+        ctx.beginPath()
+        ctx.lineWidth = linethick
+        ctx.moveTo(x1, y1)
+        ctx.lineTo(x2, y2)
+        ctx.strokeStyle = color
+        ctx.stroke()
+    draw_line(100, 100,150,250)
+    draw_line (150, 250,400,400)
+    draw_line(400, 400,100,100)
+ 
+    
+    </script>
+    </body>
+    </html>
+    '''
+        return outstring
+    @cherrypy.expose
+    def triangle2(self, *args, **kwargs):
+        outstring = '''
+    <!DOCTYPE html> 
+    <html>
+    <head>
+    <meta http-equiv="content-type" content="text/html;charset=utf-8">
+    <script type="text/javascript" src="/static/Brython2.1.0-20140419-113919/brython.js"></script>
+    </head>
+    <body onload="brython({debug:1, cache:'version'})">
+    <canvas id="plotarea" width="800" height="800"></canvas>
+    <script type="text/python">
+    # 導入 doc
+    from browser import doc
+
+    # 準備繪圖畫布
+    canvas = doc["plotarea"]
+    ctx = canvas.getContext("2d")
+    # 進行座標轉換, x 軸不變, y 軸反向且移動 800 光點
+    ctx.setTransform(1, 0, 0, -1, 0, 800)
+
+    # 定義畫線函式
+    def draw_line(x1, y1, x2, y2, linethick = 3, color = "blue"):
+        ctx.beginPath()
+        ctx.lineWidth = linethick
+        ctx.moveTo(x1, y1)
+        ctx.lineTo(x2, y2)
+        ctx.strokeStyle = color
+        ctx.stroke()
+    def full():
+        ctx.beginPath()
+        ctx.moveTo(100,100)
+        ctx.lineTo(150,250)
+        ctx.lineTo(400,400)
+        ctx.lineTo(100,100)
+        ctx.fill()
+        
+    ctx.fillStyle = "red"
+    full()
+
+    </script>
+    </body>
+    </html>
+    '''
+        return outstring
