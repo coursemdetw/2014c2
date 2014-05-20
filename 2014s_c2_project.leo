@@ -78,13 +78,13 @@ expanded="2014spring.20140509071814.2459,"><vh>@file cmsimply.py</vh></v>
 <v t="2014spring.20140512231824.2651" a="E"><vh>@path wsgi/programs/c2g7</vh>
 <v t="2014spring.20140512231824.2652"><vh>@edit __init__.py</vh></v>
 </v>
-<v t="2014spring.20140512231824.2642"><vh>@path wsgi/programs/c2g8</vh>
+<v t="2014spring.20140512231824.2642" a="E"><vh>@path wsgi/programs/c2g8</vh>
 <v t="2014spring.20140512231824.2643"><vh>@edit __init__.py</vh></v>
 </v>
-<v t="2014spring.20140512231824.2655"><vh>@path wsgi/programs/c2g9</vh>
+<v t="2014spring.20140512231824.2655" a="E"><vh>@path wsgi/programs/c2g9</vh>
 <v t="2014spring.20140512231824.2656"><vh>@edit __init__.py</vh></v>
 </v>
-<v t="2014spring.20140520155021.3451"><vh>@path wsgi/programs/c2g12</vh>
+<v t="2014spring.20140520155021.3451" a="E"><vh>@path wsgi/programs/c2g12</vh>
 <v t="2014spring.20140520155021.3452"><vh>@edit __init__.py</vh></v>
 </v>
 <v t="2014spring.20140520155021.3455" a="E"><vh>@path wsgi/programs/c2g14</vh>
@@ -99,7 +99,7 @@ expanded="2014spring.20140509071814.2459,"><vh>@file cmsimply.py</vh></v>
 <v t="kmolII_lite.20140513015136.1753" a="E"><vh>@path wsgi/programs/c2g19</vh>
 <v t="kmolII_lite.20140513015136.1754"><vh>@edit __init__.py</vh></v>
 </v>
-<v t="kmolII_lite.20140505210604.1651"><vh>@path wsgi/programs/c2g23</vh>
+<v t="kmolII_lite.20140505210604.1651" a="E"><vh>@path wsgi/programs/c2g23</vh>
 <v t="kmolII_lite.20140505210604.1652"><vh>@edit __init__.py</vh></v>
 </v>
 <v t="2014spring.20140505200238.1819"><vh>@path wsgi/programs/c2g30</vh>

@@ -392,3 +392,61 @@ class C2G5(object):
     </html>
     '''
         return outstring
+    @cherrypy.expose
+    def JPflag(self, *args, **kwargs):
+        outstring = '''
+    <!DOCTYPE html> 
+    <html>
+    <head>
+    <meta http-equiv="content-type" content="text/html;charset=utf-8">
+    <script type="text/javascript" src="/static/Brython2.1.0-20140419-113919/brython.js"></script>
+    </head>
+    <body onload="brython({debug:1, cache:'version'})">
+    <canvas id="plotarea" width="300" height="200"></canvas>
+    <script type="text/python">
+    # 導入數學模組的所有方法
+    from math import *
+    # 導入時間模組
+    import time
+    # 導入 doc
+    from browser import doc
+
+    # 準備繪圖畫布
+    canvas = doc["plotarea"]
+    ctx = canvas.getContext("2d")
+
+    # 進行座標轉換, x 軸不變, y 軸反向且移動 800 光點
+    ctx.setTransform(1, 0, 0, -1, 0, canvas.height)
+
+    flag_w = canvas.width
+    flag_h = canvas.height
+    circle_x = flag_w/2
+    circle_y = flag_h/2
+    
+    # 定義畫線函式
+    def draw_line(x1, y1, x2, y2, linethick = 3, color = "blue"):
+        ctx.beginPath()
+        ctx.lineWidth = linethick
+        ctx.moveTo(x1, y1)
+        ctx.lineTo(x2, y2)
+        ctx.strokeStyle = color
+        ctx.stroke()
+
+    draw_line(0, 0, 300, 0)
+    draw_line(300, 0, 300, 200)
+    draw_line(300, 200, 0, 200)
+    draw_line(0, 200, 0, 0)  
+
+    ctx.beginPath()
+    #ctx.arc(circle_x, circle_y, flag_h*0.6, 0, pi*2, true)
+    ctx.arc(circle_x, circle_y, 60, 0, pi*2)
+    ctx.closePath()
+    # 填色設為紅色
+    ctx.fillStyle = 'rgb(255, 0, 0)'
+    ctx.fill()
+
+    </script>
+    </body>
+    </html>
+    '''
+        return outstring
