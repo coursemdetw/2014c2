@@ -1,19 +1,19 @@
 #@+leo-ver=5-thin
-#@+node:2014spring.20140519152219.2069: * @file walker.py
+#@+node:2014spring.20140520155021.4821: * @file walker.py
 #@@language python
 #@@tabwidth -4
 
 #@+<<declarations>>
-#@+node:2014spring.20140519152219.2070: ** <<declarations>> (walker)
+#@+node:2014spring.20140520155021.4822: ** <<declarations>> (walker)
 import cherrypy
 #@-<<declarations>>
 #@+others
-#@+node:2014spring.20140519152219.2071: ** class WALKER
+#@+node:2014spring.20140520155021.4823: ** class WALKER
 # 這是 WALKER 類別的定義
 class WALKER(object):
     # 各組利用 index 引導隨後的程式執行
     #@+others
-    #@+node:2014spring.20140519152219.2072: *3* index
+    #@+node:2014spring.20140520155021.4824: *3* index
     @cherrypy.expose
     def index(self, *args, **kwargs):
         outstring = '''
