@@ -10,7 +10,7 @@
 <preferences/>
 <find_panel_settings/>
 <vnodes>
-<v t="2014pythonE.20140224205837.3150" a="E"><vh>@settings</vh>
+<v t="2014pythonE.20140224205837.3150"><vh>@settings</vh>
 <v t="2014pythonE.20140224205837.3151"><vh>@data qt-gui-plugin-style-sheet</vh></v>
 <v t="2014pythonE.20140224205837.3152"><vh>@string initial_split_orientation = horizontal</vh></v>
 <v t="2014pythonE.20140331085053.2405"><vh>@string rst3_write_intermediate_extension = .rst</vh></v>
@@ -50,9 +50,9 @@
 <v t="2014pythonE.20140414091257.1917"><vh>另一個例子</vh></v>
 </v>
 <v t="2014pythonE.20140414091257.1681" a="E"><vh>@path wsgi</vh>
-<v t="course-mde-tw.20140417093332.2216" a="E"
+<v t="course-mde-tw.20140417093332.2216"
 expanded="course-mde-tw.20140417093332.2218,"><vh>@file application</vh></v>
-<v t="2014spring.20140509071814.2435" a="E"
+<v t="2014spring.20140509071814.2435"
 expanded="2014spring.20140509071814.2459,"><vh>@file cmsimply.py</vh></v>
 </v>
 </v>
@@ -131,6 +131,13 @@ expanded="2014spring.20140520155021.4823,"><vh>@file walker.py</vh></v>
 </v>
 </v>
 <v t="2014spring.20140502183555.1864"><vh>c2_w12 任務</vh></v>
+<v t="2014spring.20140521094048.1967" a="E"><vh>reeborg 機器人專案</vh>
+<v t="2014spring.20140521094048.1968" a="E"><vh>@path wsgi/static/reeborg</vh>
+<v t="2014spring.20140521094048.1972"><vh>@edit index.html</vh></v>
+<v t="2014spring.20140521094048.1969"><vh>@edit world.html</vh></v>
+<v t="2014spring.20140521094048.1970"><vh>@edit learn_py.html</vh></v>
+</v>
+</v>
 </vnodes>
 <tnodes>
 <t tx="2014python.20140224210642.3165"></t>
@@ -1306,6 +1313,8 @@ class C2G15(object):
 <t tx="2014spring.20140520155021.3451"></t>
 <t tx="2014spring.20140520155021.3455"></t>
 <t tx="2014spring.20140520155021.4795"></t>
+<t tx="2014spring.20140521094048.1967"></t>
+<t tx="2014spring.20140521094048.1968"></t>
 <t tx="kmolII_lite.20140505210604.1651"></t>
 <t tx="kmolII_lite.20140513015136.1753"></t>
 <t tx="public_kmol.20140302202325.1714">break
