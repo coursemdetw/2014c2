@@ -349,7 +349,6 @@ class C2G1(object):
     高度:<input type=text name=h value=1 ><br />
     <input type="submit" value="send">
     <input type="reset" value="reset">
-    <br/>目前還不能用<br/>
     </form>
     <canvas id="plotarea" width="300" height="200"></canvas>
     <script type="text/python">
@@ -400,7 +399,7 @@ class C2G1(object):
     高度:<input type=text name=h value=1 ><br />
     <input type="submit" value="send">
     <input type="reset" value="reset">
-    <br/>目前還不能用<br/>
+    <br>仿照之前輸入表單的方法，把輸入變數令為常和寬的變數，接下來只要【注意語法】就可以成功<br />
     </form>
     <canvas id="plotarea" width="'''+(w)+'''" height="'''+(h)+'''"></canvas>
     <script type="text/python">
