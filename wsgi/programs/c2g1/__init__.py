@@ -1,5 +1,5 @@
 import cherrypy
-
+import math
 # 這是 C2G1 類別的定義
 class C2G1(object):
     # 各組利用 index 引導隨後的程式執行
@@ -10,9 +10,15 @@ class C2G1(object):
 <!-- 這裡採用相對連結, 而非網址的絕對連結 (這一段為 html 註解) -->
 <a href="fillpoly">c2g1 fillpoly 繪圖</a><br />
 <a href="drawline">c2g1 drawline 繪圖</a><br />
-<a href="animate1">c2g1 animate1 繪圖</a><br />
 <a href="flag">c2g1 flag 繪圖</a><br />
+<a href="star">c2g1 star 繪圖</a><br />
 <a href="square">c2g1 square 繪圖</a><br />
+<a href="triangle">c2g1 triangle 繪圖</a><br />
+<a href="triangle2">c2g1 triangle2 繪圖</a><br />
+<a href="Japenflag">c2g1 日本國旗 繪圖(可改大小)</a><br />
+<a href="USAflag">c2g1 美國國旗 繪圖</a><br />
+<a href="circle">c2g1 教學用 繪圖</a><br />
+
 '''
         return outstring
 
@@ -291,7 +297,236 @@ class C2G1(object):
     </html>
     '''
         return outstring
-        
+    @cherrypy.expose
+    def circle(self, *args, **kwargs):
+        outstring = '''
+    <!DOCTYPE html> 
+    <html>
+    <head>
+    <meta http-equiv="content-type" content="text/html;charset=utf-8">
+    <script type="text/javascript" src="/static/Brython2.1.0-20140419-113919/brython.js"></script>
+    </head>
+    <body onload="brython({debug:1, cache:'version'})">
+    <canvas id="plotarea" width="800" height="800"></canvas>
+    <script type="text/python">
+    # 導入 doc
+    from browser import doc
+    import math
+
+    # 準備繪圖畫布
+    canvas = doc["plotarea"]
+    ctx = canvas.getContext("2d")
+    # 進行座標轉換, x 軸不變, y 軸反向且移動 canvas.height 單位光點
+    # ctx.setTransform(1, 0, 0, -1, 0, canvas.height)
+    # 以下採用 canvas 原始座標繪圖
+    w = 400
+    h = 400
+    cx = w/4
+    cy = h/4
+    ctx.beginPath()
+    ctx.arc(cx, cy, w/8, 0, math.pi*2, true)
+    ctx.closePath()
+    ctx.fillStyle = 'rgb(0, 0, 149)'
+    ctx.fill()
+    </script>
+    </body>
+    </html>
+    '''
+        return outstring
+    @cherrypy.expose
+    def Japenflag(self, *args, **kwargs):
+        outstring = '''
+
+    <!DOCTYPE html> 
+    <html>
+    <head>
+    <meta http-equiv="content-type" content="text/html;charset=utf-8">
+    <script type="text/javascript" src="/static/Brython2.1.0-20140419-113919/brython.js"></script>
+    </head>
+    <body onload="brython({debug:1, cache:'version'})">
+    <form method="post" action="Japenflag2">
+    寬度:<input type=text name=w value=1 ><br />
+    高度:<input type=text name=h value=1 ><br />
+    <input type="submit" value="send">
+    <input type="reset" value="reset">
+    </form>
+    <canvas id="plotarea" width="300" height="200"></canvas>
+    <script type="text/python">
+    # 導入 doc
+    from browser import doc
+    import math
+
+    # 準備繪圖畫布
+    canvas = doc["plotarea"]
+    ctx = canvas.getContext("2d")
+    # 進行座標轉換, x 軸不變, y 軸反向且移動 canvas.height 單位光點
+    # ctx.setTransform(1, 0, 0, -1, 0, canvas.height)
+    # 以下採用 canvas 原始座標繪圖
+    flag_w = canvas.width
+    flag_h = canvas.height
+    #外框
+    circle_x = flag_w/2
+    circle_y = flag_h/2
+    ctx.fillRect(0,0,flag_w,flag_h)
+    # 先畫白旗
+    ctx.fillStyle = '#fff'
+    ctx.fillRect(1,1,flag_w-2,flag_h-2)
+
+    # 紅日
+    ctx.beginPath()
+    ctx.arc(circle_x, circle_y, flag_h*3/10, 0, math.pi*2, true)
+    ctx.closePath()
+    # 填色設為紅色
+    ctx.fillStyle='rgb(255, 0, 0)'
+    ctx.fill()
+    </script>
+    </body>
+    </html>
+    '''
+        return outstring
+    @cherrypy.expose
+    def Japenflag2(self, w = None, h = None, *args, **kwargs):
+        outstring = '''
+    <!DOCTYPE html> 
+    <html>
+    <head>
+    <meta http-equiv="content-type" content="text/html;charset=utf-8">
+    <script type="text/javascript" src="/static/Brython2.1.0-20140419-113919/brython.js"></script>
+    </head>
+    <body onload="brython({debug:1, cache:'version'})">
+    <form method="post" action="Japenflag2">
+    寬度:<input type=text name=w value=1 ><br />
+    高度:<input type=text name=h value=1 ><br />
+    <input type="submit" value="send">
+    <input type="reset" value="reset">
+    <br>仿照之前輸入表單的方法，把輸入變數令為常和寬的變數，接下來只要【注意語法】就可以成功<br />
+    </form>
+    <canvas id="plotarea" width="'''+(w)+'''" height="'''+(h)+'''"></canvas>
+    <script type="text/python">
+    # 導入 doc
+    from browser import doc
+    import math
+
+    # 準備繪圖畫布
+    canvas = doc["plotarea"]
+    ctx = canvas.getContext("2d")
+    # 進行座標轉換, x 軸不變, y 軸反向且移動 canvas.height 單位光點
+    # ctx.setTransform(1, 0, 0, -1, 0, canvas.height)
+    # 以下採用 canvas 原始座標繪圖
+
+    flag_w = '''+(w)+'''
+    flag_h = '''+(h)+'''
+    #外框
+    circle_x = flag_w/2
+    circle_y = flag_h/2
+    ctx.fillRect(0,0,flag_w,flag_h)
+    # 先畫白旗
+    ctx.fillStyle = '#fff'
+    ctx.fillRect(1,1,flag_w-2,flag_h-2)
+
+    # 紅日
+    ctx.beginPath()
+    ctx.arc(circle_x, circle_y, flag_h*3/10, 0, math.pi*2, true)
+    ctx.closePath()
+    # 填色設為紅色
+    ctx.fillStyle='rgb(255, 0, 0)'
+    ctx.fill()
+    </script>
+    </body>
+    </html>
+    '''
+        return outstring
+    @cherrypy.expose
+    def USAflag(self, *args, **kwargs):
+        outstring = '''
+    <!DOCTYPE html> 
+    <html>
+    <head>
+    <meta http-equiv="content-type" content="text/html;charset=utf-8">
+    <script type="text/javascript" src="/static/Brython2.1.0-20140419-113919/brython.js"></script>
+    </head>
+    <body onload="brython({debug:1, cache:'version'})">
+    <canvas id="plotarea" width="800" height="800"></canvas>
+    <script type="text/python">
+    # 導入 doc
+    from browser import doc
+    import math
+
+    # 準備繪圖畫布
+    canvas = doc["plotarea"]
+    ctx = canvas.getContext("2d")
+    # 進行座標轉換, x 軸不變, y 軸反向且移動 262 光點
+    ctx.setTransform(1, 0, 0, -1, 0, 262)
+    # x, y 為中心,  r 為半徑, angle 旋轉角,  solid 空心或實心,  color 顏色
+    def star(x, y, r, angle=0, solid=False, color="white"):
+        # 以 x, y 為圓心, 計算五個外點
+        deg = math.pi/180
+        # 圓心到水平線距離
+        a = r*math.cos(72*deg)
+        # a 頂點向右到內點距離
+        b = (r*math.cos(72*deg)/math.cos(36*deg))*math.sin(36*deg)
+        # 利用畢氏定理求內點半徑
+        rin = math.sqrt(a**2 + b**2)
+        # 查驗 a, b 與 rin
+        #print(a, b, rin)
+        if(solid):
+            ctx.beginPath()
+        for i in range(5):
+            xout = (x + r*math.sin((360/5)*deg*i+angle*deg))
+            yout = (y + r*math.cos((360/5)*deg*i+angle*deg))
+            # 外點增量 + 1
+            xout2 = x + r*math.sin((360/5)*deg*(i+1)+angle*deg)
+            yout2 = y + r*math.cos((360/5)*deg*(i+1)+angle*deg)
+            xin = x + rin*math.sin((360/5)*deg*i+36*deg+angle*deg)
+            yin = y + rin*math.cos((360/5)*deg*i+36*deg+angle*deg)
+            # 查驗外點與內點座標
+            #print(xout, yout, xin, yin)
+            if(solid):
+                # 填色
+                if(i==0):
+                    ctx.moveTo(xout, yout)
+                    ctx.lineTo(xin, yin)
+                    ctx.lineTo(xout2, yout2)
+                else:
+                    ctx.lineTo(xin, yin)
+                    ctx.lineTo(xout2, yout2)
+        if(solid):
+            ctx.fillStyle = 'white'
+            ctx.fill()
+
+    for i in range(7):
+        ctx.fillStyle='rgb(255, 0, 0)'
+        ctx.fillRect(0, 0+40*i, 390, 20)
+
+    ctx.fillStyle='rgb(0, 0, 149)'
+    ctx.fillRect(0, 120, 210, 140)
+
+    for i in range(6):
+        for j in range(5):
+            star(20+34*i, 134+28*j, 8, 0, True, "white")
+    for i in range(5):
+        for j in range(4):
+            star(36+34*i, 148+28*j, 8, 0, True, "white")
+      # 定義畫線函式
+    def draw_line(x1, y1, x2, y2, linethick = 3, color = "black"):
+        ctx.beginPath()
+        ctx.lineWidth = linethick
+        ctx.moveTo(x1, y1)
+        ctx.lineTo(x2, y2)
+        ctx.strokeStyle = color
+        ctx.stroke()
+    
+    draw_line(0, 0, 390, 0)
+    draw_line(390, 0, 390, 260)
+    draw_line(390, 260, 0, 260)
+    draw_line(0, 260, 0, 0)
+    
+    </script>
+    </body>
+    </html>
+'''  
+        return outstring
+
     @cherrypy.expose
     def square(self, *args, **kwargs):
         outstring = '''
@@ -322,10 +557,174 @@ class C2G1(object):
         ctx.strokeStyle = color
         ctx.stroke()
 
-    draw_line(300, 300, 300, 500)
-    draw_line(300,  300, 500, 300)
-    draw_line(300, 500, 500, 500)
-    draw_line(500, 300, 500, 500)
+    def square(x, y, width, color="black"):
+        half = width/2
+        draw_line(x+half, y+half, x+half, y-half)
+        draw_line(x+half, y-half, x-half, y-half, color="red")
+        draw_line(x-half, y-half, x-half, y+half)
+        draw_line(x-half, y+half, x+half, y+half)
+    
+    for i in range(5):
+        square(400, 400, 200+50*i)
+        square(400+i*50, 400-i*50, 200)
+    </script>
+    </body>
+    </html>
+    '''
+        return outstring
+    @cherrypy.expose
+    def star(self, *args, **kwargs):
+        outstring = '''
+    <!DOCTYPE html> 
+    <html>
+    <head>
+    <meta http-equiv="content-type" content="text/html;charset=utf-8">
+    <script type="text/javascript" src="/static/Brython2.1.0-20140419-113919/brython.js"></script>
+    </head>
+    <body onload="brython({debug:1, cache:'version'})">
+    <canvas id="plotarea" width="800" height="800"></canvas>
+    <script type="text/python">
+    # 導入 doc
+    from browser import doc
+
+    # 準備繪圖畫布
+    canvas = doc["plotarea"]
+    ctx = canvas.getContext("2d")
+    # 進行座標轉換, x 軸不變, y 軸反向且移動 800 光點
+    ctx.setTransform(1, 0, 0, -1, 0, 800)
+
+    # 定義畫線函式
+    def draw_line(x1, y1, x2, y2, linethick = 3, color = "black"):
+        ctx.beginPath()
+        ctx.lineWidth = linethick
+        ctx.moveTo(x1, y1)
+        ctx.lineTo(x2, y2)
+        ctx.strokeStyle = color
+        ctx.stroke()
+    def square(x, y, r, color="black"):
+
+        ri=0.381966*r
+        draw_line(x, y+r, x+ri*0.58779, y+ri*0.80902)
+        draw_line(x+ri*0.58779, y+ri*0.80902, x+r*0.95106, y+r*0.30902)
+        draw_line(x+r*0.95106, y+r*0.30902 , x+ri*0.95106, y+ri*-0.30902)
+        draw_line(x+ri*0.95106, y+ri*-0.30902, x+r*0.58779, y+r*-0.80902)
+        draw_line(x+r*0.58779, y+r*-0.80902 ,x,y-ri)
+        draw_line(x,y-ri, x+r*-0.58779, y+r*-0.80902)
+        draw_line(x+r*-0.58779, y+r*-0.80902 , x+ri*-0.95106, y+ri*-0.30902)
+        draw_line(x+ri*-0.95106,y+ri*-0.30902, x+r*-0.95106, y+r*0.30902)
+        draw_line(x+r*-0.95106, y+r*0.30902 , x+ri*-0.58779, y+ri*0.80902)
+        draw_line(x+ri*-0.58779, y+ri*0.80902, x, y+r)
+
+    
+    for i in range(5):
+        square(400, 400, 200)
+    # 直接採用外部五點座標不是好方法
+    # 應該要寫成函式, 用圓心座標與半徑來控制
+    # 而且要計算內五點, 因為空的五芒星不能有交叉線
+    #draw_line(400, 500, 458.7785, 319.0983)
+    #draw_line(400, 500, 342.2215, 319.0983)
+    #draw_line(342.2215, 319.0983, 495.0565, 430.9016)
+    #draw_line(458.7785, 319.0983, 305.9535, 430.9016)
+    #draw_line(495.05, 430.916, 305.9535, 430.9016)
+    #x = 400
+    #y = 400
+    #r = 100
+    #ri = r/4
+    #不知為何，裡面輸入三角函數的算式會跑不出來
+    #draw_line(x, y+r, x+ri*math.cos(54pi/180),y+ri*math.sin(54pi/180))
+    #  draw_line( x+ri*math.cos(54pi/180),y+ri*math.sin(54pi/180), x+r*math.cos(18pi/180), y+r*math.sin(18pi/180))
+    #draw_line(x+r*math.cos(18pi/180), y+r*math.sin(18pi/180) ,x+ri*math.cos(342pi/180),y+ri*math.sin(342pi/180))
+    #draw_line( x+ri*math.cos(342pi/180),y+ri*math.sin(342pi/180), x+r*math.cos(306pi/180), y+r*math.sin(306pi/180)) 
+    #draw_line(x+r*math.cos(306pi/180), y+r*math.sin(306pi/180) ,x+ri,y-ri)
+    #draw_line( x+ri,y-ri, x+r*math.cos(234pi/180), y+r*math.sin(234pi/180))
+    #draw_line(x+r*math.cos(234pi/180), y+r*math.sin(234pi/180) ,x+ri*math.cos(198pi/180),y+ri*math.sin(198pi/180))
+    #draw_line( x+ri*math.cos(198pi/180),y+ri*math.sin(198pi/180), x+r*math.cos(162pi/180), y+r*math.sin(162pi/180)) 
+    #draw_line(x+r*math.cos(162pi/180), y+r*math.sin(162pi/180) ,x+ri*math.cos(126pi/180),y+ri*math.sin(126pi/180))
+    #draw_line( x+ri*math.cos(126pi/180),y+ri*math.sin(126pi/180), x, y+r)
+    </script>
+    </body>
+    </html>
+    '''
+        return outstring
+    @cherrypy.expose
+    def triangle(self, *args, **kwargs):
+        outstring = '''
+    <!DOCTYPE html> 
+    <html>
+    <head>
+    <meta http-equiv="content-type" content="text/html;charset=utf-8">
+    <script type="text/javascript" src="/static/Brython2.1.0-20140419-113919/brython.js"></script>
+    </head>
+    <body onload="brython({debug:1, cache:'version'})">
+    <canvas id="plotarea" width="800" height="800"></canvas>
+    <script type="text/python">
+    # 導入 doc
+    from browser import doc
+
+    # 準備繪圖畫布
+    canvas = doc["plotarea"]
+    ctx = canvas.getContext("2d")
+    # 進行座標轉換, x 軸不變, y 軸反向且移動 800 光點
+    ctx.setTransform(1, 0, 0, -1, 0, 800)
+
+    # 定義畫線函式
+    def draw_line(x1, y1, x2, y2, linethick = 3, color = "blue"):
+        ctx.beginPath()
+        ctx.lineWidth = linethick
+        ctx.moveTo(x1, y1)
+        ctx.lineTo(x2, y2)
+        ctx.strokeStyle = color
+        ctx.stroke()
+    draw_line(100, 100,150,250)
+    draw_line (150, 250,400,400)
+    draw_line(400, 400,100,100)
+ 
+    
+    </script>
+    </body>
+    </html>
+    '''
+        return outstring
+    @cherrypy.expose
+    def triangle2(self, *args, **kwargs):
+        outstring = '''
+    <!DOCTYPE html> 
+    <html>
+    <head>
+    <meta http-equiv="content-type" content="text/html;charset=utf-8">
+    <script type="text/javascript" src="/static/Brython2.1.0-20140419-113919/brython.js"></script>
+    </head>
+    <body onload="brython({debug:1, cache:'version'})">
+    <canvas id="plotarea" width="800" height="800"></canvas>
+    <script type="text/python">
+    # 導入 doc
+    from browser import doc
+
+    # 準備繪圖畫布
+    canvas = doc["plotarea"]
+    ctx = canvas.getContext("2d")
+    # 進行座標轉換, x 軸不變, y 軸反向且移動 800 光點
+    ctx.setTransform(1, 0, 0, -1, 0, 800)
+
+    # 定義畫線函式
+    def draw_line(x1, y1, x2, y2, linethick = 3, color = "blue"):
+        ctx.beginPath()
+        ctx.lineWidth = linethick
+        ctx.moveTo(x1, y1)
+        ctx.lineTo(x2, y2)
+        ctx.strokeStyle = color
+        ctx.stroke()
+    def full():
+        ctx.beginPath()
+        ctx.moveTo(100,100)
+        ctx.lineTo(150,250)
+        ctx.lineTo(400,400)
+        ctx.lineTo(100,100)
+        ctx.fill()
+        
+    ctx.fillStyle = "red"
+    full()
+
     </script>
     </body>
     </html>
