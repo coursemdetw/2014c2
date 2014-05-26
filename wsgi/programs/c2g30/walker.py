@@ -1,8 +1,19 @@
-import cherrypy
+#@+leo-ver=5-thin
+#@+node:2014spring.20140520155021.4821: * @file walker.py
+#@@language python
+#@@tabwidth -4
 
+#@+<<declarations>>
+#@+node:2014spring.20140520155021.4822: ** <<declarations>> (walker)
+import cherrypy
+#@-<<declarations>>
+#@+others
+#@+node:2014spring.20140520155021.4823: ** class WALKER
 # 這是 WALKER 類別的定義
 class WALKER(object):
     # 各組利用 index 引導隨後的程式執行
+    #@+others
+    #@+node:2014spring.20140520155021.4824: *3* index
     @cherrypy.expose
     def index(self, *args, **kwargs):
         outstring = '''
@@ -215,7 +226,7 @@ def wallDistance(theta):
     face=[]
     x = playerPos[0]
     y = playerPos[1]
-    
+
     atX=floor(x)
     atY=floor(y)
 
@@ -383,7 +394,7 @@ def shoot():
     canvas.save()
     canvas.strokeStyle = "#FFFF00"
     canvas.beginPath()
-    
+
     canvas.moveTo(190+xOff, 140+yOff)
     canvas.lineTo(250+xOff, 200+yOff)
     canvas.closePath()
@@ -402,7 +413,7 @@ def update():
         playerPosZ = 1 + jumpCycle*(20-jumpCycle)/110
     elif key[4]:
         jumpCycle=20
-    
+
     if key[0]:
         if not key[1]:
             playerDir = playerDir-0.07 # left
@@ -429,7 +440,7 @@ def update():
             playerVelY = playerVelY - 0.015
         else:
             playerVelY=0
-    
+
     if playerVelY!=0:
         oldX=playerPos[0]
         oldY=playerPos[1]
@@ -442,7 +453,7 @@ def update():
         if not nearWall(oldX, newY):
             playerPos[1]=newY
             change=True
-    
+
     if playerVelY:
         wobbleGun()
     if change:
@@ -468,7 +479,7 @@ def changeKey(which, to):
 def stop():
     global key
     key = [0,0,0,0,0]
-    
+
 def move(x):
     changeKey(x,1)
     timer.set_timeout(stop, 50)
@@ -501,7 +512,7 @@ def mouse_down(e):
     mpos = [e.x,e.y]
     e.preventDefault()
     e.stopPropagation()
-    
+
 def mouse_move(e):
     global mpos
     if mpos==None:
@@ -565,3 +576,6 @@ init()
 </html>
 '''
         return outstring
+    #@-others
+#@-others
+#@-leo

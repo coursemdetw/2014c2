@@ -1,8 +1,19 @@
-import cherrypy
+#@+leo-ver=5-thin
+#@+node:2014spring.20140520155021.4813: * @file involute.py
+#@@language python
+#@@tabwidth -4
 
+#@+<<declarations>>
+#@+node:2014spring.20140520155021.4814: ** <<declarations>> (involute)
+import cherrypy
+#@-<<declarations>>
+#@+others
+#@+node:2014spring.20140520155021.4815: ** class INVOLUTE
 # 這是 INVOLUTE 類別的定義
 class INVOLUTE(object):
     # 各組利用 index 引導隨後的程式執行
+    #@+others
+    #@+node:2014spring.20140520155021.4816: *3* index
     @cherrypy.expose
     def index(self, *args, **kwargs):
         outstring = '''
@@ -37,7 +48,7 @@ class INVOLUTE(object):
         ctx.lineTo(x2, y2)
         ctx.strokeStyle = color
         ctx.stroke()
-    
+
     def draw_circle(x, y, r, linethick=1, color="black"):
         ctx.beginPath()
         ctx.lineWidth = linethick
@@ -147,3 +158,6 @@ class INVOLUTE(object):
     </html>
 '''
         return outstring
+    #@-others
+#@-others
+#@-leo
