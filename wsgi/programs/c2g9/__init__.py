@@ -16,9 +16,9 @@ class C2G9(object):
 <a href=" triangle2">c2g9 triangle2 繪圖</a><br />
 <a href=" Japan_flag">c2g9 Japan_flag 繪圖</a><br />
 <a href=" American_flag ">c2g9 American_flag  繪圖</a><br />
-<a href=" American_flagc2g14_1 ">c2g9 American_flagc2g14_1  繪圖</a><br />
-<a href=" American_flagc2g14_2 ">c2g9 American_flagc2g14_2  繪圖</a><br />
-<a href=" American_flagc2g14_3 ">c2g9 American_flagc2g14_3  繪圖</a><br />
+<a href=" American_flagc2_1 ">c2g9 American_flagc2_1  繪圖</a><br />
+<a href=" American_flagc2_2 ">c2g9 American_flagc2_2  繪圖</a><br />
+<a href=" American_flagc2_3 ">c2g9 American_flagc2_3  繪圖</a><br />
 '''
         return outstring
 
@@ -440,7 +440,7 @@ class C2G9(object):
     '''
         return outstring
     @cherrypy.expose
-    def American_flagc2g14_1 (self, *args, **kwargs):
+    def American_flagc2_1 (self, *args, **kwargs):
         '''
         原始程式來源: http://blog.roodo.com/esabear/archives/19215194.html
         改寫為 Brython 程式
@@ -549,7 +549,7 @@ class C2G9(object):
     '''
         return outstring
     @cherrypy.expose
-    def American_flagc2g14_2 (self, *args, **kwargs):
+    def American_flagc2_2 (self, *args, **kwargs):
         '''
         原始程式來源: http://blog.roodo.com/esabear/archives/19215194.html
         改寫為 Brython 程式
@@ -705,7 +705,7 @@ class C2G9(object):
     '''
         return outstring
     @cherrypy.expose
-    def American_flagc2g14_3 (self, *args, **kwargs):
+    def American_flagc2_3 (self, *args, **kwargs):
         '''
         原始程式來源: http://blog.roodo.com/esabear/archives/19215194.html
         改寫為 Brython 程式
