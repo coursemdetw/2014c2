@@ -1,19 +1,19 @@
 #@+leo-ver=5-thin
-#@+node:2014spring.20140519152219.2061: * @file demo1.py
+#@+node:2014spring.20140520155021.4817: * @file demo1.py
 #@@language python
 #@@tabwidth -4
 
 #@+<<declarations>>
-#@+node:2014spring.20140519152219.2062: ** <<declarations>> (demo1)
+#@+node:2014spring.20140520155021.4818: ** <<declarations>> (demo1)
 import cherrypy
 #@-<<declarations>>
 #@+others
-#@+node:2014spring.20140519152219.2063: ** class DEMO1
+#@+node:2014spring.20140520155021.4819: ** class DEMO1
 # 這是 DEMO1 類別的定義
 class DEMO1(object):
     # 各組利用 index 引導隨後的程式執行
     #@+others
-    #@+node:2014spring.20140519152219.2064: *3* index
+    #@+node:2014spring.20140520155021.4820: *3* index
     @cherrypy.expose
     def index(self, *args, **kwargs):
         outstring = '''

@@ -1,8 +1,19 @@
-import cherrypy
+#@+leo-ver=5-thin
+#@+node:2014spring.20140520155021.4796: * @file __init__.py
+#@@language python
+#@@tabwidth -4
 
+#@+<<declarations>>
+#@+node:2014spring.20140520155021.4797: ** <<declarations>> (__init__)
+import cherrypy
+#@-<<declarations>>
+#@+others
+#@+node:2014spring.20140520155021.4798: ** class C2G30
 # 這是 C2G30 類別的定義
 class C2G30(object):
     # 各組利用 index 引導隨後的程式執行
+    #@+others
+    #@+node:2014spring.20140520155021.4799: *3* index
     @cherrypy.expose
     def index(self, *args, **kwargs):
         outstring = '''
@@ -16,14 +27,14 @@ class C2G30(object):
 <a href="star">c2g30 star 繪圖</a><br />
 '''
         return outstring
-
+    #@+node:2014spring.20140520155021.4800: *3* fillpoly
     # 以下為 c2g30 組所建立的 CherryPy 程式方法, 這裡的 fillpoly 利用 Brython 執行網際繪圖
     ''' 
     假如採用下列規畫
-    
+
     import programs.c2g30 as c2g30
     root.c2g30 = c2g30.C2G30()
-    
+
     則程式啟動後, 可以利用 /c2g30/fillpoly 呼叫函式執行
     '''
     @cherrypy.expose
@@ -93,14 +104,15 @@ class C2G30(object):
     </html>
     '''
         return outstring
+    #@+node:2014spring.20140520155021.4801: *3* drawline
     ''' 
     假如採用下列規畫
-    
+
     import programs.c2g30 as c2g30
     root.c2g30 = c2g30.C2G30()
-    
+
     則程式啟動後, 可以利用 /c2g30/drawline 呼叫函式執行
-    
+
     context.setTransform(a,b,c,d,e,f)
     a	To Scale the object across along the X axis
     b	To skew the object horizontally(i.e horizontal shear)
@@ -108,7 +120,7 @@ class C2G30(object):
     d	To scale the object across Y axis
     e	To translate the object along the X axis
     f	To translate the object along the Y axis
-    
+
     a c e
     b d f
     0 0 1
@@ -149,7 +161,7 @@ class C2G30(object):
     </html>
     '''
         return outstring
-        
+    #@+node:2014spring.20140520155021.4802: *3* animate1
     @cherrypy.expose
     def animate1(self, *args, **kwargs):
         outstring = '''
@@ -165,7 +177,7 @@ class C2G30(object):
     # 導入 doc
     from browser import doc
     import browser.timer
-    
+
     # 準備繪圖畫布
     canvas = doc["plotarea"]
     ctx = canvas.getContext("2d")
@@ -177,7 +189,7 @@ class C2G30(object):
     inc = 1
     # 將畫筆設為紅色
     ctx.strokeStyle = "rgb(255, 0, 0)"
-    
+
     # 定義畫水平線函式
     def draw():
         # 將 y 與 inc 設為全域變數
@@ -210,7 +222,7 @@ class C2G30(object):
     doc['start'].bind('click', start)
     # 將 id 為 stop 的按鈕與 stop  函式利用 click 事件加以連結
     doc['stop'].bind('click', stop)
-    
+
     </script>
     <!-- 這裡建立 start 與 stop 按鈕-->
     <button id="start">start</button>
@@ -219,7 +231,7 @@ class C2G30(object):
     </html>
     '''
         return outstring
-        
+    #@+node:2014spring.20140520155021.4803: *3* flag
     @cherrypy.expose
     def flag(self, *args, **kwargs):
         '''
@@ -292,7 +304,7 @@ class C2G30(object):
     </html>
     '''
         return outstring
-        
+    #@+node:2014spring.20140520155021.4804: *3* square
     @cherrypy.expose
     def square(self, *args, **kwargs):
         outstring = '''
@@ -329,7 +341,7 @@ class C2G30(object):
         draw_line(x+half, y-half, x-half, y-half, color="red")
         draw_line(x-half, y-half, x-half, y+half)
         draw_line(x-half, y+half, x+half, y+half)
-    
+
     for i in range(5):
         square(400, 400, 200+50*i)
         square(400+i*50, 400-i*50, 200)
@@ -338,7 +350,7 @@ class C2G30(object):
     </html>
     '''
         return outstring
-        
+    #@+node:2014spring.20140520155021.4805: *3* star
     @cherrypy.expose
     def star(self, *args, **kwargs):
         outstring = '''
@@ -369,7 +381,7 @@ class C2G30(object):
         ctx.lineTo(x2, y2)
         ctx.strokeStyle = color
         ctx.stroke()
-    
+
     # x, y 為中心,  r 為半徑, angle 旋轉角,  solid 空心或實心,  color 顏色
     def star(x, y, r, angle=0, solid=False, color="#f00"):
         # 以 x, y 為圓心, 計算五個外點
@@ -422,3 +434,495 @@ class C2G30(object):
     </html>
     '''
         return outstring
+    #@+node:2014spring.20140520155021.4806: *3* w13_1_1
+    # w13_1_1 是第十三週第一題的第一個步驟
+    # 目的在畫布上畫一條直線
+    @cherrypy.expose
+    def w13_1_1(self, *args, **kwargs):
+        outstring = '''
+    <!DOCTYPE html> 
+    <html>
+    <head>
+    <meta http-equiv="content-type" content="text/html;charset=utf-8">
+    <script type="text/javascript" src="/static/Brython2.1.0-20140419-113919/brython.js"></script>
+    </head>
+    <body onload="brython({debug:1, cache:'version'})">
+    <canvas id="plotarea" width="800" height="800"></canvas>
+    <script type="text/python">
+    # 導入 doc
+    from browser import doc
+    import math
+
+    # 準備繪圖畫布
+    canvas = doc["plotarea"]
+    ctx = canvas.getContext("2d")
+
+    # 以下可以利用 ctx 物件進行畫圖
+    # 先畫一條直線
+    ctx.beginPath()
+    # 設定線的寬度為 1 個單位
+    ctx.lineWidth = 1
+    # 將畫筆移動到 (100, 100) 座標點
+    ctx.moveTo(100, 100)
+    # 然後畫直線到 (150, 200) 座標點
+    ctx.lineTo(150, 200)
+    # 設定顏色為藍色, 也可以使用 "rgb(0, 0, 255)" 字串設定顏色值
+    ctx.strokeStyle = "blue"
+    # 實際執行畫線
+    ctx.stroke()
+    </script>
+    </body>
+    </html>
+    '''
+        return outstring
+    #@+node:2014spring.20140520155021.4807: *3* w13_1_2
+    # w13_1_2 是第十三週第一題的第二個步驟
+    # 目的在畫布上畫四條直線, 然後當作國旗的外框
+    @cherrypy.expose
+    def w13_1_2(self, *args, **kwargs):
+        outstring = '''
+    <!DOCTYPE html> 
+    <html>
+    <head>
+    <meta http-equiv="content-type" content="text/html;charset=utf-8">
+    <script type="text/javascript" src="/static/Brython2.1.0-20140419-113919/brython.js"></script>
+    </head>
+    <body onload="brython({debug:1, cache:'version'})">
+    <canvas id="plotarea" width="800" height="800"></canvas>
+    <script type="text/python">
+    # 導入 doc
+    from browser import doc
+    import math
+
+    # 準備繪圖畫布
+    canvas = doc["plotarea"]
+    ctx = canvas.getContext("2d")
+
+    # 以下可以利用 ctx 物件進行畫圖
+    # 因為要畫四條直線, 這裡要將畫直線改寫為函式
+    # 定義畫直線的函式, 以 (x1, y1) 為起點, 畫到 (x2, y2)
+    def draw_line(x1, y1, x2, y2):
+        ctx.beginPath()
+        # 設定線的寬度為 1 個單位
+        ctx.lineWidth = 1
+        # 將畫筆移動到 (x1, y1) 座標點
+        ctx.moveTo(x1, y1)
+        # 然後畫直線到 (x2, y2) 座標點
+        ctx.lineTo(x2, y2)
+        # 設定顏色為藍色, 也可以使用 "rgb(0, 0, 255)" 字串設定顏色值
+        ctx.strokeStyle = "blue"
+        # 實際執行畫線
+        ctx.stroke()
+        
+    # 準備呼叫 draw_line() 四次以便畫出國旗外框四條線
+    # 假設從 (10, 10) 畫到 (410, 310) 的外框
+    # 先畫兩條水平線
+    draw_line(10, 10, 410, 10)
+    draw_line(10, 310, 410, 310)
+    # 再畫兩條垂直線
+    draw_line(10, 10, 10, 310)
+    draw_line(410, 10, 410, 310)
+    </script>
+    </body>
+    </html>
+    '''
+        return outstring
+    #@+node:2014spring.20140520155021.4808: *3* w13_1_3
+    # w13_1_3 是第十三週第一題的第三個步驟
+    # 目的在畫布上畫四條直線, 然後當作國旗的外框
+    # 而且在框正中心, 畫一個圓
+    @cherrypy.expose
+    def w13_1_3(self, *args, **kwargs):
+        outstring = '''
+    <!DOCTYPE html> 
+    <html>
+    <head>
+    <meta http-equiv="content-type" content="text/html;charset=utf-8">
+    <script type="text/javascript" src="/static/Brython2.1.0-20140419-113919/brython.js"></script>
+    </head>
+    <body onload="brython({debug:1, cache:'version'})">
+    <canvas id="plotarea" width="800" height="800"></canvas>
+    <script type="text/python">
+    # 導入 doc
+    from browser import doc
+    import math
+
+    # 準備繪圖畫布
+    canvas = doc["plotarea"]
+    ctx = canvas.getContext("2d")
+
+    # 以下可以利用 ctx 物件進行畫圖
+    # 因為要畫四條直線, 這裡要將畫直線改寫為函式
+    # 定義畫直線的函式, 以 (x1, y1) 為起點, 畫到 (x2, y2)
+    def draw_line(x1, y1, x2, y2):
+        ctx.beginPath()
+        # 設定線的寬度為 1 個單位
+        ctx.lineWidth = 1
+        # 將畫筆移動到 (x1, y1) 座標點
+        ctx.moveTo(x1, y1)
+        # 然後畫直線到 (x2, y2) 座標點
+        ctx.lineTo(x2, y2)
+        # 設定顏色為藍色, 也可以使用 "rgb(0, 0, 255)" 字串設定顏色值
+        ctx.strokeStyle = "blue"
+        # 實際執行畫線
+        ctx.stroke()
+        
+    # 準備呼叫 draw_line() 四次以便畫出國旗外框四條線
+    # 假設從 (10, 10) 畫到 (410, 310) 的外框
+    # 先畫兩條水平線
+    draw_line(10, 10, 410, 10)
+    draw_line(10, 310, 410, 310)
+    # 再畫兩條垂直線
+    draw_line(10, 10, 10, 310)
+    draw_line(410, 10, 410, 310)
+
+    # 以下要在框線中央畫一個圓, 設半徑為 80
+    ctx.beginPath()
+    # context.arc(x,y,r,sAngle,eAngle,counterclockwise)
+    # arc(圓心 x, 圓心 y, 起始角, 終點角, 是否逆時鐘轉)
+    circle_x = 10 + 400/2
+    circle_y = 10 + 300/2
+    ctx.arc(circle_x, circle_y, 80, 0, math.pi*2, true)
+    ctx.closePath()
+    # 設線顏色為紅色
+    ctx.strokeStyle = 'rgb(255, 0, 0)'
+    ctx.stroke()
+
+    # 填色設為紅色
+    #ctx.fillStyle = 'rgb(255, 0, 0)'
+    #ctx.fill()
+
+    </script>
+    </body>
+    </html>
+    '''
+        return outstring
+    #@+node:2014spring.20140520155021.4809: *3* w13_1_4
+    # w13_1_4 是第十三週第一題的第四個步驟
+    # 目的在畫布上畫四條直線, 然後當作國旗的外框
+    # 而且在框正中心, 畫一個圓, 然後在圓中填入紅色
+    @cherrypy.expose
+    def w13_1_4(self, *args, **kwargs):
+        outstring = '''
+    <!DOCTYPE html> 
+    <html>
+    <head>
+    <meta http-equiv="content-type" content="text/html;charset=utf-8">
+    <script type="text/javascript" src="/static/Brython2.1.0-20140419-113919/brython.js"></script>
+    </head>
+    <body onload="brython({debug:1, cache:'version'})">
+    <canvas id="plotarea" width="800" height="800"></canvas>
+    <script type="text/python">
+    # 導入 doc
+    from browser import doc
+    import math
+
+    # 準備繪圖畫布
+    canvas = doc["plotarea"]
+    ctx = canvas.getContext("2d")
+
+    # 以下可以利用 ctx 物件進行畫圖
+    # 因為要畫四條直線, 這裡要將畫直線改寫為函式
+    # 定義畫直線的函式, 以 (x1, y1) 為起點, 畫到 (x2, y2)
+    def draw_line(x1, y1, x2, y2):
+        ctx.beginPath()
+        # 設定線的寬度為 1 個單位
+        ctx.lineWidth = 1
+        # 將畫筆移動到 (x1, y1) 座標點
+        ctx.moveTo(x1, y1)
+        # 然後畫直線到 (x2, y2) 座標點
+        ctx.lineTo(x2, y2)
+        # 設定顏色為藍色, 也可以使用 "rgb(0, 0, 255)" 字串設定顏色值
+        ctx.strokeStyle = "blue"
+        # 實際執行畫線
+        ctx.stroke()
+        
+    # 準備呼叫 draw_line() 四次以便畫出國旗外框四條線
+    # 假設從 (10, 10) 畫到 (410, 310) 的外框
+    # 先畫兩條水平線
+    draw_line(10, 10, 410, 10)
+    draw_line(10, 310, 410, 310)
+    # 再畫兩條垂直線
+    draw_line(10, 10, 10, 310)
+    draw_line(410, 10, 410, 310)
+
+    # 以下要在框線中央畫一個圓, 設半徑為 80
+    ctx.beginPath()
+    # context.arc(x,y,r,sAngle,eAngle,counterclockwise)
+    # arc(圓心 x, 圓心 y, 起始角, 終點角, 是否逆時鐘轉)
+    circle_x = 10 + 400/2
+    circle_y = 10 + 300/2
+    ctx.arc(circle_x, circle_y, 80, 0, math.pi*2, true)
+    ctx.closePath()
+    # 設線顏色為紅色
+    #ctx.strokeStyle = 'rgb(255, 0, 0)'
+    #ctx.stroke()
+
+    # 填色設為紅色
+    ctx.fillStyle = 'rgb(255, 0, 0)'
+    ctx.fill()
+
+    </script>
+    </body>
+    </html>
+    '''
+        return outstring
+    #@+node:2014spring.20140520155021.4810: *3* w13_1_5
+    # w13_1_5 是第十三週第一題的第五個步驟
+    # 目的在畫布上畫四條直線, 然後當作國旗的外框
+    # 而且在框正中心, 畫一個圓, 然後在圓中填入紅色
+    # 將日本國旗以左上角點座標, 及高度作為單位, 寫為函式
+    @cherrypy.expose
+    def w13_1_5(self, *args, **kwargs):
+        outstring = '''
+    <!DOCTYPE html> 
+    <html>
+    <head>
+    <meta http-equiv="content-type" content="text/html;charset=utf-8">
+    <script type="text/javascript" src="/static/Brython2.1.0-20140419-113919/brython.js"></script>
+    </head>
+    <body onload="brython({debug:1, cache:'version'})">
+    <canvas id="plotarea" width="800" height="800"></canvas>
+    <script type="text/python">
+    # 導入 doc
+    from browser import doc
+    import math
+
+    # 準備繪圖畫布
+    canvas = doc["plotarea"]
+    ctx = canvas.getContext("2d")
+
+    # 以下可以利用 ctx 物件進行畫圖
+    # 因為要畫四條直線, 這裡要將畫直線改寫為函式
+    # 定義畫直線的函式, 以 (x1, y1) 為起點, 畫到 (x2, y2)
+    def draw_line(x1, y1, x2, y2):
+        global ctx
+        ctx.beginPath()
+        # 設定線的寬度為 1 個單位
+        ctx.lineWidth = 1
+        # 將畫筆移動到 (x1, y1) 座標點
+        ctx.moveTo(x1, y1)
+        # 然後畫直線到 (x2, y2) 座標點
+        ctx.lineTo(x2, y2)
+        # 設定顏色為藍色, 也可以使用 "rgb(0, 0, 255)" 字串設定顏色值
+        ctx.strokeStyle = "blue"
+        # 實際執行畫線
+        ctx.stroke()
+        
+    # 將外框線寫成函式, 寬為高的 3/2 倍
+    # 因為 draw_frame 函式呼叫 draw_line() 因此要在其後定義
+    def draw_frame(x, y, w):
+        # 準備呼叫 draw_line() 四次以便畫出國旗外框四條線
+        # 假設從 (x, y) 畫到 (410, 310) 的外框
+        # 先畫兩條水平線
+        draw_line(x, y, w*3/2+x, y)
+        draw_line(x, w+y, w*3/2+x, w+y)
+        # 再畫兩條垂直線
+        draw_line(x, y, x, w+y)
+        draw_line(w*3/2+x, y, w*3/2+x, w+y)
+
+    def draw_circle(x, y, r, fill=None):
+        global ctx
+        ctx.beginPath()
+        ctx.arc(x, y, r, 0, math.pi*2, true)
+        ctx.closePath()
+        if fill == None:
+            ctx.fillStyle = 'rgb(255, 0, 0)'
+            ctx.fill()
+        else:
+            ctx.strokeStyle = "rgb(255, 0, 0)"
+            ctx.stroke()
+
+    # 呼叫 draw_frame()
+    width = 400
+    draw_frame(10, 10, width)
+    # 計算框的中心點座標
+    x_center = 10 + width*3/2/2
+    y_center = 10 + width/2
+    # 中間圓的直徑為寬的 3/5
+    radius = width*3/5/2
+    draw_circle(x_center, y_center, radius)
+    </script>
+    </body>
+    </html>
+    '''
+        return outstring
+    #@+node:2014spring.20140520155021.4811: *3* w13_1_6
+    # w13_1_6 是第十三週第一題的第六個步驟
+    # 目的在將日本國旗繪製寫成函式
+    # 可控制的變數為 (x, y) 國旗的左上角座標, 內定為 (10, 10)
+    # 國旗的高度以 h 表示, 內定為 300
+    @cherrypy.expose
+    def w13_1_6(self, *args, **kwargs):
+        outstring = '''
+    <!DOCTYPE html> 
+    <html>
+    <head>
+    <meta http-equiv="content-type" content="text/html;charset=utf-8">
+    <script type="text/javascript" src="/static/Brython2.1.0-20140419-113919/brython.js"></script>
+    </head>
+    <body onload="brython({debug:1, cache:'version'})">
+    <canvas id="plotarea" width="800" height="800"></canvas>
+    <script type="text/python">
+    # 導入 doc
+    from browser import doc
+    import math
+
+    # 準備繪圖畫布
+    canvas = doc["plotarea"]
+    ctx = canvas.getContext("2d")
+
+    # 以下可以利用 ctx 物件進行畫圖
+    # 因為要畫四條直線, 這裡要將畫直線改寫為函式
+    # 定義畫直線的函式, 以 (x1, y1) 為起點, 畫到 (x2, y2)
+    def draw_line(x1, y1, x2, y2):
+        global ctx
+        ctx.beginPath()
+        # 設定線的寬度為 1 個單位
+        ctx.lineWidth = 1
+        # 將畫筆移動到 (x1, y1) 座標點
+        ctx.moveTo(x1, y1)
+        # 然後畫直線到 (x2, y2) 座標點
+        ctx.lineTo(x2, y2)
+        # 設定顏色為藍色, 也可以使用 "rgb(0, 0, 255)" 字串設定顏色值
+        ctx.strokeStyle = "blue"
+        # 實際執行畫線
+        ctx.stroke()
+        
+    # 將外框線寫成函式, 寬為高的 3/2 倍
+    # 因為 draw_frame 函式呼叫 draw_line() 因此要在其後定義
+    def draw_frame(x, y, w):
+        # 準備呼叫 draw_line() 四次以便畫出國旗外框四條線
+        # 假設從 (x, y) 畫到 (410, 310) 的外框
+        # 先畫兩條水平線
+        draw_line(x, y, w*3/2+x, y)
+        draw_line(x, w+y, w*3/2+x, w+y)
+        # 再畫兩條垂直線
+        draw_line(x, y, x, w+y)
+        draw_line(w*3/2+x, y, w*3/2+x, w+y)
+
+    def draw_circle(x, y, r, fill=None):
+        global ctx
+        ctx.beginPath()
+        ctx.arc(x, y, r, 0, math.pi*2, true)
+        ctx.closePath()
+        if fill == None:
+            ctx.fillStyle = 'rgb(255, 0, 0)'
+            ctx.fill()
+        else:
+            ctx.strokeStyle = "rgb(255, 0, 0)"
+            ctx.stroke()
+
+    def japan_flag(x, y, w):
+        width = w
+        draw_frame(x, y, width)
+        # 計算框的中心點座標
+        x_center = x + width*3/2/2
+        y_center = y + width/2
+        # 中間圓的直徑為寬的 3/5
+        radius = width*3/5/2
+        draw_circle(x_center, y_center, radius)
+
+    # 呼叫 japan_flag, 以 60 為單位, 用迴圈繪圖
+    width = 60
+    # x 方向增量與  y 方向增量
+    xinc = width*3/2 + 15
+    yinc = width + 15
+    for i in range(5):
+        for j in range(5):
+            japan_flag(10+i*xinc, 10+j*yinc, width)
+    </script>
+    </body>
+    </html>
+    '''
+        return outstring
+    #@+node:2014spring.20140520155021.4812: *3* w13_1_7
+    # w13_1_7 是第十三週第一題的第七個步驟
+    # 目的在 CherryPy 設置操控變數, 讓使用者可以透過 URL 操控繪圖內容
+    @cherrypy.expose
+    def w13_1_7(self, x=10, y=10, w=300, *args, **kwargs):
+        outstring = '''
+    <!DOCTYPE html> 
+    <html>
+    <head>
+    <meta http-equiv="content-type" content="text/html;charset=utf-8">
+    <script type="text/javascript" src="/static/Brython2.1.0-20140419-113919/brython.js"></script>
+    </head>
+    <body onload="brython({debug:1, cache:'version'})">
+    <canvas id="plotarea" width="800" height="800"></canvas>
+    <script type="text/python">
+    # 導入 doc
+    from browser import doc
+    import math
+
+    # 準備繪圖畫布
+    canvas = doc["plotarea"]
+    ctx = canvas.getContext("2d")
+
+    # 以下可以利用 ctx 物件進行畫圖
+    # 因為要畫四條直線, 這裡要將畫直線改寫為函式
+    # 定義畫直線的函式, 以 (x1, y1) 為起點, 畫到 (x2, y2)
+    def draw_line(x1, y1, x2, y2):
+        global ctx
+        ctx.beginPath()
+        # 設定線的寬度為 1 個單位
+        ctx.lineWidth = 1
+        # 將畫筆移動到 (x1, y1) 座標點
+        ctx.moveTo(x1, y1)
+        # 然後畫直線到 (x2, y2) 座標點
+        ctx.lineTo(x2, y2)
+        # 設定顏色為藍色, 也可以使用 "rgb(0, 0, 255)" 字串設定顏色值
+        ctx.strokeStyle = "blue"
+        # 實際執行畫線
+        ctx.stroke()
+        
+    # 將外框線寫成函式, 寬為高的 3/2 倍
+    # 因為 draw_frame 函式呼叫 draw_line() 因此要在其後定義
+    def draw_frame(x, y, w):
+        # 準備呼叫 draw_line() 四次以便畫出國旗外框四條線
+        # 假設從 (x, y) 畫到 (410, 310) 的外框
+        # 先畫兩條水平線
+        draw_line(x, y, w*3/2+x, y)
+        draw_line(x, w+y, w*3/2+x, w+y)
+        # 再畫兩條垂直線
+        draw_line(x, y, x, w+y)
+        draw_line(w*3/2+x, y, w*3/2+x, w+y)
+
+    def draw_circle(x, y, r, fill=None):
+        global ctx
+        ctx.beginPath()
+        ctx.arc(x, y, r, 0, math.pi*2, true)
+        ctx.closePath()
+        if fill == None:
+            ctx.fillStyle = 'rgb(255, 0, 0)'
+            ctx.fill()
+        else:
+            ctx.strokeStyle = "rgb(255, 0, 0)"
+            ctx.stroke()
+
+    def japan_flag(x, y, w):
+        width = w
+        draw_frame(x, y, width)
+        # 計算框的中心點座標
+        x_center = x + width*3/2/2
+        y_center = y + width/2
+        # 中間圓的直徑為寬的 3/5
+        radius = width*3/5/2
+        draw_circle(x_center, y_center, radius)
+
+    # 利用外部的 x, y, w 變數來控制國旗位置與大小
+    # 當所要求\的國旗超出畫布, 則採取畫最大幅的國旗因應
+    if '''+str(x)+'''+'''+str(int(w)*3/2)+'''< canvas.width and \
+        '''+str(y)+'''+'''+str(w)+'''< canvas.width:
+        japan_flag('''+str(x)+''', '''+str(y)+''', '''+str(w)+''')
+    else:
+        # 畫出最大面的國旗
+        japan_flag(10, 10, 790*2/3)
+    </script>
+    </body>
+    </html>
+    '''
+        return outstring
+    #@-others
+#@-others
+#@-leo

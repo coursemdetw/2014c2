@@ -1,19 +1,19 @@
 #@+leo-ver=5-thin
-#@+node:2014spring.20140519152219.2053: * @file involute.py
+#@+node:2014spring.20140520155021.4813: * @file involute.py
 #@@language python
 #@@tabwidth -4
 
 #@+<<declarations>>
-#@+node:2014spring.20140519152219.2054: ** <<declarations>> (involute)
+#@+node:2014spring.20140520155021.4814: ** <<declarations>> (involute)
 import cherrypy
 #@-<<declarations>>
 #@+others
-#@+node:2014spring.20140519152219.2055: ** class INVOLUTE
+#@+node:2014spring.20140520155021.4815: ** class INVOLUTE
 # 這是 INVOLUTE 類別的定義
 class INVOLUTE(object):
     # 各組利用 index 引導隨後的程式執行
     #@+others
-    #@+node:2014spring.20140519152219.2056: *3* index
+    #@+node:2014spring.20140520155021.4816: *3* index
     @cherrypy.expose
     def index(self, *args, **kwargs):
         outstring = '''
