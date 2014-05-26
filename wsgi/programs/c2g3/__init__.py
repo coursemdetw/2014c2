@@ -490,6 +490,11 @@ class C2G3(object):
     # 準備繪圖畫布
     canvas = doc["plotarea"]
     ctx = canvas.getContext("2d")
+    ctx.beginPath();
+    ctx.lineWidth="6";
+    ctx.strokeStyle="red";
+    ctx.rect(1,0,canvas.width,canvas.height);
+    ctx.stroke();
     # 進行座標轉換, x 軸不變, y 軸反向且移動 canvas.height 單位光點
     # ctx.setTransform(1, 0, 0, -1, 0, canvas.height)
     # 以下採用 canvas 原始座標繪圖
@@ -500,7 +505,6 @@ class C2G3(object):
     # 先畫白
     ctx.fillStyle='blue'
     ctx.fillRect(0,0,flag_w,flag_h)
-
     # 白日:red心
     ctx.beginPath()
     ctx.arc(circle_x, circle_y, flag_w/8, flag_h/8, math.pi*2 ,  true)
