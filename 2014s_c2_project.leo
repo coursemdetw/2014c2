@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Created by Leo (http://leoeditor.com/leo_toc.html) -->
+<!-- Created by Leo (http://webpages.charter.net/edreamleo/front.html) -->
 <?xml-stylesheet ekr_test?>
 <leo_file xmlns:leo="http://www.leo-editor.org/2011/leo" >
 <leo_header file_format="2" tnodes="0" max_tnode_index="0" clone_windows="0"/>
@@ -10,7 +10,7 @@
 <preferences/>
 <find_panel_settings/>
 <vnodes>
-<v t="2014pythonE.20140224205837.3150" a="E"><vh>@settings</vh>
+<v t="2014pythonE.20140224205837.3150"><vh>@settings</vh>
 <v t="2014pythonE.20140224205837.3151"><vh>@data qt-gui-plugin-style-sheet</vh></v>
 <v t="2014pythonE.20140224205837.3152"><vh>@string initial_split_orientation = horizontal</vh></v>
 <v t="2014pythonE.20140331085053.2405"><vh>@string rst3_write_intermediate_extension = .rst</vh></v>
@@ -50,9 +50,9 @@
 <v t="2014pythonE.20140414091257.1917"><vh>另一個例子</vh></v>
 </v>
 <v t="2014pythonE.20140414091257.1681" a="E"><vh>@path wsgi</vh>
-<v t="course-mde-tw.20140417093332.2216" a="E"
+<v t="course-mde-tw.20140417093332.2216"
 expanded="course-mde-tw.20140417093332.2218,"><vh>@file application</vh></v>
-<v t="2014spring.20140509071814.2435"
+<v t="2014spring.20140509071814.2435" a="E"
 expanded="2014spring.20140509071814.2459,"><vh>@file cmsimply.py</vh></v>
 </v>
 </v>
@@ -72,32 +72,44 @@ expanded="2014spring.20140509071814.2459,"><vh>@file cmsimply.py</vh></v>
 <v t="2014spring.20140512231824.4733" a="E"><vh>@path wsgi/programs/c2g5</vh>
 <v t="2014spring.20140512231824.4734"><vh>@edit __init__.py</vh></v>
 </v>
+<v t="2014spring.20140520155021.3447" a="E"><vh>@path wsgi/programs/c2g6</vh>
+<v t="2014spring.20140520155021.3448"><vh>@edit __init__.py</vh></v>
+</v>
 <v t="2014spring.20140512231824.2651" a="E"><vh>@path wsgi/programs/c2g7</vh>
 <v t="2014spring.20140512231824.2652"><vh>@edit __init__.py</vh></v>
 </v>
-<v t="2014spring.20140512231824.2642"><vh>@path wsgi/programs/c2g8</vh>
+<v t="2014spring.20140512231824.2642" a="E"><vh>@path wsgi/programs/c2g8</vh>
 <v t="2014spring.20140512231824.2643"><vh>@edit __init__.py</vh></v>
 </v>
 <v t="2014spring.20140512231824.2655" a="E"><vh>@path wsgi/programs/c2g9</vh>
 <v t="2014spring.20140512231824.2656"><vh>@edit __init__.py</vh></v>
 </v>
+<v t="2014spring.20140520155021.3451" a="E"><vh>@path wsgi/programs/c2g12</vh>
+<v t="2014spring.20140520155021.3452"><vh>@edit __init__.py</vh></v>
+</v>
+<v t="2014spring.20140520155021.3455" a="E"><vh>@path wsgi/programs/c2g14</vh>
+<v t="2014spring.20140520155021.3456"><vh>@edit __init__.py</vh></v>
+</v>
 <v t="2014spring.20140512231824.2646"><vh>@path wsgi/programs/c2g15</vh>
 <v t="2014spring.20140512231824.2647" a="O"><vh>@edit __init__.py</vh></v>
 </v>
-<v t="2014spring.20140512231824.2659"><vh>@path wsgi/programs/c2g16</vh>
+<v t="2014spring.20140512231824.2659" a="E"><vh>@path wsgi/programs/c2g16</vh>
 <v t="2014spring.20140512231824.2660"><vh>@edit __init__.py</vh></v>
 </v>
 <v t="kmolII_lite.20140513015136.1753" a="E"><vh>@path wsgi/programs/c2g19</vh>
 <v t="kmolII_lite.20140513015136.1754"><vh>@edit __init__.py</vh></v>
 </v>
-<v t="kmolII_lite.20140505210604.1651"><vh>@path wsgi/programs/c2g23</vh>
+<v t="kmolII_lite.20140505210604.1651" a="E"><vh>@path wsgi/programs/c2g23</vh>
 <v t="kmolII_lite.20140505210604.1652"><vh>@edit __init__.py</vh></v>
 </v>
-<v t="2014spring.20140505200238.1819" a="E"><vh>@path wsgi/programs/c2g30</vh>
-<v t="2014spring.20140505200238.1820"><vh>@edit __init__.py</vh></v>
-<v t="2014spring.20140516100941.1919"><vh>@edit involute.py</vh></v>
-<v t="2014spring.20140518103430.1921"><vh>@edit demo1.py</vh></v>
-<v t="2014spring.20140518103430.1923"><vh>@edit walker.py</vh></v>
+<v t="2014spring.20140520155021.4795" a="E"><vh>@path wsgi/programs/c2g30</vh>
+<v t="2014spring.20140520155021.4796" a="E"
+expanded="2014spring.20140520155021.4798,"><vh>@file __init__.py</vh></v>
+<v t="2014spring.20140520155021.4813"
+expanded="2014spring.20140520155021.4815,"><vh>@file involute.py</vh></v>
+<v t="2014spring.20140520155021.4817"><vh>@file demo1.py</vh></v>
+<v t="2014spring.20140520155021.4821"
+expanded="2014spring.20140520155021.4823,"><vh>@file walker.py</vh></v>
 </v>
 </v>
 <v t="2014spring.20140503095553.1883"><vh>利用 pandoc 進行格式轉換</vh>
@@ -119,6 +131,13 @@ expanded="2014spring.20140509071814.2459,"><vh>@file cmsimply.py</vh></v>
 </v>
 </v>
 <v t="2014spring.20140502183555.1864"><vh>c2_w12 任務</vh></v>
+<v t="2014spring.20140521094048.1967" a="E"><vh>reeborg 機器人專案</vh>
+<v t="2014spring.20140521094048.1968" a="E"><vh>@path wsgi/static/reeborg</vh>
+<v t="2014spring.20140521094048.1972"><vh>@edit index.html</vh></v>
+<v t="2014spring.20140521094048.1969"><vh>@edit world.html</vh></v>
+<v t="2014spring.20140521094048.1970"><vh>@edit learn_py.html</vh></v>
+</v>
+</v>
 </vnodes>
 <tnodes>
 <t tx="2014python.20140224210642.3165"></t>
@@ -986,7 +1005,6 @@ root.c2g1 = c2g1.C2G1()
     3. 完成後先在近端測試, 完全符合需求且根據標準流程, 拉下目前協同專案區最新的 github 程式碼後, 檢驗 .leo 是否可以正確開啟, 各對應目錄是否正確配置, application 是否可以正確執行後, 再推送到協同專案區, 並與各分組的 OpenShift 雲端網站進行同步.</t>
 <t tx="2014spring.20140503095553.1928"></t>
 <t tx="2014spring.20140503095553.1932"></t>
-<t tx="2014spring.20140505200238.1819"></t>
 <t tx="2014spring.20140505200238.2114">注意事項
 
     Python 版次必須使用 3.3 版
@@ -1291,6 +1309,12 @@ class C2G15(object):
 <t tx="2014spring.20140512231824.2655"></t>
 <t tx="2014spring.20140512231824.2659"></t>
 <t tx="2014spring.20140512231824.4733"></t>
+<t tx="2014spring.20140520155021.3447"></t>
+<t tx="2014spring.20140520155021.3451"></t>
+<t tx="2014spring.20140520155021.3455"></t>
+<t tx="2014spring.20140520155021.4795"></t>
+<t tx="2014spring.20140521094048.1967"></t>
+<t tx="2014spring.20140521094048.1968"></t>
 <t tx="kmolII_lite.20140505210604.1651"></t>
 <t tx="kmolII_lite.20140513015136.1753"></t>
 <t tx="public_kmol.20140302202325.1714">break
