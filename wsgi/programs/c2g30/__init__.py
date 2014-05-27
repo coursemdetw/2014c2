@@ -268,7 +268,7 @@ class C2G30(object):
     # 再畫青天
     ctx.fillStyle='rgb(0, 0, 150)'
     ctx.fillRect(0,0,flag_w/2,flag_h/2)
-    # 畫十二到光芒白日
+    # 畫十二道光芒白日
     ctx.beginPath()
     star_radius = flag_w/8
     angle = 0
