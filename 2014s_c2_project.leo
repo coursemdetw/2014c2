@@ -102,7 +102,7 @@ expanded="2014spring.20140509071814.2459,2014spring.20140509071814.2500,"><vh>@f
 <v t="kmolII_lite.20140505210604.1651" a="E"><vh>@path wsgi/programs/c2g23</vh>
 <v t="kmolII_lite.20140505210604.1652"><vh>@edit __init__.py</vh></v>
 </v>
-<v t="2014spring.20140520155021.4795" a="E"><vh>@path wsgi/programs/c2g30</vh>
+<v t="2014spring.20140520155021.4795"><vh>@path wsgi/programs/c2g30</vh>
 <v t="2014spring.20140520155021.4796" a="E"
 expanded="2014spring.20140520155021.4798,"><vh>@file __init__.py</vh></v>
 <v t="2014spring.20140520155021.4813"
@@ -112,7 +112,7 @@ expanded="2014spring.20140520155021.4815,"><vh>@file involute.py</vh></v>
 expanded="2014spring.20140520155021.4823,"><vh>@file walker.py</vh></v>
 </v>
 </v>
-<v t="2014spring.20140503095553.1883"><vh>利用 pandoc 進行格式轉換</vh>
+<v t="2014spring.20140503095553.1883" a="E"><vh>利用 pandoc 進行格式轉換</vh>
 <v t="2014spring.20140503095553.1884"><vh>注意事項</vh></v>
 <v t="2014spring.20140503095553.1886"><vh>@button pandoc_auto</vh></v>
 <v t="2014spring.20140503095553.1887" a="E"><vh>@path wsgi/doc</vh>
