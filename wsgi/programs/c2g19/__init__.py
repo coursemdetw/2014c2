@@ -21,6 +21,7 @@ class C2G19(object):
 <a href="http://goo.gl/DLsCW5">c2g19 w14 task1 繪圖</a><br />
 <a href="http://goo.gl/TO25yv">c2g19 w14 task2 繪圖</a><br />
 <a href="http://goo.gl/cGILsc">c2g19 w14 task3 繪圖</a><br />
+<a href="http://goo.gl/4uAJW4">c2g19 w15+w16 allTask</a><br /> 
 '''
         return outstring
 
