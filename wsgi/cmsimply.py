@@ -541,9 +541,9 @@ def file_lister(directory, type=None, page=1, item_per_page=10):
         outstring += "no data!"
 
     if type == "downloads":
-        return outstring+"<br /><br /><a href='/fileuploadform'>file upload</a>"
+        return outstring+"<br /><br /><a href='fileuploadform'>file upload</a>"
     else:
-        return outstring+"<br /><br /><a href='/imageuploadform'>image upload</a>"
+        return outstring+"<br /><br /><a href='imageuploadform'>image upload</a>"
 #@+node:2014spring.20140509071814.2454: ** downloadselect_access_list
 def downloadselect_access_list(files, starti, endi):
     outstring = ""
