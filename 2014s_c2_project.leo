@@ -50,8 +50,7 @@
 <v t="2014pythonE.20140414091257.1917"><vh>另一個例子</vh></v>
 </v>
 <v t="2014pythonE.20140414091257.1681" a="E"><vh>@path wsgi</vh>
-<v t="course-mde-tw.20140417093332.2216" a="E"
-expanded="course-mde-tw.20140417093332.2218,"><vh>@file application</vh></v>
+<v t="course-mde-tw.20140417093332.2216" a="E"><vh>@file application</vh></v>
 <v t="2014spring.20140509071814.2435" a="E"
 expanded="2014spring.20140509071814.2459,2014spring.20140509071814.2500,"><vh>@file cmsimply.py</vh></v>
 </v>
@@ -110,6 +109,9 @@ expanded="2014spring.20140520155021.4815,"><vh>@file involute.py</vh></v>
 <v t="2014spring.20140520155021.4817"><vh>@file demo1.py</vh></v>
 <v t="2014spring.20140520155021.4821"
 expanded="2014spring.20140520155021.4823,"><vh>@file walker.py</vh></v>
+</v>
+<v t="c2g4.20140602210658.1980" a="E"><vh>@path wsgi/programs/c2g4</vh>
+<v t="c2g4.20140602210658.1981"><vh>@edit __init__.py</vh></v>
 </v>
 </v>
 <v t="2014spring.20140503095553.1883" a="E"><vh>利用 pandoc 進行格式轉換</vh>
@@ -1318,6 +1320,7 @@ class C2G15(object):
 <t tx="2014spring.20140520155021.4795"></t>
 <t tx="2014spring.20140521094048.1967"></t>
 <t tx="2014spring.20140521094048.1968"></t>
+<t tx="c2g4.20140602210658.1980"></t>
 <t tx="kmolII_lite.20140505210604.1651"></t>
 <t tx="kmolII_lite.20140513015136.1753"></t>
 <t tx="public_kmol.20140302202325.1714">break
