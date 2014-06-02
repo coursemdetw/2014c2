@@ -92,8 +92,11 @@ expanded="2014spring.20140509071814.2459,2014spring.20140509071814.2500,"><vh>@f
 <v t="2014spring.20140512231824.2646"><vh>@path wsgi/programs/c2g15</vh>
 <v t="2014spring.20140512231824.2647" a="O"><vh>@edit __init__.py</vh></v>
 </v>
-<v t="2014spring.20140512231824.2659" a="E"><vh>@path wsgi/programs/c2g16</vh>
+<v t="2014spring.20140512231824.2659"><vh>@path wsgi/programs/c2g16</vh>
 <v t="2014spring.20140512231824.2660"><vh>@edit __init__.py</vh></v>
+</v>
+<v t="2014python.20140602230647.1984" a="E"><vh>@path wsgi/programs/c2g18</vh>
+<v t="2014python.20140602230647.1985"><vh>@edit __init__.py</vh></v>
 </v>
 <v t="kmolII_lite.20140513015136.1753" a="E"><vh>@path wsgi/programs/c2g19</vh>
 <v t="kmolII_lite.20140513015136.1754"><vh>@edit __init__.py</vh></v>
@@ -358,6 +361,7 @@ However, because the arrangement of config is directly related to the arrangemen
 responsibility of the Dispatcher to collect per-handler config, merge it with per-URI and global config, and bind the 
 resulting dict to cherrypy.request.config. This dict is of depth 1 and will contain all config entries which are in effect for the current request.</t>
 <t tx="2014python.20140505100744.1942"></t>
+<t tx="2014python.20140602230647.1984"></t>
 <t tx="2014pythonE.20140224205837.3150"></t>
 <t tx="2014pythonE.20140224205837.3151">QSplitter::handle {
     background-color: #CAE1FF; /* lightSteelBlue1 */

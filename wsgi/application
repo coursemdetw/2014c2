@@ -464,6 +464,9 @@ import programs.c2g23 as c2g23
 root.c2g23 = c2g23.C2G23()
 import programs.c2g4 as c2g4
 root.c2g4 = c2g4.C2G4()
+
+import programs.c2g18 as c2g18
+root.c2g18 = c2g18.C2G18()
 # 以下為 c2g9 的模組導入與連結設定
 import programs.c2g9 as c2g9
 root.c2g9 = c2g9.C2G9()
