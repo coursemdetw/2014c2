@@ -6,7 +6,7 @@ class C2G5(object):
     @cherrypy.expose
     def index(self, *args, **kwargs):
         outstring = '''
-這是 2014C2 協同專案下的 c2g5 分組程式開發網頁, 以下為 W12 的任務執行內容.<br />
+這是 2014C2 協同專案下的 c2g1 分組程式開發網頁, 以下為 W12 的任務執行內容.<br />
 <!-- 這裡採用相對連結, 而非網址的絕對連結 (這一段為 html 註解) -->
 <a href="fillpoly">c2g5 fillpoly 繪圖</a><br />
 <a href="drawline">c2g5 drawline 繪圖</a><br />
@@ -14,8 +14,6 @@ class C2G5(object):
 <a href="flag">c2g5 flag 繪圖</a><br />
 <a href="square">c2g5 squared 繪圖</a><br />
 <a href="triangle">c2g5 triangle 繪圖</a><br />
-<a href="JPflag">c2g5 JPflag 繪圖</a><br />
-<a href="USAflag">c2g5 USAflag 繪圖</a><br />
 '''
         return outstring
 
@@ -446,135 +444,6 @@ class C2G5(object):
     # 填色設為紅色
     ctx.fillStyle = 'rgb(255, 0, 0)'
     ctx.fill()
-
-    def draw_line(x1, y1, x2, y2, linethick = 3, color = "blue"):
-        ctx.beginPath()
-        ctx.lineWidth = linethick
-        ctx.moveTo(x1, y1)
-        ctx.lineTo(x2, y2)
-        ctx.strokeStyle = color
-        ctx.stroke()
-
-    draw_line(0, 0, 300, 0)
-    draw_line(300, 0, 300, 200)
-    draw_line(300, 200, 0, 200)
-    draw_line(0, 200, 0, 0)  
-
-    ctx.beginPath()
-    #ctx.arc(circle_x, circle_y, flag_h*0.6, 0, pi*2, true)
-    ctx.arc(circle_x, circle_y, 60, 0, pi*2)
-    ctx.closePath()
-    # 填色設為紅色
-    ctx.fillStyle = 'rgb(255, 0, 0)'
-    ctx.fill()
-    
-    </script>
-    </body>
-    </html>
-    '''
-        return outstring
-
-    @cherrypy.expose
-    def USAflag (self, *args, **kwargs):
-        '''
-        原始程式來源: http://blog.roodo.com/esabear/archives/19215194.html
-        改寫為 Brython 程式
-        '''
-        outstring = '''
-    <!DOCTYPE html> 
-    <html>
-    <head>
-    <meta http-equiv="content-type" content="text/html;charset=utf-8">
-    <script type="text/javascript" src="/static/Brython2.1.0-20140419-113919/brython.js"></script>
-    </head>
-    <body onload="brython({debug:1, cache:'version'})">
-    <canvas id="plotarea" width="190" height="100"></canvas>
-    <script type="text/python">
-    # 導入 doc
-    from browser import doc
-    import math
-
-    # 準備繪圖畫布
-    canvas = doc["plotarea"]
-    ctx = canvas.getContext("2d")
-    # 進行座標轉換, x 軸不變, y 軸反向且移動 canvas.height 單位光點
-    # ctx.setTransform(1, 0, 0, -1, 0, canvas.height)
-    # 以下採用 canvas 原始座標繪圖
-    flag_w = canvas.width
-    flag_h = canvas.height
-    circle_x = flag_w/4
-    circle_y = flag_h/4
-    # 先畫滿地紅
-    ctx.fillStyle= '#fff'
-    ctx.fillRect(0,0,flag_w,flag_h)
-    #長條紅線
-    ctx.fillRect(0,0,flag_w,flag_h/13)
-    ctx.fillStyle= 'rgb(255, 0, 0)'
-    for i in range(0,flag_h,2*flag_h/13):
-        b=i
-        ctx.fillRect(0,b,flag_w,flag_h/13)
-        ctx.fillStyle= 'rgb(255, 0, 0)'
-        ctx.fill()
-    # 先畫滿青天
-    ctx.fillStyle='rgb(0, 0, 150)'
-    ctx.fillRect(0,0,2*flag_w/5,7*flag_h/13)
-    #星星白色
-    def draw_line(x1, y1, x2, y2, linethick = 3, color = "black"):
-        ctx.beginPath()
-        ctx.lineWidth = linethick
-        ctx.moveTo(x1, y1)
-        ctx.lineTo(x2, y2)
-        ctx.strokeStyle = color
-        ctx.stroke()
-    
-    # x, y 為中心,  r 為半徑, angle 旋轉角,  solid 空心或實心,  color 顏色
-    def star(x, y, r, angle=0, solid=False, color="#f00"):
-        # 以 x, y 為圓心, 計算五個外點
-        deg = math.pi/180
-        # 圓心到水平線距離
-        a = r*math.cos(72*deg)
-        # a 頂點向右到內點距離
-        b = (r*math.cos(72*deg)/math.cos(36*deg))*math.sin(36*deg)
-        # 利用畢氏定理求內點半徑
-        rin = math.sqrt(a**2 + b**2)
-        # 查驗 a, b 與 rin
-        #print(a, b, rin)
-        if(solid):
-            ctx.beginPath()
-        for i in range(5):
-            xout = (x + r*math.sin((360/5)*deg*i+angle*deg))
-            yout = (y + r*math.cos((360/5)*deg*i+angle*deg))
-            # 外點增量 + 1
-            xout2 = x + r*math.sin((360/5)*deg*(i+1)+angle*deg)
-            yout2 = y + r*math.cos((360/5)*deg*(i+1)+angle*deg)
-            xin = x + rin*math.sin((360/5)*deg*i+36*deg+angle*deg)
-            yin = y + rin*math.cos((360/5)*deg*i+36*deg+angle*deg)
-            # 查驗外點與內點座標
-            #print(xout, yout, xin, yin)
-            if(solid):
-                # 填色
-                if(i==0):
-                    ctx.moveTo(xout, yout)
-                    ctx.lineTo(xin, yin)
-                    ctx.lineTo(xout2, yout2)
-                else:
-                    ctx.lineTo(xin, yin)
-                    ctx.lineTo(xout2, yout2)
-            else:
-                # 空心
-                draw_line(xout, yout, xin, yin, color)
-                # 畫空心五芒星, 無關畫線次序, 若實心則與畫線次序有關
-                draw_line(xout2, yout2, xin, yin, color)
-        if(solid):
-            ctx.fillStyle = color
-            ctx.fill()
-    #star(100, 100, 50, 0, False, "#000")
-    for i in range(5):
-        for j in range(4):
-            star(12+12*i, 12+10*j, 3, 0, true, "#fff")
-    for i in range(6):
-        for j in range(5):
-            star(6+12*i, 6+10*j, 3, 0, true, "#fff")
 
     </script>
     </body>
