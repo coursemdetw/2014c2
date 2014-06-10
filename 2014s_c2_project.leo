@@ -50,8 +50,7 @@
 <v t="2014pythonE.20140414091257.1917"><vh>另一個例子</vh></v>
 </v>
 <v t="2014pythonE.20140414091257.1681" a="E"><vh>@path wsgi</vh>
-<v t="course-mde-tw.20140417093332.2216" a="E"
-expanded="course-mde-tw.20140417093332.2218,"><vh>@file application</vh></v>
+<v t="course-mde-tw.20140417093332.2216" a="E"><vh>@file application</vh></v>
 <v t="2014spring.20140509071814.2435" a="E"
 expanded="2014spring.20140509071814.2459,2014spring.20140509071814.2500,"><vh>@file cmsimply.py</vh></v>
 </v>
@@ -93,8 +92,11 @@ expanded="2014spring.20140509071814.2459,2014spring.20140509071814.2500,"><vh>@f
 <v t="2014spring.20140512231824.2646"><vh>@path wsgi/programs/c2g15</vh>
 <v t="2014spring.20140512231824.2647" a="O"><vh>@edit __init__.py</vh></v>
 </v>
-<v t="2014spring.20140512231824.2659" a="E"><vh>@path wsgi/programs/c2g16</vh>
+<v t="2014spring.20140512231824.2659"><vh>@path wsgi/programs/c2g16</vh>
 <v t="2014spring.20140512231824.2660"><vh>@edit __init__.py</vh></v>
+</v>
+<v t="2014python.20140602230647.1984" a="E"><vh>@path wsgi/programs/c2g18</vh>
+<v t="2014python.20140602230647.1985"><vh>@edit __init__.py</vh></v>
 </v>
 <v t="kmolII_lite.20140513015136.1753" a="E"><vh>@path wsgi/programs/c2g19</vh>
 <v t="kmolII_lite.20140513015136.1754"><vh>@edit __init__.py</vh></v>
@@ -110,6 +112,9 @@ expanded="2014spring.20140520155021.4815,"><vh>@file involute.py</vh></v>
 <v t="2014spring.20140520155021.4817"><vh>@file demo1.py</vh></v>
 <v t="2014spring.20140520155021.4821"
 expanded="2014spring.20140520155021.4823,"><vh>@file walker.py</vh></v>
+</v>
+<v t="c2g4.20140602210658.1980" a="E"><vh>@path wsgi/programs/c2g4</vh>
+<v t="c2g4.20140602210658.1981"><vh>@edit __init__.py</vh></v>
 </v>
 </v>
 <v t="2014spring.20140503095553.1883" a="E"><vh>利用 pandoc 進行格式轉換</vh>
@@ -356,6 +361,7 @@ However, because the arrangement of config is directly related to the arrangemen
 responsibility of the Dispatcher to collect per-handler config, merge it with per-URI and global config, and bind the 
 resulting dict to cherrypy.request.config. This dict is of depth 1 and will contain all config entries which are in effect for the current request.</t>
 <t tx="2014python.20140505100744.1942"></t>
+<t tx="2014python.20140602230647.1984"></t>
 <t tx="2014pythonE.20140224205837.3150"></t>
 <t tx="2014pythonE.20140224205837.3151">QSplitter::handle {
     background-color: #CAE1FF; /* lightSteelBlue1 */
@@ -1320,6 +1326,7 @@ class C2G15(object):
 <t tx="2014spring.20140520155021.4795"></t>
 <t tx="2014spring.20140521094048.1967"></t>
 <t tx="2014spring.20140521094048.1968"></t>
+<t tx="c2g4.20140602210658.1980"></t>
 <t tx="kmolII_lite.20140505210604.1651"></t>
 <t tx="kmolII_lite.20140513015136.1753"></t>
 <t tx="public_kmol.20140302202325.1714">break
