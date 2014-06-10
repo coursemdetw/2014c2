@@ -43,7 +43,7 @@
 </v>
 </v>
 </v>
-<v t="2014pythonE.20140414091257.1680" a="E"><vh>c2_w8</vh>
+<v t="2014pythonE.20140414091257.1680"><vh>c2_w8</vh>
 <v t="2014pythonE.20140418222946.1967"><vh>說明</vh></v>
 <v t="2014pythonE.20140418222946.1968"><vh>同步設定</vh></v>
 <v t="2014pythonE.20140414091257.1916"><vh>簡單分頁</vh>
@@ -92,8 +92,11 @@ expanded="2014spring.20140509071814.2459,2014spring.20140509071814.2500,"><vh>@f
 <v t="2014spring.20140512231824.2646"><vh>@path wsgi/programs/c2g15</vh>
 <v t="2014spring.20140512231824.2647" a="O"><vh>@edit __init__.py</vh></v>
 </v>
-<v t="2014spring.20140512231824.2659" a="E"><vh>@path wsgi/programs/c2g16</vh>
+<v t="2014spring.20140512231824.2659"><vh>@path wsgi/programs/c2g16</vh>
 <v t="2014spring.20140512231824.2660"><vh>@edit __init__.py</vh></v>
+</v>
+<v t="2014python.20140602230647.1984" a="E"><vh>@path wsgi/programs/c2g18</vh>
+<v t="2014python.20140602230647.1985"><vh>@edit __init__.py</vh></v>
 </v>
 <v t="kmolII_lite.20140513015136.1753" a="E"><vh>@path wsgi/programs/c2g19</vh>
 <v t="kmolII_lite.20140513015136.1754"><vh>@edit __init__.py</vh></v>
@@ -358,6 +361,7 @@ However, because the arrangement of config is directly related to the arrangemen
 responsibility of the Dispatcher to collect per-handler config, merge it with per-URI and global config, and bind the 
 resulting dict to cherrypy.request.config. This dict is of depth 1 and will contain all config entries which are in effect for the current request.</t>
 <t tx="2014python.20140505100744.1942"></t>
+<t tx="2014python.20140602230647.1984"></t>
 <t tx="2014pythonE.20140224205837.3150"></t>
 <t tx="2014pythonE.20140224205837.3151">QSplitter::handle {
     background-color: #CAE1FF; /* lightSteelBlue1 */
@@ -1020,7 +1024,9 @@ root.c2g1 = c2g1.C2G1()
     application 網站是否可以正確執行
     .leo 檔案是否可以被 Leo Editor 正確開啟
     專案是否可以正確產生協同報告 pdf 與 html 檔案
-    與 .leo 專案對應的外部目錄與檔案是否正確設定</t>
+    與 .leo 專案對應的外部目錄與檔案是否正確設定
+
+W16 update</t>
 <t tx="2014spring.20140512231824.2642"></t>
 <t tx="2014spring.20140512231824.2646"></t>
 <t tx="2014spring.20140512231824.2647">@language python
