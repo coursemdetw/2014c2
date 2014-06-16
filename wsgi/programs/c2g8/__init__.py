@@ -15,9 +15,12 @@ class C2G8(object):
 <a href="flag">c2g8 flag 繪圖</a><br />
 <a href="Japanflag">c2g8 Japanflag 繪圖</a><br />
 <a href="america">c2g8 Americaflag 繪圖</a><br />
+<a href="america2">c2g8 Americaflag2 繪圖</a><br />
 <a href="square">c2g8 square 繪圖</a><br />
 <a href="triangle">c2g8 triangle 繪圖</a><br />
 <a href="triangle1">c2g8 triangle1 繪圖</a><br />
+<a href="americataiwan">c2g8 america taiwan 繪圖</a><br />
+<a href="http://2014c2-mdenfu.rhcloud.com/static/reeborg/world.html?proglang=python-en&world=%7B%22robots%22%3A%5B%7B%22x%22%3A12%2C%22y%22%3A1%2C%22tokens%22%3A%22infinite%22%2C%22orientation%22%3A0%2C%22_prev_x%22%3A11%2C%22_prev_y%22%3A1%2C%22_prev_orientation%22%3A3%7D%5D%2C%22walls%22%3A%7B%222%2C1%22%3A%5B%22east%22%5D%2C%224%2C1%22%3A%5B%22east%22%5D%2C%226%2C1%22%3A%5B%22east%22%5D%2C%228%2C1%22%3A%5B%22east%22%5D%2C%2210%2C1%22%3A%5B%22east%22%5D%2C%2212%2C1%22%3A%5B%22east%22%5D%2C%223%2C1%22%3A%5B%22east%22%5D%2C%227%2C1%22%3A%5B%22east%22%5D%2C%223%2C2%22%3A%5B%22east%22%5D%2C%226%2C2%22%3A%5B%22east%22%5D%2C%227%2C2%22%3A%5B%22east%22%5D%2C%227%2C3%22%3A%5B%22east%22%5D%2C%2210%2C2%22%3A%5B%22east%22%5D%7D%2C%22goal%22%3A%7B%22position%22%3A%7B%22x%22%3A12%2C%22y%22%3A1%7D%7D%7D&editor=%23%20%E5%88%A9%E7%94%A8%E4%B8%89%E5%80%8B%E5%B7%A6%E8%BD%89%2C%20%E5%AE%9A%E7%BE%A9%E5%8F%B3%E8%BD%89%0Adef%20turn_right()%3A%0A%20%20%20%20for%20i%20in%20range(3)%3A%0A%20%20%20%20%20%20%20%20turn_left()%0A%20%0Awhile%20not%20at_goal()%3A%0A%20%20%20%20if%20not%20right_is_clear()%20and%20front_is_clear()%3A%0A%20%20%20%20%20%20%20%20move()%0A%20%20%20%20elif%20right_is_clear()%3A%0A%20%20%20%20%20%20%20%20turn_right()%0A%20%20%20%20%20%20%20%20move()%0A%20%20%20%20else%3A%0A%20%20%20%20%20%20%20%20turn_left()%0A%20%20%20%20%20%20%20%20&library=%23%20'import%20my_lib'%20in%20Python%20Code%20is%20required%20to%20use%0A%23%20the%20code%20in%20this%20library.%20%0Adef%20turn_right()%3A%0A%20%20%20%20repeat(turn_left%2C%203)">c2g8 機器人迷宮萬解</a><br />
 '''
         return outstring
 
@@ -547,6 +550,230 @@ class C2G8(object):
     ctx = canvas.getContext("2d")
     # 進行座標轉換, x 軸不變, y 軸反向且移動 800 光點
     ctx.setTransform(1, 0, 0, -1, 0, 800)
+    # x, y 為中心,  r 為半徑, angle 旋轉角,  solid 空心或實心,  color 顏色
+    def star(x, y, r, angle=0, solid=False, color="white"):
+        # 以 x, y 為圓心, 計算五個外點
+        deg = math.pi/180
+        # 圓心到水平線距離
+        a = r*math.cos(72*deg)
+        # a 頂點向右到內點距離
+        b = (r*math.cos(72*deg)/math.cos(36*deg))*math.sin(36*deg)
+        # 利用畢氏定理求內點半徑
+        rin = math.sqrt(a**2 + b**2)
+        # 查驗 a, b 與 rin
+        #print(a, b, rin)
+        if(solid):
+            ctx.beginPath()
+        for i in range(5):
+            xout = (x + r*math.sin((360/5)*deg*i+angle*deg))
+            yout = (y + r*math.cos((360/5)*deg*i+angle*deg))
+            # 外點增量 + 1
+            xout2 = x + r*math.sin((360/5)*deg*(i+1)+angle*deg)
+            yout2 = y + r*math.cos((360/5)*deg*(i+1)+angle*deg)
+            xin = x + rin*math.sin((360/5)*deg*i+36*deg+angle*deg)
+            yin = y + rin*math.cos((360/5)*deg*i+36*deg+angle*deg)
+            # 查驗外點與內點座標
+            #print(xout, yout, xin, yin)
+            if(solid):
+                # 填色
+                if(i==0):
+                    ctx.moveTo(xout, yout)
+                    ctx.lineTo(xin, yin)
+                    ctx.lineTo(xout2, yout2)
+                else:
+                    ctx.lineTo(xin, yin)
+                    ctx.lineTo(xout2, yout2)
+        if(solid):
+            ctx.fillStyle = 'white'
+            ctx.fill()
+
+    for i in range(7):
+        ctx.fillStyle='rgb(255, 0, 0)'
+        ctx.fillRect(0, 0+40*i, 390, 20)
+
+    ctx.fillStyle='rgb(0, 0, 149)'
+    ctx.fillRect(0, 120, 210, 140)
+
+    for i in range(6):
+        for j in range(5):
+            star(20+34*i, 134+28*j, 8, 0, True, "white")
+    for i in range(5):
+        for j in range(4):
+            star(36+34*i, 148+28*j, 8, 0, True, "white")
+      # 定義畫線函式
+    def draw_line(x1, y1, x2, y2, linethick = 3, color = "black"):
+        ctx.beginPath()
+        ctx.lineWidth = linethick
+        ctx.moveTo(x1, y1)
+        ctx.lineTo(x2, y2)
+        ctx.strokeStyle = color
+        ctx.stroke()
+    
+    draw_line(0, 0, 390, 0)
+    draw_line(390, 0, 390, 260)
+    draw_line(390, 260, 0, 260)
+    draw_line(0, 260, 0, 0)
+    
+    </script>
+    </body>
+    </html>
+    '''
+        return outstring
+        
+    @cherrypy.expose
+    def americataiwan(self, *args, **kwargs):
+        outstring = '''
+    <!DOCTYPE html> 
+    <html>
+    <head>
+    <meta http-equiv="content-type" content="text/html;charset=utf-8">
+    <script type="text/javascript" src="/static/Brython2.1.0-20140419-113919/brython.js"></script>
+    </head>
+    <body onload="brython({debug:1, cache:'version'})">
+    <canvas id="plotarea" width="800" height="800"></canvas>
+    <script type="text/python">
+    # 導入 doc
+    from browser import doc
+    import math
+
+    # 準備繪圖畫布
+    canvas = doc["plotarea"]
+    ctx = canvas.getContext("2d")
+    # 進行座標轉換, x 軸不變, y 軸反向且移動 800 光點
+    ctx.setTransform(0, 1, 1, 0, 10, 200)
+    # x, y 為中心,  r 為半徑, angle 旋轉角,  solid 空心或實心,  color 顏色
+    def star(x, y, r, angle=0, solid=False, color="white"):
+        # 以 x, y 為圓心, 計算五個外點
+        deg = math.pi/180
+        # 圓心到水平線距離
+        a = r*math.cos(72*deg)
+        # a 頂點向右到內點距離
+        b = (r*math.cos(72*deg)/math.cos(36*deg))*math.sin(36*deg)
+        # 利用畢氏定理求內點半徑
+        rin = math.sqrt(a**2 + b**2)
+        # 查驗 a, b 與 rin
+        #print(a, b, rin)
+        if(solid):
+            ctx.beginPath()
+        for i in range(5):
+            xout = (x + r*math.sin((360/5)*deg*i+angle*deg))
+            yout = (y + r*math.cos((360/5)*deg*i+angle*deg))
+            # 外點增量 + 1
+            xout2 = x + r*math.sin((360/5)*deg*(i+1)+angle*deg)
+            yout2 = y + r*math.cos((360/5)*deg*(i+1)+angle*deg)
+            xin = x + rin*math.sin((360/5)*deg*i+36*deg+angle*deg)
+            yin = y + rin*math.cos((360/5)*deg*i+36*deg+angle*deg)
+            # 查驗外點與內點座標
+            #print(xout, yout, xin, yin)
+            if(solid):
+                # 填色
+                if(i==0):
+                    ctx.moveTo(xout, yout)
+                    ctx.lineTo(xin, yin)
+                    ctx.lineTo(xout2, yout2)
+                else:
+                    ctx.lineTo(xin, yin)
+                    ctx.lineTo(xout2, yout2)
+        if(solid):
+            ctx.fillStyle = 'white'
+            ctx.fill()
+
+    for i in range(7):
+        ctx.fillStyle='rgb(255, 0, 0)'
+        ctx.fillRect(0, 0+40*i, 390, 20)
+
+    ctx.fillStyle='rgb(0, 0, 149)'
+    ctx.fillRect(0, 120, 210, 140)
+
+    for i in range(6):
+        for j in range(5):
+            star(20+34*i, 134+28*j, 8, 0, True, "white")
+    for i in range(5):
+        for j in range(4):
+            star(36+34*i, 148+28*j, 8, 0, True, "white")
+      # 定義畫線函式
+            
+    from browser import doc
+    import math
+
+    # 準備繪圖畫布
+    canvas = doc["plotarea"]
+    ctx = canvas.getContext("2d")
+    # 進行座標轉換, x 軸不變, y 軸反向且移動 canvas.height 單位光點
+    ctx.setTransform(0, 1, 1, 0, 350, 200)
+    # 以下採用 canvas 原始座標繪圖
+    flag_w = 400
+    flag_h = 300
+    circle_x = flag_w/4
+    circle_y = flag_h/4
+    # 先畫滿地紅
+    ctx.fillStyle='rgb(255, 0, 0)'
+    ctx.fillRect(0,0,flag_w,flag_h)
+    # 再畫青天
+    ctx.fillStyle='rgb(0, 0, 150)'
+    ctx.fillRect(0,0,flag_w/2,flag_h/2)
+    # 畫十二到光芒白日
+    ctx.beginPath()
+    star_radius = flag_w/8
+    angle = 0
+    for i in range(24):
+        angle += 5*math.pi*2/12
+        toX = circle_x + math.cos(angle)*star_radius
+        toY = circle_y + math.sin(angle)*star_radius
+        # 只有 i 為 0 時移動到 toX, toY, 其餘都進行 lineTo
+        if (i):
+            ctx.lineTo(toX, toY)
+        else:
+            ctx.moveTo(toX, toY)
+    # 將填色設為白色
+    ctx.fillStyle = '#fff'
+    ctx.fill()
+    # 白日:藍圈
+    ctx.beginPath()
+    # 查詢 canvas arc 如何定義
+    ctx.arc(circle_x, circle_y, flag_w*17/240, 0, math.pi*2, true)
+    ctx.closePath()
+    # 填色設為藍色
+    ctx.fillStyle = 'rgb(0, 0, 149)'
+    ctx.fill()
+    # 白日:白心
+    ctx.beginPath()
+    ctx.arc(circle_x, circle_y, flag_w/16, 0, math.pi*2, true)
+    ctx.closePath()
+    # 填色設為白色
+    ctx.fillStyle = '#fff'
+    ctx.fill()
+    
+    </script>
+    </body>
+    </html>
+    '''
+        return outstring
+        
+        
+        
+    @cherrypy.expose
+    def america2(self, *args, **kwargs):
+        outstring = '''
+    <!DOCTYPE html> 
+    <html>
+    <head>
+    <meta http-equiv="content-type" content="text/html;charset=utf-8">
+    <script type="text/javascript" src="/static/Brython2.1.0-20140419-113919/brython.js"></script>
+    </head>
+    <body onload="brython({debug:1, cache:'version'})">
+    <canvas id="plotarea" width="800" height="800"></canvas>
+    <script type="text/python">
+    # 導入 doc
+    from browser import doc
+    import math
+
+    # 準備繪圖畫布
+    canvas = doc["plotarea"]
+    ctx = canvas.getContext("2d")
+    # 進行座標轉換, x 軸不變, y 軸反向且移動 800 光點
+    ctx.setTransform(1, 0, 0, -1, 300, 800)
+    ctx.rotate(45*math.pi/180)
     # x, y 為中心,  r 為半徑, angle 旋轉角,  solid 空心或實心,  color 顏色
     def star(x, y, r, angle=0, solid=False, color="white"):
         # 以 x, y 為圓心, 計算五個外點
