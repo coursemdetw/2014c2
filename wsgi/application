@@ -455,6 +455,13 @@ import programs.c2g7 as c2g7
 root.c2g7 = c2g7.C2G7()
 import programs.c2g8 as c2g8
 root.c2g8 = c2g8.C2G8()
+
+import programs.c2g10 as c2g10
+root.c2g10 = c2g10.C2G10()
+
+import programs.c2g16 as c2g16
+root.c2g16 = c2g16.C2G16()
+
 import programs.c2g15 as c2g15
 root.c2g15 = c2g15.C2G15()
 # 以下為 c2g19 的模組導入與連結設定

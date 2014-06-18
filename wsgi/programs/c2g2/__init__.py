@@ -296,25 +296,23 @@ class C2G2(object):
     <body onload="brython({debug:1, cache:'version'})">
     <canvas id="plotarea" width="300" height="200"></canvas>
     <script type="text/python">
-    # 導入 doc
     from browser import doc
     import math
-
     # 準備繪圖畫布
     canvas = doc["plotarea"]
     ctx = canvas.getContext("2d")
     # 進行座標轉換, x 軸不變, y 軸反向且移動 canvas.height 單位光點
-    # ctx.setTransform(1, 0, 0, -1, 0, canvas.height)
+    ctx.setTransform(1, 0, 0, 1, 200, 200)
     # 以下採用 canvas 原始座標繪圖
-    flag_w = canvas.width
-    flag_h = canvas.height
+    flag_w = 1*300
+    flag_h = 1.9*100
     for i in range(7):
         #畫紅條
         ctx.fillStyle='rgb(255, 0, 0)'
-        ctx.fillRect(0,0+i*2*flag_h/13,flag_w,flag_h/13)
+        ctx.fillRect(0,0+i*2*flag_h/13,flag_w,(flag_h/13)*0.0769*13)
     # 填色設為藍色
     ctx.fillStyle='rgb(0, 0, 150)'
-    ctx.fillRect(0,0,flag_w/2-5,flag_h*0.5385)
+    ctx.fillRect(0,0,flag_h*0.76,(flag_w*0.5385/2)*1.27)
     # 定義畫線函式
     def draw_line(x1, y1, x2, y2, linethick = 3, color = "black"):
         ctx.beginPath()
@@ -324,7 +322,7 @@ class C2G2(object):
         ctx.strokeStyle = color
         ctx.stroke()
     # x, y 為中心,  r 為半徑, angle 旋轉角,  solid 空心或實心,  color 顏色
-    def star(x, y, r, angle=0, solid=False, color="#f00"):
+    def star(x, y, r, angle=-50, solid=False, color="#f00"):
         # 以 x, y 為圓心, 計算五個外點
         deg = math.pi/180
         # 圓心到水平線距離
@@ -366,10 +364,10 @@ class C2G2(object):
             ctx.fill()
     for i in range(6):
         for j in range(5):
-            star(10+24*i, 6+24*j, 6, 0, True, "white")
+            star(((5+0.0538)*5*i+8+0.0538), (9+0.0633)*2.5*j+6.5+0.0633, 0.0616*99, 180, True, "white")
     for i in range(5):
         for j in range(4):
-            star(25+24*i, 19.5+24*j, 6, 0, True, "white")
+            star((4.3+0.0538)*6*i+18+0.0538, (5.5+0.0633)*4*j+17.5+0.0633, 0.0616*99, 180, True, "white")
     </script>
     </body>
     </html>
@@ -445,15 +443,15 @@ class C2G2(object):
     ctx.setTransform(1, 0, 0, 1, 250, 100)
     ctx.rotate(45*math.pi/180)
     # 以下採用 canvas 原始座標繪圖
-    flag_w = 300
-    flag_h = 200
+    flag_w = 1*300
+    flag_h = 1.9*100
     for i in range(7):
         #畫紅條
         ctx.fillStyle='rgb(255, 0, 0)'
-        ctx.fillRect(0,0+i*2*flag_h/13,flag_w,flag_h/13)
+        ctx.fillRect(0,0+i*2*flag_h/13,flag_w,(flag_h/13)*0.0769*13)
     # 填色設為藍色
     ctx.fillStyle='rgb(0, 0, 150)'
-    ctx.fillRect(0,0,flag_w/2-5,flag_h*0.5385)
+    ctx.fillRect(0,0,flag_h*0.76,(flag_w*0.5385/2)*1.27)
     # 定義畫線函式
     def draw_line(x1, y1, x2, y2, linethick = 3, color = "black"):
         ctx.beginPath()
@@ -505,10 +503,83 @@ class C2G2(object):
             ctx.fill()
     for i in range(6):
         for j in range(5):
-            star(10+24*i, 6+24*j, 6, 0, True, "white")
+            star(((5+0.0538)*5*i+8+0.0538), (9+0.0633)*2.5*j+6.5+0.0633, 0.0616*99, 0, True, "white")
     for i in range(5):
         for j in range(4):
-            star(18.5+25.5*i, 15.5+25.5*j, 6, 0, True, "white")
+            star((4.3+0.0538)*6*i+18+0.0538, (5.5+0.0633)*4*j+17.5+0.0633, 0.0616*99, 0, True, "white")  # 導入 doc
+    from browser import doc
+    import math
+    # 準備繪圖畫布
+    canvas = doc["background_canvas"]
+    ctx = canvas.getContext("2d")
+    # 進行座標轉換, x 軸不變, y 軸反向且移動 canvas.height 單位光點
+    ctx.setTransform(1, 0, 0, 1, 250, 100)
+    ctx.rotate(45*math.pi/180)
+    # 以下採用 canvas 原始座標繪圖
+    flag_w = 1*300
+    flag_h = 1.9*100
+    for i in range(7):
+        #畫紅條
+        ctx.fillStyle='rgb(255, 0, 0)'
+        ctx.fillRect(0,0+i*2*flag_h/13,flag_w,(flag_h/13)*0.0769*13)
+    # 填色設為藍色
+    ctx.fillStyle='rgb(0, 0, 150)'
+    ctx.fillRect(0,0,flag_h*0.76,(flag_w*0.5385/2)*1.27)
+    # 定義畫線函式
+    def draw_line(x1, y1, x2, y2, linethick = 3, color = "black"):
+        ctx.beginPath()
+        ctx.lineWidth = linethick
+        ctx.moveTo(x1, y1)
+        ctx.lineTo(x2, y2)
+        ctx.strokeStyle = color
+        ctx.stroke()
+    # x, y 為中心,  r 為半徑, angle 旋轉角,  solid 空心或實心,  color 顏色
+    def star(x, y, r, angle=0, solid=False, color="#f00"):
+        # 以 x, y 為圓心, 計算五個外點
+        deg = math.pi/180
+        # 圓心到水平線距離
+        a = r*math.cos(72*deg)
+        # a 頂點向右到內點距離
+        b = (r*math.cos(72*deg)/math.cos(36*deg))*math.sin(36*deg)
+        # 利用畢氏定理求內點半徑
+        rin = math.sqrt(a**2 + b**2)
+        # 查驗 a, b 與 rin
+        #print(a, b, rin)
+        if(solid):
+            ctx.beginPath()
+        for i in range(5):
+            xout = (x + r*math.sin((360/5)*deg*i+angle*deg))
+            yout = (y + r*math.cos((360/5)*deg*i+angle*deg))
+            # 外點增量 + 1
+            xout2 = x + r*math.sin((360/5)*deg*(i+1)+angle*deg)
+            yout2 = y + r*math.cos((360/5)*deg*(i+1)+angle*deg)
+            xin = x + rin*math.sin((360/5)*deg*i+36*deg+angle*deg)
+            yin = y + rin*math.cos((360/5)*deg*i+36*deg+angle*deg)
+            # 查驗外點與內點座標
+            #print(xout, yout, xin, yin)
+            if(solid):
+                # 填色
+                if(i==0):
+                    ctx.moveTo(xout, yout)
+                    ctx.lineTo(xin, yin)
+                    ctx.lineTo(xout2, yout2)
+                else:
+                    ctx.lineTo(xin, yin)
+                    ctx.lineTo(xout2, yout2)
+            else:
+                # 空心
+                draw_line(xout, yout, xin, yin, color)
+                # 畫空心五芒星, 無關畫線次序, 若實心則與畫線次序有關
+                draw_line(xout2, yout2, xin, yin, color)
+        if(solid):
+            ctx.fillStyle = color
+            ctx.fill()
+    for i in range(6):
+        for j in range(5):
+            star(((5+0.0538)*5*i+8+0.0538), (9+0.0633)*2.5*j+6.5+0.0633, 0.0616*99, 0, True, "white")
+    for i in range(5):
+        for j in range(4):
+            star((4.3+0.0538)*6*i+18+0.0538, (5.5+0.0633)*4*j+17.5+0.0633, 0.0616*99, 0, True, "white")
     </script>
     </body>
     </html>
@@ -533,18 +604,18 @@ class C2G2(object):
     canvas = doc["plotarea"]
     ctx = canvas.getContext("2d")
     # 進行座標轉換, x 軸不變, y 軸反向且移動 canvas.height 單位光點
-    ctx.setTransform(1, 0, 0, -1, -400, 0)
+    ctx.setTransform(1, 0, 0, -1, 0, 0)
     ctx.rotate(270*math.pi/180)
     # 以下採用 canvas 原始座標繪圖
-    flag_w = 300
-    flag_h =  200
+    flag_w = 1*300
+    flag_h = 1.9*100
     for i in range(7):
         #畫紅條
         ctx.fillStyle='rgb(255, 0, 0)'
-        ctx.fillRect(0,400+i*2*flag_h/13,flag_w,flag_h/13)
+        ctx.fillRect(0,0+i*2*flag_h/13,flag_w,(flag_h/13)*0.0769*13)
     # 填色設為藍色
     ctx.fillStyle='rgb(0, 0, 150)'
-    ctx.fillRect(0,400,flag_w/2-5,flag_h*0.5385)
+    ctx.fillRect(0,0,flag_h*0.76,(flag_w*0.5385/2)*1.27)
     # 定義畫線函式
     def draw_line(x1, y1, x2, y2, linethick = 3, color = "black"):
         ctx.beginPath()
@@ -554,7 +625,7 @@ class C2G2(object):
         ctx.strokeStyle = color
         ctx.stroke()
     # x, y 為中心,  r 為半徑, angle 旋轉角,  solid 空心或實心,  color 顏色
-    def star(x, y, r, angle=0, solid=False, color="#f00"):
+    def star(x, y, r, angle=-50, solid=False, color="#f00"):
         # 以 x, y 為圓心, 計算五個外點
         deg = math.pi/180
         # 圓心到水平線距離
@@ -596,20 +667,19 @@ class C2G2(object):
             ctx.fill()
     for i in range(6):
         for j in range(5):
-            star(10+24*i, 405+24*j, 6, 0, True, "white")
+            star(((5+0.0538)*5*i+8+0.0538), (9+0.0633)*2.5*j+6.5+0.0633, 0.0616*99, 180, True, "white")
     for i in range(5):
         for j in range(4):
-            star(18.5+25.5*i, 414.5+25.5*j, 6, 0, True, "white")
-
+            star((4.3+0.0538)*6*i+18+0.0538, (5.5+0.0633)*4*j+17.5+0.0633, 0.0616*99, 180, True, "white")
     # 準備繪圖畫布
     canvas = doc["plotarea"]
     ctx = canvas.getContext("2d")
     # 進行座標轉換, x 軸不變, y 軸反向且移動 canvas.height 單位光點
-    ctx.setTransform(1, 0, 0, -1, 500, 0)
-    ctx.rotate(180*math.pi/180)
+    ctx.setTransform(1, 0, 0, -1, 400, 0)
+    ctx.rotate(270*math.pi/180)
     # 以下採用 canvas 原始座標繪圖
-    flag_w = 200
-    flag_h = 300
+    flag_w = 120*2.5
+    flag_h = 80*2.5
     circle_x = flag_w/4
     circle_y = flag_h/4
     # 先畫滿地紅
@@ -666,25 +736,25 @@ class C2G2(object):
     <body onload="brython({debug:1, cache:'version'})">
     <canvas id="plotarea" width="800" height="800"></canvas>
     <script type="text/python">
-    # 導入 doc
+ # 導入 doc
     from browser import doc
     import math
     # 準備繪圖畫布
     canvas = doc["plotarea"]
     ctx = canvas.getContext("2d")
     # 進行座標轉換, x 軸不變, y 軸反向且移動 canvas.height 單位光點
-    ctx.setTransform(1, 0, 0, -1, -400, 0)
+    ctx.setTransform(1, 0, 0, -1, 0, 0)
     ctx.rotate(270*math.pi/180)
     # 以下採用 canvas 原始座標繪圖
-    flag_w = 300
-    flag_h =  200
+    flag_w = 1*300
+    flag_h = 1.9*100
     for i in range(7):
         #畫紅條
         ctx.fillStyle='rgb(255, 0, 0)'
-        ctx.fillRect(0,400+i*2*flag_h/13,flag_w,flag_h/13)
+        ctx.fillRect(0,0+i*2*flag_h/13,flag_w,(flag_h/13)*0.0769*13)
     # 填色設為藍色
     ctx.fillStyle='rgb(0, 0, 150)'
-    ctx.fillRect(0,400,flag_w/2-5,flag_h*0.5385)
+    ctx.fillRect(0,0,flag_h*0.76,(flag_w*0.5385/2)*1.27)
     # 定義畫線函式
     def draw_line(x1, y1, x2, y2, linethick = 3, color = "black"):
         ctx.beginPath()
@@ -694,7 +764,7 @@ class C2G2(object):
         ctx.strokeStyle = color
         ctx.stroke()
     # x, y 為中心,  r 為半徑, angle 旋轉角,  solid 空心或實心,  color 顏色
-    def star(x, y, r, angle=0, solid=False, color="#f00"):
+    def star(x, y, r, angle=-50, solid=False, color="#f00"):
         # 以 x, y 為圓心, 計算五個外點
         deg = math.pi/180
         # 圓心到水平線距離
@@ -736,10 +806,10 @@ class C2G2(object):
             ctx.fill()
     for i in range(6):
         for j in range(5):
-            star(10+24*i, 405+24*j, 6, 0, True, "white")
+            star(((5+0.0538)*5*i+8+0.0538), (9+0.0633)*2.5*j+6.5+0.0633, 0.0616*99, 180, True, "white")
     for i in range(5):
         for j in range(4):
-            star(18.5+25.5*i, 414.5+25.5*j, 6, 0, True, "white")
+            star((4.3+0.0538)*6*i+18+0.0538, (5.5+0.0633)*4*j+17.5+0.0633, 0.0616*99, 180, True, "white")
     </script>
     </body>
     </html>
