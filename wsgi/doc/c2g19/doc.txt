@@ -1,0 +1,362 @@
+期末報告(c2g10&19)
+===
+
+國立虎尾科技大學  102學年度  第二學期
+
+機械設計工程系   程式語言(二)
+
+第 10 組：
+
+40023206  陳翊庭
+
+40023218  李孟儒
+
+40023255  柯東柏
+
+
+第 19 組：
+
+40023215  吳承融
+
+40123157  盧毅民
+
+期末報告：教材二  第六堂課
+
+期末報告(PDF)： http://goo.gl/3Ve7SD
+
+期末報告網站： https://finalreport-40123157.rhcloud.com
+
+
+# 任務說明
+ *  期末全班協同專案：(30 分) 
+    1. 任務一 (10 分)：標示分工內容與章節配置
+        (a) 本組(第 19 組)與第 10 組期末協同整理教材
+        (b) 負責章節內容：教材二 第六堂課
+    2. 任務二 (10 分)：將內容以近端與遠端 (Reeborg) 程式執行模式, 放入各組的協同文件
+    3. 任務三 (10 分)：以 pandoc 完成 pdf 及 html 格式資料, 將全班產生的 html 轉換放入各組 CMSimply 網站
+
+# 期末任務一
+    1. 任務一 (10 分)：標示分工內容與章節配置
+        (a) 本組(第 19 組)與第 10 組期末協同整理教材
+        (b) 負責章節內容：教材二 第六堂課
+
+![c2分工內容與章節](./../images/c2g19/c2g19_1_1.jpg)
+
+
+# 期末任務二(part1)
+    2. 任務二 (10 分)：將內容以近端與遠端 (Reeborg) 程式執行模式, 放入各組的協同文件
+
+    (一)使用 unittest 單元測試
+unittest 有時亦稱為 “PyUnit"，是 JUnit 的 Python 語言實現，JUnit是個單元測試（Unit test）框架，單元測試指的是測試一個工作單元（a unit of work）的行為。
+         
+舉例來說，對於建築橋墩而言，一個螺絲釘、一根鋼筋、一條鋼索甚至一公斤的水泥等，都可謂是一個工作單元，驗證這些工作單元行為或功能 （硬度、張力等）是否符合預期，方可確保最後橋墩安全無虞。
+
+測試一個單元，基本上要與其它的單元獨立，否則你會在同時測試兩個單元的正確性，或是兩個單元之間的合作行為。就軟體測試而言，單元測試通常指的是測試某個函式（或方法），你給予該函式某些輸入，預期該函式會產生某種輸出，例如傳回預期的值、產生預期的檔案、新增預期的資料等。
+
+unittest 模組主要包括四個部份：
+    •測試案例（Test case）測試的最小單元。
+    •測試設備（Test fixture）執行一或多個測試前必要的預備資源，以及相關的清除資源動作。
+    •測試套件（Test suite）一組測試案例、測試套件或者是兩者的組合。
+    •測試執行器（Test runner）負責執行測試並提供測試結果的元件。
+
+    (1)測試案例
+對於測試案例的撰寫，unittest 模組提供了一個基礎類別 TestCase，你可以繼承它來建立新的測試案例。例如：
+
+```python 
+import unittest
+import calculator
+  
+class CalculatorTestCase(unittest.TestCase):
+    def setUp(self):
+        self.args = (3, 2)
+  
+    def tearDown(self):
+        self.args = None
+  
+    def test_plus(self):
+        expected = 5;
+        result = calculator.plus(*self.args);
+        self.assertEquals(expected, result);
+  
+    def test_minus(self):
+        expected = 1;
+        result = calculator.minus(*self.args);
+        self.assertEquals(expected, result);
+```
+
+每個測試必須定義在一個 test 名稱為開頭的方法中，一個 TestCase 的子類別，通常用來為某個類別或模組的單元方法或函式定義測試。
+
+    (2)測試設備
+許多單元測試經常藬用相同的測試設備，你可以在 TestCase 的子類別中定義 setUp 與tearDown 方法，測試執行器會在每個測試運行之前執行 setUp 方法，每個測試運行之後執行 tearDown 方法。
+一個實際情境可以像是在 setUp 方法中建立新表格並在表格中新增資料，執行測試之後，在tearDown 方法中刪除表格。
+
+    (3)測試套件
+根據測試的需求不同，你可能會想要將不同的測試組合在一起，例如，CalculatorTestCase 中可能有數個 test_xxx 方法，而你只想將 test_plus 與test_minus 組裝為一個測試套件的話，可以如下：
+
+```python 
+suite = unittest.TestSuite()
+suite.addTest(CalculatorTestCase('test_plus'))
+suite.addTest(CalculatorTestCase('test_minus'))
+```
+
+或者是使用一個 list 來定義要組裝的 test_xxx 方法清單：
+
+```python 
+tests = ['test_plus', 'test_minus']
+suite = unittest.TestSuite(map(CalculatorTestCase, tests))
+```
+
+如果想要自動載入某個 TestCase 子類別中所有 test_xxx 方法，可以如下：
+
+```python 
+unittest.TestLoader().loadTestsFromTestCase(CalculatorTestCase)
+```
+
+你可以任意組合測試，例如，將某個測試套件與某個 TestCase 中的 test_xxx 方法組合為另一個測試套件：
+
+```python 
+suite2 = unittest.TestSuite()
+suite2.addTest(suite)
+suite2.addTest(OtherTestCase('test_orz'))
+```
+
+也可以將許多測試套件再全部組合為另一個測試套件：
+
+```python
+suite1 = module1.TheTestSuite()
+suite2 = module2.TheTestSuite()
+alltests = unittest.TestSuite([suite1, suite2])
+```
+
+    (4)測試執行器
+你可以在程式碼中直接使用 TextTestRunner，例如：
+
+```python
+suite = (unittest.TestLoader()
+                 .loadTestsFromTestCase(CalculatorTestCase))
+unittest.TextTestRunner(verbosity=2).run(suite)
+```
+
+ 或者是透過 unittest.main 函式來執行：
+
+```python
+unittest.main(verbosity=2)
+```
+一個執行的畫面如下：
+
+![python](./../images/c2g19/2-1.jpg)
+
+如果不想透過程式碼定義，也可以在命令列中使用 unittest 模組來運行模組、類別或甚至個別的測試方法：
+
+```python
+python -m unittest test_module1 test_module2
+python -m unittest test_module.TestClass
+python -m unittest test_module.TestClass.test_method
+```
+
+如果想得到更詳細的測試資訊，可以加上 -v 引數：
+
+```python
+python -m unittest -v test_module
+```
+想得知 unittest 所有可用的引數，可以使用以下指令：
+
+```python
+python -m unittest -h
+```
+
+    (5)練習 15：重構與單元測試
+重構是改造既有程式的過程，對於重構的概念與技巧，可以參考 《Refactoring – Improving the Design of Existing Code》 這本書，中文翻譯為 《重構 — 改善既有程式的設計》，侯捷 老師將 中文版翻譯的前六章開放下載，雖然程式碼示範是使用 Java，不過就重構過程的學習來說，非常值得閱讀：
+
+![book](./../images/c2g19/2-2.jpg)
+
+接下來的練習，就是利用該書一開始的影片出租店範例，不過我將之改成了 Python 版本，在 Lab 檔案的 exercises/exercise15 中，有個 dvdlib.py，就相當於該書第一章一開始的範例程式。
+
+我們要重構的是 Customer 類別中的 statement 方法，流程則是彷造該書 〈1.3 分解並重構 statement〉 的內容，為了確保重構過程中，不會破壞既有程式的功能，我們要使用unittest 模組來進行單元測試。
+
+重構之前的類別圖是這樣的：
+
+![box1](./../images/c2g19/2-3.jpg)
+
+重構之後的類別圖則是：
+
+![box2](./../images/c2g19/2-4.jpg)
+
+別忘了，你得在每次的重構之前，先寫好測試，重構後執行測試，確保你沒有破壞了什麼，練習的過程中你會發現，因為有測試確保了功能不破壞，你會更有信心進行重構。
+
+（當然，配合版本控制系統的話，會是更好的方式！）
+
+# 期末任務二(part2)
+    (二)效能評測、PyCon Taiwan
+效能評測是我們要談的最後一個主題了，這是個很大的議題，嗯 … 應該說，這六堂課每一個主題，都可以是個很大的議題，雖然課程接近尾聲了，但別忘了，這只是個簡短的生態之旅！
+
+拉回來效能評測這個主題，就 Python 內建模組來說，我們要介紹的有：
+
+    *  timeit用來量測一個小程式片段的執行時間。
+    *  cProfile用來收集程式執行時的一些時間數據，提供各種統計數據，對大多數的使用者來說是不錯的工具，這是用 C 撰寫的擴充模組。
+    *  profile介面上彷造了 cProfile，不過是用純 Python 來實現的模組，因此有較高的互通性；cProfile 在評測時有較低的額外成本，不過並不是所有系統上都有提供。
+ 
+先來看看 timeit 的介紹 …
+
+    (1)timeit 模組
+在介紹 timeit 之前，來看一個情境，你會怎麼撰寫程式來產生以下執行結果呢？
+
+![python](./../images/c2g19/2-5.jpg)
+
+以下的程式，因為使用了 + 進行串接，所以會比較慢嗎？
+
+```python
+all = ''
+for str in strs: # strs 是 ['0', '1', '2', '3', ..., '98']
+    all = all + str + ','
+all = all + '99'
+```
+
+也許你聽過一種說法，對 list 使用 join 會比較快？
+
+```python
+','.join(strs) # strs 是 ['0', '1', '2', '3', ..., '99']
+```
+
+傳說拔到獅子的鬃毛，程式就會自己生出來嘞！別再相信沒有根據的說法了，試試 timeit！
+來看看喔！如果有個 s 字串是這樣定義的：
+
+```python
+s = '''
+all = ''
+for str in strs:
+    all = all + str + ','
+all = all + '99'
+'''
+```
+
+那麼，以下的 timeit 測試，似乎證明了 + 串接字串一定比較慢，而使用 join 一定比較快：
+
+![python](./../images/c2g19/2-6.jpg)
+
+timeit 的第一個參數接受一個用字串表示的程式片段，第二個參數是準備測試用的材料，也是用字串表示的程式片段，timeit 在材料準備好之後，就會運行第一個參數指定的程式片段並量測時間，單位是秒！嗯！就結果看來，join 勝出！
+
+不過，以下卻是相反的結果：
+
+![python](./../images/c2g19/2-7.jpg)
+
+差別在哪呢？在準備 strs 時，兩個都將 [] 改成了 () 罷了！這邊的重點並不在探討哪個快慢，只是想表示兩個觀念：
+
+    *  效能是程式結合後的整體考量，不是單一概念
+    *  效能不是用猜的，要有實際的評測作為依據
+
+timeit 預設是執行程式片段 1,000,000 次，然後取平均時間，以下是幾個直接透過 API 運行的範例：
+
+![python](./../images/c2g19/2-8.jpg)
+
+也可以透過命令列的指令來執行評測：
+
+![python](./../images/c2g19/2-9.jpg)
+
+一個更實際的例子，可以在 Lab 檔案的 demos/timeit 中找到，這是一個評測排序的範例：
+
+```python
+import timeit
+repeats = 1000
+for f in ('selectionSort', 'insertionSort', 'bubbleSort'):
+    t = timeit.Timer('{0}([10, 9, 1, 2, 5, 3, 8, 7])'.format(f),
+        'from sorting import selectionSort, insertionSort, bubbleSort')
+    sec = t.timeit(repeats) / repeats
+    print '{f}\t{sec:.6f} sec'.format(**locals())
+```
+
+以下是執行的結果：
+![python](./../images/c2g19/2-10.jpg)
+
+    (2)cProfile（profile）
+cProfile 提供有關程式運行時更多的統計資訊，你要有一個主要的進入點。例如：
+
+```python
+import cProfile
+import sorting
+import random
+ 
+l = range(500)
+random.shuffle(l)
+cProfile.run('sorting.selectionSort(l)')
+```
+
+以下是個執行後的統計資訊：
+
+
+![python](./../images/c2g19/2-11.jpg)
+
+這當中有許多欄位需要解釋一下：
+
+    *  ncalls"number of calls" 的縮寫，也就是對特定函式的呼叫次數。
+    *  tottime"total time" 的縮寫，花費在函式上的執行時間（不包括子函數呼叫的時間）。
+    *  percalltottime / ncalls 的結果。
+    *  cumtime"cumulative time" 的縮寫，花費在函式與所有子函式的時間（從呼叫至離開）。
+    *  percallcumtime / ncalls 的結果。
+    *  filename:lineno(function)提供程式碼執行時的位置資訊。
+
+    (3)使用 pstats
+你可以使用 pstats 對 cProfile 的結果，進行各種運算與排序，可以先將 cProfile 收集的結果，儲存為一個檔案：
+
+```python
+cProfile.run('sorting.selectionSort(l)', 'select_stats')
+```
+
+然後，可以如下使用 pstats 載入檔案，並進行排序等運算：
+
+```python
+import pstats
+p = pstats.Stats('select_stats')
+p.strip_dirs().sort_stats('name').print_stats()
+p.sort_stats('cumulative').print_stats(10)
+p.sort_stats('time').print_stats(10)
+```
+
+一個執行結果如下：
+
+![python](./../images/c2g19/2-12.jpg)
+
+你可以直接使用 cProfile 模組將另一個模組載入執行，例如：
+
+```python
+python -m cProfile myscript.py
+```
+
+或者是：
+
+```python
+cProfile.py [-o output_file] [-s sort_order]
+```
+
+如果想使用圖形化方式，來看看評測結果，可以試試 RunSnakeRun。
+
+
+# 期末任務三
+    3.任務三 (10 分)：以 pandoc 完成 pdf 及 html 格式資料, 將全班產生的 html 轉換放入各組 CMSimply 網站
+
+編寫報告完成時間：2014/06/22  03:27 am
+
+產生全班期末報告 (2014/06/22  03:27 am 版本)
+
+已放入 c2g10&g19 之期末 CMSimply 網站完成任務三
+
+期末報告網站： https://finalreport-40123157.rhcloud.com
+
+
+# 報告心得
+    雖然不太懂整體在講什麼, 但是至少努力看了好幾遍
+    在略懂略懂之下, 盡力完成期末任務
+    順利拿下本學期最後的 30 分!
+    
+    by c2g10&g19
+    
+
+
+
+
+
+
+
+
+
+
