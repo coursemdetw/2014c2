@@ -1,0 +1,108 @@
+資料內容為101~111 page  負責小組:第七組
+組員：李曜州、黃金振、楊承翰
+資料型態：字串
+字串str 是一種不可變的資料型態，保存的是一個Unicode 字符序列。
+str() 也可以當成函式呼叫，傳回引數中的字串型式。
+除了使用單引號與雙引號外，Python 還可以使用特有的三個引號的寫法，如：
+? print(”””A cat mean some sort of ’creature’ or ”animal” here.”””)
+A cat mean some sort of ’creature’ or ”animal” here.
+在Python 中，三引號寫法可以橫跨二或多列的字串如下：
+text = ”””A triple quoted string like this can include ’quotes’ and
+”quotes” without formality. We can also escape newlines n
+so this particular string is actually only two lines long.”””
+如果不想使用三引號寫法來橫跨二或多列的字串，可以有以下兩種方法：
+t = ”This is not the best way to join two long string ” + n
+”together since it relies on ugly newline escaping”
+s = (”This is the nice way to join two long strings ”
+”together; it relies on string literal concatenation.”)
+請使用圓括號來展開任何形式的多列陳述句，而不要藉由規避換列字符的方式。
+Python的字串規避序列
+例如：
+? print(”e nN{euro sign} nu20AC nU000020AC”)
+字串運算符
+字串支援常見的比較運算符<、<=、==、! =、> 與>=，
+這些運算符會逐位元組地比較記憶體中的字串。　　
+? ”ABCDE” >= ”ABCFA”
+False
+除此之外，字串也可以使用in 的隸屬測試功能、+ 的連結功能、+= 的附加功
+能、* 的複製功能以及*= 的增強複製功能。
+? s = ”=” * 5
+? print(s)
+=====
+? s *= 2
+? print(s)
+==========
+? ”a” in ”This is a book”
+True
+? print(”Somewhere ” + ”in time.”)
+Somewhere in time.
+如果要連結大量的字串，str.join() 方法提供了一個較佳的解決方法。
+字串的切片與跨越(1)
+對於一個字串，我們可以透過使用資料項存取運算符( [ ] ) 提取一個字串中個別的字符，或是某段字串的切片(次序列)，它又稱為切片(slice)運算符。
+一個字串的索引位置從0 開始，依序遞增至字串的長度減1，但也可以使用負的索引位
+置從最後一個字符往回數到第一個字符。例如有一個字串賦與值為s = ”Rainy day” ，
+該字串的索引位置如下：
+
+? s = ”Rainy day”
+? s[1], s[3], s[5], s[-5]
+(’a’, ’n’, ’ ’, ’y’)
+如果存取超出範圍的索引值，會引發IndexError 例外：? s[9]
+
+
+
+
+字串的切片與跨越(2)
+切片運算符有三種語法可以使用：
+seq [start]
+seq [start:end]
+seq [start:end:step]
+seq 可以是任何序列，像是清單、字串或元組。start、end 與step 等值必須是整數。
+切片語法提取由start 開始，至stop 但不包含stop 的索引值範圍，如有step 參數，
+則是每隔step 提取一次。
+冒號隔開的數字可以省略不寫，即預設為0 至字串的長度len(seq)，除非step 值為負的。
+
+s[2:5] = ’iny’, s[:3] = ’Rai’, s[5:] = ’ day’, s[-3:] = ’day’, s[::2] = ’Riydy’
+字串的切片與跨越(3)
+step 值預設為1，但不可為0。如果step 值為負號，
+則預設的起始索引值start 將會是字串的尾部，即為-1 (或是len(seq)-1)，
+而結尾索引值stop 預設將會變成字串的開頭之前。
+
+? s[::-2]
+’ydyiR’
+? s, s[::-1]
+(’Rainy day’, ’yad yniaR’)
+? for i in range(len(s)):
+print(s[len(s)-i-1],end=”)
+yad yniaR
+註：len(seq) 函式會傳回字串seq 的長度。(上面例子中len(s) = 9)
+字串的方法(method) (1)
+字串的方法(method) (2)
+字串的方法(method) (3)
+字串的方法(method) (4)
+? word = ”how are you?”
+? word.capitalize() ’How are you?’
+? word.center(16,”.”) ’..how are you?..’
+? word.count(”o”) 
+2
+?word.index(”are”)
+4
+?word.islower()
+True
+? word.upper()  ’HOW ARE YOU?’
+? word.partition(”are”)   (’how ’, ’are’, ’ you?’)
+字串的方法的範例
+如果有一個資料檔，裡面每一列都是一筆記錄，每欄間用* 隔開，我們可以使用
+str.split() 方法來取出資料：
+? record = ”Leo Tolstory*1953-6-19*2003-11-20”
+fields = record.split(”*”)
+? fields
+[’Leo Tolstory’, ’1953-6-19’, ’2010-11-20’]
+我們可以再對出生日期與死亡日期使用str.split() 以便計算他活了多久。
+? born = fields[1].split(”-”)
+? born
+[’1953’, ’6’, ’19’]
+? died = fields[2].split(”-”)
+? died
+[’2010’, ’11’, ’20’ ]
+? print(”lived about”,int(died[0])-int(born[0]),”years”)
+lived about 57 years

@@ -1,38 +1,39 @@
 import cherrypy
 
-# 這是 C2G1 類別的定義
-class C2G3(object):
+# 這是 C2G10 類別的定義
+class C2G10(object):
     # 各組利用 index 引導隨後的程式執行
     @cherrypy.expose
     def index(self, *args, **kwargs):
         outstring = '''
-這是 2014C2 協同專案下的 c2g3 分組程式開發網頁, 以下為 W12 的任務執行內容.<br />
+這是 2014C2 協同專案下的 c2g10 分組程式開發網頁, 以下為 W12 的任務執行內容.<br />
 <!-- 這裡採用相對連結, 而非網址的絕對連結 (這一段為 html 註解) -->
-<a href="fillpoly">c2g1 fillpoly 繪圖</a><br />
-<a href="drawline">c2g2 drawline 繪圖</a><br />
-<a href="square">c2g3 square 繪圖</a><br />
-<a href="star">c2g3 star 繪圖</a><br />
-<a href="triangle">c2g3 triangle 繪圖</a><br />
-<a href="triangle2">c2g3 triangle2 繪圖</a><br />
-<a href="usaflag">c2g3 USAflag 繪圖</a><br />
-<a href="Japan_flag">c2g3 Japanflag 繪圖</a><br />
-<a href="http://2014c2-mdenfu.rhcloud.com/static/reeborg/world.html?proglang=python-en&world={%22robots%22%3A[{%22x%22%3A1%2C%22y%22%3A1%2C%22tokens%22%3A%22infinite%22%2C%22orientation%22%3A0%2C%22_prev_x%22%3A1%2C%22_prev_y%22%3A1%2C%22_prev_orientation%22%3A0}]%2C%22walls%22%3A{%222%2C1%22%3A[%22east%22]%2C%224%2C1%22%3A[%22east%22]%2C%226%2C1%22%3A[%22east%22]%2C%228%2C1%22%3A[%22east%22]%2C%2210%2C1%22%3A[%22east%22]%2C%2212%2C1%22%3A[%22east%22]}%2C%22goal%22%3A{%22position%22%3A{%22x%22%3A12%2C%22y%22%3A1}}}&editor=move%28%29%0Aturn_left%28%29%0Amove%28%29%0Aturn_left%28%29%0Aturn_left%28%29%0Aturn_left%28%29%0Amove%28%29%0Aturn_left%28%29%0Aturn_left%28%29%0Aturn_left%28%29%0Amove%28%29%0Aturn_left%28%29%0Amove%28%29%0Aturn_left%28%29%0Amove%28%29%0Aturn_left%28%29%0Aturn_left%28%29%0Aturn_left%28%29%0Amove%28%29%0Aturn_left%28%29%0Aturn_left%28%29%0Aturn_left%28%29%0Amove%28%29%0Aturn_left%28%29%0Amove%28%29%0Aturn_left%28%29%0Amove%28%29%0Aturn_left%28%29%0Aturn_left%28%29%0Aturn_left%28%29%0Amove%28%29%0Aturn_left%28%29%0Aturn_left%28%29%0Aturn_left%28%29%0Amove%28%29%0Aturn_left%28%29%0Amove%28%29%0Aturn_left%28%29%0Amove%28%29%0Aturn_left%28%29%0Aturn_left%28%29%0Aturn_left%28%29%0Amove%28%29%0Aturn_left%28%29%0Aturn_left%28%29%0Aturn_left%28%29%0Amove%28%29%0Aturn_left%28%29%0Amove%28%29%0Aturn_left%28%29%0Amove%28%29%0Aturn_left%28%29%0Aturn_left%28%29%0Aturn_left%28%29%0Amove%28%29%0Aturn_left%28%29%0Aturn_left%28%29%0Aturn_left%28%29%0Amove%28%29%0Aturn_left%28%29%0Amove%28%29%0A&library=%23%20%27import%20my_lib%27%20in%20Python%20Code%20is%20required%20to%20use%0A%23%20the%20code%20in%20this%20library.%20%0A%0A">十五週任務一</a><br />
-<a href="http://2014c2-mdenfu.rhcloud.com/static/reeborg/world.html?proglang=python-en&world=%7B%22robots%22%3A%5B%7B%22x%22%3A1%2C%22y%22%3A1%2C%22tokens%22%3A%22infinite%22%2C%22orientation%22%3A0%2C%22_prev_x%22%3A1%2C%22_prev_y%22%3A1%2C%22_prev_orientation%22%3A0%7D%5D%2C%22walls%22%3A%7B%222%2C1%22%3A%5B%22east%22%5D%2C%224%2C1%22%3A%5B%22east%22%5D%2C%226%2C1%22%3A%5B%22east%22%5D%2C%228%2C1%22%3A%5B%22east%22%5D%2C%2210%2C1%22%3A%5B%22east%22%5D%2C%2212%2C1%22%3A%5B%22east%22%5D%2C%223%2C1%22%3A%5B%22east%22%5D%2C%227%2C1%22%3A%5B%22east%22%5D%7D%2C%22goal%22%3A%7B%22position%22%3A%7B%22x%22%3A12%2C%22y%22%3A1%7D%7D%7D&editor=def%20turn_right()%3A%0A%20%20%20%20repeat(turn_left%2C%203)%0Adef%20jump_hurdle()%3A%0A%20%20%20%20turn_left()%0A%20%20%20%20move()%0A%20%20%20%20turn_right()%0A%20%20%20%20move()%0A%20%20%20%20turn_right()%0A%20%20%20%20move()%0A%20%20%20%20turn_left()%0Amove()%0Ajump_hurdle()%0Ajump_hurdle()%0Ajump_hurdle()%0Amove()%0Ajump_hurdle()%0Ajump_hurdle()%0Ajump_hurdle()%0Amove()%0Ajump_hurdle()%0Amove()&library=%23%20'import%20my_lib'%20in%20Python%20Code%20is%20required%20to%20use%0A%23%20the%20code%20in%20this%20library.%20%0A%0A">十五週任務二</a><br />
-<a href="http://2014c2-mdenfu.rhcloud.com/static/reeborg/world.html?proglang=python-en&world={%22robots%22%3A[{%22x%22%3A5%2C%22y%22%3A2%2C%22tokens%22%3A%22infinite%22%2C%22orientation%22%3A0%2C%22_prev_x%22%3A4%2C%22_prev_y%22%3A2%2C%22_prev_orientation%22%3A3}]%2C%22walls%22%3A{%222%2C1%22%3A[%22east%22]%2C%224%2C1%22%3A[%22east%22]%2C%226%2C1%22%3A[%22east%22]%2C%228%2C1%22%3A[%22east%22]%2C%2210%2C1%22%3A[%22east%22]%2C%2212%2C1%22%3A[%22east%22]}%2C%22goal%22%3A{%22position%22%3A{%22x%22%3A12%2C%22y%22%3A1}}}&editor=def%20turn_right%28%29%3A%0A%20%20%20%20for%20i%20in%20range%283%29%3A%0A%20%20%20%20%20%20%20%20turn_left%28%29%0A%20%0Awhile%20not%20at_goal%28%29%3A%0A%20%20%20%20if%20not%20right_is_clear%28%29%20and%20front_is_clear%28%29%3A%0A%20%20%20%20%20%20%20%20move%28%29%0A%20%20%20%20elif%20right_is_clear%28%29%3A%0A%20%20%20%20%20%20%20%20turn_right%28%29%0A%20%20%20%20%20%20%20%20move%28%29%0A%20%20%20%20else%3A%0A%20%20%20%20%20%20%20%20turn_left%28%29&library=%23%20%27import%20my_lib%27%20in%20Python%20Code%20is%20required%20to%20use%0A%23%20the%20code%20in%20this%20library.%20%0A%0A">十五週任務三</a><br />
-<a href="http://2014c2-mdenfu.rhcloud.com/static/reeborg/world.html?proglang=python-en&world=%7B%22robots%22%3A%5B%7B%22x%22%3A1%2C%22y%22%3A1%2C%22tokens%22%3A%22infinite%22%2C%22orientation%22%3A0%2C%22_prev_x%22%3A1%2C%22_prev_y%22%3A1%2C%22_prev_orientation%22%3A0%7D%5D%2C%22walls%22%3A%7B%222%2C1%22%3A%5B%22east%22%5D%2C%224%2C1%22%3A%5B%22east%22%5D%2C%226%2C1%22%3A%5B%22east%22%5D%2C%228%2C1%22%3A%5B%22east%22%5D%2C%2210%2C1%22%3A%5B%22east%22%5D%2C%2212%2C1%22%3A%5B%22east%22%5D%2C%223%2C1%22%3A%5B%22east%22%5D%2C%227%2C1%22%3A%5B%22east%22%5D%2C%223%2C2%22%3A%5B%22east%22%5D%2C%226%2C2%22%3A%5B%22east%22%5D%2C%227%2C2%22%3A%5B%22east%22%5D%2C%227%2C3%22%3A%5B%22east%22%5D%2C%2210%2C2%22%3A%5B%22east%22%5D%7D%2C%22goal%22%3A%7B%22position%22%3A%7B%22x%22%3A12%2C%22y%22%3A1%7D%7D%7D&editor=def%20turn_right()%3A%0A%20%20%20%20for%20i%20in%20range(3)%3A%0A%20%20%20%20%20%20%20%20turn_left()%0A%20%0Awhile%20not%20at_goal()%3A%0A%20%20%20%20if%20not%20right_is_clear()%20and%20front_is_clear()%3A%0A%20%20%20%20%20%20%20%20move()%0A%20%20%20%20elif%20right_is_clear()%3A%0A%20%20%20%20%20%20%20%20turn_right()%0A%20%20%20%20%20%20%20%20move()%0A%20%20%20%20else%3A%0A%20%20%20%20%20%20%20%20turn_left()&library=%23%20'import%20my_lib'%20in%20Python%20Code%20is%20required%20to%20use%0A%23%20the%20code%20in%20this%20library.%20%0A%0A">十六週任務一</a><br />
-<a href="http://2014c2-mdenfu.rhcloud.com/static/reeborg/world.html?proglang=python-en&world=%7B%22robots%22%3A%5B%7B%22x%22%3A1%2C%22y%22%3A1%2C%22tokens%22%3A%22infinite%22%2C%22orientation%22%3A0%2C%22_prev_x%22%3A1%2C%22_prev_y%22%3A1%2C%22_prev_orientation%22%3A0%7D%5D%2C%22walls%22%3A%7B%222%2C1%22%3A%5B%22east%22%5D%2C%224%2C1%22%3A%5B%22east%22%5D%2C%226%2C1%22%3A%5B%22east%22%5D%2C%228%2C1%22%3A%5B%22east%22%5D%2C%2210%2C1%22%3A%5B%22east%22%5D%2C%2212%2C1%22%3A%5B%22east%22%5D%2C%223%2C1%22%3A%5B%22east%22%5D%2C%227%2C1%22%3A%5B%22east%22%5D%2C%223%2C2%22%3A%5B%22east%22%5D%2C%226%2C2%22%3A%5B%22east%22%5D%2C%227%2C2%22%3A%5B%22east%22%5D%2C%227%2C3%22%3A%5B%22east%22%5D%2C%2210%2C2%22%3A%5B%22east%22%5D%7D%2C%22goal%22%3A%7B%22position%22%3A%7B%22x%22%3A12%2C%22y%22%3A1%7D%7D%7D&editor=def%20turn_right()%3A%0A%20%20%20%20for%20i%20in%20range(3)%3A%0A%20%20%20%20%20%20%20%20turn_left()%0A%20%0Awhile%20not%20at_goal()%3A%0A%20%20%20%20if%20not%20right_is_clear()%20and%20front_is_clear()%3A%0A%20%20%20%20%20%20%20%20move()%0A%20%20%20%20elif%20right_is_clear()%3A%0A%20%20%20%20%20%20%20%20turn_right()%0A%20%20%20%20%20%20%20%20move()%0A%20%20%20%20else%3A%0A%20%20%20%20%20%20%20%20turn_left()&library=%23%20'import%20my_lib'%20in%20Python%20Code%20is%20required%20to%20use%0A%23%20the%20code%20in%20this%20library.%20%0A%0A">十六週任務二</a><br />
+<a href="fillpoly">c2g10 fillpoly 繪圖</a><br />
+<a href="drawline">c2g10 drawline 繪圖</a><br />
+<a href="animate1">c2g10 animate1 繪圖</a><br />
+<a href="flag">c2g10 flag 繪圖</a><br />
+<a href="square">c2g10 square 繪圖</a><br />
+<a href="star">c2g10 star 繪圖</a><br />
+<a href="triangle">c2g10 w12 triangle 繪圖</a><br />
+<a href="triangle2">c2g10 w12 triangle2 繪圖</a><br />
+<a href="japan">c2g10 w13 japan 繪圖</a><br />
+<a href="america">c2g10 w13 america 繪圖</a><br />
+<a href="http://goo.gl/G812Nr">c2g10 w14 task1 繪圖</a><br />
+<a href="http://goo.gl/G812Nr">c2g10 w14 task2 繪圖</a><br />
+<a href="http://goo.gl/G812Nr">c2g10 w14 task3 繪圖</a><br />
+<a href="http://goo.gl/kY5vfH">c2g10 w15 task</a><br /> 
+<a href="http://goo.gl/2EdKdb">c2g10 w16 task</a><br /> 
 '''
         return outstring
 
-
-    # 以下為 c2g3 組所建立的 CherryPy 程式方法, 這裡的 fillpoly 利用 Brython 執行網際繪圖
+    # 以下為 c2g19 組所建立的 CherryPy 程式方法, 這裡的 fillpoly 利用 Brython 執行網際繪圖
     ''' 
     假如採用下列規畫
     
-    import programs.c2g1 as c2g1
-    root.c2g1 = c2g1.C2G1()
+    import programs.c2g10as c2g10
+    root.c2g10= c2g10C2G10)
     
-    則程式啟動後, 可以利用 /c2g1/fillpoly 呼叫函式執行
+    則程式啟動後, 可以利用 /c2g10/fillpoly 呼叫函式執行
     '''
     @cherrypy.expose
     def fillpoly(self, *args, **kwargs):
@@ -104,10 +105,10 @@ class C2G3(object):
     ''' 
     假如採用下列規畫
     
-    import programs.c2g1 as c2g1
-    root.c2g1 = c2g1.C2G1()
+    import programs.c2g10as c2g10
+    root.c2g10= c2g10C2G10)
     
-    則程式啟動後, 可以利用 /c2g1/drawline 呼叫函式執行
+    則程式啟動後, 可以利用 /c2g10drawline 呼叫函式執行
     
     context.setTransform(a,b,c,d,e,f)
     a	To Scale the object across along the X axis
@@ -338,7 +339,7 @@ class C2G3(object):
         draw_line(x-half, y-half, x-half, y+half)
         draw_line(x-half, y+half, x+half, y+half)
     
-    for i in range(1):
+    for i in range(5):
         square(400, 400, 200+50*i)
         square(400+i*50, 400-i*50, 200)
     </script>
@@ -346,6 +347,7 @@ class C2G3(object):
     </html>
     '''
         return outstring
+        
     @cherrypy.expose
     def star(self, *args, **kwargs):
         outstring = '''
@@ -360,6 +362,7 @@ class C2G3(object):
     <script type="text/python">
     # 導入 doc
     from browser import doc
+    import math
 
     # 準備繪圖畫布
     canvas = doc["plotarea"]
@@ -375,22 +378,65 @@ class C2G3(object):
         ctx.lineTo(x2, y2)
         ctx.strokeStyle = color
         ctx.stroke()
-        
-    # 直接採用外部五點座標不是好方法
-    # 應該要寫成函式, 用圓心座標與半徑來控制
-    # 而且要計算內五點, 因為空的五芒星不能有交叉線
     
-    draw_line(400, 500, 458.7785, 319.0983)
-    draw_line(400,  500, 342.2215, 319.0983)
-    draw_line(342.2215, 319.0983, 495.0565, 430.9016)
-    draw_line(458.7785, 319.0983, 305.9535, 430.9016)
-    draw_line(495.05, 430.916, 305.9535, 430.9016)
+    # x, y 為中心,  r 為半徑, angle 旋轉角,  solid 空心或實心,  color 顏色
+    def star(x, y, r, angle=0, solid=False, color="#f00"):
+        # 以 x, y 為圓心, 計算五個外點
+        deg = math.pi/180
+        # 圓心到水平線距離
+        a = r*math.cos(72*deg)
+        # a 頂點向右到內點距離
+        b = (r*math.cos(72*deg)/math.cos(36*deg))*math.sin(36*deg)
+        # 利用畢氏定理求內點半徑
+        rin = math.sqrt(a**2 + b**2)
+        # 查驗 a, b 與 rin
+        #print(a, b, rin)
+        if(solid):
+            ctx.beginPath()
+        for i in range(5):
+            xout = (x + r*math.sin((360/5)*deg*i+angle*deg))
+            yout = (y + r*math.cos((360/5)*deg*i+angle*deg))
+            # 外點增量 + 1
+            xout2 = x + r*math.sin((360/5)*deg*(i+1)+angle*deg)
+            yout2 = y + r*math.cos((360/5)*deg*(i+1)+angle*deg)
+            xin = x + rin*math.sin((360/5)*deg*i+36*deg+angle*deg)
+            yin = y + rin*math.cos((360/5)*deg*i+36*deg+angle*deg)
+            # 查驗外點與內點座標
+            #print(xout, yout, xin, yin)
+            if(solid):
+                # 填色
+                if(i==0):
+                    ctx.moveTo(xout, yout)
+                    ctx.lineTo(xin, yin)
+                    ctx.lineTo(xout2, yout2)
+                else:
+                    ctx.lineTo(xin, yin)
+                    ctx.lineTo(xout2, yout2)
+            else:
+                # 空心
+                draw_line(xout, yout, xin, yin, color)
+                # 畫空心五芒星, 無關畫線次序, 若實心則與畫線次序有關
+                draw_line(xout2, yout2, xin, yin, color)
+        if(solid):
+            ctx.fillStyle = color
+            ctx.fill()
+    star(600, 600, 100, 30, True, "#00f")
+    star(100, 100, 30, 0, True, "#f00")
+    #star(300, 300, 50, 0, False, "#000")
+    for i in range(5):
+        for j in range(5):
+            star(200+65*i, 200+65*j, 30, 0, False, "#000")
     </script>
     </body>
     </html>
     '''
         return outstring
-        
+
+    ''' 
+    2014c2g10: triangle
+    第12 週 : 藍色 3 單位線畫出一個頂點
+    位於 (100, 100), (150, 250) 與 (400, 400) 的空心三角形. (佔期末成績 5 分) 
+    '''
     @cherrypy.expose
     def triangle(self, *args, **kwargs):
         outstring = '''
@@ -409,27 +455,36 @@ class C2G3(object):
     # 準備繪圖畫布
     canvas = doc["plotarea"]
     ctx = canvas.getContext("2d")
+    
     # 進行座標轉換, x 軸不變, y 軸反向且移動 800 光點
     ctx.setTransform(1, 0, 0, -1, 0, 800)
 
     # 定義畫線函式
-    def draw_line(x1, y1, x2, y2, linethick = 3, color = "blue"):
+    def draw_line(x1, y1, x2, y2, linethick = 3, color = "rgb(0, 0, 149)"):
         ctx.beginPath()
         ctx.lineWidth = linethick
         ctx.moveTo(x1, y1)
         ctx.lineTo(x2, y2)
         ctx.strokeStyle = color
         ctx.stroke()
-
+    
     draw_line(100, 100, 150, 250)
+    draw_line(100, 100, 400, 400)
     draw_line(150, 250, 400, 400)
-    draw_line(400, 400, 100, 100)
+ 
     </script>
     </body>
     </html>
     '''
         return outstring
-    @cherrypy.expose        
+
+    ''' 
+    2014c2g10: triangle2
+    第12 週 : 藍色 3 單位線畫出一個頂點
+    位於 (100, 100), (150, 250) 與 (400, 400) 的空心三角形
+    在上述三角形中填入紅色.(佔期末成績 5 分)
+    '''
+    @cherrypy.expose
     def triangle2(self, *args, **kwargs):
         outstring = '''
     <!DOCTYPE html> 
@@ -443,31 +498,36 @@ class C2G3(object):
     <script type="text/python">
     # 導入 doc
     from browser import doc
-
+    import math
     # 準備繪圖畫布
     canvas = doc["plotarea"]
     ctx = canvas.getContext("2d")
+    
     # 進行座標轉換, x 軸不變, y 軸反向且移動 800 光點
     ctx.setTransform(1, 0, 0, -1, 0, 800)
 
     # 定義畫線函式
-    def draw_line(x1, y1, x2, y2, linethick = 10, color = "blue"):
+    def draw_line(x1, y1, x2, y2, linethick = 3, color = "rgb(0, 0, 149)"):
         ctx.beginPath()
         ctx.lineWidth = linethick
         ctx.moveTo(x1, y1)
         ctx.lineTo(x2, y2)
         ctx.strokeStyle = color
         ctx.stroke()
-    def full():
+    
+    draw_line(100, 100, 150, 250)
+    draw_line(100, 100, 400, 400)
+    draw_line(150, 250, 400, 400)
+    
+    def fillred():
         ctx.beginPath()
-        ctx.moveTo(100,100)
-        ctx.lineTo(150,250)
-        ctx.lineTo(400,400)
-        ctx.lineTo(100,100)
+        ctx.moveTo(100, 100)
+        ctx.lineTo(100, 100)
+        ctx.lineTo(150, 250)
+        ctx.lineTo(400, 400)
         ctx.fill()
-        
-    ctx.fillStyle = "red"
-    full()
+    ctx.fillStyle = "rgb(255, 0, 0)"
+    fillred()
 
     </script>
     </body>
@@ -476,55 +536,7 @@ class C2G3(object):
         return outstring
 
     @cherrypy.expose
-    def Japan_flag(self, *args, **kwargs):
-        '''
-        原始程式來源: http://blog.roodo.com/esabear/archives/19215194.html
-        改寫為 Brython 程式
-        '''
-        outstring = '''
-    <!DOCTYPE html> 
-    <html>
-    <head>
-    <meta http-equiv="content-type" content="text/html;charset=utf-8">
-    <script type="text/javascript" src="/static/Brython2.1.0-20140419-113919/brython.js"></script>
-    </head>
-    <body onload="brython({debug:1, cache:'version'})">
-    <canvas id="plotarea" width="300" height="200"></canvas>
-    <script type="text/python">
-    # 導入 doc
-    from browser import doc
-    import math
-
-    # 準備繪圖畫布
-    canvas = doc["plotarea"]
-    ctx = canvas.getContext("2d")
-    # 進行座標轉換, x 軸不變, y 軸反向且移動 canvas.height 單位光點
-    # ctx.setTransform(1, 0, 0, -1, 0, canvas.height)
-    # 以下採用 canvas 原始座標繪圖
-    flag_w = canvas.width
-    flag_h = canvas.height
-    circle_x = flag_w/2
-    circle_y = flag_h/2
-    # 黑底
-    ctx.fillStyle='rgb(0, 0, 0)'
-    ctx.fillRect(0,0,flag_w,flag_h)
-    # 白底
-    ctx.fillStyle='rgb(255, 255, 255)'
-    ctx.fillRect(0,0,flag_w-5,flag_h-5)
-    # 紅日
-    ctx.beginPath()
-    ctx.arc(circle_x, circle_y, flag_w*17/240, 0, math.pi*2, true)
-    ctx.closePath()
-    # 填色設為白色
-    ctx.fillStyle = 'rgb(255, 0, 0)'
-    ctx.fill()
-    </script>
-    </body>
-    </html>
-    '''
-        return outstring
-    @cherrypy.expose
-    def usaflag(self, *args, **kwargs):
+    def japan(self, *args, **kwargs):
         outstring = '''
     <!DOCTYPE html> 
     <html>
@@ -545,7 +557,62 @@ class C2G3(object):
     # 進行座標轉換, x 軸不變, y 軸反向且移動 800 光點
     ctx.setTransform(1, 0, 0, -1, 0, 800)
 
+    # 定義畫線函式
+    def draw_line(x1, y1, x2, y2, linethick = 3, color = "black"):
+        ctx.beginPath()
+        ctx.lineWidth = linethick
+        ctx.moveTo(x1, y1)
+        ctx.lineTo(x2, y2)
+        ctx.strokeStyle = color
+        ctx.stroke()
 
+    draw_line(0+5, 0+5, 300+5, 0+5)
+    draw_line(300+5, 0+5, 300+5, 200+5)
+    draw_line(300+5, 200+5, 0+5, 200+5)
+    draw_line(0+5, 200+5, 0+5, 0+5)
+
+    ctx.beginPath()
+    ctx.arc(150+5, 100+5, 50, 0, math.pi*2, true)
+    ctx.closePath()
+    ctx.fillStyle = 'red'
+    ctx.fill()
+
+    </script>
+    </body>
+    </html>
+    '''
+        return outstring
+
+    @cherrypy.expose
+    def america(self, *args, **kwargs):
+        outstring = '''
+    <!DOCTYPE html> 
+    <html>
+    <head>
+    <meta http-equiv="content-type" content="text/html;charset=utf-8">
+    <script type="text/javascript" src="/static/Brython2.1.0-20140419-113919/brython.js"></script>
+    </head>
+    <body onload="brython({debug:1, cache:'version'})">
+    <canvas id="plotarea" width="800" height="800"></canvas>
+    <script type="text/python">
+    # 導入 doc
+    from browser import doc
+    import math
+
+    # 準備繪圖畫布
+    canvas = doc["plotarea"]
+    ctx = canvas.getContext("2d")
+    # 進行座標轉換, x 軸不變, y 軸反向且移動 800 光點
+    ctx.setTransform(1, 0, 0, -1, 0, 800)
+
+    # 定義畫線函式
+    def draw_line(x1, y1, x2, y2, linethick = 3, color = "black"):
+        ctx.beginPath()
+        ctx.lineWidth = linethick
+        ctx.moveTo(x1, y1)
+        ctx.lineTo(x2, y2)
+        ctx.strokeStyle = color
+        ctx.stroke()
 
     # x, y 為中心,  r 為半徑, angle 旋轉角,  solid 空心或實心,  color 顏色
     def star(x, y, r, angle=0, solid=False, color="white"):
@@ -562,13 +629,13 @@ class C2G3(object):
         if(solid):
             ctx.beginPath()
         for i in range(5):
-            xout = (x + r*math.sin(72*deg*i+angle*deg))
-            yout = (y + r*math.cos(72*deg*i+angle*deg))
+            xout = (x + r*math.sin((360/5)*deg*i+angle*deg))
+            yout = (y + r*math.cos((360/5)*deg*i+angle*deg))
             # 外點增量 + 1
-            xout2 = x + r*math.sin(72*deg*(i+1)+angle*deg)
-            yout2 = y + r*math.cos(72*deg*(i+1)+angle*deg)
-            xin = x + rin*math.sin(72*deg*i+36*deg+angle*deg)
-            yin = y + rin*math.cos(72*deg*i+36*deg+angle*deg)
+            xout2 = x + r*math.sin((360/5)*deg*(i+1)+angle*deg)
+            yout2 = y + r*math.cos((360/5)*deg*(i+1)+angle*deg)
+            xin = x + rin*math.sin((360/5)*deg*i+36*deg+angle*deg)
+            yin = y + rin*math.cos((360/5)*deg*i+36*deg+angle*deg)
             # 查驗外點與內點座標
             #print(xout, yout, xin, yin)
             if(solid):
@@ -598,55 +665,6 @@ class C2G3(object):
         for j in range(4):
             star(36+34*i, 148+28*j, 8, 0, True, "white")
     
-    </script>
-    </body>
-    </html>
-    '''
-        return outstring
-
-    @cherrypy.expose
-    def Japan_flag(self, *args, **kwargs):
-        '''
-        原始程式來源: http://blog.roodo.com/esabear/archives/19215194.html
-        改寫為 Brython 程式
-        '''
-        outstring = '''
-    <!DOCTYPE html> 
-    <html>
-    <head>
-    <meta http-equiv="content-type" content="text/html;charset=utf-8">
-    <script type="text/javascript" src="/static/Brython2.1.0-20140419-113919/brython.js"></script>
-    </head>
-    <body onload="brython({debug:1, cache:'version'})">
-    <canvas id="plotarea" width="300" height="200"></canvas>
-    <script type="text/python">
-    # 導入 doc
-    from browser import doc
-    import math
-
-    # 準備繪圖畫布
-    canvas = doc["plotarea"]
-    ctx = canvas.getContext("2d")
-    # 進行座標轉換, x 軸不變, y 軸反向且移動 canvas.height 單位光點
-    # ctx.setTransform(1, 0, 0, -1, 0, canvas.height)
-    # 以下採用 canvas 原始座標繪圖
-    flag_w = canvas.width
-    flag_h = canvas.height
-    circle_x = flag_w/2
-    circle_y = flag_h/2
-    # 黑底
-    ctx.fillStyle='rgb(0, 0, 0)'
-    ctx.fillRect(0,0,flag_w,flag_h)
-    # 白底
-    ctx.fillStyle='rgb(255, 255, 255)'
-    ctx.fillRect(0,0,flag_w-5,flag_h-5)
-    # 紅日
-    ctx.beginPath()
-    ctx.arc(circle_x, circle_y, flag_w*17/240, 0, math.pi*2, true)
-    ctx.closePath()
-    # 填色設為白色
-    ctx.fillStyle = 'rgb(255, 0, 0)'
-    ctx.fill()
     </script>
     </body>
     </html>

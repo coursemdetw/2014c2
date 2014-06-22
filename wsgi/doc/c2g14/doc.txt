@@ -1,0 +1,206 @@
+2014第十四組程式語言期末報告
+============
+p.80
+------------
+Python 以if 陳述句來提供條件分支的功能；以while 與for ... in 陳述句來提供迴圈的功能。
+if boolean_expression1:if 判斷式1 :
+suite1符合1
+elif boolean_expression2:elif判斷式2 :
+suite2符合2
+...…
+elifboolean_expressionN:elif判斷式N :
+suiteN符合N
+else:else :其他
+else_suite符合其他的條件
+
+
+p.81
+------------
+boolean_expression布林運算式:任何求值時產生布林值(True或False) 的運算式。常利用比較運算符來產生True 或False。
+程式碼區塊:Python 中稱為suite，為一或多列的程式碼陳述句。如果該suite 沒有陳述句的必要，可以用關鍵字pass 取代，代表該區塊不做任何處理。
+Python 縮排來表示它的區塊結構，suite 區塊都要用縮排來展開陳述，
+縮排可以使用任何數目的空格(space) 或跳格(Tab)，或兩者混搭。
+<Python style guildelines>建議使用四個空格，不使用跳格來進行縮排。
+※請注意冒號的使用，初學者常會遺忘冒號導致程式的混亂。冒號須與if、else、elif一起使用，放在後面代表boolean_expression的結尾與suite 的
+開始。
+
+
+p.82
+------------
+
+example :
+#!/usr/bin/env python3
+age = int(input(”你今年幾歲了？”))
+if age > 0 and age < 18:
+print(”你只能買口香糖。”)
+else: print(”你可以買酒。”)
+print(”謝謝光臨。”)
+
+解釋:輸入年齡，如果輸入值大於0歲、小於18會列印出”你只能買口香糖”
+如果輸入值大於0歲並且大於18歲,會列印出”你可以買酒”
+輸入完後不論大於18歲或是小於18歲，都會列印出”謝謝光臨”
+
+
+p.83
+------------
+給定一元二次方程式ax2 + bx+ c = 0，不同值a,b,c；以判別式b2 ??4ac 來判定根是兩不同實根，一實重根或一組共軛複根。
+#!/usr/bin/env python3
+a = float(input(’a = ? ’))
+b = float(input(’b = ? ’))
+c = float(input(’c = ? ’))
+delta = b**2-4*a*c
+if delta >0:
+print(”{0}x^2{1:+}x{2:+}=0 有兩個實根”.format(a,b,c))
+elif delta == 0:
+print(”{0}x^22{1:+}x{2:+}=0 有一實重根”.format(a,b,c))
+else: print(”{0}x^22{1:+}x{2:+}=0 有一組共軛複根”.format(a,b,c))
+
+
+p.84
+------------
+也可以改寫成這樣：
+program :
+#!/usr/bin/env python3
+a = float(input(’a = ? ’))
+b = float(input(’b = ? ’))
+c = float(input(’c = ? ’))
+delta = b**2-4*a*c
+if delta >0:
+root = ”兩個實根”
+elif delta == 0:
+root = ”一實重根”
+else:
+root = ”一組共軛複根”
+print(”{0}x^2{1:+}x{2:+}=0 有{3}”.format(a,b,c,root))
+
+
+p.85
+------------
+if …else承述句可以縮簡為一列條件運算式。例子如下：
+
+原句：
+
+把一個陳述句縮簡為一列條件運算式，可以省下很多步驟，運用縮句更加方便了吧！
+
+
+p.86
+------------
+if有很多運用方式
+括號和條件運算式是非常好用的東西，括號可以使你的程式傳達正確意念更為簡單、條件運算式可以印出給使用者看的訊息。
+Ex:
+allowance = 100 + 20 if score > 80 else 0
+    上面這個條件運算式表示：score大於80就會變120小於就會變0。
+allowance = 100 + (20 if score > 80 else 0)
+    利用了括號，這個條件運算式表示：score大於80就是100+20小於就是100+0。程式真的是很奇妙只是多個括號意義就明顯不同了。
+
+
+p.87
+------------
+while 迴圈語法：
+while boolean_expression:
+　　while_suite
+else:
+　　else_suite
+流程：
+boolean_expression 是True＝執行while_suite 陳述句區塊
+遇到continue＝回到迴圈開頭
+不正常中止(break 或return)＝跳出迴圈，不執行else_suite
+boolean_expression 變False＝迴圈停止
+如果有選用的else 子句存在＝執行else_suite 陳述句區塊.
+在while迴圈裡使用 break 則可以挑出迴圈，而利用continue 則會跳過迴圈這一輪的執行。
+
+
+p.88　p.89　p.90
+------------
+
+
+
+如果加上if和break，那下面的else_suite就不會執行。
+
+
+如果加上if和continue下面的else_suite一樣不會執行。但是整個就不會停下來會一直重複下去 。
+　上面這是運用了while和if迴圈的一個猜數字程式，猜對則跳出迴圈，若猜錯則提示是介於多少與多少之間，直到猜對為止。
+p.91
+------------
+for...in 迴圈語法：
+下面這個程式就是想要依序給號碼讓他們排列的意思。
+ ( 1 , 6)表示我要從1開始迴圈，然後6是因為python的第一個數字通常都是從0開始算的，所以我跟她說要6個他只會給我5個。
+
+
+
+
+
+
+
+p.92
+------------
+原式:
+
+如果加入if和break的話else suit就不會執行喔!
+也就是說hey不會跑出來的意思!
+p.93
+------------
+一個檢驗是否為質數的程式碼，用for...in 迴圈檢驗n是否是一個質數。
+例子如下:
+
+先導入數學模組，以從2開始到小於輸入值的值中尋找是否有能整除n的值，若是有便不是一個質數，若沒有便是質數。
+
+
+p.94
+------------
+for...in 中的 in 是迴圈關鍵字，也可以當布林運算式中的隸屬測試運算
+符。如下:
+
+
+將字母A~Z都跑入迴圈，便可以知道這些字母的隸屬關係。
+
+
+
+p.95
+------------
+input()裡的int，若是輸入非整數值便會出現以下問題。
+
+
+
+p.96
+------------
+若是要避免這種情況發生，就要使用try...except 例外處理語法：
+
+這樣便會告訴你為何而出錯，且告訴你必須是整數。
+
+如果不想印出內定的ValueError 訊息，可以不使用as variable 陳述：
+
+若是知道出錯就是因為不是輸入整數，這樣使用者只要輸入錯誤便直接印出輸入直非整數來做提醒。
+
+
+p.97
+------------
+若是要使用者輸入錯誤再重新輸入的話，用while來處理便可，如下:
+
+只要輸入正確，便會直接印出”正確!”，然後跳出迴圈。若是出錯便會提醒你”輸入錯誤囉!”，然後再重新輸入一次，直到輸入值正確才會跳出迴圈。
+
+
+
+p.98
+------------
+若是希望輸入的值是正整數，又想區分清楚是輸入成負數或是非整數的話，用if...else來處理，如下:
+
+
+
+p.99
+------------
+以下是幾個常見的例外情況的產生:
+int(”12.3”)
+ValueError: invalid literal for int() with base 10: ’12.3’，int()必須必須是整數，且不能在括號裡加冒號。
+int(12.3)
+如上，int()必須是整數。
+int(”1+2j”)
+ValueError: invalid literal for int() with base 10: ’1+2j’， int()必須必須是整數，且裡面不能有複雜的字串。
+int(1+2j)
+TypeError: can’t convert complex to int，如上，int()內不能有複雜的數值。
+float(”12.3”)
+成功。
+float(”1+2j”)
+ValueError: could not convert string to float: ’1+2j’，無法轉換字串成浮點數。
+float(1+2j)
+TypeError: can’t convert complex to float，無法轉換複雜的浮點數。
