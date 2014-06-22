@@ -1,0 +1,420 @@
+
+國立虎尾科技大學  102學年度  第二學期
+
+機械設計工程系   程式語言(二)
+
+第四組教材二第一堂
+
+Python Tutorial 第一堂（1）揭開序幕
+最後課程的主旨設計為：
+•瞭解Python 生態系（語言、工具、程式庫…）
+
+•瞭解Python 社群核心文化（撰碼風格、典範、文件、社群…）
+•建立與PyCon Taiwan 2013 的連結
+• Python 化（Pythonic）
+課程相關資料目前都放在Github 上，包括投影片、範例等：
+http://justinsdk.github.io/PyConTW2013Tutorial/
+這個課程當然沒有時間鉅細靡遺地交代所有Python 的細節，但會是個快速瞭
+解Python 生態系的起點，讓你從這個起點開始，可以自行找到更多相關的資
+源。以下是當時設計時的六小時課程綱要，也就是接下來系列文件要進行的內
+容基礎，因此系列文件將會以第一堂到第六堂的方式做區分。
+第一堂
+•揭開序幕
+•直譯器的選擇與安裝
+o Python 的實作
+o 準備課程環境
+o 程式庫在哪呢？
+o Distutils、Distribute 與Pip 間的關係
+•哈囉！世界！
+o 簡介Unicode 的支援
+o 基本輸入輸出
+•整合開發環境
+•參考資源
+第二堂
+•學習Python 語言
+o 內建型態
+o 數值型態
+o 字串型態
+o 清單型態
+o 集合型態
+o 字典型態
+o 元組型態
+• if、while 與for 包含式
+o if…else
+
+o for 與while
+o for 包含式
+•函式、模組、類別與套件
+o 函式
+o 模組
+o 類別
+o 套件
+•參考資源
+第三堂
+•社群
+o 文件
+o DocStrings
+o 官方文件
+o PyDoc
+o EpyDoc
+•資料處理函式
+o 內建函式
+o reduce
+•永續化
+o marshal、pickle 與cPickle
+o DBM
+o shelve
+o DB-API 2.0（PEP 249）
+•參考資源
+第四堂
+•程式庫vs 框架
+o 控制反轉
+o 我們需要框架嗎？
+• Django 起步走
+o 建立專案
+o 建立資料庫與App
+
+o 使用Python shell 來玩玩API
+•撰寫第一個畫面
+o 控制器還是畫面？
+o URLconf
+•參考資源
+第五堂
+•使用樣版系統
+o 撰寫樣版
+o 移出樣版中寫死的URL
+o URL 名稱空間
+o 撰寫簡單的表單
+•聊一下CSRF
+o 跨站偽造請求實例
+o 防衛CSRF
+•測試
+o assert
+o doctest
+•參考資源
+第六堂
+• unittest（接續上堂的測試）
+o 測試案例
+o 測試料件
+o 測試套件
+o 測試執行器
+•評測
+o timeit
+o cProfile（profile）
+• PyCon Taiwan
+o Python Taiwan 2012
+o Python Taiwan 2013
+•參考資源
+
+Python Tutorial 第一堂（2）準備課程環境
+須面臨學習Python 2.x 或是Python 3.x 的問題。Python 3.0（也就是Python
+3000，或是Py3k）在2008 年12 月3 日釋出，它拋棄了與Python 2.x 的向後
+相容，但也在語法上改進了許多問題，我沒有很仔細地去比較Python 2.6、2.7
+這兩個版本，不過據稱這兩個版本在某些目的上，是為了讓Python 可以平順
+地從2.x 過渡到3.x，像是在Python 2.7 中，就新增了不少Python 3.1 中的特
+性，據稱Python 2.7 應該是2.x 系列最後一個版本，2.7.x 都在於修正臭蟲之
+類的，在撰寫本文件時，最新的2.7.x 是Python 2.7.5，於2013 年5 月15 日
+釋出，而最新的3.x 則為Python 3.3.1，於2013 年4 月7 日釋出。
+由於Python 3.x 不考慮與Python 2.x 系列的向後相容，許多程式庫沒法一時
+之間昇級到能支援Python 3.x，因此若以實用為主，學習Python 2.7 是目前
+比較建議的；支援Python 3.x 的程式庫，目前在日漸增加之中，然而單就學習
+Python 而言，個人感覺是有了Python 2.7 的基礎，日後有想要再學習Python
+3.x 並不是難事。
+Python 的實作
+能執行Python 語言的實作品有不少，接下來介紹幾個主要的實作
+CPython 是Python 的參考實作，一般如果提到安裝Python，沒有特別聲
+明的話，指的就是安裝CPython，顧名思義以C 撰寫，提供與Python 套
+件（Package）與C 擴充模組的最高相容性。Python 是直譯式語言，不過
+並非每次都從原始碼直譯後執行，CPython 會將原始碼編譯為中介位元碼
+（bytecode，也就是.py 原始碼檔案被CPython 執行過留下的.pyc 檔案），爾後
+再由虛擬機器執行，這點與Java 有點類似，之後再次執行時，就不用從原始
+碼而可以從位元碼開始直譯，以加快直譯速度。
+PyPy 名稱上來看，是用Python 實現的Python，正確地說，是使用rPython
+來實現Python，rPython 不是完整的Python，是Python 的子集，不過PyPy
+可以執行完整的Python 語言。PyPy 包括一個JIT（Just-in-Time）編譯器
+（與Java 的HotSpot 技術類似），PyPy 可以將Python 程式碼編譯為其他語
+言，像是C（以及其他語言，例如CIL、JavaScript），運行速度可比CPython
+要快，為了能進行語言轉換，你必須使用rPython。PyPy 目的在改進Python
+的效能，同時追求與CPython 的最大相容性（這意味著使用PyPy 還是有相
+容性上的限制）。
+準備課程環境
+這門課程的作業系統，使用的是Ubuntu 12.04 LTS，使用這個作業系統的原因
+是，希望這門課程可以有一個一致的環境，而這個環境不會因為作業系統版本
+更迭而造成一些初學者的困惑，你可以在一台全新的機器中，或者是在虛擬機
+器中標準安裝，接下來就可以進行後續的課程了。
+
+課程的相關範例原始碼都放在Github 上，因此你要在Ubuntu 中安裝Git 客
+戶端，首先開啟終端機：
+之後，執行以下指令安裝git：
+1 sudo apt-get install git
+安裝完成後，可以使用以下指令下載課程資料：
+1 git clone https://github.com/JustinSDK/PyConTW2013Tutorial.git
+在編輯Python 程式碼時，可以使用任何你慣用的編輯器，為了課程進行時的
+流暢，本課程環境使用Sublime Text 2，這個版本可以免費用於評估，偶而會
+出現提示訊息詢問是否購買授權，撰寫這篇文章時的Sublime Text 2 版本是
+2.0.2，你可以使用以下指令下載、解壓縮、移動目錄與設定執行檔連結，之後
+就可以使用st2 指令來開啟Sublime Text 2：
+1 wgethttp://c758482.r82.cf2.rackcdn.com/Sublime%20Text%202.0.2.tar.bz2
+2 tar -xf “Sublime Text 2.0.2.tar.bz2”
+3 sudo mv “Sublime Text 2” /usr/lib
+4 sudo ln -s “/usr/lib/Sublime Text 2/sublime_text” /usr/bin/st2
+練習0：使用Python 互動交談環境
+這個課程選擇的Python 實作是Python 2.7.3，因為這是Ubuntu 12.04 LTS 內
+建的Python 實作，你只要在終端機中鍵入python，就會進入互動式交談環
+境，先在裏頭輸入print ‘hello! world!’ 後按Enter 來個哈囉世界，要離開互動
+交談環境，可以輸入exit() 後按Enter 或按Ctrl + D，這是本課程的第0 個練
+習。（因為沒什麼困難度）
+練習1：安裝Distribute、Pip 與Virtualenv
+在Python 標準程式庫中有個distutils，是用來建立與安裝額外模組，適用於
+簡易的安裝場合，有些程式庫擴充了distutils，像是Distribute，可以使用以
+下的指令建立、進入scripts 資料夾，然後下載、安裝Distribute：
+1 mkdir scripts
+2 cd scripts
+
+3 wget http://python-distribute.org/distribute_setup.py
+4 sudo python distribute_setup.py
+安裝完成後，就有個easy_install 指令可以使用，這個指令有一些問題，因而
+許多人建議廢棄它不要使用了，課程中會安裝它的替代品pip：
+1 sudo easy_install pip
+在安裝Python 擴充模組時，會需要將某些資料複製至Python 相關資料夾，
+也需要一些環境變數等的設定，不同的應用程式可能會需要不同的程式庫版本
+或相關環境設定，為了方便，可以安裝virtualenv，它可以讓你很簡易地建立
+起獨立的Python 虛擬環境，讓不同的Python 環境之間彼此互不干擾，這邊
+使用剛剛安裝好的pip 來安裝virtualenv：
+1 sudo pip install virtualenv
+到這邊為止，課程環境大致準備好了，安裝過程的畫面，可以參考Python
+Tutorial 第一堂（1）揭開序幕中的投影片，這邊就不再重複抓圖了。
+Python Tutorial 第一堂（3）哈囉！世界！
+我們安裝了Distribute、Pip 以及Virtualenv，那這些東西安裝到哪裏去了？
+如果我們打算在程式碼中引用某個程式庫，那會是什麼搜尋路徑？Python 的
+sys 模組（module）中有個path 變數，參考了一個list，當中記錄的string，
+就是程式庫模組的搜尋路徑。你可以設定環境變數PYTHONPATH，這個資訊
+會新增在Python 的模組搜尋路徑中。例如可在Ubuntu 中如下設定，並進入
+Python 互動交談環境中，使用import sys 匯入sys 模組，可看到sys.path 中
+新增了PYTHONPATH 設置的路徑：
+Distutils、Distribute 與Pip 間的關係
+Distutils 是Python 內建的標準程式庫，用以建立與安裝額外的模組，適用於
+簡易的安裝情境，詳細的說明文件，可以參考Python 官方文件中Distributing
+Python Modules 的說明，如果有人使用distutils 建立了可安裝的模組，想安
+裝該模組的基本步驟就是下載並解壓縮之後，使用python 指令執行其中的
+setup.py。例如下載Django 某版本的tar.gz 檔後，可以如下進行安裝：
+1 tar xzvf Django-X.Y.Ztar.gz
+
+2 cd Django-X.Y.Z
+3 sudo python setup.py install
+Setuptools 則擴充了distutils，是Python 社群下載、安裝、昇級與移除套
+件（Package）事實上的標準（de facto standard），不過近來開發緩慢，程式
+碼混亂，因而後來有了Distribute，意圖取代setuptools，Distribute 擴充了
+distutils，並提供了對setuptools 的向後相容（Backward compatibility），先前
+依賴setuptools 建立散佈的套件，也可以在Distribute 中運行如昔。
+（有網友看了這篇後回饋，Distribute 回併至setuptools 了, 以後只需用setuptools，
+詳情可參考Distribute Is Now Merged Back To Setuptools。）
+無論是安裝setuptools 或是Distribute，都有easy_install 可以使用，不過現
+在有許多人建議不要使用easy_install，原因是其沒有可以反安裝的選項，只
+支援SVN 等… Pip 也是用來安裝與管理Python 模組，它提供了easy_install
+的替代品，可以進行套件的反安裝，而且目前專案的維護上還蠻活躍的，
+基本的安裝與反安裝指令為pip install [PACKAGE_NAME]、pip uninstall
+[PACKAGE_NAME]。
+安裝套件時，建議可以使用pip，如果發現有pip 無法安裝的套件，可以嘗試使
+用easy_install，如果這兩個選項都無法安裝，則可以嘗試尋找是否有setup.py
+進行安裝。
+使用Virtualenv
+Python 的套件不少都會直接安裝到Python 預設的一些系統路徑中，
+像是在上面的圖片中可以看到， Pip 的pip-1.4.1-py2.7.egg 就安裝
+到/usr/local/lib/python2.7/dist-packages 之中， 在初學Python 的練習過
+程中，也許會安裝許多套件，如果不想都安裝到系統路徑中，或者不具備系統
+管理者權限而無法安裝到系統路徑，會希望有個虛擬環境可以使用，安裝Pip
+之後，通常會建議安裝Virtualenv 做為搭配，也就是上一篇文章最後一個指令
+sudo pip install virtualenv 的目的。
+Virtualenv 可以建立虛擬的Python 環境，虛擬環境彼此之間互不干擾，也
+可避免搞亂Python 主要安裝路徑，可以使用virtualenv –distribute venv 來
+建立一個虛擬環境路徑，其中venv 可以是任意的環境名稱，這會建立一個
+venv 目錄，進入該目錄後，執行source bin/activate 可以啟動虛擬環境，輸入
+deactivate 可以關閉虛擬環境。
+練習2：哈囉！世界！
+這個練習要來使用Virtualenv 建立並啟用虛擬環境，於其中撰寫一個Python
+程式，可以提示使用者輸入檔名，然後讀取檔案並顯示在終端機中。首先依序
+輸入以下指令建立、進入並啟用虛擬環境，使用gedit 編輯hello.py：
+
+1 virtualenv –distribute venv
+2 cd venv
+3 source bin/activate
+4 gedit hello.py
+嗯？我們不是安裝了Sublime Text 2 嗎？是沒錯，不過這個hello.py 中要輸
+入中文，要讓前一篇文章中安裝的Sublime Text 2 可以輸入中文，會是另一
+個故事了（顯示倒是沒問題），所以，這邊還是先使用一下gedit 來如下編輯
+Python 程式碼：
+1 # coding=UTF-8
+2 filename = raw_input(‘檔名：’)
+3
+4 f = open(filename, ‘r’)
+5 b_str = f.read()
+6 f.close()
+7
+8 print b_str.decode(‘utf-8’) # 這是什麼？
+9 print b_str.decode(‘utf-8’).encode(‘utf-8’) # 這是什麼？
+編輯完成後存檔，這邊暫不解釋程式碼的細節，附帶一提，練習的程式碼成
+果，都可以在上一篇中，從Github 下載的PyConTW2013Tutorial 中取得，舉
+例來說，這個練習的成果，可以在其中的labs/solutions/exercise2 中取得。接
+著，使用gedit 編輯任何一個檔案，寫寫一些文字（中文英文都可以）之後存
+檔，我這邊存為hello 檔案，裏頭寫著「哈囉！世界！」。
+Python Tutorial 第一堂（4）Unicode 支援、基本
+I/O
+在第一堂下課之前，來談談練習2：哈囉！世界！做了什麼？為了方便，把範
+例程式碼再貼過來一下：
+1 # coding=UTF-8
+2 filename = raw_input(‘檔名：’)
+3
+
+4 f = open(filename, ‘r’)
+5 b_str = f.read()
+6 f.close()
+7
+8 print b_str.decode(‘utf-8’) # 這是什麼？
+9 print b_str.decode(‘utf-8’).encode(‘utf-8’) # 這是什麼？
+Python 的Unicode 支援
+第1 行是編碼宣告（Encoding declaration），這是個魔法註解（Magic comment），
+它告訴Python 直譯器，這個原始碼檔案是以UTF-8 來編碼，如果不
+這麼加上這個魔法註解，Python 2.x 會以ASCII 編碼來解讀原始碼，那麼就會
+出現以下錯誤：
+SyntaxError: Non-ASCII character ‘6’ in file hello.py on line 1, but no
+encoding declared; seehttp://www.python.org/peps/pep-0263.html for
+details
+魔法註解中設定了UTF-8，這是因為在Ubuntu 12.04 LTS 中，預設採用的
+文字編碼是UTF-8。有趣的是，有時我上課會問學員一個問題：「你用的原
+始碼文字編碼是什麼？」很多學員答不出來，很多人不知道自己作業系統中
+開個純文字檔編碼是什麼，不知道在整合開發環境（Integrated Development
+Environment, IDE）中開個原始碼編碼是什麼，當然也就不知道為什麼把A 專
+案的原始碼放到B 專案中程式碼會出現亂碼。如果你連UTF-8 是什麼都不知
+道，那建議你看看我寫的亂碼1/2 中這幾篇文件：
+•哪來的純文字檔？
+• Unicode 與UTF
+• UTF-8
+在Python 2.x，程式中所有文字都是str 的實例，可以視為代表文字資料的位
+元組序列（Byte sequence）。例如在Python 中，可以使用len 函式來取得序列
+長度，不過以下的程式會顯示6，即使‘測試’ 是兩個字元：
+1 # coding=UTF-8
+2 text = ‘測試’
+3 print len(text) # 顯示6
+這是因為‘測試’ 這兩個字元，使用UTF-8 編碼的話，會使用六個位元組，len
+
+函式實際上是計算位元組序列的長度，而不是字元長度。在Python 2.x 中，如
+果想要用Unicode 來代表文字，也就是想要用unicode 型態來封裝文字，可以
+使用Unicode 字面常量（Unicode literal）來表示，也就是在文字前置一個u
+符號。例如：
+1 # coding=UTF-8
+2 text = u’ 測試’
+3 print type(text) # 顯示“”
+4 print len(text) # 顯示2
+直譯器執行程式時，會使用unicode 實例來代表文字資料，這點可以從type 函
+式得知，它用來探知實例的型態，使用len 取得一個unicode 實例的長度時，
+它會告訴你有幾個字元。
+除了使用Unicode 字面常量來建立unicode 實例外，在Python 2.x 中，如果
+有個str 的實例，可以使用其decode 方法，指定str 的實例代表何種編碼的位
+元組序列，這樣就可以傳回文字的unicode 實例。相反地，如果使用unicode
+實例的encode 方法，可指定編碼取得文字實際編碼後的位元組序列。
+在Python 3.x 中，預設原始碼檔案必須是UTF-8 編碼。如果原始碼檔案想要
+是UTF-8 以外的編碼，同樣必須在第1 行放置編碼宣告。Python 3.x 中，文
+字是str 型態的實例，不過str 代表的是Unicode（而不是像Python 2.x 代表
+的是位元組序列），下面這個程式在Python 3.x 中執行的話：
+1 text = ‘測試’
+2 print(type(text)) # 顯示“”
+3 print(len(text)) # 顯示2
+len 表示會有兩個字元。如果想取得文字實際編碼後的位元組序列，可以使用
+encode 方法指定編碼，這會傳回一個bytes 實例，如果有個bytes 實例，可以
+使用decode 指定編碼，傳回代表Unicode 的str 實例。例如下圖是在Python
+3.x 互動交談環境中的測試實例：
+果想知道更多Python 中有關文字編碼的細節，可以再參考Python 的編碼這
+篇文件。
+基本I/O
+接下來看看有關基本I/O 的部份，你可以使用open 函式來開啟檔案，開啟時
+指定存取模式，‘r’ 表示讀取，‘w’ 表示寫入，open 函式會傳回file 實例，使用
+read 方法可以讀取檔案內容，以str 型態傳回，如先前談到，傳回的str 實際
+上代表著位元組序列。以下是個實際的讀取程式範例：
+
+1 import sys 2 file = open(sys.argv[1], ‘r’) 3 content = file.read() 4 print
+content 5 file.close()
+————————————————————————————————-
+程式第一行匯入（import）了sys 模組，sys.argv 是個list，其中儲存了執行
+程式時的命令列引數（Command line arguments），索引0 固定都是執行時
+的模組名稱，而後是跟隨著的引數，例如執行python hello.py one two three
+時，sys.argv[0] 就會是’hello.py’，其餘索引則是‘one’、‘two’、‘three’。print
+在Python 2.x 中是個陳述句，用來顯示指定的資料，不使用檔案時，記得
+使用close 關閉檔案。類似地，一個寫入檔案的程式範例如下，write 方法會
+將文字的位元組序列寫入至檔案中：
+————————————————————————————————- 1
+import sys 2 file = open(sys.argv[1], ‘w’) 3 file.write(‘test’) 4 file.close()
+————————————————————————————————-
+1 import sys
+2 file = open(sys.argv[1], ‘r’)
+3 while True:
+4 line = file.readline()
+5 if not line: break
+6 print line
+7 file.close()
+如果讀不到東西了，那readline 會傳回‘’，在if 判斷式中，” 會被視為False。
+while 後加上: 表示區塊開始，Python 中使用縮排來決定區塊範圍。注意！你
+可以自行決定縮排字元，但是Python 中縮排要一致，如果縮排想使用Tab 字
+元，那所有原始碼就都要使用Tab 字元縮排，如果要使用四個空白字元，那所
+有原始碼就得是四個空白字元來縮排，強制統一縮排，是Python 的特色，也
+是Python 的文化。
+可以使用file 的readlines 方法一次讀取所有檔案內容，這會傳回list，每個索
+引處代表一行內容，一個程式範例是這樣的：
+1 import sys
+2 file = open(sys.argv[1], ‘r’)
+3 for line in file.readlines():
+4 print line
+5 file.close()
+for in 語法可作用在list 上，逐一取出list 中的元素並指定給變數，對於for
+
+line in file.readlines() 是這樣閱讀的：對於file.readlines() 傳回的list 中每個元
+素，將之指定給line。
+這是Python 的風格，也是Python 的文化，這樣的寫法好處就是增加了可讀
+性，你不用自行使用close 關閉檔案，在file 實例被回收後，檔案就會關閉，
+for line in open(sys.argv[1], ‘r’) 是這樣閱讀的：
+對於開啟檔案的每一行。除了可讀性外，這個語法還能讓讀取更有效率，不過
+現階段你不用管這些事，只要當這語法背後施了些魔法就好。
+實際上對於Python 來說，讀取檔案最好的方式，就是不要去read 它，這是什
+麼意思？是這樣的…
+1 import sys
+2 for line in open(sys.argv[1], ‘r’):
+3 print line
+整合開發工具
+真正開發程式時，你也許會想要使用整合開發工具，在Python 的世界中，我
+確實花了些時間去瞭解有沒有主流的整合開發工具，不過事後覺得，在Python
+的世界中，除了團隊因素決定之外，更多時候是個人口味問題，基於課程時
+間，我就不逐一討論我調查過的那些工具特色為何了，以下列出一些課程前調
+查過的幾個：
+• PyCharm / IntelliJ IDEA
+• PyDev / Eclipse plugin
+• Komodo IDE
+• Spyder
+• WingIDE
+• NINJA-IDE
+• Python Tools for Visual Studio
+實際上似乎是如此，在Python 社群中也有過這樣的一條討論：
+•有沒有好的Python IDE 呢？
+第一堂課的內容就到這邊了，我們認識了Python 環境的安裝與準備，寫了第
+一個Python 程式，瞭解了一些Unicode 支援，並看了些基本的I/O，休息一
+下！後面要來進入第二堂課，瞭解更多Python 語言的細節。
+參考資源
+•直譯器的選擇與安裝
+
+• http://www.python.org/download/releases/3.0/
+• http://www.python.org/download/releases/2.7.3/
+• http://docs.python-guide.org/en/latest/starting/which-python/
+•準備課程環境
+• http://docs.python-guide.org/en/latest/starting/install/linux/
+•程式庫在哪呢？
+• http://docs.python.org/2/using/cmdline.html
+• Distutils、Distribute 與Pip 間的關係
+• http://docs.python.org/2/library/distutils.html
+• http://pypi.python.org/pypi/distribute
+• http://pypi.python.org/pypi/pip
+• http://blog.yangyubo.com/2012/07/27/python-packaging/
+• http://www.openfoundry.org/tw/tech-column/8536-introduction-ofpython-
+extension-management-tools
+•哈囉！世界！
+• http://openhome.cc/Gossip/Python/IOABC.html
+• http://openhome.cc/Gossip/Encoding/
+• http://openhome.cc/Gossip/Encoding/Python.html
