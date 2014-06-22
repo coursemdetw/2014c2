@@ -1,0 +1,198 @@
+
+程式語言教材(二)第四堂課
+
+第2組
+
+組員：
+
+陳柏安 40223131
+
+賴涵餘 40223149
+
+羅志勝 40223152
+
+第9組
+
+組員：
+
+吳欣融 40223115
+
+簡正斌 40223151
+
+王常浩 40223110
+
+
+第四堂（1）Django
+============ 
+1.程式庫 vs 框架
+------------
+name = raw_input('What is your name?')
+process_name(name)
+quest = raw_input('What is your quest?')
+process_quest(quest)
+以上是由 raw_input 函式自定義的 process_name 函式以process_quest 函式來設定要如何跟讀取使用者輸入的回應等等。
+
+import Tkinter
+
+top = Tkinter.Tk()
+ 
+Tkinter.Label(top, text='What is Your Name?').pack()
+name_var = Tkinter.StringVar()
+name_entry = Tkinter.Entry(top, textvariable=name_var)
+name_entry.pack()
+name_entry.bind('', lambda event: process_name(name_var))
+ 
+Tkinter.Label(top, text='What is Your Quest?').pack()
+quest_var = Tkinter.StringVar()
+quest_entry = Tkinter.Entry(top, textvariable=quest_var)
+quest_entry.pack()
+quest_entry.bind('', lambda event: process_name(quest_var))
+ 
+Tkinter.mainloop()
+
+以上為設定一個框架，把你所要用的涵式放入你的框架中，框架有需要你的還是的時候才會呼叫出來。
+
+
+
+
+
+
+
+2.IoC（Inversion of Control）
+------------
+ Inversion of Control可以把控制權反轉，變成框架去控制。
+
+ 
+圖.1此為由程式庫寫出來的流程，可以呼叫程式出來，決定你的程式流程。
+
+
+ 
+圖.2此為由框架設定的流程，但你不可以任意呼叫程式，要由框架決定你的程式流程。
+
+3.我們需要使用框架嗎？
+------------
+當問我們需要使用框架嗎？其實可能會依照不同的需求做調整，使用程式庫時，開發者會擁有較高的自由度；使用框架時，開發者會受到較大的限制，是否需要使用框架？是否要遵循框架規範的流程？使用框架是基於技術考量？還是基於商業上的考量？所以在要開發程式的時候，要先確定用哪一種方式效益比較高，否則會於開發者來說可能是個耗時耗力的工作。
+
+
+
+建立 Django 專案
+============
+在實際進行這門課程時，使用的 Django 版本是最新 1.6.5，因而這邊仍使用這個版本來示範 … 這邊會建立一個虛擬環境，並透過 pip 來安裝 Django，指令如下：
+
+1.	~/scripts$ virtualenv --distribute venv
+2.	~/scripts$ cd venv
+3. ~/scripts/venv$ source bin/activate
+4. ~/scripts/venv$ pip install Django==1.5.1
+5. ~/scripts/venv$ python -c 'import django; print django.get_version()'
+6. ~/scripts/venv$ django-admin.py startproject mysite
+7. ~/scripts/venv$ ls -al mysite
+8. ~/scripts/venv$ cd mysite
+9. ~/scripts/venv$ python manage.py runserver
+
+指令中透過 django-admin.py startproject mysite 建立了一個 Django 專案為 mysite，完成 python manage.py runserver 指令後，會看到 Django 開發時的簡單伺服器啟動了………
+ 
+開啟你的瀏覽器，瀏覽 http://127.0.0.1:8000/，會看到以下的畫面...
+ 
+已經建立第一個 Django 專案時，那麼專案中會有以下這些東西…..如你看到
+ 
+相關的組態設定該如何進行，我們還是實際從練習中瞭解……
+練習 10：建立資料庫與 App
+===========
+開啟 mysite/settings.py，將其中 DATABASES 的 'default' 項目中，'ENGINE' 設定為 'django.db.backends.sqlite3'，'NAME' 設定為你想要的資料庫檔案位置，例如 '/home/caterpillar/scripts/venv/mysite/db.sqlite3'：
+ 
+接著執行 python manage.py syncdb，你就會看到一些建構資料表格的過程，然後會建立一個預設的驗證系統，如果你想要使用 Django 預設的後台管理，就會使用到這個驗證系統，你可以輸入使用者名稱、郵件、密碼等，下圖是個示範：
+ 
+接下來鍵入指令 python manage.py startapp polls 建立一個簡單的 poll app，這是一個用來作問題投票用的簡單 app；然後編輯 polls/models.py 的內容如
+
+ 
+        這建立了兩個資料模型 Poll 與 Choice，Poll 中有 question 與 pub_date 兩個欄位，代表想問題描述與發佈日期，was_published_recently 方法用來判斷，這個問題是不是最近一日內新發佈的，__unicode__ 用來傳回 Poll 實例的字串說明。Choice 則用來記錄投票選項，poll 關聯至問題（Choice 實例），choice_text 是該問題的選項文字，votes 是投票數。
+這個 app 剛建立，你必須讓目前專案知道，這要在 mysite/settings.py 中設定，找到其中的 'INSTALLED_APPS'，在最後加入 'polls'：
+ 
+接著你可以分別執行 python manage.py sql polls 預覽將執行的 SQL，以及 python manage.py syncdb 指令進行資料庫同步，執行時的參考畫面如下：
+ 
+接著你可以鍵入 python manage.py shell 指令，這會設定 DJANGO_SETTINGS_MODULE 環境變數，讓你可以取用 Django 的 Python 模組，然後進入 Python 互動環境，你可以在當中體驗一些 API 的使用，這些 API 是在先前的幾個動作中已經產生的，例如來玩一下 Poll 實例建立想調查的問題：
+ 
+或者是建立 Choice 與 Poll 的一對一關係：
+ 
+對 Poll 及 Choice 的操作，其實都會由 Django 進行一些物件關係對應（Object-Relational Mapping, ORM），也就是相關狀態，在某些操作時，都會同步至資料庫。
+
+心得:以上用螢光筆畫的地方,並不是很了解其意思,像是Django和API的架構,建立資料庫看起來很容易,但在實際操作時處處碰壁,可能對他的一些結構或語法不太熟悉,如果能建立一個屬於自己的資料庫,以後就不用花很多時間找尋只要輸入一些指令即可和遠端同步並找到自己所想要的東西
+
+練習 11：撰寫第一個 View
+============
+開啟 polls/views.py，在當中撰寫如下的程式碼：
+:::
+from django.http import HttpResponse
+def index(request):
+    return HttpResponse("Hello, world. You're at the poll index.")
+def detail(request, poll_id):
+    return HttpResponse("You're looking at poll {id}.".format(id = poll_id))
+def results(request, poll_id):
+    return HttpResponse("You're looking at the results of poll {id}.".format(id = poll_id))
+def vote(request, poll_id):
+    return HttpResponse("You're voting on poll {id}.".format(id = poll_id))
+“””
+上面的程式對應至不同的 URL 請求，有些 URL 請求會帶有poll_id 請求參數，這可以在函式的第二個參數取得請求值。
+每個 URL 請求該如何對應至函式，可以在 polls 目錄下建立一個 urls.py 檔案進行定義：
+“””
+from django.conf.urls import patterns, url
+# url 的第一個參數接受規則表示式，用來定義 URL Pattern，第二個參數表示該對應至哪個函式，第三個參數用來定義這個 URL Pattern 的名稱
+from polls import view
+urlpatterns = patterns('',
+    # ex: /polls/
+    url(r'^$', views.index, name='index'),
+    # ex: /polls/5/
+    url(r'^(?P<poll_id>\d+)/$', views.detail, name='detail'),
+    # ex: /polls/5/results/
+    url(r'^(?P<poll_id>\d+)/results/$', views.results, name='results'),
+    # ex: /polls/5/vote/
+    url(r'^(?P<poll_id>\d+)/vote/$', views.vote, name='vote'),
+)”””
+如果你仔細看上頭的規則表示式定義，會發現並沒有定義 polls 前置名稱，實際上這是在 mysite 目錄中的 urls.py 定義。例如：
+“””
+from django.conf.urls import patterns, include, url
+ 
+urlpatterns = patterns('',
+    url(r'^polls/', include('polls.urls'))
+)
+“””
+這個 urls.py 定義了全名的 URL 對應，在上頭定義了 polls 前置名稱，接下來的規則是包括在 polls.urls，就是方才在 polls 目錄中定義的 urls.py 中。
+
+1.完成後就可打localhost:8000/polls
+會跑出所對應的字
+Hello, world. You're at the poll index.
+這行就是我們第一次所見的第一個參數質
+
+2.再往下打5  localhost:8000/polls/5
+you're looking at poll5
+會試我們見的第二個參數而後面的5是我們在後面打了format(id = poll_id)所以他會抓取網路你所打的數字
+3. localhost:8000/polls/5/results/
+You're looking at the results of poll 5
+再來是參數第三行
+
+4.localhost:8000/polls/5/results/vote
+You're voting on poll
+參數第四行
+Controller 還是 View？
+------------
+實際上，大部份 Web MVC 框架確實也都會有一些請求的前置處理，當請求到達實際的 Controller 時，對請求要進行的處理，通常就是只剩下轉發請求給商務 Model，取得樣版引擎必要的資料 Model，然後再轉發給 View 進行呈現。
+所以Controller跟View是這樣的關西而Django中在特定的URL會把回乎函示訂為View所以有可能我們所用的名稱不是Controlle跟View而是Django本生而Django有可能其實是MTV 框架，也就是 Model、
+Template、View 框架。
+Django 與 Rails 相比較
+在 Rails 中有 before_filter 這類方法，可以作為 Controller 處理請求前的過濾器而因為 Django 本身 Controller 的功能是由框架本身負擔，也因此沒有 Rails 中 before_、around_ 與 after_ filter的方法如果真的要在 views.py 中的函式被呼叫前，進行某些處理，直接手工寫個裝飾器函式並不會太困難，或者你也可以使用現成的一些通用裝飾器
+
+URLconf
+============
+Django中呼叫哪個view，是由python的URLconf(非正式名)模組來決定，這些模組是純python撰寫，在URL Pattern與python回呼函式(也就是你的view)之間進行簡單對應。
+
+url函式有兩個必要與一個建議指定的參數：
+   ‧regex：使用規則表示式定義的URL Pattern。
+   ‧view：如果Django發現有符合的規則表示式時，應當呼叫特定函式，該函式第一個參數是HttpRequest型態，第二個之後的引數會是經由規則表示式捕捉到的值。
+   ‧name：為URL定義的名稱，可作於Django樣板其他地方參考時使用。
+
+以下簡單說明，mysite/urls.py中定義的部分，意義如下：
+ 
+
+而polls/urls.py中定義的部分如下：
+ 
+
