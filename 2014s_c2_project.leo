@@ -58,7 +58,7 @@ expanded="2014spring.20140509071814.2459,2014spring.20140509071814.2500,"><vh>@f
 <v t="2014spring.20140502183555.1776"><vh>c2_w10 - w18</vh></v>
 <v t="2014spring.20140503095553.1876" a="E"><vh>c2_w11</vh>
 <v t="2014spring.20140505200238.2114"><vh>注意事項</vh></v>
-<v t="2014spring.20140503095553.1927" a="E"><vh>分組程式開發</vh>
+<v t="2014spring.20140503095553.1927"><vh>分組程式開發</vh>
 <v t="2014spring.20140503095553.1928" a="E"><vh>@path wsgi/programs/c2g1</vh>
 <v t="2014spring.20140503095553.1929"><vh>@edit __init__.py</vh></v>
 </v>
@@ -132,7 +132,7 @@ expanded="2014spring.20140520155021.4823,"><vh>@file walker.py</vh></v>
 <v t="2014spring.20140503095553.1910" a="E"><vh>@path c2g1</vh>
 <v t="2014spring.20140503095553.1911"><vh>@edit doc.txt</vh></v>
 </v>
-<v t="2014spring.20140503095553.1912"><vh>@path c2g2</vh>
+<v t="2014spring.20140503095553.1912" a="E"><vh>@path c2g2</vh>
 <v t="2014spring.20140503095553.1913"><vh>@edit doc.txt</vh></v>
 </v>
 <v t="kmolII_lite.20140622011953.1824" a="E"><vh>@path c2g19</vh>
@@ -140,6 +140,9 @@ expanded="2014spring.20140520155021.4823,"><vh>@file walker.py</vh></v>
 </v>
 <v t="c2g4.20140622200445.1996" a="E"><vh>@path c2g4</vh>
 <v t="c2g4.20140622200445.1997"><vh>@edit doc.txt</vh></v>
+</v>
+<v t="2014python.20140623000606.2000" a="E"><vh>@path c2g9</vh>
+<v t="2014python.20140623000606.2001"><vh>@edit doc.txt</vh></v>
 </v>
 </v>
 </v>
@@ -371,6 +374,7 @@ responsibility of the Dispatcher to collect per-handler config, merge it with pe
 resulting dict to cherrypy.request.config. This dict is of depth 1 and will contain all config entries which are in effect for the current request.</t>
 <t tx="2014python.20140505100744.1942"></t>
 <t tx="2014python.20140602230647.1984"></t>
+<t tx="2014python.20140623000606.2000"></t>
 <t tx="2014pythonE.20140224205837.3150"></t>
 <t tx="2014pythonE.20140224205837.3151">QSplitter::handle {
     background-color: #CAE1FF; /* lightSteelBlue1 */
