@@ -33,6 +33,7 @@ class C2G15(object):
     
     則程式啟動後, 可以利用 /c2g15/fillpoly 呼叫函式執行
     '''
+
     @cherrypy.expose
     def fillpoly(self, *args, **kwargs):
         outstring = '''
