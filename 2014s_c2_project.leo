@@ -23,7 +23,7 @@
 <v t="2014python.20140224210642.3167"><vh>@shadow c2_w1_python1.py</vh></v>
 </v>
 </v>
-<v t="public_kmol.20140302202325.1715"><vh>c2_w2</vh>
+<v t="public_kmol.20140302202325.1715" a="E"><vh>c2_w2</vh>
 <v t="public_kmol.20140302202325.1716"><vh>程式說明</vh></v>
 <v t="2014python.20140306154142.1723"><vh>CherryPy 程式架構</vh></v>
 <v t="2014python.20140306154142.1724"><vh>git 程式到 OpehShift</vh></v>
@@ -35,7 +35,7 @@
 </v>
 </v>
 </v>
-<v t="2014pythonE.20140402100203.1908"><vh>c2_w7</vh>
+<v t="2014pythonE.20140402100203.1908" a="E"><vh>c2_w7</vh>
 <v t="2014pythonE.20140402100203.1914" a="E"><vh>利用 pandoc 進行格式轉換</vh>
 <v t="2014pythonE.20140402100203.1915"><vh>@button pandoc</vh></v>
 <v t="2014pythonE.20140402100203.1916" a="E"><vh>@path c2wp/pandoc</vh>
@@ -51,7 +51,7 @@
 </v>
 <v t="2014pythonE.20140414091257.1681" a="E"><vh>@path wsgi</vh>
 <v t="course-mde-tw.20140417093332.2216" a="E"><vh>@file application</vh></v>
-<v t="2014spring.20140509071814.2435"
+<v t="2014spring.20140509071814.2435" a="E"
 expanded="2014spring.20140509071814.2459,2014spring.20140509071814.2500,"><vh>@file cmsimply.py</vh></v>
 </v>
 </v>
@@ -135,17 +135,8 @@ expanded="2014spring.20140520155021.4823,"><vh>@file walker.py</vh></v>
 <v t="2014spring.20140503095553.1912" a="E"><vh>@path c2g2</vh>
 <v t="2014spring.20140503095553.1913"><vh>@edit doc.txt</vh></v>
 </v>
-<v t="kmolII_lite.20140622011953.1824" a="E"><vh>@path c2g19</vh>
-<v t="kmolII_lite.20140622011953.1825"><vh>@edit doc.txt</vh></v>
-</v>
-<v t="c2g4.20140622200445.1996" a="E"><vh>@path c2g4</vh>
-<v t="c2g4.20140622200445.1997"><vh>@edit doc.txt</vh></v>
-</v>
-<v t="2014python.20140623000606.2000"><vh>@path c2g9</vh>
-<v t="2014python.20140623000606.2001"><vh>@edit doc.txt</vh></v>
-</v>
-<v t="2014python.20140623005611.2008" a="E"><vh>@path c2g6</vh>
-<v t="2014python.20140623005611.2009"><vh>@edit doc.txt</vh></v>
+<v t="2014python.20140622234841.1992" a="E"><vh>@path c2g14</vh>
+<v t="2014python.20140622234841.1993"><vh>@edit doc.txt</vh></v>
 </v>
 </v>
 </v>
@@ -377,8 +368,7 @@ responsibility of the Dispatcher to collect per-handler config, merge it with pe
 resulting dict to cherrypy.request.config. This dict is of depth 1 and will contain all config entries which are in effect for the current request.</t>
 <t tx="2014python.20140505100744.1942"></t>
 <t tx="2014python.20140602230647.1984"></t>
-<t tx="2014python.20140623000606.2000"></t>
-<t tx="2014python.20140623005611.2008"></t>
+<t tx="2014python.20140622234841.1992"></t>
 <t tx="2014pythonE.20140224205837.3150"></t>
 <t tx="2014pythonE.20140224205837.3151">QSplitter::handle {
     background-color: #CAE1FF; /* lightSteelBlue1 */
@@ -1057,11 +1047,9 @@ W16 update</t>
 <t tx="2014spring.20140521094048.1967"></t>
 <t tx="2014spring.20140521094048.1968"></t>
 <t tx="c2g4.20140602210658.1980"></t>
-<t tx="c2g4.20140622200445.1996"></t>
 <t tx="kmolII_lite.20140505210604.1651"></t>
 <t tx="kmolII_lite.20140513015136.1753"></t>
 <t tx="kmolII_lite.20140616103838.2406"></t>
-<t tx="kmolII_lite.20140622011953.1824"></t>
 <t tx="public_kmol.20140302202325.1714">break
 
 The break statement in Python terminates the current loop and resumes execution at the next statement, just like the traditional break found in C.
