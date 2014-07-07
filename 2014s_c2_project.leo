@@ -43,16 +43,17 @@
 </v>
 </v>
 </v>
-<v t="2014pythonE.20140414091257.1680"><vh>c2_w8</vh>
+<v t="2014pythonE.20140414091257.1680" a="E"><vh>c2_w8</vh>
 <v t="2014pythonE.20140418222946.1967"><vh>說明</vh></v>
 <v t="2014pythonE.20140418222946.1968"><vh>同步設定</vh></v>
 <v t="2014pythonE.20140414091257.1916"><vh>簡單分頁</vh>
 <v t="2014pythonE.20140414091257.1917"><vh>另一個例子</vh></v>
 </v>
 <v t="2014pythonE.20140414091257.1681" a="E"><vh>@path wsgi</vh>
-<v t="course-mde-tw.20140417093332.2216" a="E"><vh>@file application</vh></v>
-<v t="2014spring.20140509071814.2435" a="E"
-expanded="2014spring.20140509071814.2459,2014spring.20140509071814.2500,"><vh>@file cmsimply.py</vh></v>
+<v t="course-mde-tw.20140417093332.2216" a="E"
+expanded="course-mde-tw.20140417093332.2218,"><vh>@file application</vh></v>
+<v t="2014spring.20140707105402.3662"
+expanded="2014spring.20140707105402.3687,2014spring.20140707105402.3731,"><vh>@file cmsimply.py</vh></v>
 </v>
 </v>
 <v t="2014spring.20140502183555.1776"><vh>c2_w10 - w18</vh></v>
