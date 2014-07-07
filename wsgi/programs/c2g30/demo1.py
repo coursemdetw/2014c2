@@ -20,7 +20,7 @@ class DEMO1(object):
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<script type="text/javascript" src="/static/Brython2.1.0-20140419-113919/brython.js"></script>
+<script type="text/javascript" src="/static/Brython2.1.3-20140704-213726/brython.js"></script>
 <meta charset=utf-8 />
 <title>Canvas Gradient</title>
 <style>

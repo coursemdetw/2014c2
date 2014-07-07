@@ -40,7 +40,7 @@ class C2G8(object):
     <html>
     <head>
     <meta http-equiv="content-type" content="text/html;charset=utf-8">
-    <script type="text/javascript" src="/static/Brython2.1.0-20140419-113919/brython.js"></script>
+    <script type="text/javascript" src="/static/Brython2.1.3-20140704-213726/brython.js"></script>
     </head>
     <body onload="brython({debug:1, cache:'version'})">
     <canvas id="plotarea" width="800" height="800"></canvas>
@@ -127,7 +127,7 @@ class C2G8(object):
     <html>
     <head>
     <meta http-equiv="content-type" content="text/html;charset=utf-8">
-    <script type="text/javascript" src="/static/Brython2.1.0-20140419-113919/brython.js"></script>
+    <script type="text/javascript" src="/static/Brython2.1.3-20140704-213726/brython.js"></script>
     </head>
     <body onload="brython({debug:1, cache:'version'})">
     <canvas id="plotarea" width="800" height="800"></canvas>
@@ -164,7 +164,7 @@ class C2G8(object):
     <html>
     <head>
     <meta http-equiv="content-type" content="text/html;charset=utf-8">
-    <script type="text/javascript" src="/static/Brython2.1.0-20140419-113919/brython.js"></script>
+    <script type="text/javascript" src="/static/Brython2.1.3-20140704-213726/brython.js"></script>
     </head>
     <body onload="brython({debug:1, cache:'version'})">
     <canvas id="plotarea" width="800" height="800"></canvas>
@@ -206,7 +206,7 @@ class C2G8(object):
     <html>
     <head>
     <meta http-equiv="content-type" content="text/html;charset=utf-8">
-    <script type="text/javascript" src="/static/Brython2.1.0-20140419-113919/brython.js"></script>
+    <script type="text/javascript" src="/static/Brython2.1.3-20140704-213726/brython.js"></script>
     </head>
     <body onload="brython({debug:1, cache:'version'})">
     <canvas id="plotarea" width="800" height="800"></canvas>
@@ -245,7 +245,7 @@ class C2G8(object):
     <html>
     <head>
     <meta http-equiv="content-type" content="text/html;charset=utf-8">
-    <script type="text/javascript" src="/static/Brython2.1.0-20140419-113919/brython.js"></script>
+    <script type="text/javascript" src="/static/Brython2.1.3-20140704-213726/brython.js"></script>
     </head>
     <body onload="brython({debug:1, cache:'version'})">
     <canvas id="plotarea" width="800" height="800"></canvas>
@@ -291,7 +291,7 @@ class C2G8(object):
     <html>
     <head>
     <meta http-equiv="content-type" content="text/html;charset=utf-8">
-    <script type="text/javascript" src="/static/Brython2.1.0-20140419-113919/brython.js"></script>
+    <script type="text/javascript" src="/static/Brython2.1.3-20140704-213726/brython.js"></script>
     </head>
     <body onload="brython({debug:1, cache:'version'})">
     <canvas id="plotarea" width="800" height="800"></canvas>
@@ -344,7 +344,7 @@ class C2G8(object):
     <html>
     <head>
     <meta http-equiv="content-type" content="text/html;charset=utf-8">
-    <script type="text/javascript" src="/static/Brython2.1.0-20140419-113919/brython.js"></script>
+    <script type="text/javascript" src="/static/Brython2.1.3-20140704-213726/brython.js"></script>
     </head>
     <body onload="brython({debug:1, cache:'version'})">
     <canvas id="plotarea" width="800" height="800"></canvas>
@@ -418,7 +418,7 @@ class C2G8(object):
     <html>
     <head>
     <meta http-equiv="content-type" content="text/html;charset=utf-8">
-    <script type="text/javascript" src="/static/Brython2.1.0-20140419-113919/brython.js"></script>
+    <script type="text/javascript" src="/static/Brython2.1.3-20140704-213726/brython.js"></script>
     </head>
     <body onload="brython({debug:1, cache:'version'})">
     <canvas id="plotarea" width="300" height="200"></canvas>
@@ -491,7 +491,7 @@ class C2G8(object):
     <html>
     <head>
     <meta http-equiv="content-type" content="text/html;charset=utf-8">
-    <script type="text/javascript" src="/static/Brython2.1.0-20140419-113919/brython.js"></script>
+    <script type="text/javascript" src="/static/Brython2.1.3-20140704-213726/brython.js"></script>
     </head>
     <body onload="brython({debug:1, cache:'version'})">
     <canvas id="plotarea" width="300" height="200"></canvas>
@@ -536,7 +536,7 @@ class C2G8(object):
     <html>
     <head>
     <meta http-equiv="content-type" content="text/html;charset=utf-8">
-    <script type="text/javascript" src="/static/Brython2.1.0-20140419-113919/brython.js"></script>
+    <script type="text/javascript" src="/static/Brython2.1.3-20140704-213726/brython.js"></script>
     </head>
     <body onload="brython({debug:1, cache:'version'})">
     <canvas id="plotarea" width="800" height="800"></canvas>
@@ -627,7 +627,7 @@ class C2G8(object):
     <html>
     <head>
     <meta http-equiv="content-type" content="text/html;charset=utf-8">
-    <script type="text/javascript" src="/static/Brython2.1.0-20140419-113919/brython.js"></script>
+    <script type="text/javascript" src="/static/Brython2.1.3-20140704-213726/brython.js"></script>
     </head>
     <body onload="brython({debug:1, cache:'version'})">
     <canvas id="plotarea" width="800" height="800"></canvas>
@@ -759,7 +759,7 @@ class C2G8(object):
     <html>
     <head>
     <meta http-equiv="content-type" content="text/html;charset=utf-8">
-    <script type="text/javascript" src="/static/Brython2.1.0-20140419-113919/brython.js"></script>
+    <script type="text/javascript" src="/static/Brython2.1.3-20140704-213726/brython.js"></script>
     </head>
     <body onload="brython({debug:1, cache:'version'})">
     <canvas id="plotarea" width="800" height="800"></canvas>
