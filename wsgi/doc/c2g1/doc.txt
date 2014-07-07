@@ -1,35 +1,86 @@
-# c2g1報告說明
+﻿C2期末報告(c2g1)
+===
+Python Tutorial 第三堂（3）永續化機制
+此區塊負責小組:第一組
 
-這是 c2g1報告說明內容
+40223124袁丞宗
 
-# 報告摘要
+40223103李靜茹
 
-這是 c2g1 報告摘要內容
+40223133陳澔旭
 
-# c2g1 報告內容
+[原文](http://www.codedata.com.tw/python/python-tutorial-the-3rd-class-3-persistence/)
 
-index 方法
+期末報告(PDF)： https://copy.com/eAaQkD1WX8cO
 
-~~~~~~~
-這是 2014C2 協同專案下的 c2g1 分組程式開發網頁, 以下為 W12 的任務執行內容.<br />
-<!-- 這裡採用相對連結, 而非網址的絕對連結 (這一段為 html 註解) -->
-<a href="fillpoly">c2g1 fillpoly 繪圖</a><br />
-<a href="drawline">c2g1 drawline 繪圖</a><br />
-~~~~~~~
+期末報告網站： https://g1c2-40123124.rhcloud.com
 
-# 以下為 c2g1 的模組導入與連結設定
 
-~~~~~~~
-import programs.c2g1 as c2g1
-root.c2g1 = c2g1.C2G1()
-~~~~~~~
+# 說明:
 
-# 詳細程式說明
+Python 中提供了一些方式，可以直接保存物件狀態，好在下次重新執行程式時讀取以恢復運算時必要的資料，有四種方法，如：
 
-這裡是分組程式開發的詳細說明
+  * 物件序列化（Serialization）
+  * DBM（Database Manager）
+  * shelve模組
+  * DB-API2.0（PEP249） 
 
-# 結論與討論
+心理OS:我不懂這些程式為啥可以辦到這種功能阿!!執行完也不懂啊!感覺只是印出某個東東而已啊!!
 
-這裡是分組任務執行的結論心得與討論
+# 影片連結:
+
+[Copy的flv](https://copy.com/KpSAOCdblCM7)
+
+[Vimeo的線上看](https://vimeo.com/98811256)
+
+# 程式執行:
+
+以下是用**第一堂課準備環境裡面提供的模組**，在按照原文上的說明修改裡面的程式碼所改的檔案去執行
+
+  1. 物件序列化（Serialization）－pickle模組
+
+[pickle檔案連結](https://copy.com/Ocihyr9RLKpj)
+
+![plckle](./../images/c2g1/pickle.jpg)
+
+圖1，執行完跑出的結果
+
+![plckle2](./../images/c2g1/pickle2.jpg)
+
+圖2，跑完會多1個檔案
+
+
+  2. shelve模組：shelve
+[shelve檔案連結](https://copy.com/kFbjz2txBPU3)
+
+![shelve](./../images/c2g1/shelve.jpg)
+
+圖3，執行完跑出的結果，
+
+![shelve2](./../images/c2g1/shelve2.jpg)
+
+圖4，跑完會多幾個檔案
+
+
+
+  3. DBM（Database Manager）DBM
+
+[DMB檔案連結](https://copy.com/ZY8ykQqST4G0)
+
+![DBM](./../images/c2g1/DMB.jpg)
+圖5、此範例在第一堂課提供的模組裡沒有，照上面打之後會出現一些錯誤，而且py3要把原文中的anydbm改成DBM。
+
+  4. DB-API2.0（PEP249）－sql
+
+[sql檔案連結](https://copy.com/WNDEdBugy70F)
+
+![sql](./../images/c2g1/sql.jpg)
+
+
+![sql2](./../images/c2g1/sql2.jpg)
+
+圖6、7，執行完跑出的結果
+
+
 
 

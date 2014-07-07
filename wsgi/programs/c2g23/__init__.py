@@ -14,6 +14,10 @@ class C2G23(object):
 <a href="triangle2">c2g23 triangle2 繪圖</a><br />
 <a href="japanflag">c2g23 japanflag 繪圖</a><br />
 <a href="usaflag">c2g23 usaflag 繪圖</a><br />
+<a href="http://goo.gl/DLsCW5">c2g23 w14 1 繪圖</a><br />
+<a href="http://goo.gl/TO25yv">c2g23 w14 2 繪圖</a><br />
+<a href="http://goo.gl/cGILsc">c2g23 w14 3 繪圖</a><br />
+<a href="http://goo.gl/4uAJW4">c2g23 w15+w16 allTask</a><br /> 
 '''
         return outstring
 
