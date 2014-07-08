@@ -36,7 +36,7 @@ class HelloWorld(object):
     <script src="/static/axuploader.js" type="text/javascript"></script>
     <script>
     $(document).ready(function(){
-    $('.prova').axuploader({url:'/fileaxupload', allowExt:['jpg','png','gif','7z','pdf','zip','flv','stl','txt'],
+    $('.prova').axuploader({url:'fileaxupload', allowExt:['jpg','png','gif','7z','pdf','zip','flv','stl','txt'],
     finish:function(x,files)
         {
             alert('All files have been uploaded: '+files);
