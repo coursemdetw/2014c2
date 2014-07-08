@@ -2470,6 +2470,79 @@ if (!newfile.Status) {
             # for admin
             return part1+adm1+load_program+part2+adm2+self.load_list(item_per_page, page, "calc")+part3
 
+    #@+node:2014spring.20140708101542.3091: *3* rubik
+    @cherrypy.expose
+    def rubik(self, *args, **kwargs):
+        outstring = '''
+    <!DOCTYPE html>
+    <html>
+      <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="/static/rubik/cube.css">
+        <link rel="stylesheet" type="text/css" href="/static/rubik/doodle.css">
+        <link rel="stylesheet" type="text/css" href="/static/rubik/certificate.css">
+        <!-- Script font -->
+        <link href="/static/rubik/css.css" rel="stylesheet" type="text/css">
+        <!-- compiled & minified cube code -->
+        <script charset="utf-8" src="/static/rubik/tween.js"></script>
+        <script charset="utf-8" src="/static/rubik/Three.noStrict.js"></script>
+        <script charset="utf-8" src="/static/rubik/cuber.min.js"></script>
+      </head>
+      <body>
+        <div id="bg"></div>
+        <div id="container"></div>
+        <div id="fail">
+          <img src="/static/rubik/static-cube.png"/>
+          <div id="upgradeText" class="bubble fadeTransition">
+            <div class="upgradetext">To play, please use the latest version of one of the following browsers</div>
+            <br><br>
+            <a class="upgradetext" href="https://www.google.com/chrome/browser/" target="_blank">Chrome</a><br>
+            <a class="upgradetext" href="https://www.mozilla.org/firefox" target="_blank">Firefox</a><br>
+            <a class="upgradetext" href="https://www.apple.com/safari" target="_blank">Safari</a><br>
+            <span class="pointerleft SPRITE_carrot_down_2x"></span>
+          </div>
+        </div>
+        <div id="uipanel" class="fadeTransition">
+          <div id="movecounter">0</div>
+          <div id="buttonpanel">
+            <div id="sharebubble" class="fadeTransition" style="opacity:0">
+              <input id="shareshortlink" type="text" value="google.com/doodles" readonly="readonly"/>
+              <div id="sharegplus" class="bubbleicon SPRITE_google_plus_64_2x"></div>
+              <div id="sharefacebook" class="bubbleicon SPRITE_facebook_64_2x"></div>
+              <div id="sharetwitter" class="bubbleicon SPRITE_twitter_64_2x"></div>
+              <div id="shareemail" class="bubbleicon SPRITE_email_64_2x"></div>
+            </div>
+            <div id="uibuttons">
+              <div id="sharebutton" class="bubbleicon SPRITE_share_64_2x"></div>
+              <div id="helpbutton" class="bubbleicon SPRITE_help_64_2x"></div>
+              <div id="searchbutton" class="bubbleicon SPRITE_search_64_2x"></div>
+            </div>
+          </div>
+          <div id="helpbubble" class="bubble" style="display:none">
+            <span class="pointerup SPRITE_carrot_grey_up_2x"></span>
+            <div id="helpimage" class="one"></div>
+            <div id="helptext" class="helptext"></div>
+            <div id="helpnext" class="helptext"></div>
+            <span class="pointerdown SPRITE_carrot_down_2x"></span><br>
+          </div>
+        </div>
+        <script charset="utf-8" src="/static/rubik/iecss3d.js"></script>
+        <script charset="utf-8" src="/static/rubik/ierenderer.js"></script>
+        <script charset="utf-8" src="/static/rubik/deviceMotion.js"></script>
+        <script charset="utf-8" src="/static/rubik/locked.js"></script>
+        <!-- Certificate js -->
+        <script charset="utf-8" src="/static/rubik/textBox.js"></script>
+        <script charset="utf-8" src="/static/rubik/ResizeableTextBox.js"></script>
+        <script charset="utf-8" src="/static/rubik/divBox.js"></script>
+        <script charset="utf-8" src="/static/rubik/frames.js"></script>
+        <script charset="utf-8" src="/static/rubik/certificate.js"></script>
+        <script charset="utf-8" src="/static/rubik/main.js"></script>
+      </body>
+    </html>
+
+    '''
+        return outstring
     #@+node:2014spring.20140707105402.3729: *3* openjscad
     @cherrypy.expose
     def openjscad(self, *args, **kwargs):
