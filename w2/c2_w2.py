@@ -201,9 +201,9 @@ class HelloWorld(object):
     doc['clear_canvas'].bind('click',clear_canvas)
     doc['clear_src'].bind('click',clear_src)
     # only admin can save program to server
-    doc['save_program'].bind('click',lambda ev:post('/save_program'))
+    doc['save_program'].bind('click',lambda ev:post('save_program'))
     # add delete_program 5/7, delete_program button bind to execute delete_program on server.
-    doc['delete_program'].bind('click',lambda ev:post('/delete_program'))
+    doc['delete_program'].bind('click',lambda ev:post('delete_program'))
     </script>
     <script type="text/javascript">
     window.onload=brython({debug:1, cache:'version'});

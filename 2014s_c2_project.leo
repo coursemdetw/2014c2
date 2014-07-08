@@ -29,7 +29,7 @@
 <v t="2014python.20140306154142.1724"><vh>git 程式到 OpehShift</vh></v>
 <v t="2014python.20140306154142.1725"><vh>Html 超文件表單與 CherryPy 程式</vh></v>
 <v t="2014pythonE.20140401100126.1860" a="E"><vh>@path w2</vh>
-<v t="2014python.20140306154142.1722"><vh>@auto c2_w2.py</vh></v>
+<v t="2014python.20140306154142.1722" a="E"><vh>@auto c2_w2.py</vh></v>
 <v t="2014pythonE.20140403094306.2148" a="E"><vh>@path static</vh>
 <v t="2014pythonE.20140403094306.2149"><vh>@edit axuploader.js</vh></v>
 </v>
@@ -52,7 +52,7 @@
 <v t="2014pythonE.20140414091257.1681" a="E"><vh>@path wsgi</vh>
 <v t="course-mde-tw.20140417093332.2216" a="E"
 expanded="course-mde-tw.20140417093332.2218,"><vh>@file application</vh></v>
-<v t="2014spring.20140707105402.3662"
+<v t="2014spring.20140707105402.3662" a="E"
 expanded="2014spring.20140707105402.3687,2014spring.20140707105402.3731,"><vh>@file cmsimply.py</vh></v>
 </v>
 </v>
